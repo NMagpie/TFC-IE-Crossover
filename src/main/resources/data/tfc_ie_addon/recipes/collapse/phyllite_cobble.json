@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_uranium/phyllite",
+    "tfc_ie_addon:ore/normal_uranium/phyllite",
+    "tfc_ie_addon:ore/rich_uranium/phyllite"
+  ],
+  "result": "tfc:rock/cobble/phyllite"
+}

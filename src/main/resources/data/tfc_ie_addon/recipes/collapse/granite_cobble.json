@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_uranium/granite",
+    "tfc_ie_addon:ore/normal_uranium/granite",
+    "tfc_ie_addon:ore/rich_uranium/granite"
+  ],
+  "result": "tfc:rock/cobble/granite"
+}

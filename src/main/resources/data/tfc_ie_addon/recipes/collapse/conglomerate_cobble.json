@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_uranium/conglomerate",
+    "tfc_ie_addon:ore/normal_uranium/conglomerate",
+    "tfc_ie_addon:ore/rich_uranium/conglomerate"
+  ],
+  "result": "tfc:rock/cobble/conglomerate"
+}

@@ -25,8 +25,8 @@ class ModificationLoggingResourceManager(ResourceManager):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate resources for Firmalife')
-    rm = ResourceManager('firmalife', resource_dir='../src/main/resources')
+    parser = argparse.ArgumentParser(description='Generate resources for TFC + IE Crossover')
+    rm = ResourceManager('tfc_ie_addon', resource_dir='../src/main/resources')
     parser.add_argument('--clean', action='store_true', dest='clean', help='Clean all auto generated resources')
     args = parser.parse_args()
 
@@ -54,7 +54,6 @@ def generate_all(rm: ResourceManager):
     world_gen.generate(rm)
 
     rm.flush()
-
 
 if __name__ == '__main__':
     main()

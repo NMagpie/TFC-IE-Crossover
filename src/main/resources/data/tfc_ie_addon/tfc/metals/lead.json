@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "tier": 2,
+  "fluid": "tfc_ie_addon:metal/lead",
+  "melt_temperature": 500,
+  "specific_heat_capacity": 0.00857,
+  "ingots": {
+    "tag": "forge:ingots/lead"
+  },
+  "sheets": {
+    "tag": "forge:plates/lead"
+  }
+}

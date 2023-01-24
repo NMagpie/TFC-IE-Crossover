@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "tier": 1,
+  "fluid": "tfc_ie_addon:metal/aluminum",
+  "melt_temperature": 650,
+  "specific_heat_capacity": 0.00857,
+  "ingots": {
+    "tag": "forge:ingots/aluminum"
+  },
+  "sheets": {
+    "tag": "forge:plates/aluminum"
+  }
+}

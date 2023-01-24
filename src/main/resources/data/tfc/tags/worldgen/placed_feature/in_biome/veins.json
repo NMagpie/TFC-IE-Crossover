@@ -2,7 +2,11 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    "firmalife:vein/normal_chromite",
-    "firmalife:vein/deep_chromite"
+    "tfc_ie_addon:vein/normal_aluminum",
+    "tfc_ie_addon:vein/deep_aluminum",
+    "tfc_ie_addon:vein/normal_lead",
+    "tfc_ie_addon:vein/deep_lead",
+    "tfc_ie_addon:vein/normal_uranium",
+    "tfc_ie_addon:vein/deep_uranium"
   ]
 }

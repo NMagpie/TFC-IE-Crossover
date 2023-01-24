@@ -2,7 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    "#forge:ingots/stainless_steel",
-    "#forge:ingots/chromium"
+    "immersiveengineering:ingot_aluminum",
+    "immersiveengineering:ingot_lead",
+    "immersiveengineering:ingot_uranium"
   ]
 }

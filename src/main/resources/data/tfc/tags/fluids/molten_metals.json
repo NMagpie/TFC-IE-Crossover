@@ -2,7 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    "firmalife:metal/stainless_steel",
-    "firmalife:metal/chromium"
+    "tfc_ie_addon:metal/aluminum",
+    "tfc_ie_addon:metal/lead",
+    "tfc_ie_addon:metal/uranium"
   ]
 }

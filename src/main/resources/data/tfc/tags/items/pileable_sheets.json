@@ -2,7 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    "#forge:sheets/stainless_steel",
-    "#forge:sheets/chromium"
+    "immersiveengineering:plate_aluminum",
+    "immersiveengineering:plate_lead",
+    "immersiveengineering:plate_uranium"
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:ore/poor_aluminum",
+    "tfc_ie_addon:ore/normal_aluminum",
+    "tfc_ie_addon:ore/rich_aluminum",
+    "tfc_ie_addon:ore/poor_lead",
+    "tfc_ie_addon:ore/normal_lead",
+    "tfc_ie_addon:ore/rich_lead",
+    "tfc_ie_addon:ore/poor_uranium",
+    "tfc_ie_addon:ore/normal_uranium",
+    "tfc_ie_addon:ore/rich_uranium"
+  ]
+}

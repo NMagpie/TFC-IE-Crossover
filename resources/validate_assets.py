@@ -3,11 +3,11 @@ import json
 from mcresources import utils
 
 assets_path = '../src/main/resources/assets/'
-texture_forgiveness_paths = ('crop', 'spice', 'fruitstuff', 'food', 'mallet', 'dried', 'pineapple', 'coconut', 'metal/full', 'cinnamon', 'block/white_wool', 'squash', 'cocoa')
+texture_forgiveness_paths = ('mallet', 'metal/full',)
 
 def main():
-    model_locations = glob(assets_path + 'firmalife/models/**/*.json', recursive=True)
-    state_locations = glob(assets_path + 'firmalife/blockstates/**/*.json', recursive=True)
+    model_locations = glob(assets_path + 'tfc_ie_addon/models/**/*.json', recursive=True)
+    state_locations = glob(assets_path + 'tfc_ie_addon/blockstates/**/*.json', recursive=True)
     validate_model_parents(model_locations)
     validate_textures(model_locations)
     validate_blockstate_models(state_locations)
@@ -63,15 +63,15 @@ def validate_textures(model_locations):
                 for texture in textures.values():
                     if '#' not in texture:
                         res = utils.resource_location(texture)
-                        if res.domain == 'firmalife':
+                        if res.domain == 'tfc_ie_addon':
                             tested += 1
-                            path = assets_path + 'firmalife/textures/%s.png' % res.path
+                            path = assets_path + 'tfc_ie_addon/textures/%s.png' % res.path
                             if len(glob(path)) == 0:
                                 print('Using missing texture, unable to load %s : java.io.FileNotFoundException: %s' % (f, path))
                                 errors += 1
                             else:
                                 existing_textures.append(path)
-    for f in glob(assets_path + 'firmalife/textures/**/*.png', recursive=True):
+    for f in glob(assets_path + 'tfc_ie_addon/textures/**/*.png', recursive=True):
         f = f.replace('\\', '/')
         if f not in existing_textures and ('block/' in f or 'item/' in f):
             forgiven = False
@@ -86,9 +86,9 @@ def validate_textures(model_locations):
 
 def find_model_file(file_path: str, initial_path: str, tested: int, errors: int, on_error: str):
     res = utils.resource_location(initial_path)
-    if res.domain == 'firmalife':
+    if res.domain == 'tfc_ie_addon':
         tested += 1
-        path = assets_path + 'firmalife/models/%s.json' % res.path
+        path = assets_path + 'tfc_ie_addon/models/%s.json' % res.path
         found = len(glob(path))
         if found != 1:
             print(on_error % (file_path, path))

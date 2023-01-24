@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageEnhance
 
 from constants import *
 
-path = '../src/main/resources/assets/firmalife/textures/'
+path = '../src/main/resources/assets/tfc_ie_addon/textures/'
 
 def get_jar_color(name: str):
     img = Image.open(path + 'item/jar/' + name + '.png')
@@ -29,13 +29,6 @@ def put_on_all_pixels(img: Image, color) -> Image:
     return img
 
 def main():
-    for fruit in TFC_FRUITS:
-        jar_color = get_jar_color(fruit)
-        easy_colorize(jar_color, 'texture_templates/jar_content', path + 'block/jar/%s' % fruit, 2)
-    for fruit in FL_FRUITS:
-        jar_color = get_jar_color(fruit)
-        easy_colorize(jar_color, 'texture_templates/jar_content', path + 'block/jar/%s' % fruit, 2)
-
 
 if __name__ == '__main__':
     main()

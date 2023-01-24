@@ -6,7 +6,7 @@ from mcresources.type_definitions import ResourceIdentifier, JsonObject, Json, V
 from constants import *
 
 def generate(rm: ResourceManager):
-    placed_feature_tag(rm, 'tfc:in_biome/veins', *['firmalife:vein/%s' % v for v in ORE_VEINS.keys()])
+    placed_feature_tag(rm, 'tfc:in_biome/veins', *['tfc_ie_addon:vein/%s' % v for v in ORE_VEINS.keys()])
 
     for vein_name, vein in ORE_VEINS.items():
         rocks = expand_rocks(vein.rocks, vein_name)
@@ -23,30 +23,12 @@ def generate(rm: ResourceManager):
             'indicator': {
                 'rarity': 12,
                 'blocks': [{
-                    'block': 'firmalife:ore/small_%s' % vein.ore
+                    'block': 'tfc_ie_addon:ore/small_%s' % vein.ore
                 }]
             },
             'random_name': vein_name,
             'biomes': vein.biomes
         })
-
-    for fruit, info in FRUITS.items():
-        config = {
-            'min_temperature': info.min_temp,
-            'max_temperature': info.max_temp,
-            'min_rainfall': info.min_rain,
-            'max_rainfall': info.max_rain,
-            'max_forest': 'normal'
-        }
-        feature = 'firmalife:fruit_trees'
-        state = 'firmalife:plant/%s_growing_branch' % fruit
-        configured_placed_feature(rm, ('plant', fruit), feature, {'state': state}, ('tfc:climate', config), decorate_heightmap('world_surface_wg'), decorate_square(), decorate_chance(50))
-
-        placed_feature_tag(rm, 'tfc:feature/fruit_trees', 'firmalife:plant/%s' % fruit, 'firmalife:plant/%s' % fruit)
-
-    configured_patch_feature(rm, 'hollow_shell', patch_config('firmalife:hollow_shell[fluid=empty]', 1, 15, 5, 'salt'), decorate_chance(20), decorate_square(), decorate_climate(-30, 20, 150, 500))
-    placed_feature_tag(rm, 'tfc:feature/shore_decorations', 'firmalife:hollow_shell')
-
 
 Heightmap = Literal['motion_blocking', 'motion_blocking_no_leaves', 'ocean_floor', 'ocean_floor_wg', 'world_surface', 'world_surface_wg']
 
@@ -59,7 +41,6 @@ class PatchConfig(NamedTuple):
     salt_water: bool
     custom_feature: str
     custom_config: Json
-
 
 def decorate_climate(min_temp: Optional[float] = None, max_temp: Optional[float] = None, min_rain: Optional[float] = None, max_rain: Optional[float] = None, needs_forest: Optional[bool] = False, fuzzy: Optional[bool] = None, min_forest: Optional[str] = None, max_forest: Optional[str] = None) -> Json:
     return {
@@ -178,24 +159,24 @@ def biome_tag(rm: ResourceManager, name_parts: ResourceIdentifier, *values: Reso
 def vein_ore_blocks(vein: Vein, rock: str) -> List[Dict[str, Any]]:
     ore_blocks = [{
         'weight': vein.poor,
-        'block': 'firmalife:ore/poor_%s/%s' % (vein.ore, rock)
+        'block': 'tfc_ie_addon:ore/poor_%s/%s' % (vein.ore, rock)
     }, {
         'weight': vein.normal,
-        'block': 'firmalife:ore/normal_%s/%s' % (vein.ore, rock)
+        'block': 'tfc_ie_addon:ore/normal_%s/%s' % (vein.ore, rock)
     }, {
         'weight': vein.rich,
-        'block': 'firmalife:ore/rich_%s/%s' % (vein.ore, rock)
+        'block': 'tfc_ie_addon:ore/rich_%s/%s' % (vein.ore, rock)
     }]
     if vein.spoiler_ore is not None and rock in vein.spoiler_rocks:
         p = vein.spoiler_rarity * 0.01  # as a percentage of the overall vein
         ore_blocks.append({
             'weight': int(100 * p / (1 - p)),
-            'block': 'firmalife:ore/%s/%s' % (vein.spoiler_ore, rock)
+            'block': 'tfc_ie_addon:ore/%s/%s' % (vein.spoiler_ore, rock)
         })
     elif vein.deposits:
         ore_blocks.append({
             'weight': 10,
-            'block': 'firmalife:deposit/%s/%s' % (vein.ore, rock)
+            'block': 'tfc_ie_addon:deposit/%s/%s' % (vein.ore, rock)
         })
     return ore_blocks
 

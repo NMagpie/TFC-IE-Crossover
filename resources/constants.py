@@ -4,44 +4,9 @@ OreGrade = NamedTuple('OreGrade', weight=int, grind_amount=int)
 RockCategory = Literal['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
 Rock = NamedTuple('Rock', category=RockCategory, sand=str)
 Vein = NamedTuple('Vein', ore=str, type=str, rarity=int, size=int, min_y=int, max_y=int, density=float, poor=float, normal=float, rich=float, rocks=List[str], spoiler_ore=str, spoiler_rarity=int, spoiler_rocks=List[str], biomes=Optional[str], height=Optional[int], deposits=bool)
-Fruit = NamedTuple('Fruit', min_temp=float, max_temp=float, min_rain=float, max_rain=float)
 
-class Wood(NamedTuple):
-    temp: float
-    duration: int
-
-SIMPLE_ITEMS = ('peel', 'fruit_leaf', 'cinnamon_bark', 'beeswax', 'pineapple_leather', 'pineapple_yarn', 'raw_honey', 'rennet', 'watering_can', 'treated_lumber', 'beehive_frame', 'empty_jar', 'cheesecloth', 'spoon', 'pie_pan', 'seed_ball')
-SIMPLE_FOODS = ('frothy_coconut', 'white_chocolate_blend', 'dark_chocolate_blend', 'milk_chocolate_blend', 'tofu', 'soy_mixture', 'yak_curd', 'goat_curd', 'milk_curd', 'cheddar', 'chevre', 'rajya_metok', 'gouda', 'feta', 'shosha', 'butter',
-                'pie_dough', 'filled_pie', 'cooked_pie', 'pizza_dough', 'raw_pizza', 'cooked_pizza', 'shredded_cheese', 'pickled_egg', 'pumpkin_pie_dough', 'raw_pumpkin_pie', 'cooked_pumpkin_pie', 'cocoa_beans', 'roasted_cocoa_beans',
-                'cocoa_butter', 'cocoa_powder', 'toast', 'dark_chocolate', 'milk_chocolate', 'white_chocolate', 'garlic_bread', 'cured_maize', 'nixtamal', 'masa', 'masa_flour', 'corn_tortilla', 'taco_shell', 'burrito', 'taco', 'salsa',
-                'tomato_sauce', )
-SIMPLE_SPICES = ('ground_cinnamon', 'cinnamon', 'basil_leaves')
-SIMPLE_BLOCKS: Dict[str, str] = {
-    'sealed_bricks': 'minecraft:mineable/pickaxe',
-    'embedded_pipe': 'minecraft:mineable/pickaxe',
-    'treated_wood': 'minecraft:mineable/axe'
-}
-BLOCK_ENTITIES = ('oven_bottom', 'oven_top', 'drying_mat', 'beehive', 'solar_drier', 'mixing_bowl', 'iron_composter', 'string', 'berry_bush', 'large_planter', 'bonsai_planter', 'trellis_planter', 'hanging_planter', 'quad_planter', 'climate_station')
-EXTRA_FLUIDS = ('yeast_starter', 'coconut_milk', 'yak_milk', 'goat_milk', 'curdled_yak_milk', 'curdled_goat_milk', 'pina_colada', 'cream')
-JARS: Sequence[Tuple[str, int, str, str]] = (
-    ('honey', 1, 'minecraft:block/honey_block_side', 'firmalife:raw_honey'),
-    ('compost', 8, 'firmalife:block/potting_soil_wet', 'tfc:compost'),
-    ('rotten_compost', 8, 'firmalife:block/rotten_soil', 'tfc:rotten_compost'),
-    ('guano', 8, 'minecraft:block/dead_brain_coral_block', 'tfc:groundcover/guano'),
-)
-CHEESE_WHEELS = ('rajya_metok', 'cheddar', 'gouda', 'feta', 'chevre', 'shosha')
-FL_FRUITS = ('pumpkin_chunks', 'fig')
 DEFAULT_FORGE_ORE_TAGS: Tuple[str, ...] = ('coal', 'diamond', 'emerald', 'gold', 'iron', 'lapis', 'netherite_scrap', 'quartz', 'redstone')
 
-TFC_GRAINS = ('wheat', 'rye', 'barley', 'rice', 'maize', 'oat')
-TFC_FRUIT_TREES = ('cherry', 'green_apple', 'lemon', 'olive', 'orange', 'peach', 'plum', 'red_apple')
-TFC_FRUITS = ('banana', 'blackberry', 'blueberry', 'bunchberry', 'cherry', 'cloudberry', 'cranberry', 'elderberry', 'gooseberry', 'green_apple', 'lemon', 'olive', 'orange', 'peach', 'plum', 'raspberry', 'red_apple', 'snowberry', 'strawberry', 'wintergreen_berry')
-TFC_FLOWERS = ('canna', 'goldenrod', 'allium', 'anthurium', 'houstonia', 'blood_lily', 'blue_orchid', 'blue_ginger', 'butterfly_milkweed', 'black_orchid',
-               'dandelion', 'desert_flame', 'field_horsetail', 'grape_hyacinth', 'heliconia', 'kangaroo_paw', 'labrador_tea', 'lady_fern', 'calendula',
-               'meads_milkweed', 'nasturtium', 'oxeye_daisy', 'poppy', 'primrose', 'pulsatilla', 'sacred_datura', 'silver_spurflower', 'snapdragon_pink',
-               'snapdragon_red', 'snapdragon_white', 'snapdragon_yellow', 'strelitzia', 'sword_fern', 'trillium', 'tropical_milkweed', 'tulip_orange', 'tulip_pink',
-               'tulip_red', 'tulip_white')
-TFC_FLOATING_FLOWERS = ('duckweed', 'lotus', 'pistia', 'water_canna', 'water_lily')
 TFC_ROCKS: Dict[str, Rock] = {
     'granite': Rock('igneous_intrusive', 'white'),
     'diorite': Rock('igneous_intrusive', 'white'),
@@ -64,27 +29,6 @@ TFC_ROCKS: Dict[str, Rock] = {
     'gneiss': Rock('metamorphic', 'green'),
     'marble': Rock('metamorphic', 'yellow')
 }
-TFC_WOODS: Dict[str, Wood] = {
-    'acacia': Wood(650, 1000),
-    'ash': Wood(696, 1250),
-    'aspen': Wood(611, 1000),
-    'birch': Wood(652, 1750),
-    'blackwood': Wood(720, 1750),
-    'chestnut': Wood(651, 1500),
-    'douglas_fir': Wood(707, 1500),
-    'hickory': Wood(762, 2000),
-    'kapok': Wood(645, 1000),
-    'maple': Wood(745, 2000),
-    'oak': Wood(728, 2250),
-    'palm': Wood(730, 1250),
-    'pine': Wood(627, 1250),
-    'rosewood': Wood(640, 1500),
-    'sequoia': Wood(612, 1750),
-    'spruce': Wood(608, 1500),
-    'sycamore': Wood(653, 1750),
-    'white_cedar': Wood(625, 1500),
-    'willow': Wood(603, 1000)
-}
 
 ROCK_CATEGORIES: List[str] = ['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
 ORE_GRADES: Dict[str, OreGrade] = {
@@ -92,37 +36,6 @@ ORE_GRADES: Dict[str, OreGrade] = {
     'poor': OreGrade(30, 3),
     'rich': OreGrade(20, 7)
 }
-
-GREENHOUSES = ('rusted_iron', 'iron', 'oxidized_copper', 'weathered_copper', 'exposed_copper', 'copper', 'weathered_treated_wood', 'treated_wood', 'stainless_steel')
-GREENHOUSE_BLOCKS = ('roof', 'roof_top', 'wall', 'door')
-CLEANING_PAIRS: Dict[str, str] = {
-    'rusted_iron': 'iron',
-    'oxidized_copper': 'copper',
-    'weathered_copper': 'copper',
-    'exposed_copper': 'copper',
-    'weathered_treated_wood': 'treated_wood'
-}
-PLANTERS = ('hanging', 'bonsai', 'quad', 'large', 'trellis')
-
-CARVINGS = {
-    'none': ['XXXXX', 'XXXXX', 'XXXXX', 'X   X', 'XXXXX'],
-    'circle': ['XXXXX', 'X   X', 'X   X', 'X   X', 'XXXXX'],
-    'creeper': ['XXXXX', 'X X X', 'XX XX', 'X X X', 'X X X'],
-    'axe': ['XXXXX', 'X  XX', 'X   X', 'X  XX', 'XXXXX'],
-    'hammer': ['XXXXX', 'X   X', 'X   X', 'XX XX', 'XX XX'],
-    'pickaxe': ['XXXXX', 'XX XX', 'X X X', 'XX XX', 'XX XX'],
-    'left': ['XXXXX', 'X XXX', 'X XXX', 'X   X', 'XXXXX'],
-    'right': ['XXXXX', 'X   X', 'XXX X', 'XXX X', 'XXXXX'],
-}
-
-HERBS = ('basil', 'bay_laurel', 'cardamom', 'cilantro', 'cumin', 'oregano', 'pimento', 'vanilla')
-
-FRUITS: Dict[str, Fruit] = {
-    'cocoa': Fruit(20, 35, 220, 400),
-    'fig': Fruit(20, 35, 125, 215)
-}
-
-DISABLED_TFC_RECIPES = ('barrel/curdling', 'barrel/cheese', 'barrel/milk_vinegar')
 
 # Default parameters for common ore veins
 # rarity, size, min_y, max_y, density, poor, normal, rich
@@ -142,109 +55,61 @@ def vein(ore: str, vein_type: str, rarity: int, size: int, min_y: int, max_y: in
     # Factory method to allow default values
     return Vein(ore, vein_type, rarity, size, min_y, max_y, density, poor, normal, rich, rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
 
-
 def preset_vein(ore: str, vein_type: str, rocks: List[str], spoiler_ore: Optional[str] = None, spoiler_rarity: int = 0, spoiler_rocks: List[str] = None, biomes: str = None, height: int = 0, preset: Tuple[int, int, int, int, int, int, int, int] = None, deposits: bool = False):
     assert preset is not None
     return Vein(ore, vein_type, preset[0], preset[1], preset[2], preset[3], preset[4], preset[5], preset[6], preset[7], rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
 
-
 ORE_VEINS: Dict[str, Vein] = {
-    'normal_chromite': preset_vein('chromite', 'cluster', ['igneous_intrusive', 'metamorphic'], preset=NORMAL_METAL_ORE),
-    'deep_chromite': preset_vein('chromite', 'cluster', ['igneous_intrusive', 'metamorphic'], preset=DEEP_METAL_ORE),
+    'normal_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=SURFACE_METAL_ORE),
+    'deep_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=NORMAL_METAL_ORE),
+    'normal_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive', 'igneous_intrusive'], preset=NORMAL_METAL_ORE),
+    'deep_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive',  'igneous_intrusive'], preset=DEEP_METAL_ORE),
+    'normal_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=NORMAL_METAL_ORE),
+    'deep_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=DEEP_METAL_ORE),
 }
 
 DEFAULT_LANG = {
-    'effect.firmalife.swarm': 'Swarm',
-    'entity.firmalife.seed_ball': 'Seed Ball',
-    'firmalife.tooltip.food_trait.dried': 'Dried',
-    'firmalife.tooltip.food_trait.aged': 'Aged',
-    'firmalife.tooltip.food_trait.vintage': 'Vintage',
-    'firmalife.tooltip.food_trait.fresh': 'Fresh',
-    'firmalife.tooltip.food_trait.oven_baked': 'Oven Baked',
-    'firmalife.tooltip.food_trait.hung': 'Hung in a Cellar',
-    'firmalife.tooltip.food_trait.hung_2': 'Hung in a Cellar II',
-    'firmalife.tooltip.food_trait.hung_3': 'Hung in a Cellar III',
-    'firmalife.tooltip.food_trait.shelved': 'On a Cellar Shelf',
-    'firmalife.tooltip.food_trait.shelved_2': 'On a Cellar Shelf II',
-    'firmalife.tooltip.food_trait.shelved_3': 'On a Cellar Shelf III',
-    'firmalife.tooltip.food_trait.smoked': 'Smoked',
-    'firmalife.tooltip.food_trait.rancid_smoked': 'Rancid Smoked',
-    'firmalife.tooltip.food_trait.raw': 'Raw (INEDIBLE)',
-    'firmalife.tooltip.seed_ball': 'Throw me!',
-    'firmalife.tooltip.seed_ball_disabled': 'This server has disabled seed balls!',
-    'firmalife.cellar.found': 'Found a cellar of %s blocks',
-    'firmalife.cellar.valid_block': 'In a valid cellar',
-    'firmalife.cellar.invalid_block': 'Invalid cellar',
-    'firmalife.greenhouse.valid_block': '§aGrowing',
-    'firmalife.greenhouse.invalid_block': '§cNot Growing',
-    'firmalife.greenhouse.no_sky': 'There is not enough sky light to grow',
-    'firmalife.greenhouse.climate_invalid': 'This block is not in a valid greenhouse. Try clicking your climate station.',
-    'firmalife.greenhouse.air_needed': 'Planters need a block of air to grow into.',
-    'firmalife.greenhouse.dehydrated': 'This planter needs to be watered with a Watering Can',
-    'firmalife.greenhouse.wrong_tier': 'To grow this crop, upgrade to a better greenhouse',
-    'firmalife.greenhouse.wrong_type': 'This crop does not grow in this planter. It grows in a ',
-    'firmalife.greenhouse.found': 'Found a greenhouse of %s blocks',
-    'firmalife.planter.growth_water': 'Growth: %s, Water: %s',
-    'firmalife.transducer.no_pipes': 'Currently empty. Add embedded pipes with right click!',
-    'firmalife.transducer.current_pipes': 'Pipe Inventory: %s',
-    'firmalife.transducer.pipe_length': 'Current Pipes: %s',
-    'firmalife.transducer.pipe_wanted': 'Pipes needed due to the the local climate: %s',
-
-    'firmalife.bee.queen': 'Queen',
-    'firmalife.bee.no_queen': 'No Queen',
-    'firmalife.bee.may_scrape': 'Right click with a knife to scrape',
-    'firmalife.bee.abilities': 'Abilities:',
-    'firmalife.bee.ability.hardiness': 'Hardiness %s',
-    'firmalife.bee.ability.production': 'Production %s',
-    'firmalife.bee.ability.mutant': 'Mutant %s',
-    'firmalife.bee.ability.fertility': 'Fertility %s',
-    'firmalife.bee.ability.crop_affinity': 'Crop Affinity %s',
-    'firmalife.bee.ability.nature_restoration': 'Nature Restoration %s',
-    'firmalife.bee.ability.calmness': 'Calmness %s',
-    'firmalife.beehive.honey': 'Honey: %s / 16',
-    'firmalife.beehive.bee': 'Frame %s: ',
-    'firmalife.beehive.bee_cold': 'Too cold! Minimum: %s C, Current: %s C',
-    'firmalife.beehive.has_queen': 'Has Queen. ',
-    'firmalife.beehive.no_queen': 'Empty',
-    'firmalife.beehive.flowers': 'Flowers: %s',
-    'firmalife.beehive.min_flowers': 'Not enough flowers!',
-    'firmalife.beehive.breed_chance': 'Daily New Bee Chance: 1 / %s',
-    'firmalife.beehive.breed_chance_100': 'Daily New Bee Chance: Guaranteed',
-    'firmalife.beehive.honey_chance': 'Daily Honey Chance: 1 / %s',
-    'firmalife.beehive.honey_chance_100': 'Daily Honey Chance: Guaranteed',
-
-    'firmalife.bowl.spoon': 'The bowl is missing a spoon.',
-    'firmalife.bowl.mixing': 'The bowl is currently mixing',
-    'firmalife.bowl.no_recipe': 'The bowl has no recipe.',
-    'firmalife.bowl.matching_recipe': 'The bowl\'s contents do not match the recipe',
-
-    'firmalife.enum.plantertype.hanging': 'Hanging Planter',
-    'firmalife.enum.plantertype.trellis': 'Trellis Planter',
-    'firmalife.enum.plantertype.bonsai': 'Bonsai Planter',
-    'firmalife.enum.plantertype.quad': 'Quad Planter',
-    'firmalife.enum.plantertype.large': 'Large Planter',
-
-    'firmalife.jade.food_age': 'Age: %s',
-    'firmalife.jade.aging': 'Currently Aging',
-    'firmalife.jade.not_aging': 'Not Aging',
-    'firmalife.jade.slices': 'Slices: %s',
-    'firmalife.jade.cure_time_left': 'Curing Time Left: %s',
-    'firmalife.jade.cannot_cure': 'Not hot enough to cure!',
-    'firmalife.jade.cook_left': 'Cook Time: %s',
-
-    'death.attack.firmalife.oven': '%1$s died by sticking their hand in a hot oven.',
-    'death.attack.firmalife.oven.player': '%1$s climbed into an oven to escape %2$s.',
-    'death.attack.firmalife.swarm': '%1$s was stung to death by bees.',
-    'death.attack.firmalife.swarm.player': '%1$s was stung to death by bees while trying to escape %2$s.',
-    'subtitles.item.firmalife.hollow_shell.blow': 'Shell whistles',
-
-    'item.firmalife.hollow_shell.filled': '%s Hollow Shell',
-    'firmalife.screen.pumpkin_knapping': 'Pumpkin Knapping',
-    'tfc.jei.pumpkin_knapping': 'Pumpkin Knapping',
-    'tfc.jei.drying': 'Drying',
-    'tfc.jei.smoking': 'Smoking',
-    'tfc.jei.mixing_bowl': 'Mixing Bowl',
-    'tfc.jei.oven': 'Oven',
+    "block.immersiveengineering.acetaldehyde_fluid_block": "Acetaldehyde",
+    "block.immersiveengineering.biodiesel_fluid_block": "Biodiesel",
+    "block.immersiveengineering.concrete_fluid_block": "Concrete",
+    "block.immersiveengineering.creosote_fluid_block": "Creosote",
+    "block.immersiveengineering.ethanol_fluid_block": "Ethanol",
+    "block.immersiveengineering.fake_light": "Light",
+    "block.immersiveengineering.herbicide_fluid_block": "Herbicide",
+    "block.immersiveengineering.phenolic_resin_fluid_block": "Phelonic Resin",
+    "block.immersiveengineering.plantoil_fluid_block": "Plant Oil",
+    "block.immersiveengineering.post_transformer": "Post Transformer",
+    "block.immersiveengineering.potted_hemp": "Potted Hemp",
+    "block.immersiveengineering.redstone_acid_fluid_block": "Redstone Acid",
+    "block.immersiveengineering.shader_banner": "Shader Banner",
+    "block.immersiveengineering.shader_banner_wall": "Shader Banner Wall",
+    "block.immersiveengineering.toolbox_block": "Toolbox",
+    "entity.immersiveengineering.chemthrower_shot": "Chemthrower Shot",
+    "entity.immersiveengineering.explosive": "Explosive",
+    "entity.immersiveengineering.fluorescent_tube": "Fluorescent Tube",
+    "entity.immersiveengineering.railgun_shot": "Railgun Shot",
+    "entity.immersiveengineering.revolver_shot": "Revolver Shot",
+    "entity.immersiveengineering.revolver_shot_flare": "Revolver Flare",
+    "entity.immersiveengineering.revolver_shot_homing": "Revolver Homing",
+    "entity.immersiveengineering.revolver_shot_wolfpack": "Revolver Wolfpack",
+    "entity.immersiveengineering.sawblade": "Sawblade",
+    "entity.immersiveengineering.skyline_hook": "Skyline Hook",
+    "item.immersiveengineering.armor_piercing": "Armor Piercing",
+    "item.immersiveengineering.buckshot": "Buckshot",
+    "item.immersiveengineering.casull": "Casull",
+    "item.immersiveengineering.dragons_breath": "Dragon's breath",
+    "item.immersiveengineering.fake_icon_birthday": "Birthday",
+    "item.immersiveengineering.fake_icon_drillbreak": "Drillbreak",
+    "item.immersiveengineering.fake_icon_fried": "Fried",
+    "item.immersiveengineering.fake_icon_lucky": "Lucky",
+    "item.immersiveengineering.fake_icon_ravenholm": "Ravenholm",
+    "item.immersiveengineering.firework": "Firework",
+    "item.immersiveengineering.flare": "Flare",
+    "item.immersiveengineering.he": "HE",
+    "item.immersiveengineering.homing": "Homing",
+    "item.immersiveengineering.potion": "Potion",
+    "item.immersiveengineering.silver": "Silver",
+    "item.immersiveengineering.wolfpack": "Wolfpack"
 }
 
 def lang(key: str, *args) -> str:
