@@ -13,11 +13,11 @@ import java.util.Locale;
 
 public enum Metal implements RegistryMetal
 {
-    ALUMINUM(0xCCC1BCFF),
+    ALUMINUM(0xCCC1BC),
 
-    LEAD(0x433F4DFF),
+    LEAD(0x433F4D),
 
-    URANIUM(0x738A6CFF);
+    URANIUM(0x738A6C);
 
     private final String serializedName;
     private final int color;

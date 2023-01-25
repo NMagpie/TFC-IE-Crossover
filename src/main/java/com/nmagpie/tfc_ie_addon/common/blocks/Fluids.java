@@ -31,7 +31,8 @@ public class Fluids
         properties -> properties.block(Blocks.METAL_FLUIDS.get(metal)).bucket(Items.METAL_FLUID_BUCKETS.get(metal)).explosionResistance(100),
         FluidAttributes.builder(MOLTEN_STILL, MOLTEN_FLOW)
             .translationKey("fluid.tfc_ie_addon.metal." + metal.getSerializedName())
-            .color(ALPHA_MASK | metal.getColor())
+            .color(
+                    ALPHA_MASK | metal.getColor())
             .rarity(metal.getRarity())
             .luminosity(15)
             .density(3000)
