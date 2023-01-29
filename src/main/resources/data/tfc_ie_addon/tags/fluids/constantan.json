@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:metal/constantan",
+    "tfc_ie_addon:metal/flowing_constantan"
+  ]
+}

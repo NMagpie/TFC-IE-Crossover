@@ -30,6 +30,12 @@ public class Items
 
     public static final Map<Ore.Grade, RegistryObject<Item>> URANIUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_uranium", TFCItemGroup.ORES));
 
+    public static final Map<Metal, Map<Metal.ItemType, RegistryObject<Item>>> METAL_ITEMS = Helpers.mapOfKeys(Metal.class, metal ->
+            Helpers.mapOfKeys(Metal.ItemType.class, type ->
+                    register("metal/" + type.name() + "/" + metal.name(), () -> type.create(metal))
+            )
+    );
+
     public static final Map<Metal, RegistryObject<BucketItem>> METAL_FLUID_BUCKETS = Helpers.mapOfKeys(Metal.class, metal ->
         register("bucket/metal/" + metal.name(), () -> new BucketItem(Fluids.METALS.get(metal).source(), new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1).tab(MISC)))
     );

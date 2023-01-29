@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "immersiveengineering:ingot_electrum",
+    "tfc_ie_addon:metal/double_ingot/electrum",
+    "tfc_ie_addon:metal/sheet/electrum"
+  ]
+}

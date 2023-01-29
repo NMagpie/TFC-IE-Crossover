@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "immersiveengineering:ingot_lead",
+    "tfc_ie_addon:metal/double_ingot/lead",
+    "tfc_ie_addon:metal/sheet/lead"
+  ]
+}

@@ -8,6 +8,6 @@
     "tag": "forge:ingots/aluminum"
   },
   "sheets": {
-    "tag": "forge:plates/aluminum"
+    "tag": "forge:sheets/aluminum"
   }
 }

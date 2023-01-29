@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "tier": 3,
+  "fluid": "tfc_ie_addon:metal/electrum",
+  "melt_temperature": 900,
+  "specific_heat_capacity": 0.00857,
+  "ingots": {
+    "tag": "forge:ingots/electrum"
+  },
+  "sheets": {
+    "tag": "forge:sheets/electrum"
+  }
+}

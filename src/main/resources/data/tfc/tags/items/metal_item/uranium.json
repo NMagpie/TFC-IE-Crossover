@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "immersiveengineering:ingot_uranium",
+    "tfc_ie_addon:metal/double_ingot/uranium",
+    "tfc_ie_addon:metal/sheet/uranium"
+  ]
+}

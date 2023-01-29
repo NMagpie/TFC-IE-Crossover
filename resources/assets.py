@@ -62,3 +62,9 @@ def four_ways(model: str) -> List[Dict[str, Any]]:
         {'model': model, 'y': 180},
         {'model': model, 'y': 270}
     ]
+
+def domain_divider(item: str):
+    if item == 'ingot' or item == 'plate':
+        return 'immersiveengineering:', '_'
+    else:
+        return 'tfc_ie_addon:metal/', '/'

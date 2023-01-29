@@ -2,6 +2,8 @@ from enum import Enum
 from itertools import repeat
 from typing import Union
 
+from assets import domain_divider
+
 from mcresources import ResourceManager, RecipeContext, utils
 from mcresources.type_definitions import Json, ResourceIdentifier
 
@@ -196,10 +198,11 @@ def fluid_stack(data_in: Json) -> Json:
     }
 
 def casting_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, mold: str, metal: str, amount: int, break_chance: float):
+    domain, divider = domain_divider(mold)
     rm.recipe(('casting', name_parts), 'tfc:casting', {
         'mold': {'item': 'tfc:ceramic/%s_mold' % mold},
         'fluid': fluid_stack_ingredient('%d tfc_ie_addon:metal/%s' % (amount, metal)),
-        'result': utils.item_stack('tfc_ie_addon:metal/%s/%s' % (mold, metal)),
+        'result': utils.item_stack('%s%s%s%s' % (domain, mold, divider, metal)),
         'break_chance': break_chance
     })
 
