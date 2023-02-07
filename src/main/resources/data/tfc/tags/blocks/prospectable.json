@@ -181,6 +181,12 @@
     "tfc_ie_addon:ore/rich_uranium/gneiss",
     "tfc_ie_addon:ore/normal_uranium/marble",
     "tfc_ie_addon:ore/poor_uranium/marble",
-    "tfc_ie_addon:ore/rich_uranium/marble"
+    "tfc_ie_addon:ore/rich_uranium/marble",
+    "tfc_ie_addon:mineral/quartz_block",
+    "tfc_ie_addon:mineral/budding_quartz",
+    "tfc_ie_addon:mineral/quartz_cluster",
+    "tfc_ie_addon:mineral/large_quartz_bud",
+    "tfc_ie_addon:mineral/medium_quartz_bud",
+    "tfc_ie_addon:mineral/small_quartz_bud"
   ]
 }

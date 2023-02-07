@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "facing=up": {
+      "model": "tfc_ie_addon:block/mineral/medium_quartz_bud"
+    },
+    "facing=down": {
+      "model": "tfc_ie_addon:block/mineral/medium_quartz_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "tfc_ie_addon:block/mineral/medium_quartz_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tfc_ie_addon:block/mineral/medium_quartz_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "tfc_ie_addon:block/mineral/medium_quartz_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tfc_ie_addon:block/mineral/medium_quartz_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

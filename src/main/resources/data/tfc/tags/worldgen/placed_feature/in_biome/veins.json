@@ -7,6 +7,7 @@
     "tfc_ie_addon:vein/normal_lead",
     "tfc_ie_addon:vein/deep_lead",
     "tfc_ie_addon:vein/normal_uranium",
-    "tfc_ie_addon:vein/deep_uranium"
+    "tfc_ie_addon:vein/deep_uranium",
+    "tfc_ie_addon:quartz_geode"
   ]
 }

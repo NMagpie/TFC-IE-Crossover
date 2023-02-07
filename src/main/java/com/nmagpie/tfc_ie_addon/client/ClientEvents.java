@@ -27,13 +27,8 @@ public class ClientEvents
         // Render Types
         final RenderType cutout = RenderType.cutout();
 
-        Stream.of(Blocks.SMALL_ALUMINUM
-        ).forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
-
-        Stream.of(Blocks.SMALL_LEAD
-        ).forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
-
-        Stream.of(Blocks.SMALL_URANIUM
+        Stream.of(Blocks.SMALL_ALUMINUM, Blocks.SMALL_LEAD, Blocks.SMALL_URANIUM, Blocks.BUDDING_QUARTZ, Blocks.QUARTZ_BLOCK,
+                Blocks.QUARTZ_CLUSTER, Blocks.LARGE_QUARTZ_BUD, Blocks.MEDIUM_QUARTZ_BUD, Blocks.SMALL_QUARTZ_BUD
         ).forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
 
         Blocks.ALUMINUM_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));

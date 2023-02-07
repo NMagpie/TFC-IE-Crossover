@@ -9,6 +9,8 @@ import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.common.network.Packets;
 import com.nmagpie.tfc_ie_addon.config.Config;
+import com.nmagpie.tfc_ie_addon.world.feature.Features;
+import net.minecraft.world.level.block.HalfTransparentBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -33,6 +35,7 @@ public class TFC_IE_Addon
         Items.ITEMS.register(eventBus);
         Blocks.BLOCKS.register(eventBus);
         Fluids.FLUIDS.register(eventBus);
+        Features.FEATURES.register(eventBus);
 
 //         Register ourselves for server aster(this);
 

@@ -6,7 +6,7 @@ from mcresources.type_definitions import ResourceIdentifier, JsonObject, Json, V
 from constants import *
 
 def generate(rm: ResourceManager):
-    placed_feature_tag(rm, 'tfc:in_biome/veins', *['tfc_ie_addon:vein/%s' % v for v in ORE_VEINS.keys()])
+    placed_feature_tag(rm, 'tfc:in_biome/veins', *[*('tfc_ie_addon:vein/%s' % v for v in ORE_VEINS.keys()), 'tfc_ie_addon:quartz_geode'])
 
     for vein_name, vein in ORE_VEINS.items():
         rocks = expand_rocks(vein.rocks, vein_name)
@@ -29,6 +29,27 @@ def generate(rm: ResourceManager):
             'random_name': vein_name,
             'biomes': vein.biomes
         })
+
+    rm.configured_feature('quartz_geode', 'tfc_ie_addon:quartz_geode',
+                          {'outer': 'tfc:rock/hardened/basalt',
+                           'middle': 'tfc:rock/raw/quartzite',
+                           'inner': [
+                               {'data': 'tfc_ie_addon:mineral/budding_quartz', 'weight': 2},
+                               {'data': 'tfc_ie_addon:mineral/quartz_block', 'weight': 5},
+                               {'data': 'tfc:rock/raw/quartzite', 'weight': 1}
+                            ],
+                           'filling': [
+                               {'data': 'minecraft:air', 'weight': 1},
+                           ],
+                           'inner_placements': [
+                               {'data': 'tfc_ie_addon:mineral/quartz_cluster', 'weight': 1},
+                               {'data': 'tfc_ie_addon:mineral/large_quartz_bud', 'weight': 3},
+                               {'data': 'tfc_ie_addon:mineral/medium_quartz_bud', 'weight': 5},
+                               {'data': 'tfc_ie_addon:mineral/small_quartz_bud', 'weight': 8},
+                            ]
+                           })
+
+    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(100), decorate_square(), decorate_range(30, 80), decorate_biome())
 
 Heightmap = Literal['motion_blocking', 'motion_blocking_no_leaves', 'ocean_floor', 'ocean_floor_wg', 'world_surface', 'world_surface_wg']
 
@@ -135,6 +156,20 @@ def decorate_block_predicate(predicate: Json) -> Json:
     return {
         'type': 'block_predicate_filter',
         'predicate': predicate
+    }
+
+def decorate_range(min_y: VerticalAnchor, max_y: VerticalAnchor) -> Json:
+    return {
+        'type': 'minecraft:height_range',
+        'height': {
+            'type': 'uniform',
+            'min_inclusive': {
+                'absolute': min_y
+            },
+            'max_inclusive': {
+                'absolute': max_y
+            },
+        }
     }
 
 def decorate_heightmap(heightmap: Heightmap) -> Json:

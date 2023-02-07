@@ -1,0 +1,11 @@
+{
+  "parent": "tfc_ie_addon:item/mineral/quartz_bud",
+  "textures": {
+    "layer0": "tfc_ie_addon:block/mineral/large_quartz_bud"
+  },
+  "display": {
+    "fixed": {
+      "translation": [ 0, 4, 0 ]
+    }
+  }
+}

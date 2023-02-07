@@ -1,0 +1,46 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc_ie_addon:quartz_geode",
+  "config": {
+    "outer": "tfc:rock/hardened/basalt",
+    "middle": "tfc:rock/raw/quartzite",
+    "inner": [
+      {
+        "data": "tfc_ie_addon:mineral/budding_quartz",
+        "weight": 2
+      },
+      {
+        "data": "tfc_ie_addon:mineral/quartz_block",
+        "weight": 5
+      },
+      {
+        "data": "tfc:rock/raw/quartzite",
+        "weight": 1
+      }
+    ],
+    "filling": [
+      {
+        "data": "minecraft:air",
+        "weight": 1
+      }
+    ],
+    "inner_placements": [
+      {
+        "data": "tfc_ie_addon:mineral/quartz_cluster",
+        "weight": 1
+      },
+      {
+        "data": "tfc_ie_addon:mineral/large_quartz_bud",
+        "weight": 3
+      },
+      {
+        "data": "tfc_ie_addon:mineral/medium_quartz_bud",
+        "weight": 5
+      },
+      {
+        "data": "tfc_ie_addon:mineral/small_quartz_bud",
+        "weight": 8
+      }
+    ]
+  }
+}
