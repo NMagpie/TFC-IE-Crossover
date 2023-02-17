@@ -109,7 +109,8 @@ DEFAULT_LANG = {
     "item.immersiveengineering.homing": "Homing",
     "item.immersiveengineering.potion": "Potion",
     "item.immersiveengineering.silver": "Silver",
-    "item.immersiveengineering.wolfpack": "Wolfpack"
+    "item.immersiveengineering.wolfpack": "Wolfpack",
+    "item.immersiveengineering.wirecoil_structure_rope": "Rope Coil",
 }
 
 def lang(key: str, *args) -> str:

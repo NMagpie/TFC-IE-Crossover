@@ -46,6 +46,8 @@ def generate(rm: ResourceManager):
     rm.domain = 'tfc'
     rm.domain = 'tfc_ie_addon'
 
+    # ORE RECIPES
+
     ores = ['aluminum', 'lead', 'uranium']
     for ore in ores:
         for rock, data in TFC_ROCKS.items():
@@ -58,6 +60,66 @@ def generate(rm: ResourceManager):
             for grade in ORE_GRADES.keys():
                 rm.block_tag('tfc:can_start_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
                 rm.block_tag('tfc:can_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
+
+    # FERMENTER RECIPES
+
+    berries = ['blackberry', 'blueberry', 'bunchberry', 'cloudberry', 'cranberry', 'elderberry', 'gooseberry', 'raspberry',
+               'snowberry', 'strawberry', 'wintergreen_berry', 'cherry']
+
+    other_vegetables = ['squash', 'beet', 'cabbage', 'carrot', 'green_bean', 'soybean']
+
+    fruits = ['banana', 'green_apple', 'lemon', 'orange', 'peach', 'plum', 'red_apple']
+
+    food_amount = [(berry, 50) for berry in berries]
+
+    [food_amount.append((vegetable, 40)) for vegetable in other_vegetables]
+
+    [food_amount.append((fruit, 80)) for fruit in fruits]
+
+    food_amount.append(('potato', 80))
+
+    food_amount.append(('sugarcane', 200))
+
+    [fermenter_recipe(rm, food, {'item': 'tfc:food/' + food}, amount) for (food, amount) in food_amount]
+
+    fermenter_recipe(rm, 'grains', {'tag': 'tfc:foods/grains'}, 80)
+
+    # RECIPES REMOVAL
+
+    growable_food = [ 'barley', 'oat', 'rye', 'maize', 'wheat', 'rice', 'beet', 'cabbage', 'carrot', 'garlic', 'green_bean', 'potato',
+                 'onion', 'soybean', 'squash', 'sugarcane', 'tomato']
+
+    [cloche_recipe(rm, type,
+                   {
+                       'item': 'tfc:seeds/%s' % type
+                   },
+                   [
+                       {
+                           'item': 'tfc:food/%s' % type,
+                           'count': 1,
+                       },
+                       {
+                           'item': 'tfc:seeds/%s' % type,
+                           'count': 1,
+                       }
+                   ], 128_000, 'tfc:crop/%s' % type) for type in growable_food]
+
+    other_growables = ['jute', 'pumpkin', 'melon']
+
+    [cloche_recipe(rm, type,
+                   {
+                       'item': 'tfc:seeds/%s' % type
+                   },
+                   [
+                       {
+                           'item': 'tfc:%s' % type,
+                           'count': 1,
+                       },
+                       {
+                           'item': 'tfc:seeds/%s' % type,
+                           'count': 1,
+                       }
+                   ], 128_000, 'tfc:crop/%s' % type) for type in other_growables]
 
 
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
@@ -278,4 +340,39 @@ def quern_recipe(rm: ResourceManager, name: ResourceIdentifier, item: str, resul
     return rm.recipe(('quern', name), 'tfc:quern', {
         'ingredient': utils.ingredient(item),
         'result': result
+    })
+
+def fermenter_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: Json, amount: int = 80):
+    rm.recipe(('fermenter', name_parts), 'immersiveengineering:fermenter', {
+        'fluid': {
+            'fluid': 'immersiveengineering:ethanol',
+            'amount': amount,
+        },
+        'input': ingredient,
+        'energy': 6400,
+    })
+
+def cloche_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, time: int, render_block: str):
+    rm.recipe(('cloche', name_parts), 'immersiveengineering:cloche', {
+        'results': result,
+        'input': input,
+        'soil': [
+            {
+                "item": "tfc:dirt/silt"
+            },
+            {
+                "item": "tfc:dirt/loam"
+            },
+            {
+                "item": "tfc:dirt/silty_loam"
+            },
+            {
+                "item": "tfc:dirt/sandy_loam"
+            },
+        ],
+        'time': time,
+        'render': {
+            'type': 'crop',
+            'block': render_block
+        }
     })

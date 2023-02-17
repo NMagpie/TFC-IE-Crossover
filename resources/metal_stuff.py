@@ -21,7 +21,6 @@ class Metal(NamedTuple):
 
 MetalItem = NamedTuple('MetalItem', type=str, smelt_amount=int, parent_model=str, tag=Optional[str], mold=bool)
 
-#TODO ADD OTHER METALS
 METALS: Dict[str, Metal] = {
     'aluminum': Metal(1, {'part'}, 0.35, 650, None),
     'lead': Metal(2, {'part'}, 0.35, 500, None),

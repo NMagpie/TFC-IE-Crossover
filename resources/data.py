@@ -30,11 +30,6 @@ class Category(Enum):
 
 def generate(rm: ResourceManager):
     ### TAGS ###
-    #rm.item_tag('tfc:foods/flour', *['tfc:food/%s_flour' % g for g in TFC_GRAINS])
-
-    #rm.block_tag('oven_insulation', 'minecraft:bricks', '#tfc:forge_insulation', '#tfc_ie_addon:oven_blocks', 'minecraft:brick_stairs', 'minecraft:brick_slab')
-
-    #rm.fluid_tag('tfc:alcohols', 'tfc_ie_addon:pina_colada')
 
     # Ore tags
     ores = ['aluminum', 'lead', 'uranium']
@@ -48,6 +43,10 @@ def generate(rm: ResourceManager):
             rm.block_tag('ores/%s/poor' % ore, 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock))
             rm.block_tag('ores/%s/normal' % ore, 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock))
             rm.block_tag('ores/%s/rich' % ore, 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
+
+    rm.item_tag('forge:fiber_hemp', 'tfc:jute_fiber')
+
+    rm.item_tag('forge:fabric_hemp', 'tfc:burlap_cloth')
 
 def match_entity_tag(tag: str):
     return {

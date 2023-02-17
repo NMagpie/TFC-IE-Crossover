@@ -1,6 +1,7 @@
 package com.nmagpie.tfc_ie_addon.common;
 
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
@@ -10,6 +11,7 @@ import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.resource.PathResourcePack;
 
 import javax.annotation.Nonnull;

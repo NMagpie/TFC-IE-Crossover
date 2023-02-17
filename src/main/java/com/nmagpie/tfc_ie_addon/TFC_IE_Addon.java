@@ -8,6 +8,7 @@ import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.common.network.Packets;
+import com.nmagpie.tfc_ie_addon.common.util.Registered_Soils;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
 import net.minecraft.world.level.block.HalfTransparentBlock;
@@ -59,7 +60,8 @@ public class TFC_IE_Addon
     {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
-        //LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+        Registered_Soils.register_tfc_soils();
     }
 
 }

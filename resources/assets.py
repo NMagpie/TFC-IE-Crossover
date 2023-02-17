@@ -4,6 +4,9 @@ from mcresources import utils, loot_tables
 from constants import *
 
 def generate(rm: ResourceManager):
+
+    # ORE STUFF
+
     ores = ['aluminum', 'lead', 'uranium']
     for ore in ores:
         for grade in ORE_GRADES.keys():
@@ -21,6 +24,8 @@ def generate(rm: ResourceManager):
                 }, parent='tfc:block/ore')
                 block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
                 rm.block('tfc_ie_addon:ore/%s_%s/%s/prospected' % (grade, ore, rock)).with_lang(lang(ore))
+
+    # MINERAL STUFF
 
     mineral = 'quartz'
 
@@ -56,6 +61,25 @@ def generate(rm: ResourceManager):
             block.with_tag('minecraft:mineable/pickaxe')
 
         rm.block('tfc_ie_addon:mineral/%s/prospected' % block_name).with_lang(lang('quartz'))
+
+    # FLUIDS AND BUCKETS STUFF
+
+    ie_fluids = [
+        'acetaldehyde',
+        'biodiesel',
+        'concrete',
+        'creosote',
+        'ethanol',
+        'herbicide',
+        'phenolic_resin',
+        'plantoil',
+        'redstone_acid',
+    ]
+
+    for fluid in ie_fluids:
+        #rm.fluid_tag('minecraft:water', 'immersiveengineering:%s' % fluid)
+        rm.fluid_tag('tfc:usable_in_wooden_bucket', 'immersiveengineering:%s' % fluid)
+        rm.fluid_tag('tfc:usable_in_red_steel_bucket', 'immersiveengineering:%s' % fluid)
 
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)

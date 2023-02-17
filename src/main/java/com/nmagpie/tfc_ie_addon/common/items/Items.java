@@ -9,10 +9,14 @@ import net.dries007.tfc.util.Helpers;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import blusunrize.immersiveengineering.common.register.IEFluids;
+import org.checkerframework.checker.units.qual.A;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -26,6 +30,9 @@ public class Items
 
     public static final RegistryObject<Item> QUARTZ_SHARD = register("mineral/quartz_shard", TFCItemGroup.ORES);
 
+    private static final String[] IE_Fluids = {
+            "acetaldehyde", "biodiesel", "concrete", "creosote", "ethanol", "herbicide", "phenolic_resin", "plantoil", "redstone_acid"
+    };
     public static final Map<Ore.Grade, RegistryObject<Item>> ALUMINUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_aluminum", TFCItemGroup.ORES));
 
     public static final Map<Ore.Grade, RegistryObject<Item>> LEAD_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_lead", TFCItemGroup.ORES));

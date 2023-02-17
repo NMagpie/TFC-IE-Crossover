@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " cs",
+    "csc",
+    " c "
+  ],
+  "key": {
+    "c": {
+      "tag": "forge:fabric_hemp"
+    },
+    "s": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:windmill_sail"
+  }
+}

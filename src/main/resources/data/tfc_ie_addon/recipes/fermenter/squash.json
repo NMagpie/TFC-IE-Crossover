@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:fermenter",
+  "fluid": {
+    "fluid": "immersiveengineering:ethanol",
+    "amount": 40
+  },
+  "input": {
+    "item": "tfc:food/squash"
+  },
+  "energy": 6400
+}
