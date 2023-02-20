@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "PtP",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:plates/wrought_iron"
+    },
+    "t": {
+      "item": "tfc:torch"
+    },
+    "P": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:lantern"
+  }
+}

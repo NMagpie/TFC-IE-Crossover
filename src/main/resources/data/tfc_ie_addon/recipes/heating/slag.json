@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "immersiveengineering:slag"
+  },
+  "result_item": {
+    "item": "immersiveengineering:slag_glass"
+  },
+  "temperature": 380
+}

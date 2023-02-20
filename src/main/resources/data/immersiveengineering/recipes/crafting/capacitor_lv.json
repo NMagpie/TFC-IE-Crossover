@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "waw",
+    "fef",
+    "waw"
+  ],
+  "key": {
+    "w": {
+      "tag": "forge:treated_wood"
+    },
+    "f": {
+      "tag": "forge:ingots/wrought_iron"
+    },
+    "a": {
+      "tag": "forge:sheets/lead"
+    },
+    "e": {
+      "tag": "forge:redstone_acid",
+      "amount": 1000,
+      "type": "immersiveengineering:fluid"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:capacitor_lv"
+  }
+}

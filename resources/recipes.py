@@ -46,6 +46,14 @@ def generate(rm: ResourceManager):
     rm.domain = 'tfc'
     rm.domain = 'tfc_ie_addon'
 
+    # RECIPE REMOVALS
+
+    [disable_recipe(rm, recipe) for recipe in TO_REMOVE_RECIPES]
+
+    # HEAT RECIPES
+
+    heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass', None)
+
     # ORE RECIPES
 
     ores = ['aluminum', 'lead', 'uranium']
@@ -84,7 +92,7 @@ def generate(rm: ResourceManager):
 
     fermenter_recipe(rm, 'grains', {'tag': 'tfc:foods/grains'}, 80)
 
-    # RECIPES REMOVAL
+    # CLOCHE RECIPES
 
     growable_food = [ 'barley', 'oat', 'rye', 'maize', 'wheat', 'rice', 'beet', 'cabbage', 'carrot', 'garlic', 'green_bean', 'potato',
                  'onion', 'soybean', 'squash', 'sugarcane', 'tomato']
@@ -121,7 +129,42 @@ def generate(rm: ResourceManager):
                        }
                    ], 128_000, 'tfc:crop/%s' % type) for type in other_growables]
 
+    # SQUEEZER RECIPES
 
+    grain_seeds = ['barley', 'oat', 'rye', 'maize', 'wheat', 'rice']
+
+    other_seeds = ['beet', 'cabbage', 'carrot', 'garlic', 'green_bean', 'potato',
+                   'onion', 'soybean', 'squash', 'sugarcane', 'tomato']
+
+    squeezer_inputs = [('tfc:seeds/jute', 120)]
+
+    [squeezer_inputs.append( ('tfc:seeds/%s' % seed, 80) ) for seed in grain_seeds]
+
+    [squeezer_inputs.append( ('tfc:seeds/%s' % seed, 30) ) for seed in other_seeds]
+
+    squeezer_inputs.append( ('tfc:food/olive', 120) )
+
+    [plant_oil_recipe(rm, item.split('/')[1], item, amount, 6400) for (item, amount) in squeezer_inputs]
+
+    # ANVIL RECIPES
+
+    anvil_recipe(rm, 'toolupgrade_revolver_bayonet', 'tfc:metal/ingot/steel', 'immersiveengineering:toolupgrade_revolver_bayonet', 4, Rules.hit_last, Rules.bend_any, Rules.draw_any)
+
+    anvil_recipe(rm, 'drillhead_steel', 'tfc:metal/double_sheet/steel', 'immersiveengineering:drillhead_steel', 4, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+
+    anvil_recipe(rm, 'drillhead_iron', 'tfc:metal/double_sheet/wrought_iron', 'immersiveengineering:drillhead_iron', 3, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+
+    anvil_recipe(rm, 'gunpart_barrel', 'tfc:metal/ingot/steel', 'immersiveengineering:gunpart_barrel', 4, Rules.draw_last, Rules.hit_any, Rules.shrink_any)
+
+    anvil_recipe(rm, 'empty_casing', 'tfc:metal/ingot/copper', '2 immersiveengineering:empty_casing', 1, Rules.shrink_last, Rules.upset_any, Rules.punch_any)
+
+    armor_parts = ['feet', 'legs', 'chest', 'head']
+
+    [anvil_recipe(rm, ('armor', 'armor_faraday_%s' % armor_part),
+                  'tfc:metal/double_sheet/steel',
+                  'immersiveengineering:armor_faraday_%s' % armor_part, 1,
+                  Rules.draw_any, Rules.hit_any, Rules.punch_not_last)
+     for armor_part in armor_parts]
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', 'crafting', res.path), data)
@@ -376,3 +419,18 @@ def cloche_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, inp
             'block': render_block
         }
     })
+
+def plant_oil_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: str, amount: int, energy: int):
+    rm.recipe(('squeezer', name_parts), 'immersiveengineering:squeezer', {
+        'fluid': {
+            'fluid':'immersiveengineering:plantoil',
+            'amount': amount,
+        },
+        'input': {
+            'item': input
+        },
+        'energy': energy,
+    })
+
+def disable_recipe(rm: ResourceManager, name_parts: ResourceIdentifier):
+    rm.recipe(name_parts, None, {}, conditions='forge:false')

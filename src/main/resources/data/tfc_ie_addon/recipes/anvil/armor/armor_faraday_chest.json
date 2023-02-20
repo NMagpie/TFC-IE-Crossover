@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:anvil",
+  "input": {
+    "item": "tfc:metal/double_sheet/steel"
+  },
+  "result": {
+    "item": "immersiveengineering:armor_faraday_chest"
+  },
+  "tier": 1,
+  "rules": [
+    "draw_any",
+    "hit_any",
+    "punch_not_last"
+  ]
+}

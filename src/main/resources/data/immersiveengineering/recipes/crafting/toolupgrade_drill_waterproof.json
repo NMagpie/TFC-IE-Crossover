@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "di ",
+    "idi",
+    " ip"
+  ],
+  "key": {
+    "d": {
+      "tag": "forge:dyes/blue"
+    },
+    "i": {
+      "tag": "forge:plates/wrought_iron"
+    },
+    "p": {
+      "item": "immersiveengineering:fluid_pipe"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:toolupgrade_drill_waterproof"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:anvil",
+  "input": {
+    "item": "tfc:metal/ingot/copper"
+  },
+  "result": {
+    "item": "immersiveengineering:empty_casing",
+    "count": 2
+  },
+  "tier": 1,
+  "rules": [
+    "shrink_last",
+    "upset_any",
+    "punch_any"
+  ]
+}

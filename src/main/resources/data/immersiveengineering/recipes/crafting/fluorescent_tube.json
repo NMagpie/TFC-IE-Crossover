@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GeG",
+    "GsG",
+    "GsG"
+  ],
+  "key": {
+    "s": {
+      "item": "tfc:ore/small_sphalerite"
+    },
+    "e": {
+      "item": "immersiveengineering:graphite_electrode"
+    },
+    "G": {
+      "tag": "forge:glass"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:fluorescent_tube"
+  }
+}

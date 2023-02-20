@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sdc"
+  ],
+  "key": {
+    "s": {
+      "tag": "forge:rods/wrought_iron"
+    },
+    "d": {
+      "item": "immersiveengineering:gunpart_drum"
+    },
+    "c": {
+      "item": "immersiveengineering:component_iron"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:speedloader"
+  }
+}

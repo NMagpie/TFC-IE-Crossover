@@ -44,9 +44,62 @@ def generate(rm: ResourceManager):
             rm.block_tag('ores/%s/normal' % ore, 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock))
             rm.block_tag('ores/%s/rich' % ore, 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
 
+    # JUTE AND FIBER TAGS
+
     rm.item_tag('forge:fiber_hemp', 'tfc:jute_fiber')
 
     rm.item_tag('forge:fabric_hemp', 'tfc:burlap_cloth')
+
+    # FLUIDS AND BUCKETS TAGS
+
+    ie_fluids = [
+        'acetaldehyde',
+        'biodiesel',
+        'concrete',
+        'creosote',
+        'ethanol',
+        'herbicide',
+        'phenolic_resin',
+        'plantoil',
+        'redstone_acid',
+    ]
+
+    for fluid in ie_fluids:
+        rm.fluid_tag('tfc:usable_in_wooden_bucket', 'immersiveengineering:%s' % fluid)
+        rm.fluid_tag('tfc:usable_in_red_steel_bucket', 'immersiveengineering:%s' % fluid)
+
+    # DUSTS TAGS
+
+    rm.item_tag('forge:dusts/sulfur', 'tfc:powder/sulfur')
+
+    rm.item_tag('forge:dusts/coal_coke', 'tfc:powder/graphite')
+
+    rm.item_tag('forge:dusts/saltpeter', 'tfc:powder/saltpeter')
+
+    rm.item_tag('forge:dusts/copper', 'tfc:powder/malachite')
+
+    rm.item_tag('forge:dusts/iron', 'tfc:powder/hematite')
+
+    rm.item_tag('forge:dusts/iron', 'tfc:powder/limonite')
+
+    # METAL & SHEETS TAGS
+
+    [rm.item_tag('forge:plates/%s' % metal, 'tfc:metal/sheet/%s' % metal) for metal in TFC_METALS]
+
+    # Item Heats
+
+    item_heat(rm, 'slag', 'immersiveengineering:slag', 0.6)
+
+    # TOOL TAGS
+
+    metal_hammers = ['bismuth_bronze', 'black_bronze', 'bronze', 'copper', 'wrought_iron', 'steel',
+                     'black_steel', 'blue_steel', 'red_steel']
+
+    [rm.item_tag('immersiveengineering:tools/hammers', 'tfc:metal/hammer/%s' % metal) for metal in metal_hammers]
+
+    stone_hammers = ['igneous_intrusive', 'igneous_extrusive', 'metamorphic', 'sedimentary']
+
+    [rm.item_tag('immersiveengineering:tools/hammers', 'tfc:stone/hammer/%s' % stone) for stone in stone_hammers]
 
 def match_entity_tag(tag: str):
     return {

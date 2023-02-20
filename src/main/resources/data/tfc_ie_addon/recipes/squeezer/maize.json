@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:squeezer",
+  "fluid": {
+    "fluid": "immersiveengineering:plantoil",
+    "amount": 80
+  },
+  "input": {
+    "item": "tfc:seeds/maize"
+  },
+  "energy": 6400
+}

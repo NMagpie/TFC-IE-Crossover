@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mh",
+    "eb",
+    "ii"
+  ],
+  "key": {
+    "m": {
+      "item": "immersiveengineering:connector_mv"
+    },
+    "h": {
+      "item": "immersiveengineering:connector_hv"
+    },
+    "e": {
+      "item": "immersiveengineering:component_electronic"
+    },
+    "b": {
+      "item": "immersiveengineering:coil_hv"
+    },
+    "i": {
+      "tag": "forge:ingots/wrought_iron"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:transformer_hv"
+  }
+}

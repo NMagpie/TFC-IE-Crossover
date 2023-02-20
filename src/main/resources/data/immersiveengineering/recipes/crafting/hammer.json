@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "hj",
+    "s "
+  ],
+  "key": {
+    "s": {
+      "tag": "forge:rods/wooden"
+    },
+    "h": {
+      "item": "tfc:metal/hammer_head/wrought_iron"
+    },
+    "j": {
+      "item": "tfc:jute_fiber"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:hammer"
+  }
+}

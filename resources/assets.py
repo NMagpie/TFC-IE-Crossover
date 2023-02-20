@@ -62,24 +62,6 @@ def generate(rm: ResourceManager):
 
         rm.block('tfc_ie_addon:mineral/%s/prospected' % block_name).with_lang(lang('quartz'))
 
-    # FLUIDS AND BUCKETS STUFF
-
-    ie_fluids = [
-        'acetaldehyde',
-        'biodiesel',
-        'concrete',
-        'creosote',
-        'ethanol',
-        'herbicide',
-        'phenolic_resin',
-        'plantoil',
-        'redstone_acid',
-    ]
-
-    for fluid in ie_fluids:
-        #rm.fluid_tag('minecraft:water', 'immersiveengineering:%s' % fluid)
-        rm.fluid_tag('tfc:usable_in_wooden_bucket', 'immersiveengineering:%s' % fluid)
-        rm.fluid_tag('tfc:usable_in_red_steel_bucket', 'immersiveengineering:%s' % fluid)
 
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)

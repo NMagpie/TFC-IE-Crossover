@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:anvil",
+  "input": {
+    "item": "tfc:metal/ingot/steel"
+  },
+  "result": {
+    "item": "immersiveengineering:gunpart_barrel"
+  },
+  "tier": 4,
+  "rules": [
+    "draw_last",
+    "hit_any",
+    "shrink_any"
+  ]
+}

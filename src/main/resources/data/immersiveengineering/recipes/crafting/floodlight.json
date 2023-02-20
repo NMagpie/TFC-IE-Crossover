@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sii",
+    "pes",
+    "sci"
+  ],
+  "key": {
+    "i": {
+      "tag": "forge:ingots/wrought_iron"
+    },
+    "s": {
+      "tag": "forge:sheets/silver"
+    },
+    "e": {
+      "item": "immersiveengineering:light_bulb"
+    },
+    "c": {
+      "item": "immersiveengineering:component_iron"
+    },
+    "p": {
+      "tag": "forge:glass_panes"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:floodlight"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+    "pep",
+    " w "
+  ],
+  "key": {
+    "i": {
+      "tag": "forge:sheets/wrought_iron"
+    },
+    "e": {
+      "item": "immersiveengineering:light_bulb"
+    },
+    "p": {
+      "tag": "forge:glass_panes"
+    },
+    "w": {
+      "tag": "forge:wires/copper"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:electric_lantern"
+  }
+}

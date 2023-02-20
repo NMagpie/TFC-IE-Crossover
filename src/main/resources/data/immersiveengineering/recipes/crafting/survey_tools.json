@@ -1,0 +1,24 @@
+{
+  "type": "immersiveengineering:no_container_item",
+  "baseRecipe": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "c h",
+      "fff"
+    ],
+    "key": {
+      "h": {
+        "tag": "immersiveengineering:tools/hammers"
+      },
+      "c": {
+        "item": "minecraft:writable_book"
+      },
+      "f": {
+        "tag": "forge:fabric_hemp"
+      }
+    },
+    "result": {
+      "item": "immersiveengineering:survey_tools"
+    }
+  }
+}

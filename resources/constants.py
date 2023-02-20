@@ -68,6 +68,15 @@ ORE_VEINS: Dict[str, Vein] = {
     'deep_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=DEEP_METAL_ORE),
 }
 
+TFC_METALS = [
+    'bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver',
+    'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel',
+    'red_steel',
+]
+
+TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel', 'high_carbon_steel', 'high_carbon_black_steel',
+                    'high_carbon_blue_steel', 'high_carbon_red_steel',]
+
 DEFAULT_LANG = {
     "block.immersiveengineering.acetaldehyde_fluid_block": "Acetaldehyde",
     "block.immersiveengineering.biodiesel_fluid_block": "Biodiesel",
@@ -112,6 +121,62 @@ DEFAULT_LANG = {
     "item.immersiveengineering.wolfpack": "Wolfpack",
     "item.immersiveengineering.wirecoil_structure_rope": "Rope Coil",
 }
+
+TO_REMOVE_RECIPES = [
+    'immersiveengineering:crafting/armor_faraday_chest',
+    'immersiveengineering:crafting/armor_faraday_feet',
+    'immersiveengineering:crafting/armor_faraday_head',
+    'immersiveengineering:crafting/armor_faraday_legs',
+
+    'immersiveengineering:crafting/armor_steel_chest',
+    'immersiveengineering:crafting/armor_steel_feet',
+    'immersiveengineering:crafting/armor_steel_head',
+    'immersiveengineering:crafting/armor_steel_legs',
+
+    'immersiveengineering:crafting/axe_steel',
+    'immersiveengineering:crafting/sword_steel',
+    'immersiveengineering:crafting/pickaxe_steel',
+    'immersiveengineering:crafting/hoe_steel',
+    'immersiveengineering:crafting/axe_steel',
+    'immersiveengineering:crafting/shovel_steel',
+
+    'immersiveengineering:crafting/drillhead_steel',
+
+    #'immersiveengineering:crafting/copper_ingot_to_nugget_copper',
+
+    'immersiveengineering:crafting/stick_aluminum',
+    'immersiveengineering:crafting/stick_iron',
+    'immersiveengineering:crafting/stick_steel',
+
+    'immersiveengineering:crafting/toolupgrade_revolver_bayonet',
+    'immersiveengineering:crafting/gunpart_barrel',
+
+    'immersiveengineering:crafting/empty_casing',
+
+    'immersiveengineering:crafting/gunpowder_from_dusts',
+]
+
+IE_METALS = [
+    'aluminum',
+    'constantan',
+    'electrum',
+    'lead',
+    'steel',
+    'uranium',
+    'nickel',
+    'silver'
+]
+
+[TO_REMOVE_RECIPES.extend([
+    #'immersiveengineering:crafting/ingot_%s_to_nugget_%s' % (metal, metal),
+    'immersiveengineering:crafting/ingot_%s_to_storage_%s' % (metal, metal),
+]) for metal in IE_METALS]
+
+HAMMERED_METALS = IE_METALS + ['copper', 'gold', 'iron']
+
+[TO_REMOVE_RECIPES.append(
+    'immersiveengineering:crafting/plate_%s_hammering' % metal
+) for metal in HAMMERED_METALS]
 
 def lang(key: str, *args) -> str:
     return ((key % args) if len(args) > 0 else key).replace('_', ' ').replace('/', ' ').title()
