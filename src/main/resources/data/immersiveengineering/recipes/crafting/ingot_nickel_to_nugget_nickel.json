@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfc:metal/ingot/nickel"
+    }
+  ],
+  "result": {
+    "item": "immersiveengineering:nugget_nickel",
+    "count": 9
+  }
+}

@@ -165,6 +165,49 @@ def generate(rm: ResourceManager):
                   'immersiveengineering:armor_faraday_%s' % armor_part, 1,
                   Rules.draw_any, Rules.hit_any, Rules.punch_not_last)
      for armor_part in armor_parts]
+
+    # ARC FURNACE RECIPES
+
+    grades = [('small', 5), ('poor', 3), ('normal', 2), ('rich', 1)]
+
+    for (grade, count) in grades:
+        for (ore, metal) in ORES:
+            arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
+                input =
+                    {
+                        'count': count,
+                        'base_ingredient':
+                        { 'item': 'tfc:ore/%s_%s' % (grade, ore) }
+                    },
+                results = [ {'item': 'tfc:metal/ingot/%s' % metal} ],
+                time = 100,
+                energy = 25600,
+                )
+
+    for (grade, count) in grades:
+        for ore in ADDON_ORES:
+            arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
+               input =
+               {
+                   'count': count,
+                   'base_ingredient':
+                       { 'item': 'tfc_ie_addon:ore/%s_%s' % (grade, ore) }
+               },
+               results = [{'item': 'immersiveengineering:ingot_%s' % ore}],
+               time = 100,
+               energy = 25600,
+               )
+
+    # CRUSHER RECIPES
+
+    for type in SANDSTONE_TYPES:
+        for color in SANDSTONE_COLORS:
+            crusher_recipe(rm, 'sandstone/%s_%s' % (type, color),
+                           { 'item': 'tfc:%s_sandstone/%s' % (type, color) },
+                           { 'item': 'tfc:sand/%s' % color, 'count': 2 },
+                           3200,
+                           [ {'chance': 0.5, 'output': { 'item': 'tfc:powder/saltpeter' } } ] )
+
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', 'crafting', res.path), data)
@@ -203,7 +246,7 @@ def collapse_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, i
         'result': result,
         'copy_input': copy_input
     })
-    
+
 def fluid_item_ingredient(fluid: Json, delegate: Json = None):
     return {
         'type': 'tfc:fluid_item',
@@ -434,3 +477,27 @@ def plant_oil_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, 
 
 def disable_recipe(rm: ResourceManager, name_parts: ResourceIdentifier):
     rm.recipe(name_parts, None, {}, conditions='forge:false')
+
+def arc_furnace_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, input: Json, results: list, time: int, energy: int, additives: list = [], secondaries: list = [], slag: bool = False):
+    recipe = { 'input': input, 'results': results, 'additives': additives }
+
+    if secondaries:
+        recipe['secondaries'] = secondaries
+
+    if slag:
+        recipe['slag'] = { 'tag': 'forge:slag' }
+
+    recipe['time'] = time
+    recipe['energy'] = energy
+
+    rm.recipe(('arc_furnace', name_parts), 'immersiveengineering:arc_furnace', recipe)
+
+def crusher_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, input: Json, result: Json, energy: int, secondaries: list = []):
+    recipe = { 'input': input, 'result': result }
+
+    if secondaries:
+        recipe['secondaries'] = secondaries
+
+    recipe['energy'] = energy
+
+    rm.recipe(('crusher', name_parts), 'immersiveengineering:crusher', recipe)

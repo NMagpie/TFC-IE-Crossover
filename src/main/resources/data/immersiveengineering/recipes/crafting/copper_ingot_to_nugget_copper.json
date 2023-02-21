@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfc:metal/ingot/copper"
+    }
+  ],
+  "result": {
+    "item": "immersiveengineering:nugget_copper",
+    "count": 9
+  }
+}

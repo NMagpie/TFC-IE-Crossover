@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:arc_furnace",
+  "input": {
+    "count": 2,
+    "base_ingredient": {
+      "item": "tfc_ie_addon:ore/normal_uranium"
+    }
+  },
+  "results": [
+    {
+      "item": "immersiveengineering:ingot_uranium"
+    }
+  ],
+  "additives": [],
+  "time": 100,
+  "energy": 25600
+}

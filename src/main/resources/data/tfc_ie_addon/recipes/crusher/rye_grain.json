@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:food/rye_flour",
+    "count": 1
+  },
+  "input": {
+    "item": "tfc:food/rye_grain"
+  },
+  "energy": 800
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfc:metal/ingot/silver"
+    }
+  ],
+  "result": {
+    "item": "immersiveengineering:nugget_silver",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "results": [
+    {
+      "item": "tfc:metal/ingot/wrought_iron"
+    }
+  ],
+  "additives": [],
+  "input": {
+    "count": 7,
+    "base_ingredient": {
+      "item": "tfc:powder/hematite"
+    }
+  },
+  "time": 100,
+  "energy": 51200
+}

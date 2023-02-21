@@ -1,0 +1,14 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "results": [
+    {
+      "item": "tfc:metal/ingot/gold"
+    }
+  ],
+  "additives": [],
+  "input": {
+    "tag": "forge:dusts/gold"
+  },
+  "time": 100,
+  "energy": 51200
+}

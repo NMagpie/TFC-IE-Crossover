@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:arc_furnace",
+  "input": {
+    "count": 3,
+    "base_ingredient": {
+      "item": "tfc:ore/poor_magnetite"
+    }
+  },
+  "results": [
+    {
+      "item": "tfc:metal/ingot/cast_iron"
+    }
+  ],
+  "additives": [],
+  "time": 100,
+  "energy": 25600
+}

@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:food/maize_flour",
+    "count": 1
+  },
+  "input": {
+    "item": "tfc:food/maize_grain"
+  },
+  "energy": 800
+}

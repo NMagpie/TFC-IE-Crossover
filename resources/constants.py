@@ -68,6 +68,27 @@ ORE_VEINS: Dict[str, Vein] = {
     'deep_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=DEEP_METAL_ORE),
 }
 
+ORES = [
+    ('native_copper', 'copper'),
+    ('native_gold', 'gold'),
+    ('hematite', 'cast_iron'),
+    ('native_silver', 'silver'),
+    ('cassiterite', 'tin'),
+    ('bismuthinite', 'bismuth'),
+    ('garnierite', 'nickel'),
+    ('malachite', 'copper'),
+    ('magnetite', 'cast_iron'),
+    ('limonite', 'cast_iron'),
+    ('sphalerite', 'zinc'),
+    ('tetrahedrite', 'copper'),
+]
+
+ADDON_ORES = [
+    'aluminum',
+    'lead',
+    'uranium',
+]
+
 TFC_METALS = [
     'bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver',
     'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel',
@@ -142,8 +163,6 @@ TO_REMOVE_RECIPES = [
 
     'immersiveengineering:crafting/drillhead_steel',
 
-    #'immersiveengineering:crafting/copper_ingot_to_nugget_copper',
-
     'immersiveengineering:crafting/stick_aluminum',
     'immersiveengineering:crafting/stick_iron',
     'immersiveengineering:crafting/stick_steel',
@@ -154,6 +173,8 @@ TO_REMOVE_RECIPES = [
     'immersiveengineering:crafting/empty_casing',
 
     'immersiveengineering:crafting/gunpowder_from_dusts',
+
+    'immersiveengineering:crusher/wool'
 ]
 
 IE_METALS = [
@@ -168,7 +189,6 @@ IE_METALS = [
 ]
 
 [TO_REMOVE_RECIPES.extend([
-    #'immersiveengineering:crafting/ingot_%s_to_nugget_%s' % (metal, metal),
     'immersiveengineering:crafting/ingot_%s_to_storage_%s' % (metal, metal),
 ]) for metal in IE_METALS]
 
@@ -177,6 +197,9 @@ HAMMERED_METALS = IE_METALS + ['copper', 'gold', 'iron']
 [TO_REMOVE_RECIPES.append(
     'immersiveengineering:crafting/plate_%s_hammering' % metal
 ) for metal in HAMMERED_METALS]
+
+SANDSTONE_COLORS = ['brown', 'white', 'black', 'red', 'yellow', 'green', 'pink']
+SANDSTONE_TYPES = ['raw', 'smooth', 'cut']
 
 def lang(key: str, *args) -> str:
     return ((key % args) if len(args) > 0 else key).replace('_', ' ').replace('/', ' ').title()

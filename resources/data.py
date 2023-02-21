@@ -76,12 +76,6 @@ def generate(rm: ResourceManager):
 
     rm.item_tag('forge:dusts/saltpeter', 'tfc:powder/saltpeter')
 
-    rm.item_tag('forge:dusts/copper', 'tfc:powder/malachite')
-
-    rm.item_tag('forge:dusts/iron', 'tfc:powder/hematite')
-
-    rm.item_tag('forge:dusts/iron', 'tfc:powder/limonite')
-
     # METAL & SHEETS TAGS
 
     [rm.item_tag('forge:plates/%s' % metal, 'tfc:metal/sheet/%s' % metal) for metal in TFC_METALS]
@@ -100,6 +94,13 @@ def generate(rm: ResourceManager):
     stone_hammers = ['igneous_intrusive', 'igneous_extrusive', 'metamorphic', 'sedimentary']
 
     [rm.item_tag('immersiveengineering:tools/hammers', 'tfc:stone/hammer/%s' % stone) for stone in stone_hammers]
+
+    # SANDSTONE TAG
+
+    [[
+        rm.item_tag('tfc:sandstone', 'tfc:%s_sandstone/%s' % (type, color))
+        for color in SANDSTONE_COLORS]
+        for type in SANDSTONE_TYPES]
 
 def match_entity_tag(tag: str):
     return {

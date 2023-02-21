@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:powder/kaolinite",
+    "count": 4
+  },
+  "input": {
+    "item": "tfc:ore/kaolinite"
+  },
+  "energy": 1600
+}

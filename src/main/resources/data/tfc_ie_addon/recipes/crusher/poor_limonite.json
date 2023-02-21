@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:powder/limonite",
+    "count": 3
+  },
+  "input": {
+    "item": "tfc:ore/poor_limonite"
+  },
+  "energy": 1600
+}

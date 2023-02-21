@@ -1,0 +1,20 @@
+{
+  "type": "immersiveengineering:mixer",
+  "inputs": [
+    {
+      "tag": "forge:dusts/sulfur"
+    },
+    {
+      "item": "tfc:powder/malachite"
+    }
+  ],
+  "result": {
+    "fluid": "immersiveengineering:herbicide",
+    "amount": 500
+  },
+  "fluid": {
+    "tag": "forge:ethanol",
+    "amount": 500
+  },
+  "energy": 3200
+}

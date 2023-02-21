@@ -1,5 +1,6 @@
 package com.nmagpie.tfc_ie_addon;
 
+import blusunrize.immersiveengineering.api.crafting.ArcRecyclingChecker;
 import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.client.ClientForgeEvents;
@@ -48,19 +49,19 @@ public class TFC_IE_Addon
 
 //         Register ourselves for server aster(this);
 
-                Packets.init();
+        Packets.init();
 
-                eventBus.addListener(this::setup);
+        eventBus.addListener(this::setup);
 
-                Config.init();
-                Events.init();
+        Config.init();
+        Events.init();
 
-                if (FMLEnvironment.dist == Dist.CLIENT)
-                {
-                    ClientEvents.init();
-                    ClientForgeEvents.init();
+        if (FMLEnvironment.dist == Dist.CLIENT)
+        {
+            ClientEvents.init();
+            ClientForgeEvents.init();
 //                  other game events we are interested in
-        //MinecraftForge.EVENT_BUS.registerEvents.init();
+//MinecraftForge.EVENT_BUS.registerEvents.init();
         }
     }
 

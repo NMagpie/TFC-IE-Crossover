@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:powder/malachite",
+    "count": 5
+  },
+  "input": {
+    "item": "tfc:ore/normal_malachite"
+  },
+  "energy": 1600
+}

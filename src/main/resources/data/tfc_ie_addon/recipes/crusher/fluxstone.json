@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:powder/flux",
+    "count": 2
+  },
+  "input": {
+    "tag": "tfc:fluxstone"
+  },
+  "energy": 1600
+}

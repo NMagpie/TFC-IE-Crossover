@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:arc_furnace",
+  "input": {
+    "count": 2,
+    "base_ingredient": {
+      "item": "tfc:ore/normal_cassiterite"
+    }
+  },
+  "results": [
+    {
+      "item": "tfc:metal/ingot/tin"
+    }
+  ],
+  "additives": [],
+  "time": 100,
+  "energy": 25600
+}

@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:powder/ruby",
+    "count": 4
+  },
+  "input": {
+    "item": "tfc:ore/ruby"
+  },
+  "energy": 1600
+}

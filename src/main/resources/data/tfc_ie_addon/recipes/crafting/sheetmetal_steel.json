@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "immersiveengineering:storage_steel"
+    }
+  ],
+  "result":
+  {
+    "item": "immersiveengineering:sheetmetal_steel",
+    "count": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "results": [
+    {
+      "item": "tfc:metal/ingot/copper"
+    }
+  ],
+  "additives": [],
+  "input": {
+    "count": 7,
+    "base_ingredient": {
+      "item": "tfc:powder/malachite"
+    }
+  },
+  "time": 100,
+  "energy": 51200
+}

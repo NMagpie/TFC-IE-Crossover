@@ -1,0 +1,12 @@
+{
+  "type": "immersiveengineering:crusher",
+  "secondaries": [],
+  "result": {
+    "item": "tfc:powder/sulfur",
+    "count": 4
+  },
+  "input": {
+    "item": "tfc:ore/sulfur"
+  },
+  "energy": 1600
+}

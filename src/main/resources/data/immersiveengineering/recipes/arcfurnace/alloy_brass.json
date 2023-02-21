@@ -1,0 +1,24 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "results": [
+    {
+      "count": 10,
+      "base_ingredient": {
+        "item": "tfc:metal/ingot/brass"
+      }
+    }
+  ],
+  "additives": [
+    {
+      "tag": "forge:ingots/zinc"
+    }
+  ],
+  "input": {
+    "count": 9,
+    "base_ingredient": {
+      "tag": "forge:ingots/copper"
+    }
+  },
+  "time": 100,
+  "energy": 51200
+}
