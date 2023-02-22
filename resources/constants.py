@@ -96,7 +96,7 @@ TFC_METALS = [
 ]
 
 TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel', 'high_carbon_steel', 'high_carbon_black_steel',
-                    'high_carbon_blue_steel', 'high_carbon_red_steel',]
+                    'high_carbon_blue_steel', 'high_carbon_red_steel']
 
 DEFAULT_LANG = {
     "block.immersiveengineering.acetaldehyde_fluid_block": "Acetaldehyde",
@@ -141,6 +141,11 @@ DEFAULT_LANG = {
     "item.immersiveengineering.silver": "Silver",
     "item.immersiveengineering.wolfpack": "Wolfpack",
     "item.immersiveengineering.wirecoil_structure_rope": "Rope Coil",
+
+    "desc.immersiveengineering.info.mineral.stannite": "Stannite",
+    "desc.immersiveengineering.info.mineral.aikinite": "Aikinite",
+    "desc.immersiveengineering.info.mineral.franklinite": "Franklinite",
+    "desc.immersiveengineering.info.mineral.quartzite": "Quartzite",
 }
 
 TO_REMOVE_RECIPES = [
@@ -174,7 +179,10 @@ TO_REMOVE_RECIPES = [
 
     'immersiveengineering:crafting/gunpowder_from_dusts',
 
-    'immersiveengineering:crusher/wool'
+    'immersiveengineering:crusher/wool',
+
+    'immersiveengineering:mineral/beryl',
+    'immersiveengineering:mineral/cassiterite',
 ]
 
 IE_METALS = [
@@ -200,6 +208,53 @@ HAMMERED_METALS = IE_METALS + ['copper', 'gold', 'iron']
 
 SANDSTONE_COLORS = ['brown', 'white', 'black', 'red', 'yellow', 'green', 'pink']
 SANDSTONE_TYPES = ['raw', 'smooth', 'cut']
+
+TFC_WOOD_ITEMS = [
+    ('bookshelf', 6, 1600),
+    ('door', 3, 800),
+    ('trapdoor', 6, 800),
+    ('fence', 2, 800),
+    ('log_fence', 4, 800),
+    ('fence_gate', 6, 800),
+    ('button', 1, 400),
+    ('pressure_plate', 2, 400),
+    ('slab', 2, 800),
+    ('stairs', 3, 1600),
+    ('tool_rack', 6, 800),
+    ('loom', 7, 1600),
+]
+
+TFC_OTHER_WOOD_ITEMS = [
+    ('boat', 16, 1600),
+    ('sign', 2, 800),
+    ('trapped_chest', 8, 1600),
+    ('chest', 8, 1600),
+    ('sluice', 3, 1600),
+    ('barrel', 7, 1600),
+    ('lectern', 10, 1600),
+]
+
+TFC_WOOD_TYPES = [
+    'acacia',
+    'ash',
+    'aspen',
+    'birch',
+    'blackwood',
+    'chestnut',
+    'douglas_fir',
+    'hickory',
+    'kapok',
+    'maple',
+    'oak',
+    'palm',
+    'pine',
+    'rosewood',
+    'sequoia',
+    'spruce',
+    'sycamore',
+    'white_cedar',
+    'willow'
+]
 
 def lang(key: str, *args) -> str:
     return ((key % args) if len(args) > 0 else key).replace('_', ' ').replace('/', ' ').title()

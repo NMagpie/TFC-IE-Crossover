@@ -1,0 +1,117 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "ores": [
+    {
+      "chance": 0.6,
+      "output": {
+        "item": "tfc_ie_addon:ore/small_lead"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "item": "tfc_ie_addon:ore/poor_lead"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc_ie_addon:ore/normal_lead"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc_ie_addon:ore/rich_lead"
+      }
+    },
+
+    {
+      "chance": 0.35,
+      "output": {
+        "item": "tfc:ore/small_malachite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "item": "tfc:ore/poor_malachite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:ore/normal_malachite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc:ore/rich_malachite"
+      }
+    },
+
+    {
+      "chance": 0.65,
+      "output": {
+        "item": "tfc:ore/small_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "item": "tfc:ore/poor_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:ore/normal_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc:ore/rich_bismuthinite"
+      }
+    },
+
+    {
+      "chance": 0.3,
+      "output": {
+        "item": "tfc:ore/sulfur"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/claystone"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/claystone"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/dolomite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/dolomite"
+      }
+    }
+  ],
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "weight": 25,
+  "fail_chance": 0.1
+}

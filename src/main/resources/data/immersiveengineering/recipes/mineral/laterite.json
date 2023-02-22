@@ -1,0 +1,101 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "ores": [
+    {
+      "chance": 0.3,
+      "output": {
+        "item": "tfc:ore/small_magnetite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "item": "tfc:ore/poor_magnetite"
+      }
+    },
+    {
+      "chance": 0.15,
+      "output": {
+        "item": "tfc:ore/normal_magnetite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc:ore/rich_magnetite"
+      }
+    },
+
+    {
+      "chance": 0.7,
+      "output": {
+        "item": "tfc_ie_addon:ore/small_aluminum"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc_ie_addon:ore/poor_aluminum"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "item": "tfc_ie_addon:ore/normal_aluminum"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc_ie_addon:ore/rich_aluminum"
+      }
+    },
+
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/titanium",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "chance": 0.1,
+      "output": {
+        "tag": "forge:ores/titanium"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/marble"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/marble"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/phyllite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/phyllite"
+      }
+    }
+  ],
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "weight": 20,
+  "fail_chance": 0.05
+}

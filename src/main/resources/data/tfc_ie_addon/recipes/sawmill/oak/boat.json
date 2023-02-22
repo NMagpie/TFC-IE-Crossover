@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:sawmill",
+  "input": {
+    "item": "tfc:wood/boat/oak"
+  },
+  "result": {
+    "item": "tfc:wood/lumber/oak",
+    "count": 16
+  },
+  "energy": 1600,
+  "secondaries": [
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": false
+    }
+  ]
+}

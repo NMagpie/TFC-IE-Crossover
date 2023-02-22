@@ -1,6 +1,7 @@
 package com.nmagpie.tfc_ie_addon;
 
 import blusunrize.immersiveengineering.api.crafting.ArcRecyclingChecker;
+import blusunrize.immersiveengineering.api.crafting.builders.MineralMixBuilder;
 import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.client.ClientForgeEvents;
@@ -19,6 +20,7 @@ import net.dries007.tfc.common.capabilities.forge.ForgeStep;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.block.HalfTransparentBlock;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;

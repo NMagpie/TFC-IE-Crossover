@@ -1,0 +1,92 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "ores": [
+    {
+      "chance": 0.4,
+      "output": {
+        "item": "tfc_ie_addon:ore/small_lead"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "item": "tfc_ie_addon:ore/poor_lead"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc_ie_addon:ore/normal_lead"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc_ie_addon:ore/rich_lead"
+      }
+    },
+
+    {
+      "chance": 0.25,
+      "output": {
+        "item": "tfc:ore/small_native_silver"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:ore/poor_native_silver"
+      }
+    },
+    {
+      "chance": 0.15,
+      "output": {
+        "item": "tfc:ore/normal_native_silver"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc:ore/rich_native_silver"
+      }
+    },
+
+    {
+      "chance": 0.4,
+      "output": {
+        "item": "tfc:ore/sulfur"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/limestone"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/limestone"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/quartzite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/quartzite"
+      }
+    }
+  ],
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "weight": 15,
+  "fail_chance": 0.05
+}

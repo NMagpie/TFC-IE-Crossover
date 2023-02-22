@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:sawmill",
+  "input": {
+    "item": "tfc:wood/planks/ash_log_fence"
+  },
+  "result": {
+    "item": "tfc:wood/lumber/ash",
+    "count": 4
+  },
+  "energy": 800,
+  "secondaries": [
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": false
+    }
+  ]
+}

@@ -43,7 +43,6 @@ class Rules(Enum):
     shrink_third_last = 'shrink_third_last'
 
 def generate(rm: ResourceManager):
-    rm.domain = 'tfc'
     rm.domain = 'tfc_ie_addon'
 
     # RECIPE REMOVALS
@@ -208,6 +207,54 @@ def generate(rm: ResourceManager):
                            3200,
                            [ {'chance': 0.5, 'output': { 'item': 'tfc:powder/saltpeter' } } ] )
 
+    # METAL PRESS RECIPES
+
+    rm.domain = 'immersiveengineering'
+
+    ALL_METALS = set(IE_METALS + TFC_METALS)
+
+    ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
+
+    for metal in ALL_METALS:
+        metalpress_recipe(rm, 'plate_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
+
+    for metal in TFC_METALS:
+        metalpress_recipe(rm, 'rod_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_rod', { 'count': 2, 'base_ingredient': { 'item': 'tfc:metal/rod/%s' % metal } }, 2400)
+
+    rm.domain = 'tfc_ie_addon'
+
+    # SAWMILL RECIPES
+
+    for wood_type in TFC_WOOD_TYPES:
+        for (wood_item, count, energy) in TFC_WOOD_ITEMS:
+            sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
+                           { 'item': 'tfc:wood/planks/%s_%s' % (wood_type, wood_item) },
+                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': count },
+                           energy)
+
+        for (wood_item, count, energy) in TFC_OTHER_WOOD_ITEMS:
+            sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
+                           { 'item': 'tfc:wood/%s/%s' % (wood_item, wood_type) },
+                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': count },
+                           energy)
+
+        for log_type in ['wood', 'log']:
+            sawmill_recipe(rm, '%s_%s' % (wood_type, log_type),
+                           { 'item': 'tfc:wood/%s/%s' % (log_type, wood_type) },
+                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 8 },
+                           1600,
+                           stripped= { 'item': 'tfc:wood/stripped_%s/%s' % (log_type, wood_type) },
+                           secondaries2=True)
+
+            sawmill_recipe(rm, '%s_stripped_%s' % (wood_type, log_type),
+                           { 'item': 'tfc:wood/stripped_%s/%s' % (log_type, wood_type) },
+                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 8 },
+                           1600)
+
+        sawmill_recipe(rm, '%s/planks' % wood_type,
+                       { 'item': 'tfc:wood/planks/%s' % wood_type },
+                       { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 4 },
+                       1600)
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', 'crafting', res.path), data)
@@ -501,3 +548,43 @@ def crusher_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, i
     recipe['energy'] = energy
 
     rm.recipe(('crusher', name_parts), 'immersiveengineering:crusher', recipe)
+
+def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int):
+    recipe = {
+        'mold': mold,
+        'input': input,
+        'result': result,
+        'energy': energy,
+    }
+
+    rm.recipe(('metalpress', name_parts), 'immersiveengineering:metal_press', recipe)
+
+def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, stripped: Json = None, secondaries1: bool = True, secondaries2: bool = False):
+    recipe = {
+        'input': input,
+        'result':result,
+        'energy': energy,
+    }
+
+    if stripped:
+        recipe['stripped'] = stripped
+
+    recipe['secondaries'] = []
+
+    if secondaries1:
+        recipe['secondaries'].append({
+            "output": {
+                "tag": "forge:dusts/wood"
+            },
+            "stripping": False
+        })
+
+    if secondaries2:
+        recipe['secondaries'].append({
+            "output": {
+                "tag": "forge:dusts/wood"
+            },
+            "stripping": True
+        })
+
+    rm.recipe(('sawmill', name_parts), 'immersiveengineering:sawmill', recipe)

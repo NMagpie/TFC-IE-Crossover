@@ -1,0 +1,101 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "ores": [
+    {
+      "chance": 0.7,
+      "output": {
+        "item": "tfc_ie_addon:ore/small_uranium"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc_ie_addon:ore/poor_uranium"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "item": "tfc_ie_addon:ore/normal_uranium"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc_ie_addon:ore/rich_uranium"
+      }
+    },
+
+    {
+      "chance": 0.35,
+      "output": {
+        "item": "tfc_ie_addon:ore/small_lead"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "item": "tfc_ie_addon:ore/poor_lead"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc_ie_addon:ore/normal_lead"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "item": "tfc_ie_addon:ore/rich_lead"
+      }
+    },
+
+    {
+      "conditions": [
+        {
+          "value": {
+            "tag": "forge:ores/thorium",
+            "type": "forge:tag_empty"
+          },
+          "type": "forge:not"
+        }
+      ],
+      "chance": 0.1,
+      "output": {
+        "tag": "forge:ores/thorium"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/diorite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/diorite"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/chert"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/chert"
+      }
+    }
+  ],
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "weight": 10,
+  "fail_chance": 0.15
+}

@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:metal_press",
+  "mold": "immersiveengineering:mold_plate",
+  "input": {
+    "tag": "forge:ingots/lead"
+  },
+  "result": {
+    "item": "tfc_ie_addon:metal/sheet/lead"
+  },
+  "energy": 2400
+}

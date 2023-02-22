@@ -1,0 +1,16 @@
+{
+  "type": "immersiveengineering:refinery",
+  "result": {
+    "fluid": "tfc:milk_vinegar",
+    "amount": 10
+  },
+  "input0": {
+    "tag": "tfc:vinegar",
+    "amount": 1
+  },
+  "input1": {
+    "tag": "tfc:milks",
+    "amount": 9
+  },
+  "energy": 50
+}

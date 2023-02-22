@@ -1,0 +1,85 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "ores": [
+    {
+      "chance": 0.75,
+      "output": {
+        "item": "tfc:ore/small_native_copper"
+      }
+    },
+    {
+      "chance": 0.6,
+      "output": {
+        "item": "tfc:ore/poor_native_copper"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "item": "tfc:ore/normal_native_copper"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:ore/rich_native_copper"
+      }
+    },
+
+    {
+      "chance": 0.3,
+      "output": {
+        "item": "tfc:ore/small_native_gold"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "item": "tfc:ore/poor_native_gold"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:ore/normal_native_gold"
+      }
+    },
+    {
+      "chance": 0.15,
+      "output": {
+        "item": "tfc:ore/rich_native_gold"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/granite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/granite"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:rock/raw/diorite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "item": "tfc:rock/gravel/diorite"
+      }
+    }
+  ],
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "weight": 30,
+  "fail_chance": 0.1
+}

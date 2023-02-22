@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:mixer",
+  "inputs": [
+    {
+      "tag": "tfc:flux"
+    }
+  ],
+  "result": {
+    "fluid": "tfc:salt_water",
+    "amount": 125
+  },
+  "fluid": {
+    "tag": "minecraft:water",
+    "amount": 125
+  },
+  "energy": 800
+}
