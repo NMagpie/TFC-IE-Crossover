@@ -147,6 +147,10 @@ def generate(rm: ResourceManager):
 
     # ANVIL RECIPES
 
+    anvil_recipe(rm, 'wirecutter_head', 'tfc:metal/ingot/wrought_iron', 'tfc_ie_addon:tool_head/wirecutter', 3, Rules.shrink_not_last, Rules.hit_last, Rules.bend_any)
+
+    anvil_recipe(rm, 'hammer_head', 'tfc:metal/ingot/wrought_iron', 'tfc_ie_addon:tool_head/ie_hammer', 3, Rules.upset_any, Rules.hit_not_last, Rules.draw_second_last)
+
     anvil_recipe(rm, 'toolupgrade_revolver_bayonet', 'tfc:metal/ingot/steel', 'immersiveengineering:toolupgrade_revolver_bayonet', 4, Rules.hit_last, Rules.bend_any, Rules.draw_any)
 
     anvil_recipe(rm, 'drillhead_steel', 'tfc:metal/double_sheet/steel', 'immersiveengineering:drillhead_steel', 4, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
@@ -184,7 +188,7 @@ def generate(rm: ResourceManager):
                 )
 
     for (grade, count) in grades:
-        for ore in ADDON_ORES:
+        for ore in ADDON_ORES.keys():
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
                input =
                {

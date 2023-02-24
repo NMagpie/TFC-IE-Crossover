@@ -1,0 +1,14 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "immersiveengineering:slag"
+      }
+    ]
+  },
+  "anvil_recipe": {
+    "type": "tfc:anvil",
+    "recipe": "tfc:anvil/steel_ingot"
+  }
+}

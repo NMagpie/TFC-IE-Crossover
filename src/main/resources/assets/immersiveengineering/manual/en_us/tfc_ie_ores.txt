@@ -1,0 +1,12 @@
+Ores
+Diggy diggy hole
+<&alu>§lBauxite Ore§r is found in the world between layers -32 and 210, and requires a Stone Pickaxe to harvest.
+The raw ore will smelt into aluminium ingots, which is an integral part of high-voltage architecture.
+<&lead>§lLead Ore§r is found in the world between layers -64 and 75, and requires an Stone Pickaxe to harvest.
+The raw ore will smelt into lead ingots, which are used in creating early accumulators.
+<&silver>§lSilver Ore§r is found in the world between layers -32 and 100, and requires an Stone Pickaxe to harvest.
+The raw ore will smelt into silver ingots, which alloy with gold to create electrum, a far more effective conductor.
+<&nickel>§lNickel Ore§r is found in the world between layers -32 and 100, but more abundantly below <config;i;ores.deep_nickel.max_y>. It requires an Iron Pickaxe to harvest.
+The raw ore will smelt into nickel ingots, which alloy with copper to create constantan, a heat resistant conductor used in the construction of <link;thermoelectric;Thermoelectric Generators;start>.
+<&uranium>§lUranium Ore§r is found in the world between layers -64 and 75, and requires an Iron Pickaxe to harvest.
+The raw ore will smelt into uranium ingots, but there are currently not many uses for the metal. A uranium block can serve as a heatsource for the <link;thermoelectric;Thermoelectric Generator;start> and the metal will be used in future endeavours.

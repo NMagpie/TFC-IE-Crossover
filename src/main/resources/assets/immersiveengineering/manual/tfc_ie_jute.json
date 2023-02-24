@@ -1,0 +1,32 @@
+{
+  "items": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc:wild_crop/jute"
+      },
+      {
+        "item": "tfc:jute_fiber"
+      },
+      {
+        "item": "tfc:seeds/jute"
+      }
+    ]
+  },
+  "fiber_recipe": {
+    "type": "tfc:barrel",
+    "recipe": "tfc:barrel/jute_fiber"
+  },
+  "fabric_recipe": {
+    "type": "tfc:loom",
+    "recipe": "tfc:loom/burlap_cloth"
+  },
+  "cushion_recipe": {
+    "type": "crafting",
+    "recipe": "crafting/cushion"
+  },
+  "curtain_recipe": {
+    "type": "crafting",
+    "recipe": "crafting/strip_curtain"
+  }
+}

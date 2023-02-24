@@ -1,0 +1,16 @@
+{
+  "autoload_priority": 2,
+  "tfc_ie_changes": {
+    "category_weight": 8,
+    "entry_list": [
+      "tfc_ie_ores",
+      "tfc_ie_jute",
+      "tfc_ie_alloys",
+      "tfc_ie_blueprint",
+      "tfc_ie_quartz",
+      "tfc_ie_steel_obtain",
+      "tfc_ie_chemicals",
+      "tfc_ie_graphite"
+    ]
+  }
+}

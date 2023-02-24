@@ -83,11 +83,11 @@ ORES = [
     ('tetrahedrite', 'copper'),
 ]
 
-ADDON_ORES = [
-    'aluminum',
-    'lead',
-    'uranium',
-]
+ADDON_ORES: Dict[str, str] = {
+    'aluminum': 'copper',
+    'lead': 'copper',
+    'uranium': 'iron',
+}
 
 TFC_METALS = [
     'bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver',
@@ -146,6 +146,8 @@ DEFAULT_LANG = {
     "desc.immersiveengineering.info.mineral.aikinite": "Aikinite",
     "desc.immersiveengineering.info.mineral.franklinite": "Franklinite",
     "desc.immersiveengineering.info.mineral.quartzite": "Quartzite",
+
+    "manual.immersiveengineering.tfc_ie_changes": "Changes with TerraFirmaCraft"
 }
 
 TO_REMOVE_RECIPES = [
@@ -183,6 +185,8 @@ TO_REMOVE_RECIPES = [
 
     'immersiveengineering:mineral/beryl',
     'immersiveengineering:mineral/cassiterite',
+
+    'immersiveengineering:crafting/cokebrick',
 ]
 
 IE_METALS = [

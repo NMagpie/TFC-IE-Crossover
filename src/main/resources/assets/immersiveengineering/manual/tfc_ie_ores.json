@@ -1,0 +1,72 @@
+{
+  "alu": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc_ie_addon:ore/normal_aluminum/marble"
+      },
+      {
+        "item": "tfc_ie_addon:ore/normal_aluminum"
+      },
+      {
+        "item": "immersiveengineering:ingot_aluminum"
+      }
+    ]
+  },
+  "lead": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc_ie_addon:ore/normal_lead/marble"
+      },
+      {
+        "item": "tfc_ie_addon:ore/normal_lead"
+      },
+      {
+        "item": "immersiveengineering:ingot_lead"
+      }
+    ]
+  },
+  "silver": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc:ore/normal_native_silver/marble"
+      },
+      {
+        "item": "tfc:ore/normal_native_silver"
+      },
+      {
+        "item": "tfc:metal/ingot/silver"
+      }
+    ]
+  },
+  "nickel": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc:ore/normal_garnierite/marble"
+      },
+      {
+        "item": "tfc:ore/normal_garnierite"
+      },
+      {
+        "item": "tfc:metal/ingot/nickel"
+      }
+    ]
+  },
+  "uranium": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc_ie_addon:ore/normal_uranium/marble"
+      },
+      {
+        "item": "tfc_ie_addon:ore/normal_uranium"
+      },
+      {
+        "item": "immersiveengineering:ingot_uranium"
+      }
+    ]
+  }
+}

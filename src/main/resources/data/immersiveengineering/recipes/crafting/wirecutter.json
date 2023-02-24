@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "h",
-    "s"
+    "si",
+    " s"
   ],
   "key": {
     "s": {
       "tag": "forge:rods/wooden"
     },
-    "h": {
-      "item": "tfc_ie_addon:tool_head/ie_hammer"
+    "i": {
+      "item": "tfc_ie_addon:tool_head/wirecutter"
     }
   },
   "result": {
-    "item": "immersiveengineering:hammer"
+    "item": "immersiveengineering:wirecutter"
   }
 }

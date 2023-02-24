@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ses",
+    "ddd",
+    "ppp"
+  ],
+  "key": {
+    "e": {
+      "item": "immersiveengineering:empty_casing"
+    },
+    "s": {
+      "tag": "forge:ingots/blue_steel"
+    },
+    "d": {
+      "tag": "forge:dyes/blue"
+    },
+    "p": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:blueprint",
+    "nbt": {
+      "blueprint": "specialBullet"
+    }
+  }
+}

@@ -32,8 +32,7 @@ def generate(rm: ResourceManager):
     ### TAGS ###
 
     # Ore tags
-    ores = ['aluminum', 'lead', 'uranium']
-    for ore in ores:
+    for ore in ADDON_ORES.keys():
         rm.block_tag('forge:ores', '#forge:ores/%s' % ore)
         rm.block_tag('forge:ores/%s' % ore, '#tfc_ie_addon:ores/%s/poor' % ore, '#tfc_ie_addon:ores/%s/normal' % ore, '#tfc_ie_addon:ores/%s/rich' % ore)
         rm.item_tag('ore_pieces', 'tfc_ie_addon:ore/poor_%s' % ore, 'tfc_ie_addon:ore/normal_%s' % ore, 'tfc_ie_addon:ore/rich_%s' % ore)
@@ -43,6 +42,8 @@ def generate(rm: ResourceManager):
             rm.block_tag('ores/%s/poor' % ore, 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock))
             rm.block_tag('ores/%s/normal' % ore, 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock))
             rm.block_tag('ores/%s/rich' % ore, 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
+
+            rm.block_tag(needs_tool(ADDON_ORES[ore]), 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
 
     # JUTE AND FIBER TAGS
 
@@ -97,10 +98,21 @@ def generate(rm: ResourceManager):
 
     # SANDSTONE TAG
 
-    [[
-        rm.item_tag('tfc:sandstone', 'tfc:%s_sandstone/%s' % (type, color))
-        for color in SANDSTONE_COLORS]
-        for type in SANDSTONE_TYPES]
+    # [[
+    #     rm.item_tag('tfc:sandstone', 'tfc:%s_sandstone/%s' % (type, color))
+    #     for color in SANDSTONE_COLORS]
+    #     for type in SANDSTONE_TYPES]
+
+def needs_tool(_tool: str) -> str:
+    return {
+        'wood': 'forge:needs_wood_tool', 'stone': 'forge:needs_wood_tool',
+        'copper': 'minecraft:needs_stone_tool',
+        'bronze': 'minecraft:needs_iron_tool',
+        'iron': 'minecraft:needs_iron_tool', 'wrought_iron': 'minecraft:needs_iron_tool',
+        'diamond': 'minecraft:needs_diamond_tool', 'steel': 'minecraft:needs_diamond_tool',
+        'netherite': 'forge:needs_netherite_tool', 'black_steel': 'forge:needs_netherite_tool',
+        'colored_steel': 'tfc:needs_colored_steel_tool'
+    }[_tool]
 
 def match_entity_tag(tag: str):
     return {

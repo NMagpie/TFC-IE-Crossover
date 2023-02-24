@@ -1,0 +1,26 @@
+{
+    "start": [
+        {
+            "type": "crafting",
+            "recipes": [
+                {
+                    "recipe": "crafting/electrum_mix"
+                },
+                {
+                    "recipe": "crafting/constantan_mix"
+                }
+            ]
+        },
+        {
+            "type": "tfc:alloy",
+            "recipes": [
+                {
+                    "recipe": "tfc_ie_addon:alloy/electrum"
+                },
+                {
+                    "recipe": "tfc_ie_addon:alloy/constantan"
+                }
+            ]
+        }
+    ]
+}

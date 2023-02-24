@@ -30,13 +30,10 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 import net.dries007.tfc.common.blockentities.AnvilBlockEntity;
-
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(TFC_IE_Addon.MOD_ID)
 public class TFC_IE_Addon
 {
     public static final String MOD_ID = "tfc_ie_addon";
-    // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public TFC_IE_Addon()
@@ -49,8 +46,6 @@ public class TFC_IE_Addon
         Features.FEATURES.register(eventBus);
         TFC_IE_BlockEntities.BLOCK_ENTITIES.register(eventBus);
 
-//         Register ourselves for server aster(this);
-
         Packets.init();
 
         eventBus.addListener(this::setup);
@@ -62,15 +57,10 @@ public class TFC_IE_Addon
         {
             ClientEvents.init();
             ClientForgeEvents.init();
-//                  other game events we are interested in
-//MinecraftForge.EVENT_BUS.registerEvents.init();
         }
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-
         Registered_Soils.register_tfc_soils();
     }
 

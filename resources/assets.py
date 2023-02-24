@@ -9,11 +9,14 @@ def generate(rm: ResourceManager):
 
     ores = ['aluminum', 'lead', 'uranium']
     for ore in ores:
+
+        ore_name = 'bauxite' if ore == 'aluminum' else ore
+
         for grade in ORE_GRADES.keys():
-            rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore))
+            rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore_name))
         block = rm.blockstate('ore/small_%s' % ore, variants={"": four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
-        block.with_lang(lang('small %s', ore)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('tfc:can_be_snow_piled')
-        rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore))
+        block.with_lang(lang('small %s', ore_name)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('tfc:can_be_snow_piled')
+        rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore_name))
         for rock, data in TFC_ROCKS.items():
             for grade in ORE_GRADES.keys():
                 block = rm.blockstate(('ore', grade + '_' + ore, rock), 'tfc_ie_addon:block/ore/%s_%s/%s' % (grade, ore, rock))
@@ -22,8 +25,8 @@ def generate(rm: ResourceManager):
                     'particle': 'tfc:block/rock/raw/%s' % rock,
                     'overlay': 'tfc_ie_addon:block/ore/%s_%s' % (grade, ore)
                 }, parent='tfc:block/ore')
-                block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
-                rm.block('tfc_ie_addon:ore/%s_%s/%s/prospected' % (grade, ore, rock)).with_lang(lang(ore))
+                block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore_name)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
+                rm.block('tfc_ie_addon:ore/%s_%s/%s/prospected' % (grade, ore, rock)).with_lang(lang(ore_name))
 
     # MINERAL STUFF
 
@@ -62,6 +65,11 @@ def generate(rm: ResourceManager):
 
         rm.block('tfc_ie_addon:mineral/%s/prospected' % block_name).with_lang(lang('quartz'))
 
+    # TOOLS
+
+    rm.item_model('tool_head/wirecutter').with_lang(lang('wirecutter head'))
+
+    rm.item_model('tool_head/ie_hammer').with_lang(lang('engineer\'s hammer head'))
 
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)

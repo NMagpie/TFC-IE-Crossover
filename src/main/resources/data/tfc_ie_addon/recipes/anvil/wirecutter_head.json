@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:anvil",
+  "input": {
+    "item": "tfc:metal/ingot/wrought_iron"
+  },
+  "result": {
+    "item": "tfc_ie_addon:tool_head/wirecutter"
+  },
+  "tier": 3,
+  "rules": [
+    "shrink_not_last",
+    "hit_last",
+    "bend_any"
+  ]
+}

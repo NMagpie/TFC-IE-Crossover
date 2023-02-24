@@ -1,5 +1,6 @@
 package com.nmagpie.tfc_ie_addon.common.items;
 
+import blusunrize.immersiveengineering.ImmersiveEngineering;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.util.Metal;
@@ -29,6 +30,10 @@ public class Items
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TFC_IE_Addon.MOD_ID);
 
     public static final RegistryObject<Item> QUARTZ_SHARD = register("mineral/quartz_shard", TFCItemGroup.ORES);
+
+    public static final RegistryObject<Item> WIRECUTTER_HEAD = register("tool_head/wirecutter", TFCItemGroup.METAL);
+
+    public static final RegistryObject<Item> HAMMER_HEAD = register("tool_head/ie_hammer", TFCItemGroup.METAL);
 
     private static final String[] IE_Fluids = {
             "acetaldehyde", "biodiesel", "concrete", "creosote", "ethanol", "herbicide", "phenolic_resin", "plantoil", "redstone_acid"
