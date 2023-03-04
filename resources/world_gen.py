@@ -49,7 +49,7 @@ def generate(rm: ResourceManager):
                             ]
                            })
 
-    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(100), decorate_square(), decorate_range(30, 80), decorate_biome())
+    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(350), decorate_square(), decorate_range(30, 80), decorate_biome())
 
 Heightmap = Literal['motion_blocking', 'motion_blocking_no_leaves', 'ocean_floor', 'ocean_floor_wg', 'world_surface', 'world_surface_wg']
 

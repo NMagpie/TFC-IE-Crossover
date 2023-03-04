@@ -1,0 +1,11 @@
+{
+  "homepage" : "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover",
+  "promos": {
+    "1.18.2-latest": "0.1.1",
+    "1.18.2-recommended": "0.1.1"
+  },
+  "1.18.2": {
+    "0.1.1": " - Fixed Arc Furnace Recipe for Weak Red Steel.\n - Decreased chance of generating Quartz Geode from 100 to 350.\n - Fixed Engineer's Hammer Head Name.",
+    "0.1-1.18.2": "Addon almost done, just need to fix bugs."
+  }
+}
