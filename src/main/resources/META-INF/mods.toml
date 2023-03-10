@@ -12,7 +12,7 @@ logoFile="logo.png"
 credits="Thanks to Developers of such wonderful mods as TerraFirmaCraft: TNG and Immersive Engineering.\nEspecially to EERussianguy, whose addon FirmaLife was used as base for this addon.\nSome textures of BluSunrize were used or modified.\nAlso, were used some textures from TFC: TNG, all credits to the developers."
 authors="NMagpie"
 description="Addon that makes TFC and IE compatible."
-updateJSONURL = "https://github.com/NMagpie/TFC-IE-Crossover/blob/1.18.x/update.json"
+updateJSONURL = "https://raw.githubusercontent.com/NMagpie/TFC-IE-Crossover/1.18.x/update.json"
 
 [[dependencies.tfc_ie_addon]]
     modId="forge"
