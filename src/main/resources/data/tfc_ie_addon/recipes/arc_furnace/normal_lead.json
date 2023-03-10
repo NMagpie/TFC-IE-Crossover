@@ -13,6 +13,9 @@
     }
   ],
   "additives": [],
+  "slag": {
+    "tag": "forge:slag"
+  },
   "time": 100,
   "energy": 25600
 }

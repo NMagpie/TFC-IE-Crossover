@@ -189,6 +189,9 @@ TO_REMOVE_RECIPES = [
     'immersiveengineering:mineral/cassiterite',
 
     'immersiveengineering:crafting/cokebrick',
+    'immersiveengineering:crafting/blastbrick_reinforced',
+
+    'immersiveengineering:crafting/alloybrick',
 ]
 
 IE_METALS = [

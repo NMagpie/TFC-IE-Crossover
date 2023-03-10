@@ -138,7 +138,6 @@ def decorate_would_survive(block: str) -> Json:
         'state': utils.block_state(block)
     })
 
-
 def decorate_would_survive_with_fluid(block: str) -> Json:
     return decorate_block_predicate({
         'type': 'tfc:would_survive_with_fluid',
@@ -150,7 +149,6 @@ def decorate_replaceable() -> Json:
 
 def decorate_air_or_empty_fluid() -> Json:
     return decorate_block_predicate({'type': 'tfc:air_or_empty_fluid'})
-
 
 def decorate_block_predicate(predicate: Json) -> Json:
     return {
@@ -236,4 +234,3 @@ def configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifie
         feature = res
     rm.configured_feature(res, feature, config)
     rm.placed_feature(res, res, *placements)
-

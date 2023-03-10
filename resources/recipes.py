@@ -185,6 +185,7 @@ def generate(rm: ResourceManager):
                 results = [ {'item': 'tfc:metal/ingot/%s' % metal} ],
                 time = 100,
                 energy = 25600,
+                slag = True,
                 )
 
     for (grade, count) in grades:
@@ -199,6 +200,7 @@ def generate(rm: ResourceManager):
                results = [{'item': 'immersiveengineering:ingot_%s' % ore}],
                time = 100,
                energy = 25600,
+               slag = True,
                )
 
     # CRUSHER RECIPES

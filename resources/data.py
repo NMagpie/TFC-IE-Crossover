@@ -35,8 +35,8 @@ def generate(rm: ResourceManager):
     for ore in ADDON_ORES.keys():
         rm.block_tag('forge:ores', '#forge:ores/%s' % ore)
         rm.block_tag('forge:ores/%s' % ore, '#tfc_ie_addon:ores/%s/poor' % ore, '#tfc_ie_addon:ores/%s/normal' % ore, '#tfc_ie_addon:ores/%s/rich' % ore)
-        rm.item_tag('ore_pieces', 'tfc_ie_addon:ore/poor_%s' % ore, 'tfc_ie_addon:ore/normal_%s' % ore, 'tfc_ie_addon:ore/rich_%s' % ore)
-        rm.item_tag('small_ore_pieces', 'tfc_ie_addon:ore/small_%s' % ore)
+        rm.item_tag('tfc:ore_pieces', 'tfc_ie_addon:ore/poor_%s' % ore, 'tfc_ie_addon:ore/normal_%s' % ore, 'tfc_ie_addon:ore/rich_%s' % ore)
+        rm.item_tag('tfc:small_ore_pieces', 'tfc_ie_addon:ore/small_%s' % ore)
 
         for rock in TFC_ROCKS.keys():
             rm.block_tag('ores/%s/poor' % ore, 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock))
