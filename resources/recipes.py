@@ -222,7 +222,7 @@ def generate(rm: ResourceManager):
     ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
 
     for metal in ALL_METALS:
-        metalpress_recipe(rm, 'plate_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
+        metalpress_recipe(rm, 'plate_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
 
     for metal in TFC_METALS:
         metalpress_recipe(rm, 'rod_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_rod', { 'count': 2, 'base_ingredient': { 'item': 'tfc:metal/rod/%s' % metal } }, 2400)
