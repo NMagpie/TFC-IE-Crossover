@@ -17,7 +17,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 
 minecraft {
-    mappings channel: 'parchment', version: '2022.03.13-1.18.2'
+    mappings channel: 'parchment', version: '2022.11.06-1.18.2'
 
     runs {
 
@@ -139,7 +139,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     //TFC
     implementation fg.deobf("curse.maven:tfc-302973:${tfc_identifier}")
@@ -152,8 +152,8 @@ dependencies {
     implementation(fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}"))
 
     //Immersive Engineering
-    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:1.18.2-8.3.0-155.5")
-    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:1.18.2-8.3.0-155.5:datagen")
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}")
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}:datagen")
 
     //Jade
     compileOnly(fg.deobf("curse.maven:jade-324717:${jade_version}"))
