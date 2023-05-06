@@ -31,11 +31,11 @@ public class IEHeatHandler
         {
             return blockEntity.getCapability(HeatCapability.BLOCK_CAPABILITY).map(handler ->
             {
-                int rfPerTick = Config.SERVER.crucibleExternalHeaterRFperTick.get();
-                if (energyAvailable >= rfPerTick)
+                int FEperTick = Config.SERVER.crucibleExternalHeaterFEperTick.get();
+                if (energyAvailable >= FEperTick)
                 {
                     handler.setTemperature(Config.SERVER.crucibleExternalHeaterTemperature.get());
-                    return rfPerTick;
+                    return FEperTick;
                 }
                 return 0;
             }).orElse(0);
