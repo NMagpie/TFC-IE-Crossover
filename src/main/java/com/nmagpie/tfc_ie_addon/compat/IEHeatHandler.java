@@ -55,11 +55,13 @@ public class IEHeatHandler
 
         @Nonnull
         @Override
-        public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+        public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side)
+        {
             return ExternalHeaterHandler.CAPABILITY.orEmpty(cap, lazy);
         }
 
-        public void invalidate() {
+        public void invalidate()
+        {
             lazy.invalidate();
         }
     }

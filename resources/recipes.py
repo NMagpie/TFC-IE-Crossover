@@ -274,6 +274,7 @@ def barrel_instant_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentif
         'output_fluid': fluid_stack(output_fluid) if output_fluid is not None else None,
         'sound': sound
     })
+
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', 'crafting', res.path), data)
