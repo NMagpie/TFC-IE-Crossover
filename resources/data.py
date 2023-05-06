@@ -69,6 +69,8 @@ def generate(rm: ResourceManager):
         rm.fluid_tag('tfc:usable_in_wooden_bucket', 'immersiveengineering:%s' % fluid)
         rm.fluid_tag('tfc:usable_in_red_steel_bucket', 'immersiveengineering:%s' % fluid)
 
+    rm.fluid_tag('tfc:usable_in_barrel', 'immersiveengineering:redstone_acid')
+
     # DUSTS TAGS
 
     rm.item_tag('forge:dusts/sulfur', 'tfc:powder/sulfur')

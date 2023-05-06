@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:barrel_instant",
+  "input_item": {
+    "ingredient": {
+      "tag": "forge:dusts/redstone"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "minecraft:water",
+    "amount": 250
+  },
+  "output_fluid": {
+    "fluid": "immersiveengineering:redstone_acid",
+    "amount": 250
+  }
+}
