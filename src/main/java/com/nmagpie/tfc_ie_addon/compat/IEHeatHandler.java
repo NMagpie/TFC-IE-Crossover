@@ -1,4 +1,4 @@
-package com.nmagpie.tfc_ie_addon.compat.external_heater;
+package com.nmagpie.tfc_ie_addon.compat;
 
 import blusunrize.immersiveengineering.api.tool.ExternalHeaterHandler;
 import com.nmagpie.tfc_ie_addon.config.Config;

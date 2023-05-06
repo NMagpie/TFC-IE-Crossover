@@ -3,7 +3,7 @@ package com.nmagpie.tfc_ie_addon.common;
 import java.io.IOException;
 import java.nio.file.Path;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
-import com.nmagpie.tfc_ie_addon.compat.external_heater.IEHeatHandler;
+import com.nmagpie.tfc_ie_addon.compat.IEHeatHandler;
 import javax.annotation.Nonnull;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.packs.PackType;
@@ -21,8 +21,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.resource.PathResourcePack;
 
 import net.dries007.tfc.common.blockentities.CrucibleBlockEntity;
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
-import net.dries007.tfc.common.capabilities.heat.IHeatBlock;
 
 public class Events
 {
