@@ -9,7 +9,8 @@
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/silver"
+      "item": "tfc:metal/ingot/silver",
+      "count": 1
     }
   ],
   "additives": [],

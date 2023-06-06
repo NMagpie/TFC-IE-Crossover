@@ -9,7 +9,8 @@
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/tin"
+      "item": "tfc:metal/ingot/tin",
+      "count": 1
     }
   ],
   "additives": [],

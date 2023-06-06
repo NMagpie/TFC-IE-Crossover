@@ -2,14 +2,15 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 1,
+    "count": 3,
     "base_ingredient": {
       "item": "tfc_ie_addon:ore/rich_lead"
     }
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_lead"
+      "item": "immersiveengineering:ingot_lead",
+      "count": 2
     }
   ],
   "additives": [],

@@ -2,14 +2,15 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 1,
+    "count": 3,
     "base_ingredient": {
       "item": "tfc:ore/rich_cassiterite"
     }
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/tin"
+      "item": "tfc:metal/ingot/tin",
+      "count": 2
     }
   ],
   "additives": [],

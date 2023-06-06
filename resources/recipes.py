@@ -49,6 +49,13 @@ def generate(rm: ResourceManager):
 
     [disable_recipe(rm, recipe) for recipe in TO_REMOVE_RECIPES]
 
+    # CRAFTING RECIPE
+
+    PLATE_METALS = IE_METALS + ['copper', 'gold']
+    for metal in PLATE_METALS:
+        damage_shapeless(rm, 'crafting/%s_sheet_to_plate' % metal, ('%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal), 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_%s' % metal))
+    damage_shapeless(rm, 'crafting/wrought_iron_sheet_to_plate', ('tfc:metal/sheet/wrought_iron', 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_iron'))
+
     # HEAT RECIPES
 
     heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass', None)
@@ -71,6 +78,11 @@ def generate(rm: ResourceManager):
     # BARREL RECIPES
 
     barrel_instant_recipe(rm, 'redstone_acid', {'ingredient': {'tag': 'forge:dusts/redstone'} }, '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
+
+    # COKE OVEN RECIPES
+
+    TFC_COALS = ['bituminous_coal', 'lignite']
+    [coke_oven_recipe(rm, coal, {'item': 'tfc:ore/' + coal}, {'tag': 'forge:coal_coke'}, 500, 1800) for coal in TFC_COALS]
 
     # FERMENTER RECIPES
 
@@ -175,9 +187,9 @@ def generate(rm: ResourceManager):
 
     # ARC FURNACE RECIPES
 
-    grades = [('small', 5), ('poor', 3), ('normal', 2), ('rich', 1)]
+    grades = [('small', 5, 1), ('poor', 7, 2), ('normal', 2, 1), ('rich', 3, 2)]
 
-    for (grade, count) in grades:
+    for (grade, count, output) in grades:
         for (ore, metal) in ORES:
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
                 input =
@@ -186,13 +198,13 @@ def generate(rm: ResourceManager):
                         'base_ingredient':
                         { 'item': 'tfc:ore/%s_%s' % (grade, ore) }
                     },
-                results = [ {'item': 'tfc:metal/ingot/%s' % metal} ],
+                results = ('%s tfc:metal/ingot/%s' % (output, metal)),
                 time = 100,
                 energy = 25600,
                 slag = True,
                 )
 
-    for (grade, count) in grades:
+    for (grade, count, output) in grades:
         for ore in ADDON_ORES.keys():
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
                input =
@@ -201,7 +213,7 @@ def generate(rm: ResourceManager):
                    'base_ingredient':
                        { 'item': 'tfc_ie_addon:ore/%s_%s' % (grade, ore) }
                },
-               results = [{'item': 'immersiveengineering:ingot_%s' % ore}],
+               results = ('%s immersiveengineering:ingot_%s' % (output, ore)),
                time = 100,
                energy = 25600,
                slag = True,
@@ -222,8 +234,6 @@ def generate(rm: ResourceManager):
     rm.domain = 'immersiveengineering'
 
     ALL_METALS = set(IE_METALS + TFC_METALS)
-
-    ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
 
     for metal in ALL_METALS:
         metalpress_recipe(rm, 'plate_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
@@ -265,6 +275,20 @@ def generate(rm: ResourceManager):
                        { 'item': 'tfc:wood/planks/%s' % wood_type },
                        { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 4 },
                        1600)
+
+def damage_shapeless(rm: ResourceManager, name_parts: ResourceIdentifier, ingredients: Json, result: Json, group: str = None, conditions: utils.Json = None) -> RecipeContext:
+    res = utils.resource_location(rm.domain, name_parts)
+    rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', res.path), {
+        'type': 'tfc:damage_inputs_shapeless_crafting',
+        'recipe': {
+            'type': 'minecraft:crafting_shapeless',
+            'group': group,
+            'ingredients': utils.item_stack_list(ingredients),
+            'result': utils.item_stack(result),
+            'conditions': utils.recipe_condition(conditions)
+        }
+    })
+    return RecipeContext(rm, res)
 
 def barrel_instant_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input_item: Optional[Json] = None, input_fluid: Optional[Json] = None, output_item: Optional[Json] = None, output_fluid: Optional[Json] = None, sound: Optional[str] = None):
     rm.recipe(('barrel', name_parts), 'tfc:barrel_instant', {
@@ -495,6 +519,14 @@ def quern_recipe(rm: ResourceManager, name: ResourceIdentifier, item: str, resul
         'result': result
     })
 
+def coke_oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, creosote: int, time: int):
+    rm.recipe(('cokeoven', name_parts), 'immersiveengineering:coke_oven', {
+        'creosote': creosote,
+        'input': input,
+        'result': result,
+        'time': time
+    })
+
 def fermenter_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: Json, amount: int = 80):
     rm.recipe(('fermenter', name_parts), 'immersiveengineering:fermenter', {
         'fluid': {
@@ -545,8 +577,8 @@ def plant_oil_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, 
 def disable_recipe(rm: ResourceManager, name_parts: ResourceIdentifier):
     rm.recipe(name_parts, None, {}, conditions='forge:false')
 
-def arc_furnace_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, input: Json, results: list, time: int, energy: int, additives: list = [], secondaries: list = [], slag: bool = False):
-    recipe = { 'input': input, 'results': results, 'additives': additives }
+def arc_furnace_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, input: Json, results: Json, time: int, energy: int, additives: list = [], secondaries: list = [], slag: bool = False):
+    recipe = { 'input': input, 'results':  utils.item_stack_list(results), 'additives': additives }
 
     if secondaries:
         recipe['secondaries'] = secondaries

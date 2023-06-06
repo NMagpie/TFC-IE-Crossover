@@ -98,6 +98,8 @@ TFC_METALS = [
 TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel', 'high_carbon_steel', 'high_carbon_black_steel',
                     'high_carbon_blue_steel', 'high_carbon_red_steel']
 
+ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
+
 DEFAULT_LANG = {
     "block.immersiveengineering.acetaldehyde_fluid_block": "Acetaldehyde",
     "block.immersiveengineering.biodiesel_fluid_block": "Biodiesel",

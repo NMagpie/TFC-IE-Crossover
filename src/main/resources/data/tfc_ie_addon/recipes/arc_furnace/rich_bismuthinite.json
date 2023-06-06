@@ -2,14 +2,15 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 1,
+    "count": 3,
     "base_ingredient": {
       "item": "tfc:ore/rich_bismuthinite"
     }
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/bismuth"
+      "item": "tfc:metal/ingot/bismuth",
+      "count": 2
     }
   ],
   "additives": [],

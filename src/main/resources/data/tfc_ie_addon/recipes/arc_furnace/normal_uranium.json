@@ -9,7 +9,8 @@
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_uranium"
+      "item": "immersiveengineering:ingot_uranium",
+      "count": 1
     }
   ],
   "additives": [],

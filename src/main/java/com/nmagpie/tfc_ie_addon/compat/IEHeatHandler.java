@@ -2,12 +2,9 @@ package com.nmagpie.tfc_ie_addon.compat;
 
 import blusunrize.immersiveengineering.api.tool.ExternalHeaterHandler;
 import com.nmagpie.tfc_ie_addon.config.Config;
-import com.nmagpie.tfc_ie_addon.config.ServerConfig;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
@@ -32,7 +29,7 @@ public class IEHeatHandler
             return blockEntity.getCapability(HeatCapability.BLOCK_CAPABILITY).map(handler ->
             {
                 int FEperTick = Config.SERVER.crucibleExternalHeaterFEperTick.get();
-                if (energyAvailable >= FEperTick)
+                if (energyAvailable >= FEperTick && !redstone)
                 {
                     handler.setTemperature(Config.SERVER.crucibleExternalHeaterTemperature.get());
                     return FEperTick;

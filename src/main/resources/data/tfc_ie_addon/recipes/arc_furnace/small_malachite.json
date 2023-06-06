@@ -9,7 +9,8 @@
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/copper"
+      "item": "tfc:metal/ingot/copper",
+      "count": 1
     }
   ],
   "additives": [],

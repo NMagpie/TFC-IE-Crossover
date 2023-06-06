@@ -9,7 +9,8 @@
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_aluminum"
+      "item": "immersiveengineering:ingot_aluminum",
+      "count": 1
     }
   ],
   "additives": [],

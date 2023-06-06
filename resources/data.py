@@ -79,10 +79,6 @@ def generate(rm: ResourceManager):
 
     rm.item_tag('forge:dusts/saltpeter', 'tfc:powder/saltpeter')
 
-    # METAL & SHEETS TAGS
-
-    [rm.item_tag('forge:plates/%s' % metal, 'tfc:metal/sheet/%s' % metal) for metal in TFC_METALS]
-
     # Item Heats
 
     item_heat(rm, 'slag', 'immersiveengineering:slag', 0.6)
@@ -104,6 +100,12 @@ def generate(rm: ResourceManager):
     #     rm.item_tag('tfc:sandstone', 'tfc:%s_sandstone/%s' % (type, color))
     #     for color in SANDSTONE_COLORS]
     #     for type in SANDSTONE_TYPES]
+
+    # Fuels
+
+    fuel_item(rm, 'coal_coke', 'immersiveengineering:coal_coke', 4400, 1550)
+    fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 44000, 1550)
+    rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
 
 def needs_tool(_tool: str) -> str:
     return {
@@ -147,4 +149,12 @@ def item_size(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredi
         'ingredient': utils.ingredient(ingredient),
         'size': size.name,
         'weight': weight.name
+    })
+
+def fuel_item(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, duration: int, temperature: float, purity: float = None):
+    rm.data(('tfc', 'fuels', name_parts), {
+        'ingredient': utils.ingredient(ingredient),
+        'duration': duration,
+        'temperature': temperature,
+        'purity': purity,
     })

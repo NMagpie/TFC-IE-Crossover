@@ -9,7 +9,8 @@
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_lead"
+      "item": "immersiveengineering:ingot_lead",
+      "count": 1
     }
   ],
   "additives": [],
