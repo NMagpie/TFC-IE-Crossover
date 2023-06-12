@@ -29,6 +29,7 @@ public class IEHeatHandler {
                     handler.setTemperature(Config.SERVER.crucibleExternalHeaterTemperature.get());
                     return FEperTick;
                 }
+                handler.setTemperature(0);
                 return 0;
             }).orElse(0);
         }
