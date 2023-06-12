@@ -16,6 +16,7 @@ import static com.nmagpie.tfc_ie_addon.common.blocks.Blocks.*;
 public class BuddingQuartzBlock extends BuddingAmethystBlock {
 
     private static final Direction[] DIRECTIONS = Direction.values();
+
     public BuddingQuartzBlock(Properties p_152726_) {
         super(p_152726_);
     }

@@ -25,7 +25,6 @@
         "item": "tfc:ore/rich_tetrahedrite"
       }
     },
-
     {
       "chance": 0.35,
       "output": {
@@ -50,7 +49,6 @@
         "item": "tfc:ore/rich_limonite"
       }
     },
-
     {
       "chance": 0.7,
       "output": {
@@ -75,7 +73,6 @@
         "item": "tfc:ore/rich_cassiterite"
       }
     },
-
     {
       "chance": 0.3,
       "output": {

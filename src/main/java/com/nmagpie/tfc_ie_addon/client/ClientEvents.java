@@ -11,19 +11,16 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import java.util.stream.Stream;
 
-public class ClientEvents
-{
+public class ClientEvents {
 
-    public static void init()
-    {
+    public static void init() {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(ClientEvents::clientSetup);
         bus.addListener(ClientEvents::onTextureStitch);
     }
 
-    public static void clientSetup(FMLClientSetupEvent event)
-    {
+    public static void clientSetup(FMLClientSetupEvent event) {
         // Render Types
         final RenderType cutout = RenderType.cutout();
 
@@ -36,10 +33,8 @@ public class ClientEvents
         Blocks.URANIUM_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
     }
 
-    public static void onTextureStitch(TextureStitchEvent.Pre event)
-    {
-        for (Metal metal : Metal.values())
-        {
+    public static void onTextureStitch(TextureStitchEvent.Pre event) {
+        for (Metal metal : Metal.values()) {
             event.addSprite(metal.getSheet());
         }
     }

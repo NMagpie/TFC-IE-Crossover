@@ -15,9 +15,9 @@ public class Registered_Soils {
 
             String soil_name = soil.name().toLowerCase();
 
-            ResourceLocation rl = new ResourceLocation(TerraFirmaCraft.MOD_ID, "block/farmland/"+soil_name);
+            ResourceLocation rl = new ResourceLocation(TerraFirmaCraft.MOD_ID, "block/farmland/" + soil_name);
 
-            ClocheRecipe.registerSoilTexture( Ingredient.of(new ItemStack(soil.getBlock(SoilBlockType.DIRT).get().asItem())), rl);
+            ClocheRecipe.registerSoilTexture(Ingredient.of(new ItemStack(soil.getBlock(SoilBlockType.DIRT).get().asItem())), rl);
         }
 
     }

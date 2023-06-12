@@ -1,6 +1,8 @@
 package com.nmagpie.tfc_ie_addon.common.blockenties;
-import java.lang.reflect.Field;
+
 import sun.misc.Unsafe;
+
+import java.lang.reflect.Field;
 
 /**
  * @author {link:https://github.com/Arnuh}
@@ -10,12 +12,12 @@ public class FieldUtil {
 
     private static Unsafe unsafe;
 
-    static{
-        try{
+    static {
+        try {
             final Field unsafeField = Unsafe.class.getDeclaredField("theUnsafe");
             unsafeField.setAccessible(true);
             unsafe = (Unsafe) unsafeField.get(null);
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
