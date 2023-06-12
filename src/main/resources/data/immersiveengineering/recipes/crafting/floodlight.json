@@ -10,7 +10,7 @@
       "tag": "forge:ingots/wrought_iron"
     },
     "s": {
-      "tag": "forge:sheets/silver"
+      "tag": "forge:plates/silver"
     },
     "e": {
       "item": "immersiveengineering:light_bulb"

@@ -7,7 +7,7 @@
   ],
   "key": {
     "i": {
-      "tag": "forge:plates/wrought_iron"
+      "tag": "forge:plates/iron"
     },
     "b": {
       "item": "tfc:metal/bucket/red_steel"
