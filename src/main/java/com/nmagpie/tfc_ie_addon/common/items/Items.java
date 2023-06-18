@@ -1,5 +1,6 @@
 package com.nmagpie.tfc_ie_addon.common.items;
 
+import blusunrize.immersiveengineering.ImmersiveEngineering;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.util.Metal;
@@ -17,8 +18,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import static net.dries007.tfc.common.TFCItemGroup.MISC;
-
 @SuppressWarnings("unused")
 public class Items {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TFC_IE_Addon.MOD_ID);
@@ -28,6 +27,8 @@ public class Items {
     public static final RegistryObject<Item> WIRECUTTER_HEAD = register("tool_head/wirecutter", TFCItemGroup.METAL);
 
     public static final RegistryObject<Item> HAMMER_HEAD = register("tool_head/ie_hammer", TFCItemGroup.METAL);
+
+    public static final RegistryObject<Item> MOLD_SHEET = register("mold_sheet", () -> new Item(new Item.Properties().stacksTo(1).tab(ImmersiveEngineering.ITEM_GROUP)));
 
     private static final String[] IE_Fluids = {
             "acetaldehyde", "biodiesel", "concrete", "creosote", "ethanol", "herbicide", "phenolic_resin", "plantoil", "redstone_acid"
@@ -45,11 +46,11 @@ public class Items {
     );
 
     public static final Map<Metal, RegistryObject<BucketItem>> METAL_FLUID_BUCKETS = Helpers.mapOfKeys(Metal.class, metal ->
-            register("bucket/metal/" + metal.name(), () -> new BucketItem(Fluids.METALS.get(metal).source(), new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1).tab(MISC)))
+            register("bucket/metal/" + metal.name(), () -> new BucketItem(Fluids.METALS.get(metal).source(), new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1).tab(TFCItemGroup.MISC)))
     );
 
     private static Item.Properties prop() {
-        return new Item.Properties().tab(MISC);
+        return new Item.Properties().tab(TFCItemGroup.MISC);
     }
 
     private static RegistryObject<Item> register(String name, CreativeModeTab group) {

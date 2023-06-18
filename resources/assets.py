@@ -69,7 +69,11 @@ def generate(rm: ResourceManager):
 
     rm.item_model('tool_head/wirecutter').with_lang('Wirecutter Head')
 
-    rm.item_model('tool_head/ie_hammer')
+    rm.item_model('tool_head/ie_hammer').with_lang('Engineer\'s Hammer Head')
+
+    # MOLD
+
+    rm.item_model('mold_sheet').with_lang('Metal Press Mold: Sheet')
 
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)

@@ -81,8 +81,8 @@ def generate(rm: ResourceManager):
 
     # COKE OVEN RECIPES
 
-    TFC_COALS = ['bituminous_coal', 'lignite']
-    [coke_oven_recipe(rm, coal, {'item': 'tfc:ore/' + coal}, {'tag': 'forge:coal_coke'}, 500, 1800) for coal in TFC_COALS]
+    tfc_coals = ['bituminous_coal', 'lignite']
+    [coke_oven_recipe(rm, coal, {'item': 'tfc:ore/' + coal}, {'tag': 'forge:coal_coke'}, 500, 1800) for coal in tfc_coals]
 
     # FERMENTER RECIPES
 
@@ -231,17 +231,19 @@ def generate(rm: ResourceManager):
 
     # METAL PRESS RECIPES
 
-    rm.domain = 'immersiveengineering'
-
     ALL_METALS = set(IE_METALS + TFC_METALS)
 
     for metal in ALL_METALS:
-        metalpress_recipe(rm, 'plate_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
+        metalpress_recipe(rm, 'sheet_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'tfc_ie_addon:mold_sheet', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
 
     for metal in TFC_METALS:
         metalpress_recipe(rm, 'rod_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_rod', { 'count': 2, 'base_ingredient': { 'item': 'tfc:metal/rod/%s' % metal } }, 2400)
 
-    rm.domain = 'tfc_ie_addon'
+    for metal in FL_METALS:
+        metalpress_recipe(rm, 'sheet_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'tfc_ie_addon:mold_sheet', {'item': 'firmalife:metal/sheet/%s' % metal}, 2400, 'firmalife')
+        metalpress_recipe(rm, 'rod_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_rod', { 'count': 2, 'base_ingredient': { 'item': 'firmalife:metal/rod/%s' % metal } }, 2400, 'firmalife')
+
+    metalpress_recipe(rm, 'plate_wrought_iron', {'tag': 'forge:ingots/wrought_iron'}, 'immersiveengineering:mold_plate', {'tag': 'forge:plates/iron'}, 2400)
 
     # SAWMILL RECIPES
 
@@ -601,15 +603,17 @@ def crusher_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, i
 
     rm.recipe(('crusher', name_parts), 'immersiveengineering:crusher', recipe)
 
-def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int):
-    recipe = {
+def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int, modid: str = None) -> RecipeContext:
+    res = utils.resource_location(rm.domain, name_parts)
+    rm.write((*rm.resource_dir, 'data', res.domain, 'recipes/metalpress', res.path), {
+        'conditions': [{'type': 'forge:mod_loaded', 'modid': modid}] if modid is not None else None,
+        'type': 'immersiveengineering:metal_press',
         'mold': mold,
         'input': input,
         'result': result,
-        'energy': energy,
-    }
-
-    rm.recipe(('metalpress', name_parts), 'immersiveengineering:metal_press', recipe)
+        'energy': energy
+    })
+    return RecipeContext(rm, res)
 
 def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, stripped: Json = None, secondaries1: bool = True, secondaries2: bool = False):
     recipe = {

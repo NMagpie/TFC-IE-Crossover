@@ -1,0 +1,18 @@
+{
+  "type": "immersiveengineering:blueprint",
+  "inputs": [
+    {
+      "count": 3,
+      "base_ingredient": {
+        "tag": "forge:plates/steel"
+      }
+    },
+    {
+      "item": "immersiveengineering:wirecutter"
+    }
+  ],
+  "category": "molds",
+  "result": {
+    "item": "tfc_ie_addon:mold_sheet"
+  }
+}

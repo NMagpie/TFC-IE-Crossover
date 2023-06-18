@@ -149,9 +149,7 @@ DEFAULT_LANG = {
     "desc.immersiveengineering.info.mineral.franklinite": "Franklinite",
     "desc.immersiveengineering.info.mineral.quartzite": "Quartzite",
 
-    "manual.immersiveengineering.tfc_ie_changes": "Changes with TerraFirmaCraft",
-
-    "item.tfc_ie_addon.tool_head.ie_hammer": "Engineer's Hammer Head"
+    "manual.immersiveengineering.tfc_ie_changes": "Changes with TerraFirmaCraft"
 }
 
 TO_REMOVE_RECIPES = [
@@ -205,6 +203,11 @@ IE_METALS = [
     'uranium',
     'nickel',
     'silver'
+]
+
+FL_METALS = [
+    'chromium',
+    'stainless_steel'
 ]
 
 [TO_REMOVE_RECIPES.extend([
