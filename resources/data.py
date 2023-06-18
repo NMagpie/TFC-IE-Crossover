@@ -102,8 +102,8 @@ def generate(rm: ResourceManager):
 
     # Fuels
 
-    fuel_item(rm, 'coal_coke', 'immersiveengineering:coal_coke', 4400, 1550)
-    fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 44000, 1550)
+    fuel_item(rm, 'coal_coke', 'immersiveengineering:coal_coke', 3300, 1550)
+    fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 33000, 1550)
     rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
 
 def needs_tool(_tool: str) -> str:
