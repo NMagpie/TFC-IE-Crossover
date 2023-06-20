@@ -20,8 +20,9 @@
     },
     {
       "type": "tfc:quern_recipe",
+      "anchor": "sulfur",
       "recipe": "tfc:quern/sulfur",
-      "text": "$(thing)Sulfur$() is a powder found in certain ores and commonly in $(thing)Mineral Deposits$(). It can be obtained by processing $(l:the_world/ores_and_minerals#sulphur)Sulphur Ores$() and $(thing)Quartz Blocks$() in a $(thing)Crusher$(). $(thing)Sulphur Ores$() can also be processed in a $(l:mechanics/quern)Quern$()."
+      "text": "$(thing)Sulfur$() is a powder found in certain ores and commonly in $(thing)Mineral Deposits$(). It can be obtained by processing $(l:the_world/ores_and_minerals#sulfur)Sulfur Ores$() and $(thing)Quartz Blocks$() in a $(thing)Crusher$(). $(thing)Sulfur Ores$() can also be processed in a $(l:mechanics/quern)Quern$()."
     },
     {
       "type": "patchouli:crafting",

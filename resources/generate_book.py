@@ -67,7 +67,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             text('Not all materials in engineer- ing are as straightforward as wood, stone and various metals. A basic understanding of chemical processes is essential to appreciate the breadth of materials available to you.'),
             quern_recipe('tfc:quern/saltpeter', '$(thing)Saltpeter$() is an alkali salt obtained by processing $(l:the_world/ores_and_minerals#saltpeter)Saltpeter Ores$() and $(thing)Sandstone$() in a $(thing)Crusher$(). $(thing)Saltpeter Ores$() can also be processed in a $(l:mechanics/quern)Quern$().'),
             crafting('immersiveengineering:crafting/fertilizer', text_contents='$(thing)Saltpeter$() is used as a catalyst in the creation of $(thing)Biodiesel$(), and can be used to craft $(thing)Fertilizer$() as shown above.'),
-            quern_recipe('tfc:quern/sulfur', '$(thing)Sulfur$() is a powder found in certain ores and commonly in $(thing)Mineral Deposits$(). It can be obtained by processing $(l:the_world/ores_and_minerals#sulphur)Sulphur Ores$() and $(thing)Quartz Blocks$() in a $(thing)Crusher$(). $(thing)Sulphur Ores$() can also be processed in a $(l:mechanics/quern)Quern$().'),
+            quern_recipe('tfc:quern/sulfur', '$(thing)Sulfur$() is a powder found in certain ores and commonly in $(thing)Mineral Deposits$(). It can be obtained by processing $(l:the_world/ores_and_minerals#sulfur)Sulfur Ores$() and $(thing)Quartz Blocks$() in a $(thing)Crusher$(). $(thing)Sulfur Ores$() can also be processed in a $(l:mechanics/quern)Quern$().').anchor('sulfur'),
             crafting('tfc:crafting/gunpowder', 'tfc:crafting/gunpowder_graphite'),
             text('Mixing $(thing)Saltpeter$(), $(thing)Sulfur$() and $(thing)Charcoal$() allows for the creation of $(thing)Gunpowder$(), a far more scientific process than looting it from slain monsters.')
         )),
@@ -110,11 +110,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         entry('jute', 'Jute', 'tfc:jute_fiber', pages=(
             non_text_first_page(),
             item_spotlight('tfc:jute_fiber', 'Jute', text_contents='Industrial Hemp is a remarkable plant, but today we are going to talk about $(thing)Jute$()! Not only are its seeds useful for the creation of $(thing)Biodiesel$(), $(thing)Jute Fiber$() is also used for the creation of $(thing)Burlap Cloth$(), which is an alternative of Tough Fabric. The seeds can be obtained by harvesting $(l:the_world/wild_crops)Wild Jute$().'),
-            loom_recipe('tfc:loom/burlap_cloth', 'Similar to Tough Fabric, $(thing)Burlap Cloth$() is a resilient weave made from $(thing)Jute Fiber$(). It\'s used to create $(thing)Improved Windmills$() as well as $(thing)Balloons$() and $(thing)Jump Cushions$()'),
-            crafting('immersiveengineering:crafting/cushion', text_contents='$(thing)Jump Cushions$() are simple blocks capable of absorbing impacts and prevent fall damage when landed upon, but, unlike slime blocks, will not bounce you back up'),
-            crafting('immersiveengineering:crafting/strip_curtain', text_contents='$(thing)Strip Curtains$() are pieces of fabric that are mounted to doorframes or other openings to serve in blocking the view. When an entity passes through them, they will emit a redstone signal. $(item)Right click$() them with an $(thing)Engineer\'s Screwdriver$() to enable strong signals.'),
-            text('They can be dyed in the same way leather armor can.'),
-            empty_last_page()
+            loom_recipe('tfc:loom/burlap_cloth', 'Similar to Tough Fabric, $(thing)Burlap Cloth$() is a resilient weave made from $(thing)Jute Fiber$(). It\'s used to create $(thing)Improved Windmills$() as well as $(thing)Balloons$() and $(thing)Jump Cushions$()')
         )),
         entry('quartz', 'Quartz', 'tfc_ie_addon:mineral/quartz_shard', pages=(
             non_text_first_page(),
@@ -126,13 +122,17 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
                     '0': 'tfc_ie_addon:mineral/budding_quartz'
             })
         )),
+        entry('graphite', 'Graphite', 'immersiveengineering:ingot_hop_graphite', pages=(
+            text('Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs. $(thing)HOP Graphite Dust$() is created by compressing eight pieces of $(thing)Coke Dust$() or $(thing)Graphite Powder$() in the $(thing)Industrial Squeezer$(). That dust can then be smelted into an ingot.'),
+            item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(thing)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
+        )),
         entry('steel_obtain', 'Steel Creation', 'tfc:metal/ingot/steel', pages=(
             text('In TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.'),
             item_spotlight('immersiveengineering:slag', text_contents='Also, $(thing)Slag$() now can be obtained while you are forging $(thing)High Carbon Steel Ingot$() to get $(thing)Steel Ingot$().')
         )),
-        entry('graphite', 'Graphite', 'immersiveengineering:ingot_hop_graphite', pages=(
-            text('Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs. $(thing)HOP Graphite Dust$() is created by compressing eight pieces of $(thing)Coke Dust$() or $(thing)Graphite Powder$() in the $(thing)Industrial Squeezer$(). That dust can then be smelted into an ingot.'),
-            item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(thing)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
+        entry('herbicide', 'Herbicide Additions', 'immersiveengineering:herbicide_bucket', pages=(
+            text('$(thing)Herbicide$() works in the TerraFirmaCraft World too! When loaded into a $(thing)Chemical Thrower$() it is dispersed as a fine mist, which withers and destroys any plants it comes in contact with. The fluid will destroy flowers and crops and strip the grass from dirt. It will also dehydrate and ruin farmland. It can therefore be used as an alternative to $(thing)Rotten Compost$().'),
+            item_spotlight('immersiveengineering:herbicide_bucket', text_contents='To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with $(thing)Malachite Powder$() and $(l:tfc_ie_addon:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$().')
         )),
         entry('external_heater', 'Electric Crucible?', 'tfc:crucible', pages=(
             text('There is no Electric Crucible in this mod, but the $(thing)External Heater$() is made to be able to heat a $(l:mechanics/crucible)Crucible$() just like a $(l:mechanics/charcoal_forge)Charcoal Forge$().'),

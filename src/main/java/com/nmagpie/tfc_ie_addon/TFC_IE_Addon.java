@@ -11,6 +11,7 @@ import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.common.network.Packets;
 import com.nmagpie.tfc_ie_addon.common.util.Registered_Soils;
+import com.nmagpie.tfc_ie_addon.common.util.HerbicideEffects;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
 import net.minecraftforge.api.distmarker.Dist;
@@ -52,6 +53,7 @@ public class TFC_IE_Addon {
 
     private void setup(final FMLCommonSetupEvent event) {
         Registered_Soils.register_tfc_soils();
+        HerbicideEffects.register();
     }
 
     private void loadComplete(final FMLLoadCompleteEvent event) {
