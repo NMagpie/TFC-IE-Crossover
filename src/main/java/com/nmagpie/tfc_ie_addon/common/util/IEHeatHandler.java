@@ -1,4 +1,4 @@
-package com.nmagpie.tfc_ie_addon.compat;
+package com.nmagpie.tfc_ie_addon.common.util;
 
 import blusunrize.immersiveengineering.api.tool.ExternalHeaterHandler;
 import com.nmagpie.tfc_ie_addon.config.Config;
@@ -24,10 +24,10 @@ public class IEHeatHandler {
         public int doHeatTick(int energyAvailable, boolean redstone) {
             return blockEntity.getCapability(HeatCapability.BLOCK_CAPABILITY).map(handler ->
             {
-                int FEperTick = Config.SERVER.crucibleExternalHeaterFEPerTick.get();
-                if (energyAvailable >= FEperTick && !redstone) {
+                int FEPerTick = Config.SERVER.crucibleExternalHeaterFEPerTick.get();
+                if (energyAvailable >= FEPerTick && !redstone) {
                     handler.setTemperature(Config.SERVER.crucibleExternalHeaterTemperature.get());
-                    return FEperTick;
+                    return FEPerTick;
                 }
                 handler.setTemperature(0);
                 return 0;

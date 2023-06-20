@@ -1,7 +1,7 @@
 package com.nmagpie.tfc_ie_addon.common;
 
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
-import com.nmagpie.tfc_ie_addon.compat.IEHeatHandler;
+import com.nmagpie.tfc_ie_addon.common.util.IEHeatHandler;
 import net.dries007.tfc.common.blockentities.CrucibleBlockEntity;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.packs.PackType;
