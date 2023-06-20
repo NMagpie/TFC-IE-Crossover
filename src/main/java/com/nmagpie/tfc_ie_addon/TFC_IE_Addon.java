@@ -1,5 +1,6 @@
 package com.nmagpie.tfc_ie_addon;
 
+import blusunrize.immersiveengineering.api.ManualHelper;
 import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.client.ClientForgeEvents;
@@ -16,6 +17,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
@@ -37,6 +39,7 @@ public class TFC_IE_Addon {
         Packets.init();
 
         eventBus.addListener(this::setup);
+        eventBus.addListener(this::loadComplete);
 
         Config.init();
         Events.init();
@@ -51,4 +54,11 @@ public class TFC_IE_Addon {
         Registered_Soils.register_tfc_soils();
     }
 
+    private void loadComplete(final FMLLoadCompleteEvent event) {
+        event.enqueueWork(() -> ManualHelper.addConfigGetter(str -> switch (str) {
+            case "crucibleExternalHeaterFEPerTick" -> Config.SERVER.crucibleExternalHeaterFEPerTick.get();
+            case "crucibleExternalHeaterTemperature" -> Config.SERVER.crucibleExternalHeaterTemperature.get();
+            default -> -1;
+        }));
+    }
 }

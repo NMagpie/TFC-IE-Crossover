@@ -7,7 +7,7 @@ import net.minecraftforge.common.ForgeConfigSpec.Builder;
 import java.util.function.Function;
 
 public class ServerConfig {
-    public final ForgeConfigSpec.IntValue crucibleExternalHeaterFEperTick;
+    public final ForgeConfigSpec.IntValue crucibleExternalHeaterFEPerTick;
     public final ForgeConfigSpec.IntValue crucibleExternalHeaterTemperature;
 
     ServerConfig(Builder innerBuilder) {
@@ -15,7 +15,7 @@ public class ServerConfig {
 
         innerBuilder.push("crucibleExternalHeater");
 
-        crucibleExternalHeaterFEperTick = builder.apply("crucibleExternalHeaterFEperTick").comment("The amount of FE an external heater consumes per tick when heating a crucible.").defineInRange("crucibleExternalHeaterFEperTick", 20, 0, 32000);
+        crucibleExternalHeaterFEPerTick = builder.apply("crucibleExternalHeaterFEPerTick").comment("The amount of FE an external heater consumes per tick when heating a crucible.").defineInRange("crucibleExternalHeaterFEPerTick", 20, 0, 32000);
         crucibleExternalHeaterTemperature = builder.apply("crucibleExternalHeaterTemperature").comment("The maximum temperature a crucible reaches when heated by an external heater.").defineInRange("crucibleExternalHeaterTemperature", 1600, 0, Integer.MAX_VALUE);
 
         innerBuilder.pop();

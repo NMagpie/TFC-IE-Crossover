@@ -1,0 +1,36 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Jute",
+  "category": "tfc_ie_addon:tfc_ie_changes",
+  "icon": "tfc:jute_fiber",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfc:jute_fiber",
+      "title": "Jute",
+      "link_recipes": false,
+      "text": "Industrial Hemp is a remarkable plant, but today we are going to talk about $(thing)Jute$()! Not only are its seeds useful for the creation of $(thing)Biodiesel$(), $(thing)Jute Fiber$() is also used for the creation of $(thing)Burlap Cloth$(), which is an alternative of Tough Fabric. The seeds can be obtained by harvesting $(l:the_world/wild_crops)Wild Jute$()."
+    },
+    {
+      "type": "tfc:loom_recipe",
+      "recipe": "tfc:loom/burlap_cloth",
+      "text": "Similar to Tough Fabric, $(thing)Burlap Cloth$() is a resilient weave made from $(thing)Jute Fiber$(). It's used to create $(thing)Improved Windmills$() as well as $(thing)Balloons$() and $(thing)Jump Cushions$()"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "immersiveengineering:crafting/cushion",
+      "text": "$(thing)Jump Cushions$() are simple blocks capable of absorbing impacts and prevent fall damage when landed upon, but, unlike slime blocks, will not bounce you back up"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "immersiveengineering:crafting/strip_curtain",
+      "text": "$(thing)Strip Curtains$() are pieces of fabric that are mounted to doorframes or other openings to serve in blocking the view. When an entity passes through them, they will emit a redstone signal. $(item)Right click$() them with an $(thing)Engineer's Screwdriver$() to enable strong signals."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "They can be dyed in the same way leather armor can."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 6
+}

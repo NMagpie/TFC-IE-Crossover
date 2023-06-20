@@ -1,0 +1,10 @@
+{
+  "start": {
+    "type": "blueprint",
+    "recipes": [
+      {
+        "item": "tfc_ie_addon:mold_sheet"
+      }
+    ]
+  }
+}

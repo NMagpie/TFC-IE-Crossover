@@ -1,0 +1,13 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "immersiveengineering:furnace_heater"
+      },
+      {
+        "item": "tfc:crucible"
+      }
+    ]
+  }
+}

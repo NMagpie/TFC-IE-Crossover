@@ -59,6 +59,11 @@ def preset_vein(ore: str, vein_type: str, rocks: List[str], spoiler_ore: Optiona
     assert preset is not None
     return Vein(ore, vein_type, preset[0], preset[1], preset[2], preset[3], preset[4], preset[5], preset[6], preset[7], rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
 
+ALLOYS: Dict[str, Tuple[Tuple[str, float, float], ...]] = {
+    'electrum': (('gold', 0.4, 0.6), ('silver', 0.4, 0.6)),
+    'constantan': (('copper', 0.4, 0.6), ('nickel', 0.4, 0.6))
+}
+
 ORE_VEINS: Dict[str, Vein] = {
     'normal_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=SURFACE_METAL_ORE),
     'deep_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=NORMAL_METAL_ORE),
@@ -149,7 +154,7 @@ DEFAULT_LANG = {
     "desc.immersiveengineering.info.mineral.franklinite": "Franklinite",
     "desc.immersiveengineering.info.mineral.quartzite": "Quartzite",
 
-    "manual.immersiveengineering.tfc_ie_changes": "Changes with TerraFirmaCraft"
+    "manual.tfc_ie_addon.tfc_ie_changes": "Changes with TerraFirmaCraft"
 }
 
 TO_REMOVE_RECIPES = [

@@ -24,7 +24,7 @@ public class IEHeatHandler {
         public int doHeatTick(int energyAvailable, boolean redstone) {
             return blockEntity.getCapability(HeatCapability.BLOCK_CAPABILITY).map(handler ->
             {
-                int FEperTick = Config.SERVER.crucibleExternalHeaterFEperTick.get();
+                int FEperTick = Config.SERVER.crucibleExternalHeaterFEPerTick.get();
                 if (energyAvailable >= FEperTick && !redstone) {
                     handler.setTemperature(Config.SERVER.crucibleExternalHeaterTemperature.get());
                     return FEperTick;

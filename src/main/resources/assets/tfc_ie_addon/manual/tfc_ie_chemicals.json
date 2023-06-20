@@ -1,0 +1,25 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc:powder/saltpeter"
+      },
+      {
+        "item": "tfc:powder/sulfur"
+      }
+    ]
+  },
+  "fertilizer": {
+    "type": "crafting",
+    "recipe": "crafting/fertilizer"
+  },
+  "gunpowder": {
+    "type": "crafting",
+    "recipe": "tfc:crafting/gunpowder"
+  },
+  "gunpowder_graphite": {
+    "type": "crafting",
+    "recipe": "tfc:crafting/gunpowder_graphite"
+  }
+}

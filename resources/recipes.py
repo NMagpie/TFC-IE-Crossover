@@ -603,17 +603,15 @@ def crusher_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, i
 
     rm.recipe(('crusher', name_parts), 'immersiveengineering:crusher', recipe)
 
-def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int, modid: str = None) -> RecipeContext:
-    res = utils.resource_location(rm.domain, name_parts)
-    rm.write((*rm.resource_dir, 'data', res.domain, 'recipes/metalpress', res.path), {
-        'conditions': [{'type': 'forge:mod_loaded', 'modid': modid}] if modid is not None else None,
-        'type': 'immersiveengineering:metal_press',
+def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int, conditional_modid: str = None):
+    recipe = {
         'mold': mold,
         'input': input,
         'result': result,
-        'energy': energy
-    })
-    return RecipeContext(rm, res)
+        'energy': energy,
+    }
+
+    rm.recipe(('metalpress', name_parts), 'immersiveengineering:metal_press', recipe, conditions = {'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
 
 def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, stripped: Json = None, secondaries1: bool = True, secondaries2: bool = False):
     recipe = {

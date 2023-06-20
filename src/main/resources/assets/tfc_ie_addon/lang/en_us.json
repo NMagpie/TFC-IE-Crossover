@@ -437,7 +437,7 @@
   "desc.immersiveengineering.info.mineral.aikinite": "Aikinite",
   "desc.immersiveengineering.info.mineral.franklinite": "Franklinite",
   "desc.immersiveengineering.info.mineral.quartzite": "Quartzite",
-  "manual.immersiveengineering.tfc_ie_changes": "Changes with TerraFirmaCraft",
+  "manual.tfc_ie_addon.tfc_ie_changes": "Changes with TerraFirmaCraft",
   "item.tfc_ie_addon.metal.double_ingot.aluminum": "Aluminum Double Ingot",
   "item.tfc_ie_addon.metal.sheet.aluminum": "Aluminum Sheet",
   "block.tfc_ie_addon.fluid.metal.aluminum": "Molten Aluminum",
