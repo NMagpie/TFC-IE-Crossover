@@ -197,6 +197,8 @@ TO_REMOVE_RECIPES = [
     'immersiveengineering:crafting/blastbrick_reinforced',
 
     'immersiveengineering:crafting/alloybrick',
+
+    'immersiveengineering:crafting/storage_steel_to_ingot_steel'
 ]
 
 IE_METALS = [
