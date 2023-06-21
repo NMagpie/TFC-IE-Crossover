@@ -2,16 +2,16 @@
   "type": "immersiveengineering:mixer",
   "inputs": [
     {
-      "tag": "tfc:flux"
+      "tag": "forge:dusts/redstone"
     }
   ],
   "result": {
-    "fluid": "tfc:limewater",
-    "amount": 500
+    "fluid": "immersiveengineering:redstone_acid",
+    "amount": 250
   },
   "fluid": {
     "tag": "tfc:any_fresh_water",
-    "amount": 500
+    "amount": 250
   },
-  "energy": 800
+  "energy": 1600
 }
