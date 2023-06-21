@@ -6,13 +6,13 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "In TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later."
+      "text": "In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later."
     },
     {
       "type": "patchouli:spotlight",
       "item": "immersiveengineering:slag",
       "link_recipes": false,
-      "text": "Also, $(thing)Slag$() now can be obtained while you are forging $(thing)High Carbon Steel Ingot$() to get $(thing)Steel Ingot$()."
+      "text": "Also, $(thing)Slag$() now can be obtained while you are forging $(thing)Pig Iron Ingot$() to get $(thing)High Carbon Steel Ingot$()."
     }
   ],
   "read_by_default": true,

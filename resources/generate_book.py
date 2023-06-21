@@ -127,8 +127,8 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(thing)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
         )),
         entry('steel_obtain', 'Steel Creation', 'tfc:metal/ingot/steel', pages=(
-            text('In TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.'),
-            item_spotlight('immersiveengineering:slag', text_contents='Also, $(thing)Slag$() now can be obtained while you are forging $(thing)High Carbon Steel Ingot$() to get $(thing)Steel Ingot$().')
+            text('In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.'),
+            item_spotlight('immersiveengineering:slag', text_contents='Also, $(thing)Slag$() now can be obtained while you are forging $(thing)Pig Iron Ingot$() to get $(thing)High Carbon Steel Ingot$().')
         )),
         entry('herbicide', 'Herbicide Additions', 'immersiveengineering:herbicide_bucket', pages=(
             text('$(thing)Herbicide$() works in the TerraFirmaCraft World too! When loaded into a $(thing)Chemical Thrower$() it is dispersed as a fine mist, which withers and destroys any plants it comes in contact with. The fluid will destroy flowers and crops and strip the grass from dirt. It will also dehydrate and ruin farmland. It can therefore be used as an alternative to $(thing)Rotten Compost$().'),
