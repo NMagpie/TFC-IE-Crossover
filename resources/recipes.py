@@ -58,7 +58,9 @@ def generate(rm: ResourceManager):
 
     # HEAT RECIPES
 
-    heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass', None)
+    heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass')
+
+    heat_recipe(rm, 'hop_graphite_ingot', 'immersiveengineering:dust_hop_graphite', 2000, 'immersiveengineering:ingot_hop_graphite')
 
     # ORE RECIPES
 

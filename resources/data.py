@@ -82,6 +82,8 @@ def generate(rm: ResourceManager):
 
     item_heat(rm, 'slag', 'immersiveengineering:slag', 0.6)
 
+    item_heat(rm, 'hop_graphite_dust', 'immersiveengineering:dust_hop_graphite', 0.55)
+
     # TOOL TAGS
 
     metal_hammers = ['bismuth_bronze', 'black_bronze', 'bronze', 'copper', 'wrought_iron', 'steel',
