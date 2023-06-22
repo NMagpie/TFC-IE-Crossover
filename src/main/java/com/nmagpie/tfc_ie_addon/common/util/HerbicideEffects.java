@@ -3,7 +3,9 @@ package com.nmagpie.tfc_ie_addon.common.util;
 import blusunrize.immersiveengineering.api.IETags;
 import blusunrize.immersiveengineering.api.tool.ChemthrowerHandler;
 import blusunrize.immersiveengineering.common.entities.ChemthrowerShotEntity;
+import net.dries007.tfc.common.blockentities.CropBlockEntity;
 import net.dries007.tfc.common.blocks.crop.DeadCropBlock;
+import net.dries007.tfc.common.blocks.crop.ICropBlock;
 import net.dries007.tfc.common.blocks.crop.WildCropBlock;
 import net.dries007.tfc.common.blocks.plant.fruit.SeasonalPlantBlock;
 import net.dries007.tfc.common.blocks.soil.SoilBlockType;
@@ -36,22 +38,31 @@ public class HerbicideEffects {
                     return;
 
                 BlockPos pos = result.getBlockPos();
-                BlockPos above = pos.above();
-                Block blockAbove = world.getBlockState(above).getBlock();
                 BlockState hit = world.getBlockState(pos);
+                BlockPos above = pos.above();
+                BlockState stateAbove = world.getBlockState(above);
+                Block blockAbove = stateAbove.getBlock();
                 for (SoilBlockType.Variant soil : SoilBlockType.Variant.values()) {
                     if (hit.is(soil.getBlock(SoilBlockType.GRASS).get().defaultBlockState().getBlock()) || hit.is(soil.getBlock(SoilBlockType.FARMLAND).get().defaultBlockState().getBlock())) {
-                        world.setBlockAndUpdate(pos, soil.getBlock(SoilBlockType.DIRT).get().defaultBlockState());
-                        if (blockAbove instanceof DeadCropBlock || blockAbove instanceof WildCropBlock)
+                        if (blockAbove instanceof ICropBlock cropBlock) {
+                            if (world.getBlockEntity(above) instanceof CropBlockEntity cropBlockEntity) {
+                                final boolean mature = cropBlockEntity.getGrowth() >= 1f;
+                                cropBlock.die(world, above, stateAbove, mature);
+                                world.destroyBlock(above, true);
+                            }
+                        }
+                        else if (blockAbove instanceof DeadCropBlock || blockAbove instanceof WildCropBlock)
                             world.destroyBlock(above, true);
                         else if (blockAbove instanceof BushBlock && !(blockAbove instanceof SeasonalPlantBlock))
                             world.removeBlock(above, false);
-                    } else if (hit.is(soil.getBlock(SoilBlockType.CLAY_GRASS).get().defaultBlockState().getBlock())) {
-                        world.setBlockAndUpdate(pos, soil.getBlock(SoilBlockType.CLAY).get().defaultBlockState());
+                        world.setBlockAndUpdate(pos, soil.getBlock(SoilBlockType.DIRT).get().defaultBlockState());
+                    }
+                    else if (hit.is(soil.getBlock(SoilBlockType.CLAY_GRASS).get().defaultBlockState().getBlock())) {
                         if (blockAbove instanceof WildCropBlock)
                             world.destroyBlock(above, true);
                         else if (blockAbove instanceof BushBlock && !(blockAbove instanceof SeasonalPlantBlock))
                             world.removeBlock(above, false);
+                        world.setBlockAndUpdate(pos, soil.getBlock(SoilBlockType.CLAY).get().defaultBlockState());
                     }
                 }
 
