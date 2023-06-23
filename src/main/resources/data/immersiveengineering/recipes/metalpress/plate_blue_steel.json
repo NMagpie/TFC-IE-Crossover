@@ -3,7 +3,10 @@
   "type": "immersiveengineering:metal_press",
   "mold": "immersiveengineering:mold_plate",
   "input": {
-    "tag": "forge:ingots/blue_steel"
+    "count": 2,
+    "base_ingredient": {
+      "tag": "forge:ingots/blue_steel"
+    }
   },
   "result": {
     "item": "tfc:metal/sheet/blue_steel"

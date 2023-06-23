@@ -68,6 +68,10 @@ def generate(rm: ResourceManager):
                 rm.block_tag('tfc:can_start_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
                 rm.block_tag('tfc:can_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
 
+    # BARREL RECIPES
+
+    barrel_instant_recipe(rm, 'redstone_acid', {'ingredient': {'tag': 'forge:dusts/redstone'} }, '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
+
     # FERMENTER RECIPES
 
     berries = ['blackberry', 'blueberry', 'bunchberry', 'cloudberry', 'cranberry', 'elderberry', 'gooseberry', 'raspberry',
@@ -222,7 +226,7 @@ def generate(rm: ResourceManager):
     ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
 
     for metal in ALL_METALS:
-        metalpress_recipe(rm, 'plate_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
+        metalpress_recipe(rm, 'plate_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
 
     for metal in TFC_METALS:
         metalpress_recipe(rm, 'rod_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_rod', { 'count': 2, 'base_ingredient': { 'item': 'tfc:metal/rod/%s' % metal } }, 2400)
@@ -261,6 +265,16 @@ def generate(rm: ResourceManager):
                        { 'item': 'tfc:wood/planks/%s' % wood_type },
                        { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 4 },
                        1600)
+
+def barrel_instant_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input_item: Optional[Json] = None, input_fluid: Optional[Json] = None, output_item: Optional[Json] = None, output_fluid: Optional[Json] = None, sound: Optional[str] = None):
+    rm.recipe(('barrel', name_parts), 'tfc:barrel_instant', {
+        'input_item': item_stack_ingredient(input_item) if input_item is not None else None,
+        'input_fluid': fluid_stack_ingredient(input_fluid) if input_fluid is not None else None,
+        'output_item': item_stack_provider(output_item) if output_item is not None else None,
+        'output_fluid': fluid_stack(output_fluid) if output_fluid is not None else None,
+        'sound': sound
+    })
+
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', 'crafting', res.path), data)

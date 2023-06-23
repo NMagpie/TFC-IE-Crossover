@@ -1,22 +1,26 @@
 package com.nmagpie.tfc_ie_addon.common;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
-import net.minecraft.data.DataGenerator;
+import com.nmagpie.tfc_ie_addon.compat.IEHeatHandler;
+import javax.annotation.Nonnull;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddPackFindersEvent;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.resource.PathResourcePack;
 
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.nio.file.Path;
+import net.dries007.tfc.common.blockentities.CrucibleBlockEntity;
 
 public class Events
 {
@@ -25,6 +29,8 @@ public class Events
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(Events::onPackFinder);
+
+        MinecraftForge.EVENT_BUS.register(ExternalHeatCapListener.class);
     }
 
     public static void onPackFinder(AddPackFindersEvent event)
@@ -60,4 +66,17 @@ public class Events
         }
     }
 
+    public static class ExternalHeatCapListener
+    {
+        @SubscribeEvent
+        public static void attachExternalHeatHandler(AttachCapabilitiesEvent<BlockEntity> event)
+        {
+            if (event.getObject() instanceof CrucibleBlockEntity crucible)
+            {
+                IEHeatHandler.Provider provider = new IEHeatHandler.Provider(crucible);
+                event.addCapability(Helpers.identifier("crucible_external_heater"), provider);
+                event.addListener(provider::invalidate);
+            }
+        }
+    }
 }
