@@ -31,6 +31,7 @@ TFC_ROCKS: Dict[str, Rock] = {
 }
 
 ROCK_CATEGORIES: List[str] = ['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
+SOIL_VARIANTS: List[str] = ['silt', 'loam', 'sandy_loam', 'silty_loam']
 ORE_GRADES: Dict[str, OreGrade] = {
     'normal': OreGrade(50, 5),
     'poor': OreGrade(30, 3),
@@ -106,55 +107,56 @@ TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel
 ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
 
 DEFAULT_LANG = {
-    "block.immersiveengineering.acetaldehyde_fluid_block": "Acetaldehyde",
-    "block.immersiveengineering.biodiesel_fluid_block": "Biodiesel",
-    "block.immersiveengineering.concrete_fluid_block": "Concrete",
-    "block.immersiveengineering.creosote_fluid_block": "Creosote",
-    "block.immersiveengineering.ethanol_fluid_block": "Ethanol",
-    "block.immersiveengineering.fake_light": "Light",
-    "block.immersiveengineering.herbicide_fluid_block": "Herbicide",
-    "block.immersiveengineering.phenolic_resin_fluid_block": "Phelonic Resin",
-    "block.immersiveengineering.plantoil_fluid_block": "Plant Oil",
-    "block.immersiveengineering.post_transformer": "Post Transformer",
-    "block.immersiveengineering.potted_hemp": "Potted Hemp",
-    "block.immersiveengineering.redstone_acid_fluid_block": "Redstone Acid",
-    "block.immersiveengineering.shader_banner": "Shader Banner",
-    "block.immersiveengineering.shader_banner_wall": "Shader Banner Wall",
-    "block.immersiveengineering.toolbox_block": "Toolbox",
-    "entity.immersiveengineering.chemthrower_shot": "Chemthrower Shot",
-    "entity.immersiveengineering.explosive": "Explosive",
-    "entity.immersiveengineering.fluorescent_tube": "Fluorescent Tube",
-    "entity.immersiveengineering.railgun_shot": "Railgun Shot",
-    "entity.immersiveengineering.revolver_shot": "Revolver Shot",
-    "entity.immersiveengineering.revolver_shot_flare": "Revolver Flare",
-    "entity.immersiveengineering.revolver_shot_homing": "Revolver Homing",
-    "entity.immersiveengineering.revolver_shot_wolfpack": "Revolver Wolfpack",
-    "entity.immersiveengineering.sawblade": "Sawblade",
-    "entity.immersiveengineering.skyline_hook": "Skyline Hook",
-    "item.immersiveengineering.armor_piercing": "Armor Piercing",
-    "item.immersiveengineering.buckshot": "Buckshot",
-    "item.immersiveengineering.casull": "Casull",
-    "item.immersiveengineering.dragons_breath": "Dragon's breath",
-    "item.immersiveengineering.fake_icon_birthday": "Birthday",
-    "item.immersiveengineering.fake_icon_drillbreak": "Drillbreak",
-    "item.immersiveengineering.fake_icon_fried": "Fried",
-    "item.immersiveengineering.fake_icon_lucky": "Lucky",
-    "item.immersiveengineering.fake_icon_ravenholm": "Ravenholm",
-    "item.immersiveengineering.firework": "Firework",
-    "item.immersiveengineering.flare": "Flare",
-    "item.immersiveengineering.he": "HE",
-    "item.immersiveengineering.homing": "Homing",
-    "item.immersiveengineering.potion": "Potion",
-    "item.immersiveengineering.silver": "Silver",
-    "item.immersiveengineering.wolfpack": "Wolfpack",
-    "item.immersiveengineering.wirecoil_structure_rope": "Rope Coil",
+    'block.immersiveengineering.acetaldehyde_fluid_block': 'Acetaldehyde',
+    'block.immersiveengineering.biodiesel_fluid_block': 'Biodiesel',
+    'block.immersiveengineering.concrete_fluid_block': 'Concrete',
+    'block.immersiveengineering.creosote_fluid_block': 'Creosote',
+    'block.immersiveengineering.ethanol_fluid_block': 'Ethanol',
+    'block.immersiveengineering.fake_light': 'Light',
+    'block.immersiveengineering.herbicide_fluid_block': 'Herbicide',
+    'block.immersiveengineering.phenolic_resin_fluid_block': 'Phelonic Resin',
+    'block.immersiveengineering.plantoil_fluid_block': 'Plant Oil',
+    'block.immersiveengineering.post_transformer': 'Post Transformer',
+    'block.immersiveengineering.potted_hemp': 'Potted Hemp',
+    'block.immersiveengineering.redstone_acid_fluid_block': 'Redstone Acid',
+    'block.immersiveengineering.shader_banner': 'Shader Banner',
+    'block.immersiveengineering.shader_banner_wall': 'Shader Banner Wall',
+    'block.immersiveengineering.toolbox_block': 'Toolbox',
+    'entity.immersiveengineering.chemthrower_shot': 'Chemthrower Shot',
+    'entity.immersiveengineering.explosive': 'Explosive',
+    'entity.immersiveengineering.fluorescent_tube': 'Fluorescent Tube',
+    'entity.immersiveengineering.railgun_shot': 'Railgun Shot',
+    'entity.immersiveengineering.revolver_shot': 'Revolver Shot',
+    'entity.immersiveengineering.revolver_shot_flare': 'Revolver Flare',
+    'entity.immersiveengineering.revolver_shot_homing': 'Revolver Homing',
+    'entity.immersiveengineering.revolver_shot_wolfpack': 'Revolver Wolfpack',
+    'entity.immersiveengineering.sawblade': 'Sawblade',
+    'entity.immersiveengineering.skyline_hook': 'Skyline Hook',
+    'item.immersiveengineering.armor_piercing': 'Armor Piercing',
+    'item.immersiveengineering.buckshot': 'Buckshot',
+    'item.immersiveengineering.casull': 'Casull',
+    'item.immersiveengineering.dragons_breath': 'Dragon\'s breath',
+    'item.immersiveengineering.fake_icon_birthday': 'Birthday',
+    'item.immersiveengineering.fake_icon_bttf': 'BTTF',
+    'item.immersiveengineering.fake_icon_drillbreak': 'Drillbreak',
+    'item.immersiveengineering.fake_icon_fried': 'Fried',
+    'item.immersiveengineering.fake_icon_lucky': 'Lucky',
+    'item.immersiveengineering.fake_icon_ravenholm': 'Ravenholm',
+    'item.immersiveengineering.firework': 'Firework',
+    'item.immersiveengineering.flare': 'Flare',
+    'item.immersiveengineering.he': 'HE',
+    'item.immersiveengineering.homing': 'Homing',
+    'item.immersiveengineering.potion': 'Potion',
+    'item.immersiveengineering.silver': 'Silver',
+    'item.immersiveengineering.wolfpack': 'Wolfpack',
+    'item.immersiveengineering.wirecoil_structure_rope': 'Rope Coil',
 
-    "desc.immersiveengineering.info.mineral.stannite": "Stannite",
-    "desc.immersiveengineering.info.mineral.aikinite": "Aikinite",
-    "desc.immersiveengineering.info.mineral.franklinite": "Franklinite",
-    "desc.immersiveengineering.info.mineral.quartzite": "Quartzite",
+    'desc.immersiveengineering.info.mineral.stannite': 'Stannite',
+    'desc.immersiveengineering.info.mineral.aikinite': 'Aikinite',
+    'desc.immersiveengineering.info.mineral.franklinite': 'Franklinite',
+    'desc.immersiveengineering.info.mineral.quartzite': 'Quartzite',
 
-    "manual.tfc_ie_addon.tfc_ie_changes": "Changes with TerraFirmaCraft"
+    'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft'
 }
 
 TO_REMOVE_RECIPES = [
@@ -190,13 +192,14 @@ TO_REMOVE_RECIPES = [
 
     'immersiveengineering:crusher/wool',
 
+    'immersiveengineering:metalpress/rod_steel',
+
     'immersiveengineering:mineral/beryl',
     'immersiveengineering:mineral/cassiterite',
 
+    'immersiveengineering:crafting/alloybrick',
     'immersiveengineering:crafting/cokebrick',
     'immersiveengineering:crafting/blastbrick_reinforced',
-
-    'immersiveengineering:crafting/alloybrick',
 
     'immersiveengineering:crafting/storage_steel_to_ingot_steel',
     'immersiveengineering:crafting/storage_uranium_to_ingot_uranium'

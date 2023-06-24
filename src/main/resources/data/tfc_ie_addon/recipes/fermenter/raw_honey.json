@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:fermenter",
+  "fluid": {
+    "fluid": "immersiveengineering:ethanol",
+    "amount": 200
+  },
+  "input": {
+    "item": "firmalife:raw_honey"
+  },
+  "energy": 6400,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ]
+}

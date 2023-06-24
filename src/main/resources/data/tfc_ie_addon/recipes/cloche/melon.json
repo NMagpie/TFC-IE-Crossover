@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:melon",
-      "count": 1
+      "item": "tfc:melon"
     },
     {
-      "item": "tfc:seeds/melon",
-      "count": 1
+      "item": "tfc:seeds/melon"
     }
   ],
   "input": {

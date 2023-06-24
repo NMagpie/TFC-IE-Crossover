@@ -2,15 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 5,
     "base_ingredient": {
       "item": "tfc_ie_addon:ore/small_lead"
-    }
+    },
+    "count": 5
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_lead",
-      "count": 1
+      "tag": "forge:ingots/lead"
     }
   ],
   "additives": [],

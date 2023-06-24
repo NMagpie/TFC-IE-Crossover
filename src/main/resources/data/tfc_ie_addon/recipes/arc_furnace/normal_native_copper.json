@@ -2,15 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 2,
     "base_ingredient": {
       "item": "tfc:ore/normal_native_copper"
-    }
+    },
+    "count": 2
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/copper",
-      "count": 1
+      "item": "tfc:metal/ingot/copper"
     }
   ],
   "additives": [],

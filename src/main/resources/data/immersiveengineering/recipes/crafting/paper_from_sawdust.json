@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": "minecraft:water",
+        "amount": 1000
+      }
+    }
+  ],
+  "result": {
+    "item": "minecraft:paper",
+    "count": 2
+  }
+}

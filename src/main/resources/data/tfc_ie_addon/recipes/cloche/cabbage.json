@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/cabbage",
-      "count": 1
+      "item": "tfc:food/cabbage"
     },
     {
-      "item": "tfc:seeds/cabbage",
-      "count": 1
+      "item": "tfc:seeds/cabbage"
     }
   ],
   "input": {

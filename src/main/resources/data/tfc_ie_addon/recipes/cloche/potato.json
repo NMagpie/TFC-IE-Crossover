@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/potato",
-      "count": 1
+      "item": "tfc:food/potato"
     },
     {
-      "item": "tfc:seeds/potato",
-      "count": 1
+      "item": "tfc:seeds/potato"
     }
   ],
   "input": {

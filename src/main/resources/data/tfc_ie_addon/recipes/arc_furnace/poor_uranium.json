@@ -2,14 +2,16 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 7,
     "base_ingredient": {
       "item": "tfc_ie_addon:ore/poor_uranium"
-    }
+    },
+    "count": 7
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_uranium",
+      "base_ingredient": {
+        "tag": "forge:ingots/uranium"
+      },
       "count": 2
     }
   ],

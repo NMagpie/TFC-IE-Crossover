@@ -1,5 +1,5 @@
 {
-  "autoload_priority": 2,
+  "autoload_priority": 4,
   "tfc_ie_addon:tfc_ie_changes": {
     "category_weight": 8,
     "entry_list": [

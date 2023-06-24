@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/green_bean",
-      "count": 1
+      "item": "tfc:food/green_bean"
     },
     {
-      "item": "tfc:seeds/green_bean",
-      "count": 1
+      "item": "tfc:seeds/green_bean"
     }
   ],
   "input": {

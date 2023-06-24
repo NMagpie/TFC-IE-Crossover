@@ -8,7 +8,7 @@ plugins {
     id("org.spongepowered.mixin") version "0.7.+"
 }
 
-version = "0.1.8-unofficial"
+version = "0.2.0"
 group = 'com.nmagpie.tfc_ie_addon'
 archivesBaseName = 'tfc_ie_addon'
 
@@ -153,6 +153,7 @@ dependencies {
 
     //Immersive Engineering
     implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}")
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}:api")
     implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}:datagen")
 
     //Jade

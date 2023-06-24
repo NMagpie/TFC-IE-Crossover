@@ -2,14 +2,16 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 3,
     "base_ingredient": {
       "item": "tfc:ore/rich_limonite"
-    }
+    },
+    "count": 3
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/cast_iron",
+      "base_ingredient": {
+        "item": "tfc:metal/ingot/cast_iron"
+      },
       "count": 2
     }
   ],

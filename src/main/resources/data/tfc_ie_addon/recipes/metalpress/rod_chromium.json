@@ -1,21 +1,19 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "firmalife"
-    }
-  ],
   "type": "immersiveengineering:metal_press",
   "mold": "immersiveengineering:mold_rod",
   "input": {
     "tag": "forge:ingots/chromium"
   },
   "result": {
-    "count": 2,
-    "base_ingredient": {
-      "item": "firmalife:metal/rod/chromium"
-    }
+    "item": "firmalife:metal/rod/chromium",
+    "count": 2
   },
-  "energy": 2400
+  "energy": 2400,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ]
 }

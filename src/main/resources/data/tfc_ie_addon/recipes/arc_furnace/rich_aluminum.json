@@ -2,14 +2,16 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 3,
     "base_ingredient": {
       "item": "tfc_ie_addon:ore/rich_aluminum"
-    }
+    },
+    "count": 3
   },
   "results": [
     {
-      "item": "immersiveengineering:ingot_aluminum",
+      "base_ingredient": {
+        "tag": "forge:ingots/aluminum"
+      },
       "count": 2
     }
   ],

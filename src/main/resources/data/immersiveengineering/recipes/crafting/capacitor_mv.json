@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "waw",
+    "fef",
+    "wcw"
+  ],
+  "key": {
+    "w": {
+      "tag": "forge:treated_wood"
+    },
+    "f": {
+      "tag": "forge:ingots/steel"
+    },
+    "a": {
+      "tag": "forge:plates/nickel"
+    },
+    "c": {
+      "tag": "forge:plates/iron"
+    },
+    "e": {
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": {
+          "tag": "forge:redstone_acid"
+        },
+        "amount": 1000
+      }
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:capacitor_mv"
+  }
+}

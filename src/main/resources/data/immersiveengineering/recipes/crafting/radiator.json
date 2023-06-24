@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ici",
+    "cbc",
+    "ici"
+  ],
+  "key": {
+    "i": {
+      "tag": "forge:sheetmetals/steel"
+    },
+    "c": {
+      "tag": "forge:plates/copper"
+    },
+    "b": {
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": "minecraft:water",
+        "amount": 1000
+      }
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:radiator",
+    "count": 4
+  }
+}

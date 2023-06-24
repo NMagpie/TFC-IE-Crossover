@@ -10,7 +10,7 @@ displayName = "TFC + IE Crossover"
 displayURL = "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover"
 logoFile = "logo.png"
 credits = "Thanks to Developers of such wonderful mods as TerraFirmaCraft: TNG and Immersive Engineering.\nEspecially to EERussianguy, whose addon FirmaLife was used as base for this addon.\nSome textures of BluSunrize were used or modified.\nAlso, were used some textures from TFC: TNG, all credits to the developers."
-authors = "NMagpie"
+authors = "NMagpie and maintained by HermitOwO"
 description = "Addon that makes TFC and IE compatible."
 updateJSONURL = "https://raw.githubusercontent.com/NMagpie/TFC-IE-Crossover/1.18.x/update.json"
 
@@ -38,7 +38,7 @@ side = "BOTH"
 [[dependencies.tfc_ie_addon]]
 modId = "immersiveengineering"
 mandatory = true
-versionRange = "[1.18.2-8.3.0-155,)"
+versionRange = "[1.18.2-8.4.0-161,)"
 ordering = "AFTER"
 side = "BOTH"
 

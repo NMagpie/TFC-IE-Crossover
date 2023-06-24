@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/oat",
-      "count": 1
+      "item": "tfc:food/oat"
     },
     {
-      "item": "tfc:seeds/oat",
-      "count": 1
+      "item": "tfc:seeds/oat"
     }
   ],
   "input": {

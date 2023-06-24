@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/soybean",
-      "count": 1
+      "item": "tfc:food/soybean"
     },
     {
-      "item": "tfc:seeds/soybean",
-      "count": 1
+      "item": "tfc:seeds/soybean"
     }
   ],
   "input": {

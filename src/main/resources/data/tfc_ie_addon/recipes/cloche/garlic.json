@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/garlic",
-      "count": 1
+      "item": "tfc:food/garlic"
     },
     {
-      "item": "tfc:seeds/garlic",
-      "count": 1
+      "item": "tfc:seeds/garlic"
     }
   ],
   "input": {

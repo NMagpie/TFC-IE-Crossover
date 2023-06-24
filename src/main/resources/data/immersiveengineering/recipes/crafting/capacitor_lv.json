@@ -16,9 +16,13 @@
       "tag": "forge:plates/lead"
     },
     "e": {
-      "tag": "forge:redstone_acid",
-      "amount": 1000,
-      "type": "immersiveengineering:fluid"
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": {
+          "tag": "forge:redstone_acid"
+        },
+        "amount": 1000
+      }
     }
   },
   "result": {

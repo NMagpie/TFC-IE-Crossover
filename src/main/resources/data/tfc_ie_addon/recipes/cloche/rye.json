@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/rye",
-      "count": 1
+      "item": "tfc:food/rye"
     },
     {
-      "item": "tfc:seeds/rye",
-      "count": 1
+      "item": "tfc:seeds/rye"
     }
   ],
   "input": {

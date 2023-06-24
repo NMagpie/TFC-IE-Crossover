@@ -2,15 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 5,
     "base_ingredient": {
       "item": "tfc:ore/small_cassiterite"
-    }
+    },
+    "count": 5
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/tin",
-      "count": 1
+      "item": "tfc:metal/ingot/tin"
     }
   ],
   "additives": [],

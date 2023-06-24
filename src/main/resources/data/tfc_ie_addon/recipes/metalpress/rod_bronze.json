@@ -6,10 +6,8 @@
     "tag": "forge:ingots/bronze"
   },
   "result": {
-    "count": 2,
-    "base_ingredient": {
-      "item": "tfc:metal/rod/bronze"
-    }
+    "item": "tfc:metal/rod/bronze",
+    "count": 2
   },
   "energy": 2400
 }

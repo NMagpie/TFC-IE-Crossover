@@ -6,10 +6,8 @@
     "tag": "forge:ingots/rose_gold"
   },
   "result": {
-    "count": 2,
-    "base_ingredient": {
-      "item": "tfc:metal/rod/rose_gold"
-    }
+    "item": "tfc:metal/rod/rose_gold",
+    "count": 2
   },
   "energy": 2400
 }

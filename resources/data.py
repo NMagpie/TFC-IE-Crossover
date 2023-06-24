@@ -108,6 +108,8 @@ def generate(rm: ResourceManager):
     fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 33000, 1550)
     rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
 
+    rm.item_tag('forge:rods/all_metal', '#forge:rods/wrought_iron')
+
 def needs_tool(_tool: str) -> str:
     return {
         'wood': 'forge:needs_wood_tool', 'stone': 'forge:needs_wood_tool',

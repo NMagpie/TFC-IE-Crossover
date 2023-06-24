@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/tomato",
-      "count": 1
+      "item": "tfc:food/tomato"
     },
     {
-      "item": "tfc:seeds/tomato",
-      "count": 1
+      "item": "tfc:seeds/tomato"
     }
   ],
   "input": {

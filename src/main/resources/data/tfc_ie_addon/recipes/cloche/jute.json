@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:jute",
-      "count": 1
+      "item": "tfc:jute"
     },
     {
-      "item": "tfc:seeds/jute",
-      "count": 1
+      "item": "tfc:seeds/jute"
     }
   ],
   "input": {
