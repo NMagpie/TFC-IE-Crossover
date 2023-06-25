@@ -19,7 +19,7 @@
     "amount": 500
   },
   "fluid": {
-    "tag": "tfc:any_fresh_water",
+    "tag": "tfc:fresh_water",
     "amount": 500
   },
   "energy": 3200

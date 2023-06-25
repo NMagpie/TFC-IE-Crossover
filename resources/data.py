@@ -1,12 +1,9 @@
 from enum import Enum, auto
 
 from mcresources import ResourceManager, loot_tables
-from mcresources.type_definitions import Json
 
 from constants import *
 from mcresources import utils
-
-from recipes import fluid_ingredient
 
 class Size(Enum):
     tiny = auto()
@@ -31,7 +28,7 @@ class Category(Enum):
 def generate(rm: ResourceManager):
     ### TAGS ###
 
-    # Ore tags
+    # ORE TAGS
     for ore in ADDON_ORES.keys():
         rm.block_tag('forge:ores', '#forge:ores/%s' % ore)
         rm.block_tag('forge:ores/%s' % ore, '#tfc_ie_addon:ores/%s/poor' % ore, '#tfc_ie_addon:ores/%s/normal' % ore, '#tfc_ie_addon:ores/%s/rich' % ore)
@@ -78,7 +75,7 @@ def generate(rm: ResourceManager):
 
     rm.item_tag('forge:dusts/saltpeter', 'tfc:powder/saltpeter')
 
-    # Item Heats
+    # ITEM HEATS
 
     item_heat(rm, 'slag', 'immersiveengineering:slag', 0.6)
 
@@ -102,13 +99,17 @@ def generate(rm: ResourceManager):
     #     for color in SANDSTONE_COLORS]
     #     for type in SANDSTONE_TYPES]
 
-    # Fuels
+    # FUELS
 
     fuel_item(rm, 'coal_coke', 'immersiveengineering:coal_coke', 3300, 1550)
     fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 33000, 1550)
     rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
 
     rm.item_tag('forge:rods/all_metal', '#forge:rods/wrought_iron')
+
+    # FORBIDDEN IN CRATES (HUGE ITEMS)
+
+    rm.item_tag('immersiveengineering:forbidden_in_crates', '#tfc:large_vessels', '#tfc:anvils', '#tfc:barrels', 'tfc:powderkeg')
 
 def needs_tool(_tool: str) -> str:
     return {

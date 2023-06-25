@@ -1,5 +1,5 @@
 {
-  "type": "immersiveengineering:turn_and_copy",
+  "type": "tfc_ie_addon:shaped_fluid",
   "group": "ie_concrete",
   "pattern": [
     "scs",
@@ -17,11 +17,9 @@
       "tag": "forge:gravel"
     },
     "b": {
-      "type": "tfc:fluid_item",
-      "fluid_ingredient": {
-        "ingredient": "minecraft:water",
-        "amount": 1000
-      }
+      "tag": "minecraft:water",
+      "amount": 1000,
+      "type": "immersiveengineering:fluid"
     }
   },
   "result": {

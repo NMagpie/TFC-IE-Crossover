@@ -10,7 +10,7 @@
     "amount": 125
   },
   "fluid": {
-    "tag": "tfc:any_fresh_water",
+    "tag": "tfc:fresh_water",
     "amount": 125
   },
   "energy": 800

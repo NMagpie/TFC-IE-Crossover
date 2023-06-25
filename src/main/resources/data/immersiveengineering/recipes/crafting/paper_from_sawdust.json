@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "tfc_ie_addon:shapeless_fluid",
   "ingredients": [
     {
       "tag": "forge:dusts/wood"
@@ -14,11 +14,9 @@
       "tag": "forge:dusts/wood"
     },
     {
-      "type": "tfc:fluid_item",
-      "fluid_ingredient": {
-        "ingredient": "minecraft:water",
-        "amount": 1000
-      }
+      "tag": "minecraft:water",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
     }
   ],
   "result": {

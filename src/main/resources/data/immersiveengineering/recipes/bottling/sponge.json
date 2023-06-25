@@ -2,7 +2,7 @@
   "type": "immersiveengineering:bottling_machine",
   "fluid": {
     "amount": 1000,
-    "tag": "tfc:any_fresh_water"
+    "tag": "tfc:fresh_water"
   },
   "input": {
     "item": "minecraft:sponge"

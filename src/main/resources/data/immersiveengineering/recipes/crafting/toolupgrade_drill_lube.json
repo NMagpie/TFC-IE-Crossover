@@ -1,0 +1,24 @@
+{
+  "type": "tfc_ie_addon:shaped_fluid",
+  "pattern": [
+    " i ",
+    "ioi",
+    " ip"
+  ],
+  "key": {
+    "o": {
+      "tag": "forge:plantoil",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
+    },
+    "i": {
+      "tag": "forge:plates/iron"
+    },
+    "p": {
+      "item": "immersiveengineering:fluid_pipe"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:toolupgrade_drill_lube"
+  }
+}

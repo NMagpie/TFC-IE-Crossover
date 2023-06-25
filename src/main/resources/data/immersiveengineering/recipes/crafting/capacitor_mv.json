@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "tfc_ie_addon:shaped_fluid",
   "pattern": [
     "waw",
     "fef",
@@ -19,13 +19,9 @@
       "tag": "forge:plates/iron"
     },
     "e": {
-      "type": "tfc:fluid_item",
-      "fluid_ingredient": {
-        "ingredient": {
-          "tag": "forge:redstone_acid"
-        },
-        "amount": 1000
-      }
+      "tag": "forge:redstone_acid",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
     }
   },
   "result": {

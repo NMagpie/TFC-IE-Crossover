@@ -167,7 +167,7 @@ def generate(rm: ResourceManager):
     for (grade, count, output) in grades:
         for (ore, metal) in ORES:
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
-                input = str(count) + ' tfc:ore/%s_%s' % (grade, ore),
+                input = '%s tfc:ore/%s_%s' % (count, grade, ore),
                 results = ('%s tfc:metal/ingot/%s' % (output, metal)),
                 time = 100,
                 energy = 25600,
@@ -176,7 +176,7 @@ def generate(rm: ResourceManager):
     for (grade, count, output) in grades:
         for ore in ADDON_ORES.keys():
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
-               input = str(count) + ' tfc_ie_addon:ore/%s_%s' % (grade, ore),
+               input = '%s tfc_ie_addon:ore/%s_%s' % (count, grade, ore),
                results = ('%s #forge:ingots/%s' % (output, ore)),
                time = 100,
                energy = 25600,
@@ -210,13 +210,13 @@ def generate(rm: ResourceManager):
         for (wood_item, count, energy) in TFC_WOOD_ITEMS:
             sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
                            'tfc:wood/planks/%s_%s' % (wood_type, wood_item),
-                           str(count) + ' tfc:wood/lumber/%s' % wood_type,
+                           '%s tfc:wood/lumber/%s' % (count, wood_type),
                            energy)
 
         for (wood_item, count, energy) in TFC_OTHER_WOOD_ITEMS:
             sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
                            'tfc:wood/%s/%s' % (wood_item, wood_type),
-                           str(count) + ' tfc:wood/lumber/%s' % wood_type,
+                           '%s tfc:wood/lumber/%s' % (count, wood_type),
                            energy)
 
         for log_type in ['wood', 'log']:
@@ -247,7 +247,7 @@ def generate(rm: ResourceManager):
 
     for (grade, count, output) in grades:
         arc_furnace_recipe(rm, '%s_chromite' % grade,
-            input = str(count) + ' firmalife:ore/%s_chromite' % grade,
+            input = '%s firmalife:ore/%s_chromite' % (count, grade),
             results = ('%s #forge:ingots/chromium' % output),
             time = 100,
             energy = 25600,

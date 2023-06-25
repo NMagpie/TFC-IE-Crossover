@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "tfc_ie_addon:shaped_fluid",
   "pattern": [
     "ici",
     "cbc",
@@ -13,11 +13,9 @@
       "tag": "forge:plates/copper"
     },
     "b": {
-      "type": "tfc:fluid_item",
-      "fluid_ingredient": {
-        "ingredient": "minecraft:water",
-        "amount": 1000
-      }
+      "tag": "minecraft:water",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
     }
   },
   "result": {
