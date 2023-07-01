@@ -25,11 +25,13 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 @Mod(TFC_IE_Addon.MOD_ID)
-public class TFC_IE_Addon {
+public class TFC_IE_Addon
+{
     public static final String MOD_ID = "tfc_ie_addon";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public TFC_IE_Addon() {
+    public TFC_IE_Addon()
+    {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         Items.ITEMS.register(eventBus);
@@ -47,13 +49,15 @@ public class TFC_IE_Addon {
 
         eventBus.addListener(this::setup);
 
-        if (FMLEnvironment.dist == Dist.CLIENT) {
+        if (FMLEnvironment.dist == Dist.CLIENT)
+        {
             ClientEvents.init();
             ClientForgeEvents.init();
         }
     }
 
-    private void setup(FMLCommonSetupEvent event) {
+    private void setup(FMLCommonSetupEvent event)
+    {
         Registered_Soils.register_tfc_soils();
         HerbicideEffects.register();
     }

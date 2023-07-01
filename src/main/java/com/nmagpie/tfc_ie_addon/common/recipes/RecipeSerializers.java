@@ -7,18 +7,19 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class RecipeSerializers {
+public class RecipeSerializers
+{
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(
-            ForgeRegistries.RECIPE_SERIALIZERS, TFC_IE_Addon.MOD_ID);
+        ForgeRegistries.RECIPE_SERIALIZERS, TFC_IE_Addon.MOD_ID);
 
     public static final RegistryObject<WrappingRecipeSerializer<FluidAwareShapedRecipe, ?>> SHAPED_SERIALIZER = RECIPE_SERIALIZERS.register(
-            "shaped_fluid", () -> new WrappingRecipeSerializer<>(
-                    RecipeSerializer.SHAPED_RECIPE, FluidAwareShapedRecipe::toVanilla, FluidAwareShapedRecipe::new
-            )
+        "shaped_fluid", () -> new WrappingRecipeSerializer<>(
+            RecipeSerializer.SHAPED_RECIPE, FluidAwareShapedRecipe::toVanilla, FluidAwareShapedRecipe::new
+        )
     );
     public static final RegistryObject<WrappingRecipeSerializer<FluidAwareShapelessRecipe, ?>> SHAPELESS_SERIALIZER = RECIPE_SERIALIZERS.register(
-            "shapeless_fluid", () -> new WrappingRecipeSerializer<>(
-                    RecipeSerializer.SHAPELESS_RECIPE, FluidAwareShapelessRecipe::toVanilla, FluidAwareShapelessRecipe::new
-            )
+        "shapeless_fluid", () -> new WrappingRecipeSerializer<>(
+            RecipeSerializer.SHAPELESS_RECIPE, FluidAwareShapelessRecipe::toVanilla, FluidAwareShapelessRecipe::new
+        )
     );
 }

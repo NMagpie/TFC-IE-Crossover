@@ -1,8 +1,10 @@
 package com.nmagpie.tfc_ie_addon.common;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.util.IEHeatHandler;
-import net.dries007.tfc.common.blockentities.CrucibleBlockEntity;
+import javax.annotation.Nonnull;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
@@ -18,12 +20,12 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.resource.PathResourcePack;
 
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.nio.file.Path;
+import net.dries007.tfc.common.blockentities.CrucibleBlockEntity;
 
-public class Events {
-    public static void init() {
+public class Events
+{
+    public static void init()
+    {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(Events::onPackFinder);
@@ -31,35 +33,46 @@ public class Events {
         MinecraftForge.EVENT_BUS.register(ExternalHeatCapListener.class);
     }
 
-    public static void onPackFinder(AddPackFindersEvent event) {
-        try {
-            if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+    public static void onPackFinder(AddPackFindersEvent event)
+    {
+        try
+        {
+            if (event.getPackType() == PackType.CLIENT_RESOURCES)
+            {
                 var modFile = ModList.get().getModFileById(TFC_IE_Addon.MOD_ID).getFile();
                 var resourcePath = modFile.getFilePath();
-                var pack = new PathResourcePack(modFile.getFileName() + ":overload", resourcePath) {
+                var pack = new PathResourcePack(modFile.getFileName() + ":overload", resourcePath)
+                {
                     @Nonnull
                     @Override
-                    protected Path resolve(@Nonnull String... paths) {
+                    protected Path resolve(@Nonnull String... paths)
+                    {
                         return modFile.findResource(paths);
                     }
                 };
                 var metadata = pack.getMetadataSection(PackMetadataSection.SERIALIZER);
-                if (metadata != null) {
+                if (metadata != null)
+                {
                     TFC_IE_Addon.LOGGER.info("Injecting tfc + ie addon override pack");
                     event.addRepositorySource((consumer, constructor) ->
-                            consumer.accept(constructor.create("builtin/tfc_ie_addon_data", new TextComponent("TFC + IE Resources"), true, () -> pack, metadata, Pack.Position.TOP, PackSource.BUILT_IN, false))
+                        consumer.accept(constructor.create("builtin/tfc_ie_addon_data", new TextComponent("TFC + IE Resources"), true, () -> pack, metadata, Pack.Position.TOP, PackSource.BUILT_IN, false))
                     );
                 }
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             throw new RuntimeException(e);
         }
     }
 
-    public static class ExternalHeatCapListener {
+    public static class ExternalHeatCapListener
+    {
         @SubscribeEvent
-        public static void attachExternalHeatHandler(AttachCapabilitiesEvent<BlockEntity> event) {
-            if (event.getObject() instanceof CrucibleBlockEntity crucible) {
+        public static void attachExternalHeatHandler(AttachCapabilitiesEvent<BlockEntity> event)
+        {
+            if (event.getObject() instanceof CrucibleBlockEntity crucible)
+            {
                 IEHeatHandler.Provider provider = new IEHeatHandler.Provider(crucible);
                 event.addCapability(Helpers.identifier("crucible_external_heater"), provider);
                 event.addListener(provider::invalidate);
