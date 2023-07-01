@@ -5,12 +5,14 @@ from mcresources import utils
 assets_path = '../src/main/resources/assets/'
 texture_forgiveness_paths = ('mallet', 'metal/full',)
 
+
 def main():
     model_locations = glob(assets_path + 'tfc_ie_addon/models/**/*.json', recursive=True)
     state_locations = glob(assets_path + 'tfc_ie_addon/blockstates/**/*.json', recursive=True)
     validate_model_parents(model_locations)
     validate_textures(model_locations)
     validate_blockstate_models(state_locations)
+
 
 def validate_blockstate_models(state_locations):
     tested = 0
@@ -39,6 +41,7 @@ def validate_blockstate_models(state_locations):
                         tested, errors = find_model_file(f, model, tested, errors, 'Blockstate file %s points to non-existent model: %s')
     print('Blockstate Validation: Validated %s files, found %s errors' % (tested, errors))
 
+
 def validate_model_parents(model_locations):
     tested = 0
     errors = 0
@@ -48,6 +51,7 @@ def validate_model_parents(model_locations):
             parent = model_file['parent']
             tested, errors = find_model_file(f, parent, tested, errors, 'Model parent not found. Model: %s, Parent: %s')
     print('Parent Validation: Validated %s files, found %s errors' % (tested, errors))
+
 
 def validate_textures(model_locations):
     tested = 0
@@ -84,6 +88,7 @@ def validate_textures(model_locations):
 
     print('Texture Validation: Verified %s files, %s texture entries, found %s errors' % (files_tested, tested, errors))
 
+
 def find_model_file(file_path: str, initial_path: str, tested: int, errors: int, on_error: str):
     res = utils.resource_location(initial_path)
     if res.domain == 'tfc_ie_addon':
@@ -99,6 +104,7 @@ def find_model_file(file_path: str, initial_path: str, tested: int, errors: int,
 def load(fn: str):
     with open(fn, 'r', encoding='utf-8') as f:
         return json.load(f)
+
 
 if __name__ == '__main__':
     main()

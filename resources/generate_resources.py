@@ -55,5 +55,6 @@ def generate_all(rm: ResourceManager):
 
     rm.flush()
 
+
 if __name__ == '__main__':
     main()

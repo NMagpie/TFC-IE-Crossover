@@ -1,4 +1,4 @@
-from typing import Dict, List, NamedTuple, Sequence, Optional, Literal, Tuple, Any, Set
+from typing import Dict, List, NamedTuple, Optional, Literal, Tuple
 
 OreGrade = NamedTuple('OreGrade', weight=int, grind_amount=int)
 RockCategory = Literal['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
@@ -52,13 +52,16 @@ DEEP_S_METAL_ORE = (110, 25, -64, 30, 70, 10, 30, 60)
 DEEP_MINERAL_ORE = (90, 10, -48, 100, 60, 0, 0, 0)
 HIGH_MINERAL_ORE = (90, 10, 0, 210, 60, 0, 0, 0)
 
+
 def vein(ore: str, vein_type: str, rarity: int, size: int, min_y: int, max_y: int, density: float, poor: float, normal: float, rich: float, rocks: List[str], spoiler_ore: Optional[str] = None, spoiler_rarity: int = 0, spoiler_rocks: List[str] = None, biomes: str = None, height: int = 0, deposits: bool = False):
     # Factory method to allow default values
     return Vein(ore, vein_type, rarity, size, min_y, max_y, density, poor, normal, rich, rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
 
+
 def preset_vein(ore: str, vein_type: str, rocks: List[str], spoiler_ore: Optional[str] = None, spoiler_rarity: int = 0, spoiler_rocks: List[str] = None, biomes: str = None, height: int = 0, preset: Tuple[int, int, int, int, int, int, int, int] = None, deposits: bool = False):
     assert preset is not None
     return Vein(ore, vein_type, preset[0], preset[1], preset[2], preset[3], preset[4], preset[5], preset[6], preset[7], rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
+
 
 ALLOYS: Dict[str, Tuple[Tuple[str, float, float], ...]] = {
     'electrum': (('gold', 0.4, 0.6), ('silver', 0.4, 0.6)),
@@ -69,7 +72,7 @@ ORE_VEINS: Dict[str, Vein] = {
     'normal_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=SURFACE_METAL_ORE),
     'deep_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=NORMAL_METAL_ORE),
     'normal_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive', 'igneous_intrusive'], preset=NORMAL_METAL_ORE),
-    'deep_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive',  'igneous_intrusive'], preset=DEEP_METAL_ORE),
+    'deep_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive', 'igneous_intrusive'], preset=DEEP_METAL_ORE),
     'normal_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=NORMAL_METAL_ORE),
     'deep_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=DEEP_METAL_ORE),
 }
@@ -280,6 +283,7 @@ TFC_WOOD_TYPES = [
     'white_cedar',
     'willow'
 ]
+
 
 def lang(key: str, *args) -> str:
     return ((key % args) if len(args) > 0 else key).replace('_', ' ').replace('/', ' ').title()

@@ -10,7 +10,6 @@ GRADES = ['poor', 'normal', 'rich']
 GRADES_ALL = ['small', 'poor', 'normal', 'rich']
 
 
-
 class LocalInstance:
     INSTANCE_DIR = os.getenv('LOCAL_MINECRAFT_INSTANCE')  # The location of a local .minecraft directory, for testing in external minecraft instance (as hot reloading works much better)
 
@@ -23,6 +22,7 @@ class LocalInstance:
             rm.data = data
             return rm
         return None
+
 
 def main():
     parser = ArgumentParser('generate_book.py')
@@ -43,6 +43,7 @@ def main():
         make_book(rm, I18n.create('en_us'), local_instance=True)
 
     print('Done')
+
 
 def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
     rm.domain = 'tfc_ie_addon'
@@ -80,22 +81,22 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
                 ('M T  ', 'LBBBB', 'LBBBB', 'LBBBB', 'M T  '),
                 ('HHT  ', 'LBB  ', 'LBB  ', 'LBB  ', 'HHT R'),
                 ('MMTmm', 'Mmmmm', 'Hmmm0', 'Mmmmm', 'MMTmS')), mapping={
-                    'S': 'immersiveengineering:steel_scaffolding_standard',
-                    'T': 'immersiveengineering:storage_steel',
-                    'M': 'immersiveengineering:sheetmetal_steel',
-                    'm': 'immersiveengineering:slab_sheetmetal_steel',
-                    'B': 'tfc:fire_bricks',
-                    'L': 'immersiveengineering:light_engineering',
-                    'H': 'immersiveengineering:heavy_engineering',
-                    'R': 'immersiveengineering:rs_engineering',
-                    '0': 'minecraft:cauldron'
+                'S': 'immersiveengineering:steel_scaffolding_standard',
+                'T': 'immersiveengineering:storage_steel',
+                'M': 'immersiveengineering:sheetmetal_steel',
+                'm': 'immersiveengineering:slab_sheetmetal_steel',
+                'B': 'tfc:fire_bricks',
+                'L': 'immersiveengineering:light_engineering',
+                'H': 'immersiveengineering:heavy_engineering',
+                'R': 'immersiveengineering:rs_engineering',
+                '0': 'minecraft:cauldron'
             }),
             multiblock('Coke Oven', '', True, pattern=(
                 ('BBB', 'BBB', 'BBB'),
                 ('BBB', 'BBB', 'BBB'),
                 ('BBB', 'BB0', 'BBB')), mapping={
-                    'B': 'tfc:fire_bricks',
-                    '0': 'tfc:fire_bricks'
+                'B': 'tfc:fire_bricks',
+                '0': 'tfc:fire_bricks'
             })
         )),
         entry('blueprint', 'Blueprint Recipes', 'immersiveengineering:blueprint', pages=(
@@ -118,8 +119,8 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             multiblock('Quartz Cluster', 'Keep in mind that with time $(thing)Budding Quartz Blocks$() can produce more $(thing)Quartz Clusters$().', False, pattern=(
                 ('   ', ' Q ', '   '),
                 ('   ', ' 0 ', '   ')), mapping={
-                    'Q': 'tfc_ie_addon:mineral/quartz_cluster',
-                    '0': 'tfc_ie_addon:mineral/budding_quartz'
+                'Q': 'tfc_ie_addon:mineral/quartz_cluster',
+                '0': 'tfc_ie_addon:mineral/budding_quartz'
             })
         )),
         entry('graphite', 'Graphite', 'immersiveengineering:ingot_hop_graphite', pages=(
@@ -139,6 +140,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             crafting('immersiveengineering:crafting/furnace_heater', text_contents='By default, it heats a $(thing)Crucible$() up to 1600°C, consuming 20IF/t.')
         ))
     ))
+
 
 if __name__ == '__main__':
     main()

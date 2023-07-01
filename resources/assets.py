@@ -1,10 +1,10 @@
-from mcresources import ResourceManager, ItemContext, BlockContext, block_states
-from mcresources import utils, loot_tables
+from mcresources import ResourceManager, ItemContext
+from mcresources import utils
 
 from constants import *
 
-def generate(rm: ResourceManager):
 
+def generate(rm: ResourceManager):
     # ORE STUFF
 
     ores = ['aluminum', 'lead', 'uranium']
@@ -39,7 +39,7 @@ def generate(rm: ResourceManager):
     for (block_name, block_lang, texture, parent) in quartz_parts:
 
         if 'budding' in block_name or 'block' in block_name:
-            block = rm.blockstate('mineral/%s' % block_name, variants = {"": {'model': 'tfc_ie_addon:block/mineral/%s' % block_name}}, use_default_model=False)
+            block = rm.blockstate('mineral/%s' % block_name, variants={"": {'model': 'tfc_ie_addon:block/mineral/%s' % block_name}}, use_default_model=False)
 
             block.with_item_model().with_lang(lang(block_lang))
 
@@ -47,7 +47,7 @@ def generate(rm: ResourceManager):
                 block.with_block_loot('tfc_ie_addon:mineral/%s' % block_name).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
 
         else:
-            block = rm.blockstate('mineral/%s' % block_name, variants = six_ways('tfc_ie_addon:block/mineral/%s' % block_name), use_default_model=False)
+            block = rm.blockstate('mineral/%s' % block_name, variants=six_ways('tfc_ie_addon:block/mineral/%s' % block_name), use_default_model=False)
 
         block.with_block_loot()
 
@@ -57,7 +57,7 @@ def generate(rm: ResourceManager):
         block.with_block_model({
             texture: 'tfc_ie_addon:block/mineral/%s' % block_name,
             'particle': 'tfc_ie_addon:block/mineral/%s' % block_name,
-        }, parent='minecraft:block/' + parent,)
+        }, parent='minecraft:block/' + parent, )
         block.with_lang(lang(block_lang)).with_tag('tfc:prospectable')
 
         if texture == 'all':
@@ -78,6 +78,7 @@ def generate(rm: ResourceManager):
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)
 
+
 def contained_fluid(rm: ResourceManager, name_parts: utils.ResourceIdentifier, base: str, overlay: str) -> 'ItemContext':
     return rm.custom_item_model(name_parts, 'tfc:contained_fluid', {
         'parent': 'forge:item/default',
@@ -87,6 +88,7 @@ def contained_fluid(rm: ResourceManager, name_parts: utils.ResourceIdentifier, b
         }
     })
 
+
 def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifier, overrides: utils.Json, data: Dict[str, Any]) -> ItemContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'assets', res.domain, 'models', 'item', res.path), {
@@ -94,6 +96,7 @@ def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifie
         'overrides': overrides
     })
     return ItemContext(rm, res)
+
 
 def water_based_fluid(rm: ResourceManager, name: str):
     rm.blockstate(('fluid', name)).with_block_model({'particle': 'minecraft:block/water_still'}, parent=None).with_lang(lang(name))
@@ -108,6 +111,7 @@ def water_based_fluid(rm: ResourceManager, name: str):
     item.with_lang(lang('%s bucket', name))
     rm.lang('fluid.tfc_ie_addon.%s' % name, lang(name))
 
+
 def four_ways(model: str) -> List[Dict[str, Any]]:
     return [
         {'model': model, 'y': 90},
@@ -115,6 +119,7 @@ def four_ways(model: str) -> List[Dict[str, Any]]:
         {'model': model, 'y': 180},
         {'model': model, 'y': 270}
     ]
+
 
 def six_ways(model: str) -> Dict[str, Any]:
     return {
@@ -126,17 +131,19 @@ def six_ways(model: str) -> Dict[str, Any]:
         'facing=west': {'model': model, 'x': 90, 'y': 270},
     }
 
+
 def domain_divider(item: str):
     if item == 'ingot' or item == 'plate':
         return 'immersiveengineering:', '_'
     else:
         return 'tfc_ie_addon:metal/', '/'
 
+
 def mineral_parts(mineral: str):
     return [
-            ('%s_block' % mineral, '%s Block' % mineral, 'all', 'cube_all'),
-            ('budding_%s' % mineral, 'Budding %s' % mineral, 'all', 'cube_all'),
-            ('%s_cluster' % mineral, '%s Cluster' % mineral, 'cross', 'cross'),
-            ('large_%s_bud' % mineral, 'Large %s Bud' % mineral, 'cross', 'cross'),
-            ('medium_%s_bud' % mineral, 'Medium %s Bud' % mineral, 'cross', 'cross'),
-            ('small_%s_bud' % mineral, 'Small %s Bud' % mineral, 'cross', 'cross')]
+        ('%s_block' % mineral, '%s Block' % mineral, 'all', 'cube_all'),
+        ('budding_%s' % mineral, 'Budding %s' % mineral, 'all', 'cube_all'),
+        ('%s_cluster' % mineral, '%s Cluster' % mineral, 'cross', 'cross'),
+        ('large_%s_bud' % mineral, 'Large %s Bud' % mineral, 'cross', 'cross'),
+        ('medium_%s_bud' % mineral, 'Medium %s Bud' % mineral, 'cross', 'cross'),
+        ('small_%s_bud' % mineral, 'Small %s Bud' % mineral, 'cross', 'cross')]

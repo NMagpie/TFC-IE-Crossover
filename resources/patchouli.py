@@ -65,12 +65,12 @@ class Book:
                 'extend': 'tfc:field_guide',
                 'name': 'tfc_ie_addon field_guide extension',
                 'landing_text': 'tfc_ie_addon field_guide extension'
-                #'subtitle': '${version}',
+                # 'subtitle': '${version}',
                 # Even though we don't use the book item, we still need patchy to make a book item for us, as it controls the title
                 # If neither we nor patchy make a book item, this will show up as 'Air'. So we make one to allow the title to work properly.
-                #'dont_generate_book': False,
-                #'show_progress': False,
-                #'macros': macros
+                # 'dont_generate_book': False,
+                # 'show_progress': False,
+                # 'macros': macros
             })
 
     def template(self, template_id: str, *components: Component):
@@ -299,18 +299,36 @@ def multimultiblock(text_content: str, *pages) -> Page:
 
 
 def leather_knapping(recipe: str, text_content: str) -> Page: return recipe_page('leather_knapping_recipe', recipe, text_content)
+
+
 def clay_knapping(recipe: str, text_content: str) -> Page: return recipe_page('clay_knapping_recipe', recipe, text_content)
+
+
 def fire_clay_knapping(recipe: str, text_content: str) -> Page: return recipe_page('fire_clay_knapping_recipe', recipe, text_content)
+
+
 def heat_recipe(recipe: str, text_content: str) -> Page: return recipe_page('heat_recipe', recipe, text_content)
+
+
 def quern_recipe(recipe: str, text_content: str) -> Page: return recipe_page('quern_recipe', recipe, text_content)
+
+
 def anvil_recipe(recipe: str, text_content: str) -> Page: return recipe_page('anvil_recipe', recipe, text_content)
+
+
 def welding_recipe(recipe: str, text_content: str) -> Page: return recipe_page('welding_recipe', recipe, text_content)
+
+
 def sealed_barrel_recipe(recipe: str, text_content: str) -> Page: return recipe_page('sealed_barrel_recipe', recipe, text_content)
+
+
 def instant_barrel_recipe(recipe: str, text_content: str) -> Page: return recipe_page('instant_barrel_recipe', recipe, text_content)
+
+
 def loom_recipe(recipe: str, text_content: str) -> Page: return recipe_page('loom_recipe', recipe, text_content)
 
 
-#def rock_knapping_typical(recipe_with_category_format: str, text_content: str) -> Page:
+# def rock_knapping_typical(recipe_with_category_format: str, text_content: str) -> Page:
 #    return page('rock_knapping_recipe', {'recipes': [recipe_with_category_format % c for c in ROCK_CATEGORIES], 'text': text_content}, custom=True, translation_keys=('text',))
 
 
@@ -365,6 +383,5 @@ def header_component(x: int, y: int) -> Component:
 def seperator_component(x: int, y: int) -> Component:
     return Component('patchouli:separator', x, y, {})
 
-
-#def custom_component(x: int, y: int, class_name: str, data: JsonObject) -> Component:
+# def custom_component(x: int, y: int, class_name: str, data: JsonObject) -> Component:
 #    return Component('patchouli:custom', x, y, {'class': 'net.dries007.tfc.compat.patchouli.component.' + class_name, **data})

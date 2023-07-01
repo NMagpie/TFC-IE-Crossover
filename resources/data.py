@@ -1,9 +1,9 @@
 from enum import Enum, auto
 
-from mcresources import ResourceManager, loot_tables
+from mcresources import ResourceManager, utils
 
 from constants import *
-from mcresources import utils
+
 
 class Size(Enum):
     tiny = auto()
@@ -22,8 +22,10 @@ class Weight(Enum):
     heavy = auto()
     very_heavy = auto()
 
+
 class Category(Enum):
     other = auto()
+
 
 def generate(rm: ResourceManager):
     ### TAGS ###
@@ -111,6 +113,7 @@ def generate(rm: ResourceManager):
 
     rm.item_tag('immersiveengineering:forbidden_in_crates', '#tfc:large_vessels', '#tfc:anvils', '#tfc:barrels', 'tfc:powderkeg')
 
+
 def needs_tool(_tool: str) -> str:
     return {
         'wood': 'forge:needs_wood_tool', 'stone': 'forge:needs_wood_tool',
@@ -122,6 +125,7 @@ def needs_tool(_tool: str) -> str:
         'colored_steel': 'tfc:needs_colored_steel_tool'
     }[_tool]
 
+
 def match_entity_tag(tag: str):
     return {
         'condition': 'minecraft:entity_properties',
@@ -130,6 +134,7 @@ def match_entity_tag(tag: str):
         },
         'entity': 'this'
     }
+
 
 def item_heat(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, heat_capacity: float, melt_temperature: Optional[float] = None, mb: Optional[int] = None):
     if melt_temperature is not None:
@@ -148,12 +153,14 @@ def item_heat(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredi
         'welding_temperature': welding_temperature
     })
 
+
 def item_size(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, size: Size, weight: Weight):
     rm.data(('tfc', 'item_sizes', name_parts), {
         'ingredient': utils.ingredient(ingredient),
         'size': size.name,
         'weight': weight.name
     })
+
 
 def fuel_item(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, duration: int, temperature: float, purity: float = None):
     rm.data(('tfc', 'fuels', name_parts), {
