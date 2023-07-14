@@ -2,10 +2,10 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 5,
     "base_ingredient": {
       "item": "tfc:ore/small_sphalerite"
-    }
+    },
+    "count": 5
   },
   "results": [
     {

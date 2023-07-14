@@ -1,0 +1,10 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "immersiveengineering:slag"
+      }
+    ]
+  }
+}

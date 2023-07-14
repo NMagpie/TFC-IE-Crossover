@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/beet",
-      "count": 1
+      "item": "tfc:food/beet"
     },
     {
-      "item": "tfc:seeds/beet",
-      "count": 1
+      "item": "tfc:seeds/beet"
     }
   ],
   "input": {

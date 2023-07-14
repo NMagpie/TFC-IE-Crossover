@@ -1,11 +1,7 @@
 package com.nmagpie.tfc_ie_addon.common.util;
 
+import java.util.Locale;
 import com.nmagpie.tfc_ie_addon.common.Helpers;
-import net.dries007.tfc.common.TFCArmorMaterials;
-import net.dries007.tfc.common.TFCItemGroup;
-import net.dries007.tfc.common.TFCTiers;
-import net.dries007.tfc.util.ToolTier;
-import net.dries007.tfc.util.registry.RegistryMetal;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
@@ -13,43 +9,46 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
 import net.minecraftforge.common.util.NonNullFunction;
 
-import java.util.Locale;
+import net.dries007.tfc.common.TFCArmorMaterials;
+import net.dries007.tfc.common.TFCItemGroup;
+import net.dries007.tfc.common.TFCTiers;
+import net.dries007.tfc.util.registry.RegistryMetal;
 
 public enum Metal implements RegistryMetal
 {
     ELECTRUM(
-            0xFCB74A,
-            Rarity.EPIC,
-            TFCTiers.WROUGHT_IRON,
-            TFCArmorMaterials.WROUGHT_IRON,
-            net.dries007.tfc.util.Metal.Tier.TIER_IV),
+        0xFCB74A,
+        Rarity.EPIC,
+        TFCTiers.WROUGHT_IRON,
+        TFCArmorMaterials.WROUGHT_IRON,
+        net.dries007.tfc.util.Metal.Tier.TIER_IV),
 
     CONSTANTAN(
-            0xEC8068,
-            Rarity.EPIC,
-            TFCTiers.STEEL,
-            TFCArmorMaterials.STEEL,
-            net.dries007.tfc.util.Metal.Tier.TIER_IV),
+        0xEC8068,
+        Rarity.EPIC,
+        TFCTiers.STEEL,
+        TFCArmorMaterials.STEEL,
+        net.dries007.tfc.util.Metal.Tier.TIER_IV),
 
     ALUMINUM(
-            0xCCC1BC,
-            Rarity.COMMON,
-            TFCTiers.BRONZE,
-            TFCArmorMaterials.BRONZE,
-            net.dries007.tfc.util.Metal.Tier.TIER_I),
+        0xCCC1BC,
+        Rarity.COMMON,
+        TFCTiers.BRONZE,
+        TFCArmorMaterials.BRONZE,
+        net.dries007.tfc.util.Metal.Tier.TIER_I),
 
     LEAD(
-            0x433F4D,
-            Rarity.RARE,
-            TFCTiers.BLACK_BRONZE,
-            TFCArmorMaterials.WROUGHT_IRON,
-            net.dries007.tfc.util.Metal.Tier.TIER_III),
+        0x433F4D,
+        Rarity.RARE,
+        TFCTiers.BLACK_BRONZE,
+        TFCArmorMaterials.WROUGHT_IRON,
+        net.dries007.tfc.util.Metal.Tier.TIER_III),
 
     URANIUM(0x738A6C,
-            Rarity.EPIC,
-            TFCTiers.STEEL,
-            TFCArmorMaterials.STEEL,
-            net.dries007.tfc.util.Metal.Tier.TIER_IV);
+        Rarity.EPIC,
+        TFCTiers.STEEL,
+        TFCArmorMaterials.STEEL,
+        net.dries007.tfc.util.Metal.Tier.TIER_IV);
 
     private final String serializedName;
     private final int color;

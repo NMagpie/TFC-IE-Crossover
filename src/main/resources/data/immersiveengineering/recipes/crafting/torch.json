@@ -1,0 +1,24 @@
+{
+  "type": "tfc_ie_addon:shaped_fluid",
+  "pattern": [
+    "wc ",
+    "sss"
+  ],
+  "key": {
+    "w": {
+      "tag": "minecraft:wool"
+    },
+    "c": {
+      "tag": "forge:creosote",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
+    },
+    "s": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "tfc:torch",
+    "count": 12
+  }
+}

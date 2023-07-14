@@ -1,0 +1,26 @@
+{
+  "type": "tfc_ie_addon:shapeless_fluid",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "forge:dusts/wood"
+    },
+    {
+      "tag": "minecraft:water",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
+    }
+  ],
+  "result": {
+    "item": "minecraft:paper",
+    "count": 2
+  }
+}

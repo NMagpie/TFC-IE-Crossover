@@ -5,7 +5,11 @@
   },
   "display": {
     "fixed": {
-      "translation": [ 0, 6, 0 ]
+      "translation": [
+        0,
+        6,
+        0
+      ]
     }
   }
 }

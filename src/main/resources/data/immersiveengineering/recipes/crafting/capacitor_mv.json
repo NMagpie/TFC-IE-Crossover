@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "tfc_ie_addon:shaped_fluid",
   "pattern": [
     "waw",
     "fef",
@@ -13,15 +13,15 @@
       "tag": "forge:ingots/steel"
     },
     "a": {
-      "tag": "forge:sheets/nickel"
+      "tag": "forge:plates/nickel"
     },
     "c": {
-      "tag": "forge:sheets/wrought_iron"
+      "tag": "forge:plates/iron"
     },
     "e": {
       "tag": "forge:redstone_acid",
       "amount": 1000,
-      "type": "immersiveengineering:fluid"
+      "type": "tfc_ie_addon:fluid"
     }
   },
   "result": {

@@ -3,8 +3,9 @@ package com.nmagpie.tfc_ie_addon.world.feature;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Predicate;
-
 import com.google.common.collect.Lists;
+import com.mojang.datafixers.util.Pair;
+import com.mojang.serialization.Codec;
 import com.nmagpie.tfc_ie_addon.common.blocks.BuddingQuartzBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,15 +23,14 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.minecraft.world.level.material.FluidState;
 
-import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.Codec;
 import net.dries007.tfc.util.Helpers;
 
 /**
  * {@link net.dries007.tfc.world.feature.TFCGeodeFeature but with filling configuration and placement}
  */
 
-public class TFC_IE_GeodeFeature extends Feature<TFC_IE_GeodeConfig> {
+public class TFC_IE_GeodeFeature extends Feature<TFC_IE_GeodeConfig>
+{
 
     public TFC_IE_GeodeFeature(Codec<TFC_IE_GeodeConfig> codec)
     {
@@ -148,11 +148,12 @@ public class TFC_IE_GeodeFeature extends Feature<TFC_IE_GeodeConfig> {
                 }
                 else if (pointAt >= innerLimit)
                 {
-                    boolean flag1 = (double)random.nextFloat() < 0.083D;
+                    boolean flag1 = (double) random.nextFloat() < 0.083D;
 
                     this.safeSetBlock(level, pos, config.inner().getRandomValue(random).orElseThrow(), predicate);
 
-                    if ((flag1) && (double)random.nextFloat() < 0.35D) {
+                    if ((flag1) && (double) random.nextFloat() < 0.35D)
+                    {
                         list2.add(pos.immutable());
                     }
                 }
@@ -167,21 +168,26 @@ public class TFC_IE_GeodeFeature extends Feature<TFC_IE_GeodeConfig> {
             }
         }
 
-        for(BlockPos blockpos4 : list2) {
+        for (BlockPos blockpos4 : list2)
+        {
             BlockState blockstate1 = config.innerPlacements().getRandomValue(random).orElseThrow();
 
-            for(Direction direction : Helpers.DIRECTIONS) {
-                if (blockstate1.hasProperty(BlockStateProperties.FACING)) {
+            for (Direction direction : Helpers.DIRECTIONS)
+            {
+                if (blockstate1.hasProperty(BlockStateProperties.FACING))
+                {
                     blockstate1 = blockstate1.setValue(BlockStateProperties.FACING, direction);
                 }
 
                 BlockPos blockpos5 = blockpos4.relative(direction);
                 BlockState blockstate2 = level.getBlockState(blockpos5);
-                if (blockstate1.hasProperty(BlockStateProperties.WATERLOGGED)) {
+                if (blockstate1.hasProperty(BlockStateProperties.WATERLOGGED))
+                {
                     blockstate1 = blockstate1.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(blockstate2.getFluidState().isSource()));
                 }
 
-                if (BuddingQuartzBlock.canClusterGrowAtState(blockstate2)) {
+                if (BuddingQuartzBlock.canClusterGrowAtState(blockstate2))
+                {
                     this.safeSetBlock(level, blockpos5, blockstate1, predicate);
                     break;
                 }

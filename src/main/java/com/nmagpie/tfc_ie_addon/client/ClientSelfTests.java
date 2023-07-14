@@ -1,5 +1,6 @@
 package com.nmagpie.tfc_ie_addon.client;
 
+import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.BlockModelShaper;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -8,10 +9,7 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.List;
-
-import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.LOGGER;
-import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.MOD_ID;
+import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.*;
 import static net.dries007.tfc.util.SelfTests.*;
 
 public final class ClientSelfTests

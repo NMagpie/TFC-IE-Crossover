@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:pumpkin",
-      "count": 1
+      "item": "tfc:pumpkin"
     },
     {
-      "item": "tfc:seeds/pumpkin",
-      "count": 1
+      "item": "tfc:seeds/pumpkin"
     }
   ],
   "input": {

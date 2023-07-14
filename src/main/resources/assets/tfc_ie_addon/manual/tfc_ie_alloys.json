@@ -1,0 +1,13 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "immersiveengineering:ingot_electrum"
+      },
+      {
+        "item": "immersiveengineering:ingot_constantan"
+      }
+    ]
+  }
+}

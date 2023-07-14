@@ -1,11 +1,10 @@
 from enum import Enum
-from itertools import repeat
 from typing import Union
 
 from assets import domain_divider
 
 from mcresources import ResourceManager, RecipeContext, utils
-from mcresources.type_definitions import Json, ResourceIdentifier
+from mcresources.type_definitions import Json, JsonObject, ResourceIdentifier
 
 from constants import *
 
@@ -42,6 +41,7 @@ class Rules(Enum):
     shrink_second_last = 'shrink_second_last'
     shrink_third_last = 'shrink_third_last'
 
+
 def generate(rm: ResourceManager):
     rm.domain = 'tfc_ie_addon'
 
@@ -49,9 +49,18 @@ def generate(rm: ResourceManager):
 
     [disable_recipe(rm, recipe) for recipe in TO_REMOVE_RECIPES]
 
+    # CRAFTING RECIPE
+
+    PLATE_METALS = IE_METALS + ['copper', 'gold']
+    for metal in PLATE_METALS:
+        damage_shapeless(rm, 'crafting/%s_sheet_to_plate' % metal, ('%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal), 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_%s' % metal))
+    damage_shapeless(rm, 'crafting/wrought_iron_sheet_to_plate', ('tfc:metal/sheet/wrought_iron', 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_iron'))
+
     # HEAT RECIPES
 
-    heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass', None)
+    heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass')
+
+    heat_recipe(rm, 'hop_graphite_ingot', 'immersiveengineering:dust_hop_graphite', 2000, 'immersiveengineering:ingot_hop_graphite')
 
     # ORE RECIPES
 
@@ -70,7 +79,12 @@ def generate(rm: ResourceManager):
 
     # BARREL RECIPES
 
-    barrel_instant_recipe(rm, 'redstone_acid', {'ingredient': {'tag': 'forge:dusts/redstone'} }, '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
+    barrel_instant_recipe(rm, 'redstone_acid', {'ingredient': {'tag': 'forge:dusts/redstone'}}, '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
+
+    # COKE OVEN RECIPES
+
+    tfc_coals = ['bituminous_coal', 'lignite']
+    [coke_oven_recipe(rm, coal, {'item': 'tfc:ore/' + coal}, {'tag': 'forge:coal_coke'}, 500, 1800) for coal in tfc_coals]
 
     # FERMENTER RECIPES
 
@@ -91,46 +105,20 @@ def generate(rm: ResourceManager):
 
     food_amount.append(('sugarcane', 200))
 
-    [fermenter_recipe(rm, food, {'item': 'tfc:food/' + food}, amount) for (food, amount) in food_amount]
+    [fermenter_recipe(rm, food, 'tfc:food/%s' % food, amount) for (food, amount) in food_amount]
 
-    fermenter_recipe(rm, 'grains', {'tag': 'tfc:foods/grains'}, 80)
+    fermenter_recipe(rm, 'grains', '#tfc:foods/grains', 80)
 
     # CLOCHE RECIPES
 
-    growable_food = [ 'barley', 'oat', 'rye', 'maize', 'wheat', 'rice', 'beet', 'cabbage', 'carrot', 'garlic', 'green_bean', 'potato',
-                 'onion', 'soybean', 'squash', 'sugarcane', 'tomato']
+    growable_food = ['barley', 'oat', 'rye', 'maize', 'wheat', 'rice', 'beet', 'cabbage', 'carrot', 'garlic', 'green_bean', 'potato',
+                     'onion', 'soybean', 'squash', 'sugarcane', 'tomato']
 
-    [cloche_recipe(rm, type,
-                   {
-                       'item': 'tfc:seeds/%s' % type
-                   },
-                   [
-                       {
-                           'item': 'tfc:food/%s' % type,
-                           'count': 1,
-                       },
-                       {
-                           'item': 'tfc:seeds/%s' % type,
-                           'count': 1,
-                       }
-                   ], 128_000, 'tfc:crop/%s' % type) for type in growable_food]
+    [cloche_recipe(rm, type, utils.ingredient('tfc:seeds/%s' % type), utils.item_stack_list(('tfc:food/%s' % type, 'tfc:seeds/%s' % type)), 128_000, 'tfc:crop/%s' % type) for type in growable_food]
 
     other_growables = ['jute', 'pumpkin', 'melon']
 
-    [cloche_recipe(rm, type,
-                   {
-                       'item': 'tfc:seeds/%s' % type
-                   },
-                   [
-                       {
-                           'item': 'tfc:%s' % type,
-                           'count': 1,
-                       },
-                       {
-                           'item': 'tfc:seeds/%s' % type,
-                           'count': 1,
-                       }
-                   ], 128_000, 'tfc:crop/%s' % type) for type in other_growables]
+    [cloche_recipe(rm, type, utils.ingredient('tfc:seeds/%s' % type), utils.item_stack_list(('tfc:%s' % type, 'tfc:seeds/%s' % type)), 128_000, 'tfc:crop/%s' % type) for type in other_growables]
 
     # SQUEEZER RECIPES
 
@@ -141,11 +129,11 @@ def generate(rm: ResourceManager):
 
     squeezer_inputs = [('tfc:seeds/jute', 120)]
 
-    [squeezer_inputs.append( ('tfc:seeds/%s' % seed, 80) ) for seed in grain_seeds]
+    [squeezer_inputs.append(('tfc:seeds/%s' % seed, 80)) for seed in grain_seeds]
 
-    [squeezer_inputs.append( ('tfc:seeds/%s' % seed, 30) ) for seed in other_seeds]
+    [squeezer_inputs.append(('tfc:seeds/%s' % seed, 30)) for seed in other_seeds]
 
-    squeezer_inputs.append( ('tfc:food/olive', 120) )
+    squeezer_inputs.append(('tfc:food/olive', 120))
 
     [plant_oil_recipe(rm, item.split('/')[1], item, amount, 6400) for (item, amount) in squeezer_inputs]
 
@@ -175,96 +163,113 @@ def generate(rm: ResourceManager):
 
     # ARC FURNACE RECIPES
 
-    grades = [('small', 5), ('poor', 3), ('normal', 2), ('rich', 1)]
+    grades = [('small', 5, 1), ('poor', 7, 2), ('normal', 2, 1), ('rich', 3, 2)]
 
-    for (grade, count) in grades:
+    for (grade, count, output) in grades:
         for (ore, metal) in ORES:
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
-                input =
-                    {
-                        'count': count,
-                        'base_ingredient':
-                        { 'item': 'tfc:ore/%s_%s' % (grade, ore) }
-                    },
-                results = [ {'item': 'tfc:metal/ingot/%s' % metal} ],
-                time = 100,
-                energy = 25600,
-                slag = True,
-                )
+                               input='%s tfc:ore/%s_%s' % (count, grade, ore),
+                               results=('%s tfc:metal/ingot/%s' % (output, metal)),
+                               time=100,
+                               energy=25600,
+                               slag=True)
 
-    for (grade, count) in grades:
+    for (grade, count, output) in grades:
         for ore in ADDON_ORES.keys():
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
-               input =
-               {
-                   'count': count,
-                   'base_ingredient':
-                       { 'item': 'tfc_ie_addon:ore/%s_%s' % (grade, ore) }
-               },
-               results = [{'item': 'immersiveengineering:ingot_%s' % ore}],
-               time = 100,
-               energy = 25600,
-               slag = True,
-               )
+                               input='%s tfc_ie_addon:ore/%s_%s' % (count, grade, ore),
+                               results=('%s #forge:ingots/%s' % (output, ore)),
+                               time=100,
+                               energy=25600,
+                               slag=True)
 
     # CRUSHER RECIPES
 
     for type in SANDSTONE_TYPES:
         for color in SANDSTONE_COLORS:
             crusher_recipe(rm, 'sandstone/%s_%s' % (type, color),
-                           { 'item': 'tfc:%s_sandstone/%s' % (type, color) },
-                           { 'item': 'tfc:sand/%s' % color, 'count': 2 },
+                           utils.ingredient('tfc:%s_sandstone/%s' % (type, color)),
+                           utils.item_stack('2 tfc:sand/%s' % color),
                            3200,
-                           [ {'chance': 0.5, 'output': { 'item': 'tfc:powder/saltpeter' } } ] )
+                           [{'chance': 0.5, 'output': utils.item_stack('tfc:powder/saltpeter')}])
 
     # METAL PRESS RECIPES
 
-    rm.domain = 'immersiveengineering'
-
     ALL_METALS = set(IE_METALS + TFC_METALS)
 
-    ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
-
     for metal in ALL_METALS:
-        metalpress_recipe(rm, 'plate_%s' % metal, { 'count': 2, 'base_ingredient': {'tag': 'forge:ingots/%s' % metal} }, 'immersiveengineering:mold_plate', {'item': '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal)}, 2400)
+        metalpress_recipe(rm, 'sheet_%s' % metal, '2 #forge:ingots/%s' % metal, 'tfc_ie_addon:mold_sheet', '%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal), 2400)
 
     for metal in TFC_METALS:
-        metalpress_recipe(rm, 'rod_%s' % metal, {'tag': 'forge:ingots/%s' % metal}, 'immersiveengineering:mold_rod', { 'count': 2, 'base_ingredient': { 'item': 'tfc:metal/rod/%s' % metal } }, 2400)
+        metalpress_recipe(rm, 'rod_%s' % metal, '#forge:ingots/%s' % metal, 'immersiveengineering:mold_rod', '2 tfc:metal/rod/%s' % metal, 2400)
 
-    rm.domain = 'tfc_ie_addon'
+    metalpress_recipe(rm, 'plate_wrought_iron', '#forge:ingots/wrought_iron', 'immersiveengineering:mold_plate', '#forge:plates/iron', 2400)
 
     # SAWMILL RECIPES
 
     for wood_type in TFC_WOOD_TYPES:
         for (wood_item, count, energy) in TFC_WOOD_ITEMS:
             sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
-                           { 'item': 'tfc:wood/planks/%s_%s' % (wood_type, wood_item) },
-                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': count },
+                           'tfc:wood/planks/%s_%s' % (wood_type, wood_item),
+                           '%s tfc:wood/lumber/%s' % (count, wood_type),
                            energy)
 
         for (wood_item, count, energy) in TFC_OTHER_WOOD_ITEMS:
             sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
-                           { 'item': 'tfc:wood/%s/%s' % (wood_item, wood_type) },
-                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': count },
+                           'tfc:wood/%s/%s' % (wood_item, wood_type),
+                           '%s tfc:wood/lumber/%s' % (count, wood_type),
                            energy)
 
         for log_type in ['wood', 'log']:
             sawmill_recipe(rm, '%s_%s' % (wood_type, log_type),
-                           { 'item': 'tfc:wood/%s/%s' % (log_type, wood_type) },
-                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 8 },
+                           'tfc:wood/%s/%s' % (log_type, wood_type),
+                           '12 tfc:wood/lumber/%s' % wood_type,
                            1600,
-                           stripped= { 'item': 'tfc:wood/stripped_%s/%s' % (log_type, wood_type) },
+                           stripped='tfc:wood/stripped_%s/%s' % (log_type, wood_type),
                            secondaries2=True)
 
             sawmill_recipe(rm, '%s_stripped_%s' % (wood_type, log_type),
-                           { 'item': 'tfc:wood/stripped_%s/%s' % (log_type, wood_type) },
-                           { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 8 },
+                           'tfc:wood/stripped_%s/%s' % (log_type, wood_type),
+                           '12 tfc:wood/lumber/%s' % wood_type,
                            1600)
 
         sawmill_recipe(rm, '%s/planks' % wood_type,
-                       { 'item': 'tfc:wood/planks/%s' % wood_type },
-                       { 'item': 'tfc:wood/lumber/%s' % wood_type, 'count': 4 },
+                       'tfc:wood/planks/%s' % wood_type,
+                       '4 tfc:wood/lumber/%s' % wood_type,
                        1600)
+
+    # FIRMALIFE COMPAT
+
+    for metal in FL_METALS:
+        metalpress_recipe(rm, 'sheet_%s' % metal, '2 #forge:ingots/%s' % metal, 'tfc_ie_addon:mold_sheet', 'firmalife:metal/sheet/%s' % metal, 2400, 'firmalife')
+        metalpress_recipe(rm, 'rod_%s' % metal, '#forge:ingots/%s' % metal, 'immersiveengineering:mold_rod', '2 firmalife:metal/rod/%s' % metal, 2400, 'firmalife')
+
+    fermenter_recipe(rm, 'raw_honey', 'firmalife:raw_honey', 200, 'firmalife')
+
+    for (grade, count, output) in grades:
+        arc_furnace_recipe(rm, '%s_chromite' % grade,
+                           input='%s firmalife:ore/%s_chromite' % (count, grade),
+                           results=('%s #forge:ingots/chromium' % output),
+                           time=100,
+                           energy=25600,
+                           slag=True,
+                           conditional_modid='firmalife')
+
+
+def damage_shapeless(rm: ResourceManager, name_parts: ResourceIdentifier, ingredients: Json, result: Json, group: str = None, conditions: utils.Json = None) -> RecipeContext:
+    res = utils.resource_location(rm.domain, name_parts)
+    rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', res.path), {
+        'type': 'tfc:damage_inputs_shapeless_crafting',
+        'recipe': {
+            'type': 'minecraft:crafting_shapeless',
+            'group': group,
+            'ingredients': utils.item_stack_list(ingredients),
+            'result': utils.item_stack(result),
+            'conditions': utils.recipe_condition(conditions)
+        }
+    })
+    return RecipeContext(rm, res)
+
 
 def barrel_instant_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input_item: Optional[Json] = None, input_fluid: Optional[Json] = None, output_item: Optional[Json] = None, output_fluid: Optional[Json] = None, sound: Optional[str] = None):
     rm.recipe(('barrel', name_parts), 'tfc:barrel_instant', {
@@ -275,10 +280,12 @@ def barrel_instant_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentif
         'sound': sound
     })
 
+
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', 'crafting', res.path), data)
     return RecipeContext(rm, res)
+
 
 def advanced_shapeless(rm: ResourceManager, name_parts: ResourceIdentifier, ingredients: Json, result: Json, primary_ingredient: Json = None, group: str = None, conditions: Optional[Json] = None) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
@@ -291,6 +298,7 @@ def advanced_shapeless(rm: ResourceManager, name_parts: ResourceIdentifier, ingr
         'conditions': utils.recipe_condition(conditions)
     })
     return RecipeContext(rm, res)
+
 
 def advanced_shaped(rm: ResourceManager, name_parts: ResourceIdentifier, pattern: Sequence[str], ingredients: Json, result: Json, input_xy: Tuple[int, int], group: str = None, conditions: Optional[Json] = None) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
@@ -306,6 +314,7 @@ def advanced_shaped(rm: ResourceManager, name_parts: ResourceIdentifier, pattern
     })
     return RecipeContext(rm, res)
 
+
 def collapse_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient, result: Optional[utils.Json] = None, copy_input: Optional[bool] = None):
     assert result is not None or copy_input
     rm.recipe(('collapse', name_parts), 'tfc:collapse', {
@@ -314,12 +323,14 @@ def collapse_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, i
         'copy_input': copy_input
     })
 
+
 def fluid_item_ingredient(fluid: Json, delegate: Json = None):
     return {
         'type': 'tfc:fluid_item',
         'ingredient': delegate,
         'fluid_ingredient': fluid_stack_ingredient(fluid)
     }
+
 
 def has_trait(ingredient: Json, trait: str, invert: bool = False) -> Json:
     return {
@@ -328,8 +339,10 @@ def has_trait(ingredient: Json, trait: str, invert: bool = False) -> Json:
         'ingredient': utils.ingredient(ingredient)
     }
 
+
 def lacks_trait(ingredient: Json, trait: str) -> Json:
     return has_trait(ingredient, trait, True)
+
 
 def item_stack_provider(data_in: Json = None, copy_input: bool = False, copy_heat: bool = False, copy_food: bool = False, copy_oldest_food: bool = False, reset_food: bool = False, add_heat: float = None, add_trait: str = None, remove_trait: str = None, empty_bowl: bool = False, copy_forging: bool = False, other_modifier: str = None, other_other_modifier: str = None) -> Json:
     if isinstance(data_in, dict):
@@ -356,6 +369,28 @@ def item_stack_provider(data_in: Json = None, copy_input: bool = False, copy_hea
         }
     return stack
 
+
+def ingredient_with_size(data_in: Json) -> Json:
+    if isinstance(data_in, dict):
+        return data_in
+    item, tag, amount, _ = utils.parse_item_stack(data_in, False)
+    if amount is None:
+        amount = 1
+    if amount > 1:
+        return {'base_ingredient': {'tag' if tag else 'item': item}, 'count': amount}
+    else:
+        return {'tag' if tag else 'item': item}
+
+
+def ingredient_with_size_list(data_in: Json) -> List[JsonObject]:
+    if isinstance(data_in, str) or isinstance(data_in, Dict):
+        return [ingredient_with_size(data_in)]
+    elif utils.is_sequence(data_in):
+        return [*utils.flatten_list([ingredient_with_size(s) for s in data_in])]
+    else:
+        raise ValueError('Unknown object %s at ingredient_with_size_list' % str(data_in))
+
+
 def anvil_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: Json, result: Json, tier: int, *rules: Rules, bonus: bool = None):
     rm.recipe(('anvil', name_parts), 'tfc:anvil', {
         'input': utils.ingredient(ingredient),
@@ -365,6 +400,7 @@ def anvil_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingr
         'apply_forging_bonus': bonus
     })
 
+
 def welding_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, first_input: Json, second_input: Json, result: Json, tier: int, ):
     rm.recipe(('welding', name_parts), 'tfc:welding', {
         'first_input': utils.ingredient(first_input),
@@ -372,6 +408,7 @@ def welding_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, fi
         'tier': tier,
         'result': item_stack_provider(result)
     })
+
 
 def simple_pot_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredients: Json, fluid: str, output_fluid: str = None, output_items: Json = None, duration: int = 2000, temp: int = 300):
     rm.recipe(('pot', name_parts), 'tfc:pot', {
@@ -383,6 +420,7 @@ def simple_pot_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier,
         'item_output': [utils.item_stack(item) for item in output_items] if output_items is not None else None
     })
 
+
 def oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, temperature: float, result_item: Optional[Union[str, Json]], duration: int = 1000) -> RecipeContext:
     result_item = item_stack_provider(result_item) if isinstance(result_item, str) else result_item
     return rm.recipe(('oven', name_parts), 'tfc_ie_addon:oven', {
@@ -391,6 +429,7 @@ def oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingre
         'temperature': temperature,
         'duration': duration
     })
+
 
 def heat_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, temperature: float, result_item: Optional[Union[str, Json]], result_fluid: Optional[str] = None) -> RecipeContext:
     result_item = item_stack_provider(result_item) if isinstance(result_item, str) else result_item
@@ -402,6 +441,7 @@ def heat_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingre
         'temperature': temperature
     })
 
+
 def fluid_stack(data_in: Json) -> Json:
     if isinstance(data_in, dict):
         return data_in
@@ -412,6 +452,7 @@ def fluid_stack(data_in: Json) -> Json:
         'amount': amount
     }
 
+
 def casting_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, mold: str, metal: str, amount: int, break_chance: float):
     domain, divider = domain_divider(mold)
     rm.recipe(('casting', name_parts), 'tfc:casting', {
@@ -420,6 +461,7 @@ def casting_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, mo
         'result': utils.item_stack('%s%s%s%s' % (domain, mold, divider, metal)),
         'break_chance': break_chance
     })
+
 
 def fluid_stack_ingredient(data_in: Json) -> Json:
     if isinstance(data_in, dict):
@@ -436,6 +478,7 @@ def fluid_stack_ingredient(data_in: Json) -> Json:
     else:
         return {'ingredient': fluid, 'amount': amount}
 
+
 def fluid_ingredient(data_in: Json) -> Json:
     if isinstance(data_in, dict):
         return data_in
@@ -447,6 +490,7 @@ def fluid_ingredient(data_in: Json) -> Json:
             return {'tag': fluid}
         else:
             return fluid
+
 
 def item_stack_ingredient(data_in: Json):
     if isinstance(data_in, dict):
@@ -463,6 +507,7 @@ def item_stack_ingredient(data_in: Json):
     else:
         return {'ingredient': {'item': item}, 'count': count}
 
+
 def delegate_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, recipe_type: str, delegate: Json) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
     rm.write((*rm.resource_dir, 'data', res.domain, 'recipes', res.path), {
@@ -471,12 +516,14 @@ def delegate_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, recipe_
     })
     return RecipeContext(rm, res)
 
+
 def knapping_recipe(rm: ResourceManager, knapping_type: str, name_parts: utils.ResourceIdentifier, pattern: List[str], result: utils.Json, outside_slot_required: bool = None):
     rm.recipe((knapping_type, name_parts), knapping_type, {
         'outside_slot_required': outside_slot_required,
         'pattern': pattern,
         'result': utils.item_stack(result)
     })
+
 
 def alloy_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, metal: str, *parts: Tuple[str, float, float]):
     rm.recipe(('alloy', name_parts), 'tfc:alloy', {
@@ -488,6 +535,7 @@ def alloy_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, meta
         } for p in parts]
     })
 
+
 def quern_recipe(rm: ResourceManager, name: ResourceIdentifier, item: str, result: str, count: int = 1) -> RecipeContext:
     result = result if not isinstance(result, str) else utils.item_stack((count, result))
     return rm.recipe(('quern', name), 'tfc:quern', {
@@ -495,34 +543,29 @@ def quern_recipe(rm: ResourceManager, name: ResourceIdentifier, item: str, resul
         'result': result
     })
 
-def fermenter_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: Json, amount: int = 80):
-    rm.recipe(('fermenter', name_parts), 'immersiveengineering:fermenter', {
-        'fluid': {
-            'fluid': 'immersiveengineering:ethanol',
-            'amount': amount,
-        },
-        'input': ingredient,
-        'energy': 6400,
+
+def coke_oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, creosote: int, time: int):
+    rm.recipe(('cokeoven', name_parts), 'immersiveengineering:coke_oven', {
+        'creosote': creosote,
+        'input': input,
+        'result': result,
+        'time': time
     })
+
+
+def fermenter_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: Json, amount: int = 80, conditional_modid: str = None):
+    rm.recipe(('fermenter', name_parts), 'immersiveengineering:fermenter', {
+        'fluid': fluid_stack(str(amount) + ' immersiveengineering:ethanol'),
+        'input': utils.ingredient(ingredient),
+        'energy': 6400,
+    }, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
+
 
 def cloche_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, time: int, render_block: str):
     rm.recipe(('cloche', name_parts), 'immersiveengineering:cloche', {
         'results': result,
         'input': input,
-        'soil': [
-            {
-                "item": "tfc:dirt/silt"
-            },
-            {
-                "item": "tfc:dirt/loam"
-            },
-            {
-                "item": "tfc:dirt/silty_loam"
-            },
-            {
-                "item": "tfc:dirt/sandy_loam"
-            },
-        ],
+        'soil': utils.item_stack_list(('tfc:dirt/silt', 'tfc:dirt/loam', 'tfc:dirt/silty_loam', 'tfc:dirt/sandy_loam')),
         'time': time,
         'render': {
             'type': 'crop',
@@ -530,37 +573,36 @@ def cloche_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, inp
         }
     })
 
+
 def plant_oil_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: str, amount: int, energy: int):
     rm.recipe(('squeezer', name_parts), 'immersiveengineering:squeezer', {
-        'fluid': {
-            'fluid':'immersiveengineering:plantoil',
-            'amount': amount,
-        },
-        'input': {
-            'item': input
-        },
+        'fluid': fluid_stack(str(amount) + ' immersiveengineering:plantoil'),
+        'input': utils.ingredient(input),
         'energy': energy,
     })
+
 
 def disable_recipe(rm: ResourceManager, name_parts: ResourceIdentifier):
     rm.recipe(name_parts, None, {}, conditions='forge:false')
 
-def arc_furnace_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, input: Json, results: list, time: int, energy: int, additives: list = [], secondaries: list = [], slag: bool = False):
-    recipe = { 'input': input, 'results': results, 'additives': additives }
+
+def arc_furnace_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, results: Json, time: int, energy: int, additives: list = [], secondaries: list = [], slag: bool = False, conditional_modid: str = None):
+    recipe = {'input': ingredient_with_size(input), 'results': ingredient_with_size_list(results), 'additives': additives}
 
     if secondaries:
         recipe['secondaries'] = secondaries
 
     if slag:
-        recipe['slag'] = { 'tag': 'forge:slag' }
+        recipe['slag'] = utils.item_stack('#forge:slag')
 
     recipe['time'] = time
     recipe['energy'] = energy
 
-    rm.recipe(('arc_furnace', name_parts), 'immersiveengineering:arc_furnace', recipe)
+    rm.recipe(('arc_furnace', name_parts), 'immersiveengineering:arc_furnace', recipe, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
 
-def crusher_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, input: Json, result: Json, energy: int, secondaries: list = []):
-    recipe = { 'input': input, 'result': result }
+
+def crusher_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, secondaries: list = []):
+    recipe = {'input': input, 'result': result}
 
     if secondaries:
         recipe['secondaries'] = secondaries
@@ -569,42 +611,40 @@ def crusher_recipe(rm: ResourceManager, name_parts:  utils.ResourceIdentifier, i
 
     rm.recipe(('crusher', name_parts), 'immersiveengineering:crusher', recipe)
 
-def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int):
+
+def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, mold: str, result: Json, energy: int, conditional_modid: str = None):
     recipe = {
         'mold': mold,
-        'input': input,
-        'result': result,
+        'input': ingredient_with_size(input),
+        'result': utils.item_stack(result),
         'energy': energy,
     }
 
-    rm.recipe(('metalpress', name_parts), 'immersiveengineering:metal_press', recipe)
+    rm.recipe(('metalpress', name_parts), 'immersiveengineering:metal_press', recipe, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
+
 
 def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, stripped: Json = None, secondaries1: bool = True, secondaries2: bool = False):
     recipe = {
-        'input': input,
-        'result':result,
+        'input': utils.ingredient(input),
+        'result': utils.item_stack(result),
         'energy': energy,
     }
 
     if stripped:
-        recipe['stripped'] = stripped
+        recipe['stripped'] = utils.item_stack(stripped)
 
     recipe['secondaries'] = []
 
     if secondaries1:
         recipe['secondaries'].append({
-            "output": {
-                "tag": "forge:dusts/wood"
-            },
-            "stripping": False
+            'output': utils.item_stack('#forge:dusts/wood'),
+            'stripping': False
         })
 
     if secondaries2:
         recipe['secondaries'].append({
-            "output": {
-                "tag": "forge:dusts/wood"
-            },
-            "stripping": True
+            'output': utils.item_stack('#forge:dusts/wood'),
+            'stripping': True
         })
 
     rm.recipe(('sawmill', name_parts), 'immersiveengineering:sawmill', recipe)

@@ -1,5 +1,5 @@
 {
-  "type": "immersiveengineering:shaped_fluid",
+  "type": "tfc_ie_addon:shaped_fluid",
   "pattern": [
     " i ",
     "ioi",
@@ -9,10 +9,10 @@
     "o": {
       "tag": "forge:plantoil",
       "amount": 1000,
-      "type": "immersiveengineering:fluid"
+      "type": "tfc_ie_addon:fluid"
     },
     "i": {
-      "tag": "forge:plates/wrought_iron"
+      "tag": "forge:plates/iron"
     },
     "p": {
       "item": "immersiveengineering:fluid_pipe"

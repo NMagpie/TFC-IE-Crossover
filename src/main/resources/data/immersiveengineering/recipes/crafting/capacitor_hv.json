@@ -1,0 +1,30 @@
+{
+  "type": "tfc_ie_addon:shaped_fluid",
+  "pattern": [
+    "waw",
+    "fef",
+    "wcw"
+  ],
+  "key": {
+    "w": {
+      "tag": "forge:treated_wood"
+    },
+    "f": {
+      "tag": "forge:ingots/steel"
+    },
+    "a": {
+      "tag": "forge:plates/aluminum"
+    },
+    "c": {
+      "tag": "forge:ingots/hop_graphite"
+    },
+    "e": {
+      "tag": "forge:redstone_acid",
+      "amount": 1000,
+      "type": "tfc_ie_addon:fluid"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:capacitor_hv"
+  }
+}

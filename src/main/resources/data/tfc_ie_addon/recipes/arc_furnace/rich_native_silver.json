@@ -2,14 +2,17 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 1,
     "base_ingredient": {
       "item": "tfc:ore/rich_native_silver"
-    }
+    },
+    "count": 3
   },
   "results": [
     {
-      "item": "tfc:metal/ingot/silver"
+      "base_ingredient": {
+        "item": "tfc:metal/ingot/silver"
+      },
+      "count": 2
     }
   ],
   "additives": [],

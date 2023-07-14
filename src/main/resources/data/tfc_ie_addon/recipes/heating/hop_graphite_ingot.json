@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "immersiveengineering:dust_hop_graphite"
+  },
+  "result_item": {
+    "item": "immersiveengineering:ingot_hop_graphite"
+  },
+  "temperature": 2000
+}

@@ -2,10 +2,10 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "immersiveengineering:arc_furnace",
   "input": {
-    "count": 2,
     "base_ingredient": {
       "item": "tfc:ore/normal_tetrahedrite"
-    }
+    },
+    "count": 2
   },
   "results": [
     {

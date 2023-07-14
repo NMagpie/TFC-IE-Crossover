@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/sugarcane",
-      "count": 1
+      "item": "tfc:food/sugarcane"
     },
     {
-      "item": "tfc:seeds/sugarcane",
-      "count": 1
+      "item": "tfc:seeds/sugarcane"
     }
   ],
   "input": {

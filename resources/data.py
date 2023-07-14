@@ -1,12 +1,9 @@
 from enum import Enum, auto
 
-from mcresources import ResourceManager, loot_tables
-from mcresources.type_definitions import Json
+from mcresources import ResourceManager, utils
 
 from constants import *
-from mcresources import utils
 
-from recipes import fluid_ingredient
 
 class Size(Enum):
     tiny = auto()
@@ -25,13 +22,15 @@ class Weight(Enum):
     heavy = auto()
     very_heavy = auto()
 
+
 class Category(Enum):
     other = auto()
+
 
 def generate(rm: ResourceManager):
     ### TAGS ###
 
-    # Ore tags
+    # ORE TAGS
     for ore in ADDON_ORES.keys():
         rm.block_tag('forge:ores', '#forge:ores/%s' % ore)
         rm.block_tag('forge:ores/%s' % ore, '#tfc_ie_addon:ores/%s/poor' % ore, '#tfc_ie_addon:ores/%s/normal' % ore, '#tfc_ie_addon:ores/%s/rich' % ore)
@@ -68,8 +67,7 @@ def generate(rm: ResourceManager):
     for fluid in ie_fluids:
         rm.fluid_tag('tfc:usable_in_wooden_bucket', 'immersiveengineering:%s' % fluid)
         rm.fluid_tag('tfc:usable_in_red_steel_bucket', 'immersiveengineering:%s' % fluid)
-
-    rm.fluid_tag('tfc:usable_in_barrel', 'immersiveengineering:redstone_acid')
+        rm.fluid_tag('tfc:usable_in_barrel', 'immersiveengineering:%s' % fluid)
 
     # DUSTS TAGS
 
@@ -79,13 +77,11 @@ def generate(rm: ResourceManager):
 
     rm.item_tag('forge:dusts/saltpeter', 'tfc:powder/saltpeter')
 
-    # METAL & SHEETS TAGS
-
-    [rm.item_tag('forge:plates/%s' % metal, 'tfc:metal/sheet/%s' % metal) for metal in TFC_METALS]
-
-    # Item Heats
+    # ITEM HEATS
 
     item_heat(rm, 'slag', 'immersiveengineering:slag', 0.6)
+
+    item_heat(rm, 'hop_graphite_dust', 'immersiveengineering:dust_hop_graphite', 0.55)
 
     # TOOL TAGS
 
@@ -105,6 +101,19 @@ def generate(rm: ResourceManager):
     #     for color in SANDSTONE_COLORS]
     #     for type in SANDSTONE_TYPES]
 
+    # FUELS
+
+    fuel_item(rm, 'coal_coke', 'immersiveengineering:coal_coke', 3300, 1550)
+    fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 33000, 1550)
+    rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
+
+    rm.item_tag('forge:rods/all_metal', '#forge:rods/wrought_iron')
+
+    # FORBIDDEN IN CRATES (HUGE ITEMS)
+
+    rm.item_tag('immersiveengineering:forbidden_in_crates', '#tfc:large_vessels', '#tfc:anvils', '#tfc:barrels', 'tfc:powderkeg')
+
+
 def needs_tool(_tool: str) -> str:
     return {
         'wood': 'forge:needs_wood_tool', 'stone': 'forge:needs_wood_tool',
@@ -116,6 +125,7 @@ def needs_tool(_tool: str) -> str:
         'colored_steel': 'tfc:needs_colored_steel_tool'
     }[_tool]
 
+
 def match_entity_tag(tag: str):
     return {
         'condition': 'minecraft:entity_properties',
@@ -124,6 +134,7 @@ def match_entity_tag(tag: str):
         },
         'entity': 'this'
     }
+
 
 def item_heat(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, heat_capacity: float, melt_temperature: Optional[float] = None, mb: Optional[int] = None):
     if melt_temperature is not None:
@@ -142,9 +153,19 @@ def item_heat(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredi
         'welding_temperature': welding_temperature
     })
 
+
 def item_size(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, size: Size, weight: Weight):
     rm.data(('tfc', 'item_sizes', name_parts), {
         'ingredient': utils.ingredient(ingredient),
         'size': size.name,
         'weight': weight.name
+    })
+
+
+def fuel_item(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, duration: int, temperature: float, purity: float = None):
+    rm.data(('tfc', 'fuels', name_parts), {
+        'ingredient': utils.ingredient(ingredient),
+        'duration': duration,
+        'temperature': temperature,
+        'purity': purity,
     })

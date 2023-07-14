@@ -1,0 +1,24 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "tfc:wild_crop/jute"
+      },
+      {
+        "item": "tfc:jute_fiber"
+      },
+      {
+        "item": "tfc:seeds/jute"
+      }
+    ]
+  },
+  "cushion_recipe": {
+    "type": "crafting",
+    "recipe": "crafting/cushion"
+  },
+  "curtain_recipe": {
+    "type": "crafting",
+    "recipe": "crafting/strip_curtain"
+  }
+}

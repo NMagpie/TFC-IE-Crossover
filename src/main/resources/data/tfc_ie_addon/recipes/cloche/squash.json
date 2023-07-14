@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/squash",
-      "count": 1
+      "item": "tfc:food/squash"
     },
     {
-      "item": "tfc:seeds/squash",
-      "count": 1
+      "item": "tfc:seeds/squash"
     }
   ],
   "input": {

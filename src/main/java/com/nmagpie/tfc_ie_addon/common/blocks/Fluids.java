@@ -1,11 +1,10 @@
 package com.nmagpie.tfc_ie_addon.common.blocks;
 
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.common.util.Metal;
-import net.dries007.tfc.common.fluids.FlowingFluidRegistryObject;
-import net.dries007.tfc.common.fluids.MoltenFluid;
-import net.dries007.tfc.util.Helpers;
-import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
@@ -14,11 +13,12 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Map;
-import java.util.function.Consumer;
-import java.util.function.Function;
+import net.dries007.tfc.common.fluids.FlowingFluidRegistryObject;
+import net.dries007.tfc.common.fluids.MoltenFluid;
+import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.registry.RegistrationHelpers;
 
-import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.MOD_ID;
+import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.*;
 import static net.dries007.tfc.common.fluids.TFCFluids.*;
 
 public class Fluids
@@ -31,8 +31,7 @@ public class Fluids
         properties -> properties.block(Blocks.METAL_FLUIDS.get(metal)).bucket(Items.METAL_FLUID_BUCKETS.get(metal)).explosionResistance(100),
         FluidAttributes.builder(MOLTEN_STILL, MOLTEN_FLOW)
             .translationKey("fluid.tfc_ie_addon.metal." + metal.getSerializedName())
-            .color(
-                    ALPHA_MASK | metal.getColor())
+            .color(ALPHA_MASK | metal.getColor())
             .rarity(metal.getRarity())
             .luminosity(15)
             .density(3000)

@@ -3,12 +3,10 @@
   "type": "immersiveengineering:cloche",
   "results": [
     {
-      "item": "tfc:food/carrot",
-      "count": 1
+      "item": "tfc:food/carrot"
     },
     {
-      "item": "tfc:seeds/carrot",
-      "count": 1
+      "item": "tfc:seeds/carrot"
     }
   ],
   "input": {

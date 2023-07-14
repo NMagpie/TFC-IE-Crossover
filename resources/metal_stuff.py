@@ -8,6 +8,7 @@ from constants import lang
 from data import item_heat
 from recipes import anvil_recipe, Rules, welding_recipe, heat_recipe, casting_recipe
 
+
 class Metal(NamedTuple):
     tier: int
     types: Set[str]
@@ -16,6 +17,7 @@ class Metal(NamedTuple):
     melt_metal: Optional[str]
 
     def specific_heat_capacity(self) -> float: return round(300 / self.heat_capacity_base) / 100_000
+
     def ingot_heat_capacity(self) -> float: return 1 / self.heat_capacity_base
 
 
@@ -35,6 +37,7 @@ METAL_ITEMS: Dict[str, MetalItem] = {
     'double_ingot': MetalItem('part', 200, 'item/generated', 'forge:double_ingots', False),
     'sheet': MetalItem('part', 200, 'item/generated', 'forge:sheets', False),
 }
+
 
 def generate(rm: ResourceManager):
     ore_heats(rm)
@@ -62,7 +65,7 @@ def generate(rm: ResourceManager):
             item_heat(rm, ('metal', metal + '_' + item), ingredient, metal_data.ingot_heat_capacity(), metal_data.melt_temperature, mb=item_data.smelt_amount)
 
         def item(_variant: str) -> str:
-                return '#forge:%s/%s' % (_variant, metal)
+            return '#forge:%s/%s' % (_variant, metal)
 
         # Metal Items
 
@@ -104,9 +107,6 @@ def generate(rm: ResourceManager):
         rm.item_tag('tfc:pileable_ingots', 'immersiveengineering:ingot_%s' % metal)
         rm.item_tag('tfc:pileable_sheets', 'tfc_ie_addon:metal/sheet/%s' % metal)
 
-        rm.item_tag('forge:plates/%s' % metal, 'tfc_ie_addon:metal/sheet/%s' % metal)
-
-        rm.item_tag('forge:plates/iron', 'tfc:metal/sheet/wrought_iron')
 
 def ore_heats(rm: ResourceManager):
     for ore in ['aluminum', 'lead', 'uranium']:

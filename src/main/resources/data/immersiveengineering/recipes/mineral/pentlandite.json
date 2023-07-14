@@ -25,7 +25,6 @@
         "item": "tfc:ore/rich_hematite"
       }
     },
-
     {
       "chance": 0.35,
       "output": {
@@ -50,7 +49,6 @@
         "item": "tfc:ore/rich_garnierite"
       }
     },
-
     {
       "chance": 0.3,
       "output": {

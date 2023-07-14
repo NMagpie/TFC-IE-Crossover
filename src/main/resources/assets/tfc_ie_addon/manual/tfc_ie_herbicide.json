@@ -1,0 +1,16 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "item": "immersiveengineering:herbicide_bucket"
+      }
+    ]
+  },
+  "mixing": {
+    "type": "mixer",
+    "recipe": {
+      "fluid": "immersiveengineering:herbicide"
+    }
+  }
+}

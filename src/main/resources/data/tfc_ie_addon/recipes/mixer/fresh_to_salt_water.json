@@ -2,7 +2,7 @@
   "type": "immersiveengineering:mixer",
   "inputs": [
     {
-      "tag": "tfc:flux"
+      "item": "tfc:powder/salt"
     }
   ],
   "result": {
@@ -10,7 +10,7 @@
     "amount": 125
   },
   "fluid": {
-    "tag": "minecraft:water",
+    "tag": "tfc:fresh_water",
     "amount": 125
   },
   "energy": 800

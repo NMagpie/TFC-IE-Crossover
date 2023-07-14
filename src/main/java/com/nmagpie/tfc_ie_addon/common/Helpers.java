@@ -2,7 +2,7 @@ package com.nmagpie.tfc_ie_addon.common;
 
 import net.minecraft.resources.ResourceLocation;
 
-import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.MOD_ID;
+import static com.nmagpie.tfc_ie_addon.TFC_IE_Addon.*;
 
 public class Helpers
 {
