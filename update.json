@@ -1,10 +1,11 @@
 {
   "homepage" : "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover",
   "promos": {
-    "1.18.2-latest": "0.2.1",
-    "1.18.2-recommended": "0.2.1"
+    "1.18.2-latest": "0.2.2",
+    "1.18.2-recommended": "0.2.2"
   },
   "1.18.2": {
+    "0.2.2": " - Add drill heads of black steel, blue steel and red steel. (Thank you @SnideKek for providing textures.)\n - Add missing #minecraft:mineable/pickaxe tag for quartz cluster and buds.\n - Add missing block drop for quartz block.\n - Remove malachite powder to constantan mix recipe.",
     "0.2.1": " - Improve fluid crafting recipes. (JEI will now show wooden buckets and barrels can be used in place of buckets.)\n - Disallow huge items (large vessels, anvils and barrels) from entering storage crate.",
     "0.2.0": " - Add compatibility for external heater to heat crucible.\n - Add barrel recipe for redstone acid.\n - Make all IE fluids usable in barrel.\n - Add bituminous coal and lignite to coal coke recipe.\n - Make coal coke a TFC fuel item.\n - Make herbicide work with TFC blocks.\n - Improve how slag is obtained (no more slag popping up when forging high carbon steel).\n - Add sheet mold -> Metal press can now make both plates and sheets using respective molds.\n - Add recipe for using IE wirecutter to cut 1 TFC sheet into 2 IE plates.\n - Remove plate tags from metal sheets.\n - Add Firmalife compatibility.\n - Add more manual entries.\n - Add manual entries to the field guide.\n - Many recipe fixes.",
     "0.1.2": " - Added new chapter in the Manual about Multiblocks.\n - Added slag into other Arc Furnace Recipes.\n - Added IE Fertilizer and Slag as Fertilizers for TFC Farming system.",

@@ -2,6 +2,7 @@ package com.nmagpie.tfc_ie_addon.common.util;
 
 import java.util.Locale;
 import com.nmagpie.tfc_ie_addon.common.Helpers;
+import javax.annotation.Nonnull;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
@@ -79,6 +80,7 @@ public enum Metal implements RegistryMetal
         return sheet;
     }
 
+    @Nonnull
     @Override
     public String getSerializedName()
     {
@@ -95,18 +97,21 @@ public enum Metal implements RegistryMetal
         return rarity;
     }
 
+    @Nonnull
     @Override
     public Tier toolTier()
     {
         return toolTier;
     }
 
+    @Nonnull
     @Override
     public ArmorMaterial armorTier()
     {
         return armorTier;
     }
 
+    @Nonnull
     @Override
     public net.dries007.tfc.util.Metal.Tier metalTier()
     {
@@ -115,7 +120,6 @@ public enum Metal implements RegistryMetal
 
     public enum ItemType
     {
-
         SHEET(metal -> new Item(new Item.Properties().tab(TFCItemGroup.METAL))),
         DOUBLE_INGOT(metal -> new Item(new Item.Properties().tab(TFCItemGroup.METAL)));
 

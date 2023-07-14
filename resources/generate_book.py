@@ -49,6 +49,8 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
     rm.domain = 'tfc_ie_addon'
     book = Book(rm, 'field_guide', {}, i18n, local_instance)
 
+    book.template('tri_anvil_recipe', header_component(-1, -1), custom_component(0, 0, 'TriAnvilComponent', {'recipe': '#recipe', 'recipe2': '#recipe2', 'recipe3': '#recipe3'}))
+
     book.category('tfc_ie_changes', 'TFC + IE Crossover', 'Changes with TerraFirmaCraft.', 'immersiveengineering:manual', is_sorted=True, entries=(
         entry('ores', 'New Ores', 'tfc_ie_addon:ore/normal_aluminum', pages=(
             text('Bauxite is an ore of $(thing)Aluminum$(), which is an integral part of high-voltage architecture. It can be found at any elevation, but deeper veins are often richer. It can be found in $(l:the_world/geology#sedimentary)Sedimentary$() and $(l:the_world/geology#metamorphic)Metamorphic$() rocks.', title='Bauxite').link(*['tfc_ie_addon:ore/%s_%s' % (g, 'aluminum') for g in GRADES_ALL]).anchor('aluminum'),
@@ -138,6 +140,10 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         entry('external_heater', 'Electric Crucible?', 'tfc:crucible', pages=(
             text('There is no Electric Crucible in this mod, but the $(thing)External Heater$() is made to be able to heat a $(l:mechanics/crucible)Crucible$() just like a $(l:mechanics/charcoal_forge)Charcoal Forge$().'),
             crafting('immersiveengineering:crafting/furnace_heater', text_contents='By default, it heats a $(thing)Crucible$() up to 1600°C, consuming 20IF/t.')
+        )),
+        entry('drill', 'High-End Drill Heads', 'tfc_ie_addon:drillhead_black_steel', pages=(
+            text('Does mining with the drill feel too slow? Are you not satisfied with the steel drill head?$(br)You can now create drill heads of coloured steels! They have better mining speed and size, as well as higher durability.'),
+            tri_anvil_recipe('Drill Heads', 'tfc_ie_addon:anvil/drillhead_black_steel', 'tfc_ie_addon:anvil/drillhead_blue_steel', 'tfc_ie_addon:anvil/drillhead_red_steel')
         ))
     ))
 

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Union
+from typing import Union, Sequence
 
 from assets import domain_divider
 
@@ -148,6 +148,12 @@ def generate(rm: ResourceManager):
     anvil_recipe(rm, 'drillhead_steel', 'tfc:metal/double_sheet/steel', 'immersiveengineering:drillhead_steel', 4, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
 
     anvil_recipe(rm, 'drillhead_iron', 'tfc:metal/double_sheet/wrought_iron', 'immersiveengineering:drillhead_iron', 3, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+
+    anvil_recipe(rm, 'drillhead_black_steel', 'tfc:metal/double_sheet/black_steel', 'tfc_ie_addon:drillhead_black_steel', 5, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+
+    anvil_recipe(rm, 'drillhead_blue_steel', 'tfc:metal/double_sheet/blue_steel', 'tfc_ie_addon:drillhead_blue_steel', 6, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+
+    anvil_recipe(rm, 'drillhead_red_steel', 'tfc:metal/double_sheet/red_steel', 'tfc_ie_addon:drillhead_red_steel', 6, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
 
     anvil_recipe(rm, 'gunpart_barrel', 'tfc:metal/ingot/steel', 'immersiveengineering:gunpart_barrel', 4, Rules.draw_last, Rules.hit_any, Rules.shrink_any)
 

@@ -350,6 +350,13 @@ def fertilizer(item: str, text_contents: str, n: float = 0, p: float = 0, k: flo
     return item_spotlight(item, text_contents=text_contents)
 
 
+# =======================
+# TFC_IE_ADDON Page Types
+# =======================
+
+def tri_anvil_recipe(header: str, recipe: str, recipe2: str, recipe3: str) -> Page: return page('tri_anvil_recipe', {'header': header, 'recipe': recipe, 'recipe2': recipe2, 'recipe3': recipe3}, True, ('header',), True)
+
+
 def non_text_first_page() -> Page:
     return page(NON_TEXT_FIRST_PAGE, {})
 
@@ -383,5 +390,6 @@ def header_component(x: int, y: int) -> Component:
 def seperator_component(x: int, y: int) -> Component:
     return Component('patchouli:separator', x, y, {})
 
-# def custom_component(x: int, y: int, class_name: str, data: JsonObject) -> Component:
-#    return Component('patchouli:custom', x, y, {'class': 'net.dries007.tfc.compat.patchouli.component.' + class_name, **data})
+
+def custom_component(x: int, y: int, class_name: str, data: JsonObject) -> Component:
+    return Component('patchouli:custom', x, y, {'class': 'com.nmagpie.tfc_ie_addon.compat.patchouli.component.' + class_name, **data})

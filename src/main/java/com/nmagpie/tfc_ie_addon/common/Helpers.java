@@ -13,7 +13,6 @@ public class Helpers
         return new ResourceLocation(MOD_ID, id);
     }
 
-
     @SuppressWarnings({"AssertWithSideEffects", "ConstantConditions"})
     private static boolean detectAssertionsEnabled()
     {

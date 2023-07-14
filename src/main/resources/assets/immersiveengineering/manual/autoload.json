@@ -14,7 +14,8 @@
       "tfc_ie_addon:tfc_ie_graphite",
       "tfc_ie_addon:tfc_ie_steel_obtain",
       "tfc_ie_addon:tfc_ie_herbicide",
-      "tfc_ie_addon:tfc_ie_external_heater"
+      "tfc_ie_addon:tfc_ie_external_heater",
+      "tfc_ie_addon:tfc_ie_drill"
     ]
   }
 }

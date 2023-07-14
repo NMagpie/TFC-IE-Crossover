@@ -1,3 +1,5 @@
+from typing import Any
+
 from mcresources import ResourceManager, ItemContext
 from mcresources import utils
 
@@ -44,24 +46,19 @@ def generate(rm: ResourceManager):
             block.with_item_model().with_lang(lang(block_lang))
 
             if 'block' in block_name:
-                block.with_block_loot('tfc_ie_addon:mineral/%s' % block_name).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
+                block.with_block_loot('tfc_ie_addon:mineral/%s' % block_name)
 
         else:
             block = rm.blockstate('mineral/%s' % block_name, variants=six_ways('tfc_ie_addon:block/mineral/%s' % block_name), use_default_model=False)
 
-        block.with_block_loot()
-
         if "cluster" in block_name:
-            block.with_block_loot('tfc_ie_addon:mineral/quartz_shard')
+            block.with_block_loot('2 tfc_ie_addon:mineral/quartz_shard')
 
         block.with_block_model({
             texture: 'tfc_ie_addon:block/mineral/%s' % block_name,
             'particle': 'tfc_ie_addon:block/mineral/%s' % block_name,
         }, parent='minecraft:block/' + parent, )
-        block.with_lang(lang(block_lang)).with_tag('tfc:prospectable')
-
-        if texture == 'all':
-            block.with_tag('minecraft:mineable/pickaxe')
+        block.with_lang(lang(block_lang)).with_tag('tfc:prospectable').with_tag('minecraft:mineable/pickaxe')
 
         rm.block('tfc_ie_addon:mineral/%s/prospected' % block_name).with_lang(lang('quartz'))
 
@@ -74,6 +71,12 @@ def generate(rm: ResourceManager):
     # MOLD
 
     rm.item_model('mold_sheet').with_lang('Metal Press Mold: Sheet')
+
+    # DRILLHEADS
+
+    rm.item_model('drillhead_black_steel').with_lang('Black Steel Drill Head')
+    rm.item_model('drillhead_blue_steel').with_lang('Blue Steel Drill Head')
+    rm.item_model('drillhead_red_steel').with_lang('Red Steel Drill Head')
 
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)

@@ -30,6 +30,11 @@ public class Items
     public static final RegistryObject<Item> HAMMER_HEAD = register("tool_head/ie_hammer", TFCItemGroup.METAL);
 
     public static final RegistryObject<Item> MOLD_SHEET = register("mold_sheet", () -> new Item(new Item.Properties().stacksTo(1).tab(ImmersiveEngineering.ITEM_GROUP)));
+
+    public static final RegistryObject<Drillhead> DRILLHEAD_BLACK_STEEL = register("drillhead_black_steel", () -> new Drillhead(Drillhead.BLACK_STEEL));
+    public static final RegistryObject<Drillhead> DRILLHEAD_BLUE_STEEL = register("drillhead_blue_steel", () -> new Drillhead(Drillhead.BLUE_STEEL));
+    public static final RegistryObject<Drillhead> DRILLHEAD_RED_STEEL = register("drillhead_red_steel", () -> new Drillhead(Drillhead.RED_STEEL));
+
     public static final Map<Ore.Grade, RegistryObject<Item>> ALUMINUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_aluminum", TFCItemGroup.ORES));
     public static final Map<Ore.Grade, RegistryObject<Item>> LEAD_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_lead", TFCItemGroup.ORES));
     public static final Map<Ore.Grade, RegistryObject<Item>> URANIUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_uranium", TFCItemGroup.ORES));
