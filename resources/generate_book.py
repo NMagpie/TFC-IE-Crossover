@@ -75,7 +75,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             text('Mixing $(thing)Saltpeter$(), $(thing)Sulfur$() and $(thing)Charcoal$() allows for the creation of $(thing)Gunpowder$(), a far more scientific process than looting it from slain monsters.')
         )),
         entry('multiblocks', 'Multiblock Changes', 'tfc:fire_bricks', pages=(
-            text('Now, there are changes in creating multiblock structures. To create $(thing)Coke Oven$() and $(thing)Arc Furnace$() you will need $(thing)Fire Bricks$() from TerraFirmaCraft instead of Blast Bricks.$(br)Also, keep in mind that you don\'t need Blast Furnace from Immersive Engineering since you have it in TerraFirmaCraft! Additionally, you don\'t need Alloy Kiln because, you know, you can make alloys in TerraFirmaCraft.'),
+            text('Now, there are changes in creating multiblock structures. To create $(thing)Coke Oven$() and $(thing)Arc Furnace$() you will need $(thing)Fire Bricks$() from TerraFirmaCraft instead of Blast Bricks.$(br)Also, keep in mind that you don\'t need Blast Furnace from Immersive Engineering since you have it in TerraFirmaCraft! Additionally, you don\'t need Alloy Kiln because, you know, you can make alloys in TerraFirmaCraft.').link('immersiveengineering:cokebrick').link('immersiveengineering:blastbrick'),
             crafting('tfc:crafting/fire_bricks'),
             multiblock('Arc Furnace', '', True, pattern=(
                 ('     ', 'S    ', 'LLL  ', 'S    ', '     '),
@@ -117,7 +117,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         )),
         entry('quartz', 'Quartz', 'tfc_ie_addon:mineral/quartz_shard', pages=(
             non_text_first_page(),
-            item_spotlight('tfc_ie_addon:mineral/quartz_shard', 'Quartz', text_contents='You cannot visit Nether anymore, but you still need some Quartz for Electronics? Not a problem! Now you can find in TFC Overworld $(thing)Quartz Geodes$(), which can contain $(thing)Quartz Blocks$() and $(thing)Quartz Clusters$()! It can be helpful for crafting electronics from the Immersive Engineering!'),
+            item_spotlight('tfc_ie_addon:mineral/quartz_shard', 'Quartz', text_contents='You cannot visit Nether anymore, but you still need some Quartz for Electronics? Not a problem! Now you can find in TFC Overworld $(thing)Quartz Geodes$(), which can contain $(thing)Quartz Blocks$() and $(thing)Quartz Clusters$()! It can be helpful for crafting electronics from the Immersive Engineering!').link('tfc_ie_addon:mineral/quartz_shard').link('tfc_ie_addon:mineral/quartz_block'),
             multiblock('Quartz Cluster', 'Keep in mind that with time $(thing)Budding Quartz Blocks$() can produce more $(thing)Quartz Clusters$().', False, pattern=(
                 ('   ', ' Q ', '   '),
                 ('   ', ' 0 ', '   ')), mapping={
@@ -130,7 +130,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(l:tfc_ie_addon:tfc_ie_changes/blueprint)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
         )),
         entry('steel_obtain', 'Steel Creation', 'tfc:metal/ingot/steel', pages=(
-            text('In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.'),
+            text('In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.').link('immersiveengineering:slag'),
             item_spotlight('immersiveengineering:slag', text_contents='Also, $(thing)Slag$() now can be obtained while you are forging $(thing)Pig Iron Ingot$() to get $(thing)High Carbon Steel Ingot$().')
         )),
         entry('herbicide', 'Herbicide Additions', 'immersiveengineering:herbicide_bucket', pages=(
@@ -138,7 +138,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             item_spotlight('immersiveengineering:herbicide_bucket', text_contents='To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with $(thing)Malachite Powder$() and $(l:tfc_ie_addon:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$().')
         )),
         entry('external_heater', 'Electric Crucible?', 'tfc:crucible', pages=(
-            text('There is no Electric Crucible in this mod, but the $(thing)External Heater$() is made to be able to heat a $(l:mechanics/crucible)Crucible$() just like a $(l:mechanics/charcoal_forge)Charcoal Forge$().'),
+            text('There is no Electric Crucible in this mod, but the $(thing)External Heater$() is made to be able to heat a $(l:mechanics/crucible)Crucible$() just like a $(l:mechanics/charcoal_forge)Charcoal Forge$().').link('immersiveengineering:furnace_heater'),
             crafting('immersiveengineering:crafting/furnace_heater', text_contents='By default, it heats a $(thing)Crucible$() up to 1600°C, consuming 20IF/t.')
         )),
         entry('drill', 'High-End Drill Heads', 'tfc_ie_addon:drillhead_black_steel', pages=(

@@ -181,6 +181,7 @@ TO_REMOVE_RECIPES = [
     'immersiveengineering:crafting/shovel_steel',
 
     'immersiveengineering:crafting/drillhead_steel',
+    'immersiveengineering:crafting/drillhead_iron',
 
     'immersiveengineering:crafting/stick_aluminum',
     'immersiveengineering:crafting/stick_iron',
@@ -202,6 +203,7 @@ TO_REMOVE_RECIPES = [
 
     'immersiveengineering:crafting/alloybrick',
     'immersiveengineering:crafting/cokebrick',
+    'immersiveengineering:crafting/blastbrick',
     'immersiveengineering:crafting/blastbrick_reinforced',
 
     'immersiveengineering:crafting/storage_steel_to_ingot_steel',

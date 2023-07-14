@@ -16,5 +16,8 @@
     }
   ],
   "read_by_default": true,
-  "sortnum": 9
+  "sortnum": 9,
+  "extra_recipe_mappings": {
+    "immersiveengineering:slag": 0
+  }
 }

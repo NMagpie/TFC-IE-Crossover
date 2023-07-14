@@ -37,5 +37,9 @@
     }
   ],
   "read_by_default": true,
-  "sortnum": 7
+  "sortnum": 7,
+  "extra_recipe_mappings": {
+    "tfc_ie_addon:mineral/quartz_shard": 0,
+    "tfc_ie_addon:mineral/quartz_block": 0
+  }
 }

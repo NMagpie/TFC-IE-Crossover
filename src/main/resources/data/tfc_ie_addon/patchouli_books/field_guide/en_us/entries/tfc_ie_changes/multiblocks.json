@@ -99,5 +99,9 @@
     }
   ],
   "read_by_default": true,
-  "sortnum": 3
+  "sortnum": 3,
+  "extra_recipe_mappings": {
+    "immersiveengineering:cokebrick": 0,
+    "immersiveengineering:blastbrick": 0
+  }
 }

@@ -15,5 +15,8 @@
     }
   ],
   "read_by_default": true,
-  "sortnum": 11
+  "sortnum": 11,
+  "extra_recipe_mappings": {
+    "immersiveengineering:furnace_heater": 0
+  }
 }
