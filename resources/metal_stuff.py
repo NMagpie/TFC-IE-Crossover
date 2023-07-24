@@ -107,6 +107,8 @@ def generate(rm: ResourceManager):
         rm.item_tag('tfc:pileable_ingots', 'immersiveengineering:ingot_%s' % metal)
         rm.item_tag('tfc:pileable_sheets', 'tfc_ie_addon:metal/sheet/%s' % metal)
 
+        rm.item_tag('forge:rods/all_metal', '#forge:rods/wrought_iron')
+
 
 def ore_heats(rm: ResourceManager):
     for ore in ['aluminum', 'lead', 'uranium']:

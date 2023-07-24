@@ -107,11 +107,29 @@ def generate(rm: ResourceManager):
     fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 33000, 1550)
     rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
 
-    rm.item_tag('forge:rods/all_metal', '#forge:rods/wrought_iron')
-
     # FORBIDDEN IN CRATES (HUGE ITEMS)
 
     rm.item_tag('immersiveengineering:forbidden_in_crates', '#tfc:large_vessels', '#tfc:anvils', '#tfc:barrels', 'tfc:powderkeg')
+
+    # REPLACEABLE
+
+    rm.block_tag('minecraft:replaceable', *[
+        'immersiveengineering:acetaldehyde_fluid_block',
+        'immersiveengineering:biodiesel_fluid_block',
+        'immersiveengineering:concrete_fluid_block',
+        'immersiveengineering:creosote_fluid_block',
+        'immersiveengineering:ethanol_fluid_block',
+        'immersiveengineering:fake_light',
+        'immersiveengineering:herbicide_fluid_block',
+        'immersiveengineering:phenolic_resin_fluid_block',
+        'immersiveengineering:plantoil_fluid_block',
+        'immersiveengineering:redstone_acid_fluid_block',
+        'tfc_ie_addon:fluid/metal/aluminum',
+        'tfc_ie_addon:fluid/metal/constantan',
+        'tfc_ie_addon:fluid/metal/electrum',
+        'tfc_ie_addon:fluid/metal/lead',
+        'tfc_ie_addon:fluid/metal/uranium'
+    ])
 
 
 def needs_tool(_tool: str) -> str:

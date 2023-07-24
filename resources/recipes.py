@@ -56,6 +56,8 @@ def generate(rm: ResourceManager):
         damage_shapeless(rm, 'crafting/%s_sheet_to_plate' % metal, ('%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal), 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_%s' % metal))
     damage_shapeless(rm, 'crafting/wrought_iron_sheet_to_plate', ('tfc:metal/sheet/wrought_iron', 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_iron'))
 
+    rm.crafting_shaped('crafting/treated_wood_planks', ['XX', 'XX'], {'X': 'tfc_ie_addon:treated_wood_lumber'}, 'immersiveengineering:treated_wood_horizontal')
+
     # HEAT RECIPES
 
     heat_recipe(rm, 'slag', 'immersiveengineering:slag', 380, 'immersiveengineering:slag_glass')
@@ -79,7 +81,13 @@ def generate(rm: ResourceManager):
 
     # BARREL RECIPES
 
-    barrel_instant_recipe(rm, 'redstone_acid', {'ingredient': {'tag': 'forge:dusts/redstone'}}, '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
+    barrel_instant_recipe(rm, 'redstone_acid', '#forge:dusts/redstone', '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
+    barrel_sealed_recipe(rm, 'treated_wood', 'Treated Wood', 8000, '#tfc:lumber', '50 immersiveengineering:creosote',  output_item='tfc_ie_addon:treated_wood_lumber')
+
+    # CHISEL RECIPES
+
+    chisel_recipe(rm, 'concrete_stairs', 'immersiveengineering:concrete', 'immersiveengineering:stairs_concrete', 'stair')
+    chisel_recipe(rm, 'concrete_slab', 'immersiveengineering:concrete', 'immersiveengineering:slab_concrete', 'slab')
 
     # COKE OVEN RECIPES
 
@@ -211,6 +219,9 @@ def generate(rm: ResourceManager):
 
     metalpress_recipe(rm, 'plate_wrought_iron', '#forge:ingots/wrought_iron', 'immersiveengineering:mold_plate', '#forge:plates/iron', 2400)
 
+    for metal in ['steel', 'uranium']:
+        metalpress_recipe(rm, '%s_block' % metal, '9 #forge:ingots/%s' % metal, 'tfc_ie_addon:mold_block', 'immersiveengineering:storage_%s' % metal, 4800)
+
     # SAWMILL RECIPES
 
     for wood_type in TFC_WOOD_TYPES:
@@ -261,6 +272,11 @@ def generate(rm: ResourceManager):
                            slag=True,
                            conditional_modid='firmalife')
 
+    # IMMERSIVE PETROLEUM COMPAT
+
+    chisel_recipe(rm, 'asphalt_stairs', 'immersivepetroleum:asphalt', 'immersivepetroleum:asphalt_stair', 'stair', 'immersivepetroleum')
+    chisel_recipe(rm, 'asphalt_slab', 'immersivepetroleum:asphalt', 'immersivepetroleum:asphalt_slab', 'slab', 'immersivepetroleum')
+
 
 def damage_shapeless(rm: ResourceManager, name_parts: ResourceIdentifier, ingredients: Json, result: Json, group: str = None, conditions: utils.Json = None) -> RecipeContext:
     res = utils.resource_location(rm.domain, name_parts)
@@ -285,6 +301,21 @@ def barrel_instant_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentif
         'output_fluid': fluid_stack(output_fluid) if output_fluid is not None else None,
         'sound': sound
     })
+
+
+def barrel_sealed_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, translation: str, duration: int, input_item: Optional[Json] = None, input_fluid: Optional[Json] = None, output_item: Optional[Json] = None, output_fluid: Optional[Json] = None, on_seal: Optional[Json] = None, on_unseal: Optional[Json] = None, sound: Optional[str] = None):
+    rm.recipe(('barrel', name_parts), 'tfc:barrel_sealed', {
+        'input_item': item_stack_ingredient(input_item) if input_item is not None else None,
+        'input_fluid': fluid_stack_ingredient(input_fluid) if input_fluid is not None else None,
+        'output_item': item_stack_provider(output_item) if isinstance(output_item, str) else output_item,
+        'output_fluid': fluid_stack(output_fluid) if output_fluid is not None else None,
+        'duration': duration,
+        'on_seal': on_seal,
+        'on_unseal': on_unseal,
+        'sound': sound
+    })
+    res = utils.resource_location('tfc_ie_addon', name_parts)
+    rm.lang('tfc.recipe.barrel.' + res.domain + '.barrel.' + res.path.replace('/', '.'), lang(translation))
 
 
 def write_crafting_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, data: Json) -> RecipeContext:
@@ -548,6 +579,15 @@ def quern_recipe(rm: ResourceManager, name: ResourceIdentifier, item: str, resul
         'ingredient': utils.ingredient(item),
         'result': result
     })
+
+
+def chisel_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, result: str, mode: str, conditional_modid: str = None):
+    rm.recipe(('chisel', mode, name_parts), 'tfc:chisel', {
+        'ingredient': ingredient,
+        'result': result,
+        'mode': mode,
+        'extra_drop': item_stack_provider(result) if mode == 'slab' else None
+    }, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
 
 
 def coke_oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, creosote: int, time: int):

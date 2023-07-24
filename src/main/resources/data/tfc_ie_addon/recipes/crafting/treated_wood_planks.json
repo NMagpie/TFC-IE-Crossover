@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc_ie_addon:treated_wood_lumber"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:treated_wood_horizontal"
+  }
+}

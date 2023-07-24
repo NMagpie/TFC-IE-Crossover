@@ -159,7 +159,10 @@ DEFAULT_LANG = {
     'desc.immersiveengineering.info.mineral.franklinite': 'Franklinite',
     'desc.immersiveengineering.info.mineral.quartzite': 'Quartzite',
 
-    'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft'
+    'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft',
+
+    'pack.tfc_ie_addon.immersivepetroleum.title': 'TFC + IE Addon Immersive Petroleum Override',
+    'pack.tfc_ie_addon.immersivepetroleum.description': 'Compatibility with Immersive Petroleum by TFC + IE Addon'
 }
 
 TO_REMOVE_RECIPES = [
@@ -207,7 +210,9 @@ TO_REMOVE_RECIPES = [
     'immersiveengineering:crafting/blastbrick_reinforced',
 
     'immersiveengineering:crafting/storage_steel_to_ingot_steel',
-    'immersiveengineering:crafting/storage_uranium_to_ingot_uranium'
+    'immersiveengineering:crafting/storage_uranium_to_ingot_uranium',
+
+    'immersiveengineering:crafting/treated_wood_horizontal'
 ]
 
 IE_METALS = [

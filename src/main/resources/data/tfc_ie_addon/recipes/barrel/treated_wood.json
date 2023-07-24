@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "ingredient": {
+      "tag": "tfc:lumber"
+    }
+  },
+  "input_fluid": {
+    "ingredient": "immersiveengineering:creosote",
+    "amount": 50
+  },
+  "output_item": {
+    "item": "tfc_ie_addon:treated_wood_lumber"
+  },
+  "duration": 8000
+}

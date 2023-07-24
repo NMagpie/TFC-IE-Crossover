@@ -65,18 +65,22 @@ def generate(rm: ResourceManager):
     # TOOLS
 
     rm.item_model('tool_head/wirecutter').with_lang('Wirecutter Head')
-
     rm.item_model('tool_head/ie_hammer').with_lang('Engineer\'s Hammer Head')
 
     # MOLD
 
     rm.item_model('mold_sheet').with_lang('Metal Press Mold: Sheet')
+    rm.item_model('mold_block').with_lang('Metal Press Mold: Block')
 
     # DRILLHEADS
 
     rm.item_model('drillhead_black_steel').with_lang('Black Steel Drill Head')
     rm.item_model('drillhead_blue_steel').with_lang('Blue Steel Drill Head')
     rm.item_model('drillhead_red_steel').with_lang('Red Steel Drill Head')
+
+    # TREATED WOOD
+
+    rm.item_model('treated_wood_lumber').with_lang(lang('treated_wood_lumber'))
 
     for key, value in DEFAULT_LANG.items():
         rm.lang(key, value)

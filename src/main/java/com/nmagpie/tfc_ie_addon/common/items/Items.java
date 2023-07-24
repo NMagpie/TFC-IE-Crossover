@@ -29,11 +29,16 @@ public class Items
 
     public static final RegistryObject<Item> HAMMER_HEAD = register("tool_head/ie_hammer", TFCItemGroup.METAL);
 
-    public static final RegistryObject<Item> MOLD_SHEET = register("mold_sheet", () -> new Item(new Item.Properties().stacksTo(1).tab(ImmersiveEngineering.ITEM_GROUP)));
+    public static final RegistryObject<Item> MOLD_SHEET = register("mold_sheet",
+        () -> new Item(new Item.Properties().stacksTo(1).tab(ImmersiveEngineering.ITEM_GROUP)));
+    public static final RegistryObject<Item> MOLD_BLOCK = register("mold_block",
+        () -> new Item(new Item.Properties().stacksTo(1).tab(ImmersiveEngineering.ITEM_GROUP)));
 
     public static final RegistryObject<Drillhead> DRILLHEAD_BLACK_STEEL = register("drillhead_black_steel", () -> new Drillhead(Drillhead.BLACK_STEEL));
     public static final RegistryObject<Drillhead> DRILLHEAD_BLUE_STEEL = register("drillhead_blue_steel", () -> new Drillhead(Drillhead.BLUE_STEEL));
     public static final RegistryObject<Drillhead> DRILLHEAD_RED_STEEL = register("drillhead_red_steel", () -> new Drillhead(Drillhead.RED_STEEL));
+
+    public static final RegistryObject<Item> TREATED_WOOD_LUMBER = register("treated_wood_lumber", TFCItemGroup.WOOD);
 
     public static final Map<Ore.Grade, RegistryObject<Item>> ALUMINUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_aluminum", TFCItemGroup.ORES));
     public static final Map<Ore.Grade, RegistryObject<Item>> LEAD_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_lead", TFCItemGroup.ORES));
@@ -46,14 +51,6 @@ public class Items
     public static final Map<Metal, RegistryObject<BucketItem>> METAL_FLUID_BUCKETS = Helpers.mapOfKeys(Metal.class, metal ->
         register("bucket/metal/" + metal.name(), () -> new BucketItem(Fluids.METALS.get(metal).source(), new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1).tab(TFCItemGroup.MISC)))
     );
-    private static final String[] IE_Fluids = {
-        "acetaldehyde", "biodiesel", "concrete", "creosote", "ethanol", "herbicide", "phenolic_resin", "plantoil", "redstone_acid"
-    };
-
-    private static Item.Properties prop()
-    {
-        return new Item.Properties().tab(TFCItemGroup.MISC);
-    }
 
     private static RegistryObject<Item> register(String name, CreativeModeTab group)
     {
