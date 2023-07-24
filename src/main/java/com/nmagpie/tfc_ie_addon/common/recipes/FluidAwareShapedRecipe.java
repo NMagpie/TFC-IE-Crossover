@@ -31,6 +31,9 @@ public class FluidAwareShapedRecipe extends BasicShapedRecipe
         NonNullList<ItemStack> remaining = NonNullList.withSize(inv.getContainerSize(), ItemStack.EMPTY);
         final MatchLocation offset = findMatch(inv);
 
+        if (offset == null)
+            return super.getRemainingItems(inv);
+
         for (int x = 0; x < inv.getWidth(); ++x)
             for (int y = 0; y < inv.getHeight(); ++y)
             {
