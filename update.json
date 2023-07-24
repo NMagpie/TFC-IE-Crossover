@@ -1,8 +1,8 @@
 {
   "homepage" : "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover",
   "promos": {
-    "1.18.2-latest": "0.2.2",
-    "1.18.2-recommended": "0.2.2"
+    "1.18.2-latest": "0.2.3",
+    "1.18.2-recommended": "0.2.3"
   },
   "1.18.2": {
     "0.2.3": " - Add treated wood lumber.\n - Change treated wood planks to be crafted from treated wood lumber.\n - Add block mold.\n - Change steel block and uranium block recipe.\n - Add chisel recipe for concrete stairs and slab.\n - Fix fluid crafting recipes bugged in JEI.\n - Add Immersive Petroleum compatibility.",
