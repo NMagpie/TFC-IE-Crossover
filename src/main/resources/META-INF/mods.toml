@@ -43,8 +43,8 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.tfc_ie_addon]]
-modId = "jei"
+modId = "immersivepetroleum"
 mandatory = false
-versionRange = "[${jei_version},)"
-ordering = "NONE"
+versionRange = "[1.18.2-4.1.0-21,)"
+ordering = "AFTER"
 side = "BOTH"

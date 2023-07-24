@@ -5,7 +5,9 @@ import java.nio.file.Path;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.util.IEHeatHandler;
 import javax.annotation.Nonnull;
+import net.minecraft.SharedConstants;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
@@ -29,6 +31,7 @@ public class Events
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(Events::onPackFinder);
+        bus.addListener(Events::setupImmersivePetroleumCompat);
 
         MinecraftForge.EVENT_BUS.register(ExternalHeatCapListener.class);
     }
@@ -63,6 +66,19 @@ public class Events
         catch (IOException e)
         {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static void setupImmersivePetroleumCompat(AddPackFindersEvent event)
+    {
+        if (event.getPackType() == PackType.SERVER_DATA && ModList.get().isLoaded("immersivepetroleum"))
+        {
+            var resourcePath = ModList.get().getModFileById(TFC_IE_Addon.MOD_ID).getFile().findResource("compat/immersivepetroleum");
+            var pack = new PathResourcePack(ModList.get().getModFileById(TFC_IE_Addon.MOD_ID).getFile().getFileName() + ":" + resourcePath, resourcePath);
+            var metadata = new PackMetadataSection(new TranslatableComponent("pack.tfc_ie_addon.immersivepetroleum.description"), SharedConstants.getCurrentVersion().getPackVersion(com.mojang.bridge.game.PackType.DATA));
+            event.addRepositorySource((consumer, constructor) ->
+                consumer.accept(constructor.create("builtin/tfc_ie_addon_immersivepetroleum_compat", new TranslatableComponent("pack.tfc_ie_addon.immersivepetroleum.title"), true, () -> pack, metadata, Pack.Position.TOP, PackSource.BUILT_IN, false))
+            );
         }
     }
 
