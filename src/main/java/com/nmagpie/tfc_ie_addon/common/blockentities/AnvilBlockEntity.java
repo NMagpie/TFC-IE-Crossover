@@ -1,4 +1,4 @@
-package com.nmagpie.tfc_ie_addon.common.blockenties;
+package com.nmagpie.tfc_ie_addon.common.blockentities;
 
 import blusunrize.immersiveengineering.common.register.IEItems;
 import net.minecraft.core.BlockPos;

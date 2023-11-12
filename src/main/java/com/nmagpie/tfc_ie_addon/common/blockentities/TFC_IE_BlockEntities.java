@@ -1,4 +1,4 @@
-package com.nmagpie.tfc_ie_addon.common.blockenties;
+package com.nmagpie.tfc_ie_addon.common.blockentities;
 
 import java.lang.reflect.Field;
 import java.util.Objects;

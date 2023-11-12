@@ -5,7 +5,7 @@ import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.client.ClientForgeEvents;
 import com.nmagpie.tfc_ie_addon.common.Events;
 import com.nmagpie.tfc_ie_addon.common.Helpers;
-import com.nmagpie.tfc_ie_addon.common.blockenties.TFC_IE_BlockEntities;
+import com.nmagpie.tfc_ie_addon.common.blockentities.TFC_IE_BlockEntities;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
