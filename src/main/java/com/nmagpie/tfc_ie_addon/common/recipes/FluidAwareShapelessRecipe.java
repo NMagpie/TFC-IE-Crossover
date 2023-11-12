@@ -21,7 +21,7 @@ public class FluidAwareShapelessRecipe extends ShapelessFluidAwareRecipe
 
     public FluidAwareShapelessRecipe(ShapelessRecipe in)
     {
-        this(in.getId(), in.getGroup(), in.getIngredients(), in.getResultItem());
+        this(in.getId(), in.getGroup(), in.getIngredients(), in.getResultItem(null));
     }
 
     @Nonnull
@@ -48,8 +48,8 @@ public class FluidAwareShapelessRecipe extends ShapelessFluidAwareRecipe
                         result = ((IngredientFluidStack) ingr).getExtractedStack(item.copy());
                     else if (ingr instanceof AddonIngredientFluidStack)
                         result = ((AddonIngredientFluidStack) ingr).getExtractedStack(item.copy());
-                    else if (item.hasContainerItem())
-                        result = item.getContainerItem();
+                    else if (item.hasCraftingRemainingItem())
+                        result = item.getCraftingRemainingItem();
                     if (result == item)
                         result = result.copy();
                     remaining.set(invIndex, result);

@@ -1,9 +1,17 @@
 {
-  "start": {
+  "sheet": {
     "type": "blueprint",
     "recipes": [
       {
         "item": "tfc_ie_addon:mold_sheet"
+      }
+    ]
+  },
+  "block": {
+    "type": "blueprint",
+    "recipes": [
+      {
+        "item": "tfc_ie_addon:mold_block"
       }
     ]
   }

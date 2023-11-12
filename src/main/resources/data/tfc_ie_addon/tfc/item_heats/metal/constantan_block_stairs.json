@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/constantan_stairs"
+  },
+  "heat_capacity": 2.143,
+  "forging_temperature": 450,
+  "welding_temperature": 600
+}

@@ -46,7 +46,6 @@ def main():
 
 
 def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
-    rm.domain = 'tfc_ie_addon'
     book = Book(rm, 'field_guide', {}, i18n, local_instance)
 
     book.template('tri_anvil_recipe', header_component(-1, -1), custom_component(0, 0, 'TriAnvilComponent', {'recipe': '#recipe', 'recipe2': '#recipe2', 'recipe3': '#recipe3'}))
@@ -65,6 +64,11 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             alloy_recipe('Electrum', 'electrum', '').link('immersiveengineering:ingot_electrum'),
             alloy_recipe('Constantan', 'constantan', '').link('immersiveengineering:ingot_constantan'),
             empty_last_page()
+        )),
+        entry('mold', 'New Molds', 'tfc_ie_addon:mold_sheet', pages=(
+            non_text_first_page(),
+            item_spotlight('tfc_ie_addon:mold_sheet', 'Sheet Mold', text_contents='The $(thing)Sheet Mold$() is created with an $(thing)Engineering\'s Blueprint$() at the $(thing)Engineering\'s Workbench$(). With it, you can create metal sheets of all metals at the $(thing)Metal Press$().'),
+            item_spotlight('tfc_ie_addon:mold_block', 'Block Mold', text_contents='The $(thing)Block Mold$() is created in the same way. You can create $(thing)Block of Steel$() and $(thing)Block of Uranium$() with it.')
         )),
         entry('chemicals', 'Chemical Ingredients', 'tfc:powder/saltpeter', pages=(
             text('Not all materials in engineer- ing are as straightforward as wood, stone and various metals. A basic understanding of chemical processes is essential to appreciate the breadth of materials available to you.'),
@@ -105,11 +109,6 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             text('Since TerraFirmaCraft world does not provide village generation, you won\'t be able to meet Villagers that could sell you some Blueprints. Thus, you can now craft it on the crafting table! It will be a little difficult, but it will worth it.'),
             crafting('tfc_ie_addon:crafting/blueprint_electrode', 'tfc_ie_addon:crafting/blueprint_special_bullet')
         )),
-        entry('mold', 'Sheet Mold', 'tfc_ie_addon:mold_sheet', pages=(
-            non_text_first_page(),
-            item_spotlight('tfc_ie_addon:mold_sheet', 'Sheet Mold', text_contents='The $(thing)Sheet Mold$() is created with an $(thing)Engineering\'s Blueprint$() at the $(thing)Engineering\'s Workbench$(). With it, you can create metal sheets of all metals at the $(thing)Metal Press$().'),
-            empty_last_page()
-        )),
         entry('jute', 'Jute', 'tfc:jute_fiber', pages=(
             non_text_first_page(),
             item_spotlight('tfc:jute_fiber', 'Jute', text_contents='Industrial Hemp is a remarkable plant, but today we are going to talk about $(thing)Jute$()! Not only are its seeds useful for the creation of $(thing)Biodiesel$(), $(thing)Jute Fiber$() is also used for the creation of $(thing)Burlap Cloth$(), which is an alternative of Tough Fabric. The seeds can be obtained by harvesting $(l:the_world/wild_crops)Wild Jute$().'),
@@ -127,7 +126,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         )),
         entry('graphite', 'Graphite', 'immersiveengineering:ingot_hop_graphite', pages=(
             text('Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs. $(thing)HOP Graphite Dust$() is created by compressing eight pieces of $(thing)Coke Dust$() or $(thing)Graphite Powder$() in the $(thing)Industrial Squeezer$(). That dust can then be smelted into an ingot.'),
-            item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(l:tfc_ie_addon:tfc_ie_changes/blueprint)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
+            item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(l:tfc:tfc_ie_changes/blueprint)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
         )),
         entry('steel_obtain', 'Steel Creation', 'tfc:metal/ingot/steel', pages=(
             text('In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.').link('immersiveengineering:slag'),
@@ -135,11 +134,11 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         )),
         entry('herbicide', 'Herbicide Additions', 'immersiveengineering:herbicide_bucket', pages=(
             text('$(thing)Herbicide$() works in the TerraFirmaCraft World too! When loaded into a $(thing)Chemical Thrower$() it is dispersed as a fine mist, which withers and destroys any plants it comes in contact with. The fluid will destroy flowers and crops and strip the grass from dirt. It will also dehydrate and ruin farmland. It can therefore be used as an alternative to $(thing)Rotten Compost$().'),
-            item_spotlight('immersiveengineering:herbicide_bucket', text_contents='To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with $(thing)Malachite Powder$() and $(l:tfc_ie_addon:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$().')
+            item_spotlight('immersiveengineering:herbicide_bucket', text_contents='To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with $(thing)Malachite Powder$() and $(l:tfc:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$().')
         )),
         entry('external_heater', 'Electric Crucible?', 'tfc:crucible', pages=(
             text('There is no Electric Crucible in this mod, but the $(thing)External Heater$() is made to be able to heat a $(l:mechanics/crucible)Crucible$() just like a $(l:mechanics/charcoal_forge)Charcoal Forge$().').link('immersiveengineering:furnace_heater'),
-            crafting('immersiveengineering:crafting/furnace_heater', text_contents='By default, it heats a $(thing)Crucible$() up to 1600°C, consuming 20IF/t.')
+            crafting('immersiveengineering:crafting/furnace_heater', text_contents='By default, it heats a $(thing)Crucible$() up to 2000°C, consuming 20IF/t.')
         )),
         entry('drill', 'High-End Drill Heads', 'tfc_ie_addon:drillhead_black_steel', pages=(
             text('Does mining with the drill feel too slow? Are you not satisfied with the steel drill head?$(br)You can now create drill heads of coloured steels! They have better mining speed and size, as well as higher durability.'),

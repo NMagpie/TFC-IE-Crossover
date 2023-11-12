@@ -4,6 +4,9 @@
   "values": [
     "immersiveengineering:ingot_electrum",
     "tfc_ie_addon:metal/double_ingot/electrum",
-    "tfc_ie_addon:metal/sheet/electrum"
+    "tfc_ie_addon:metal/sheet/electrum",
+    "tfc_ie_addon:metal/block/electrum",
+    "tfc_ie_addon:metal/block/electrum_slab",
+    "tfc_ie_addon:metal/block/electrum_stairs"
   ]
 }

@@ -6,6 +6,8 @@ from mcresources.type_definitions import JsonObject, ResourceLocation
 from constants import ALLOYS, lang
 from i18n import I18n
 
+import re
+
 NON_TEXT_FIRST_PAGE = 'NON_TEXT_FIRST_PAGE'
 PAGE_BREAK = 'PAGE_BREAK'
 EMPTY_LAST_PAGE = 'EMPTY_LAST_PAGE'
@@ -25,10 +27,9 @@ class Page(NamedTuple):
     anchor_id: str | None  # Anchor for referencing from other pages
     link_ids: List[str]  # Items that are linked to this page
     translation_keys: Tuple[str, ...]  # Keys into 'data' that need to be passed through the Translation
-    tfc_ie_addon: bool
 
     def anchor(self, anchor_id: str) -> 'Page':
-        return Page(self.type, self.data, self.custom, anchor_id, self.link_ids, self.translation_keys, self.tfc_ie_addon)
+        return Page(self.type, self.data, self.custom, anchor_id, self.link_ids, self.translation_keys)
 
     def link(self, *link_ids: str) -> 'Page':
         for link_id in link_ids:
@@ -60,25 +61,12 @@ class Book:
         self.i18n = i18n
         self.local_instance = local_instance
 
-        if self.i18n.lang == 'en_us':  # Only generate the book.json if we're in the root language
-            rm.data(('patchouli_books', self.root_name, 'book'), {
-                'extend': 'tfc:field_guide',
-                'name': 'tfc_ie_addon field_guide extension',
-                'landing_text': 'tfc_ie_addon field_guide extension'
-                # 'subtitle': '${version}',
-                # Even though we don't use the book item, we still need patchy to make a book item for us, as it controls the title
-                # If neither we nor patchy make a book item, this will show up as 'Air'. So we make one to allow the title to work properly.
-                # 'dont_generate_book': False,
-                # 'show_progress': False,
-                # 'macros': macros
-            })
-
     def template(self, template_id: str, *components: Component):
         self.rm.data(('patchouli_books', self.root_name, 'en_us', 'templates', template_id), {
             'components': [{
                 'type': c.type, 'x': c.x, 'y': c.y, **c.data
             } for c in components]
-        })
+        }, root_domain='assets')
 
     def category(self, category_id: str, name: str, description: str, icon: str, parent: str | None = None, is_sorted: bool = False, entries: Tuple[Entry, ...] = ()):
         """
@@ -98,7 +86,7 @@ class Book:
             'icon': icon,
             'parent': parent,
             'sortnum': self.category_count
-        })
+        }, root_domain='assets')
         self.category_count += 1
 
         category_res: ResourceLocation = utils.resource_location(self.rm.domain, category_id)
@@ -156,7 +144,7 @@ class Book:
                 'category': self.category_prefix(category_res.path),
                 'icon': e.icon,
                 'pages': [{
-                    'type': self.prefix(p.type, p.tfc_ie_addon) if p.custom else p.type,
+                    'type': self.prefix(p.type) if p.custom else p.type,
                     'anchor': p.anchor_id,
                     **p.data
                 } for p in real_pages],
@@ -164,15 +152,13 @@ class Book:
                 'read_by_default': True,
                 'sortnum': i if is_sorted else None,
                 'extra_recipe_mappings': extra_recipe_mappings
-            })
+            }, root_domain='assets')
 
     def category_prefix(self, path: str) -> str:
-        return ('patchouli' if self.local_instance else 'tfc_ie_addon') + ':' + path
+        return ('patchouli' if self.local_instance else 'tfc') + ':' + path
 
-    def prefix(self, path: str, tfc_ie_addon: bool) -> str:
+    def prefix(self, path: str) -> str:
         """ In a local instance, domains are all under patchouli, otherwise under tfc """
-        if tfc_ie_addon:
-            return ('patchouli' if self.local_instance else 'tfc_ie_addon') + ':' + path
         return ('patchouli' if self.local_instance else 'tfc') + ':' + path
 
 
@@ -298,38 +284,10 @@ def multimultiblock(text_content: str, *pages) -> Page:
     return page('multimultiblock', {'text': text_content, 'multiblocks': [p.data['multiblock'] if 'multiblock' in p.data else p.data['multiblock_id'] for p in pages]}, custom=True, translation_keys=('text',))
 
 
-def leather_knapping(recipe: str, text_content: str) -> Page: return recipe_page('leather_knapping_recipe', recipe, text_content)
-
-
-def clay_knapping(recipe: str, text_content: str) -> Page: return recipe_page('clay_knapping_recipe', recipe, text_content)
-
-
-def fire_clay_knapping(recipe: str, text_content: str) -> Page: return recipe_page('fire_clay_knapping_recipe', recipe, text_content)
-
-
-def heat_recipe(recipe: str, text_content: str) -> Page: return recipe_page('heat_recipe', recipe, text_content)
-
-
 def quern_recipe(recipe: str, text_content: str) -> Page: return recipe_page('quern_recipe', recipe, text_content)
 
 
-def anvil_recipe(recipe: str, text_content: str) -> Page: return recipe_page('anvil_recipe', recipe, text_content)
-
-
-def welding_recipe(recipe: str, text_content: str) -> Page: return recipe_page('welding_recipe', recipe, text_content)
-
-
-def sealed_barrel_recipe(recipe: str, text_content: str) -> Page: return recipe_page('sealed_barrel_recipe', recipe, text_content)
-
-
-def instant_barrel_recipe(recipe: str, text_content: str) -> Page: return recipe_page('instant_barrel_recipe', recipe, text_content)
-
-
 def loom_recipe(recipe: str, text_content: str) -> Page: return recipe_page('loom_recipe', recipe, text_content)
-
-
-# def rock_knapping_typical(recipe_with_category_format: str, text_content: str) -> Page:
-#    return page('rock_knapping_recipe', {'recipes': [recipe_with_category_format % c for c in ROCK_CATEGORIES], 'text': text_content}, custom=True, translation_keys=('text',))
 
 
 def alloy_recipe(title: str, alloy_name: str, text_content: str) -> Page:
@@ -354,7 +312,7 @@ def fertilizer(item: str, text_contents: str, n: float = 0, p: float = 0, k: flo
 # TFC_IE_ADDON Page Types
 # =======================
 
-def tri_anvil_recipe(header: str, recipe: str, recipe2: str, recipe3: str) -> Page: return page('tri_anvil_recipe', {'header': header, 'recipe': recipe, 'recipe2': recipe2, 'recipe3': recipe3}, True, ('header',), True)
+def tri_anvil_recipe(header: str, recipe: str, recipe2: str, recipe3: str) -> Page: return page('tri_anvil_recipe', {'header': header, 'recipe': recipe, 'recipe2': recipe2, 'recipe3': recipe3}, True, ('header',))
 
 
 def non_text_first_page() -> Page:
@@ -373,8 +331,8 @@ def recipe_page(recipe_type: str, recipe: str, text_content: str) -> Page:
     return page(recipe_type, {'recipe': recipe, 'text': text_content}, custom=True, translation_keys=('text',))
 
 
-def page(page_type: str, page_data: JsonObject, custom: bool = False, translation_keys: Tuple[str, ...] = (), tfc_ie_addon: bool = False) -> Page:
-    return Page(page_type, page_data, custom, None, [], translation_keys, tfc_ie_addon)
+def page(page_type: str, page_data: JsonObject, custom: bool = False, translation_keys: Tuple[str, ...] = ()) -> Page:
+    return Page(page_type, page_data, custom, None, [], translation_keys)
 
 
 # Components

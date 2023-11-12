@@ -74,7 +74,7 @@ public class AddonIngredientFluidStack extends DelegateIngredient
             fluidTagInput.extractFrom(handler, FluidAction.EXECUTE);
             return handler.getContainer();
         }
-        return input.getContainerItem();
+        return input.getCraftingRemainingItem();
     }
 
     @Nonnull

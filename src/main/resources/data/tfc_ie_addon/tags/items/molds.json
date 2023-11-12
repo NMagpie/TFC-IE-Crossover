@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "immersiveengineering:mold_plate",
+    "immersiveengineering:mold_gear",
+    "immersiveengineering:mold_rod",
+    "immersiveengineering:mold_bullet_casing",
+    "immersiveengineering:mold_wire",
+    "immersiveengineering:mold_packing_4",
+    "immersiveengineering:mold_packing_9",
+    "immersiveengineering:mold_unpacking",
+    "tfc_ie_addon:mold_sheet",
+    "tfc_ie_addon:mold_block"
+  ]
+}

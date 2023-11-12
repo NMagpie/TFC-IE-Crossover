@@ -2,15 +2,12 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:cluster_vein",
   "config": {
-    "rarity": 20,
-    "min_y": {
-      "absolute": 60
-    },
-    "max_y": {
-      "absolute": 210
-    },
-    "size": 15,
-    "density": 0.5,
+    "rarity": 60,
+    "density": 0.6,
+    "min_y": -32,
+    "max_y": 75,
+    "size": 30,
+    "random_name": "normal_aluminum",
     "blocks": [
       {
         "replace": [
@@ -18,15 +15,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/shale"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/shale"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/shale"
           }
         ]
@@ -37,15 +34,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/claystone"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/claystone"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/claystone"
           }
         ]
@@ -56,15 +53,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/limestone"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/limestone"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/limestone"
           }
         ]
@@ -75,15 +72,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/conglomerate"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/conglomerate"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/conglomerate"
           }
         ]
@@ -94,15 +91,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/dolomite"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/dolomite"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/dolomite"
           }
         ]
@@ -113,15 +110,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/chert"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/chert"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/chert"
           }
         ]
@@ -132,15 +129,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/chalk"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/chalk"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/chalk"
           }
         ]
@@ -151,15 +148,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/quartzite"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/quartzite"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/quartzite"
           }
         ]
@@ -170,15 +167,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/slate"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/slate"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/slate"
           }
         ]
@@ -189,15 +186,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/phyllite"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/phyllite"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/phyllite"
           }
         ]
@@ -208,15 +205,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/schist"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/schist"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/schist"
           }
         ]
@@ -227,15 +224,15 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/gneiss"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/gneiss"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/gneiss"
           }
         ]
@@ -246,28 +243,30 @@
         ],
         "with": [
           {
-            "weight": 60,
+            "weight": 15,
             "block": "tfc_ie_addon:ore/poor_aluminum/marble"
           },
           {
-            "weight": 30,
+            "weight": 25,
             "block": "tfc_ie_addon:ore/normal_aluminum/marble"
           },
           {
-            "weight": 10,
+            "weight": 60,
             "block": "tfc_ie_addon:ore/rich_aluminum/marble"
           }
         ]
       }
     ],
     "indicator": {
-      "rarity": 12,
+      "rarity": 0,
+      "depth": 35,
+      "underground_rarity": 1,
+      "underground_count": 4,
       "blocks": [
         {
           "block": "tfc_ie_addon:ore/small_aluminum"
         }
       ]
-    },
-    "random_name": "normal_aluminum"
+    }
   }
 }

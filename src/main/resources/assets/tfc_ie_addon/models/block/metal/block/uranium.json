@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "side": "tfc_ie_addon:block/metal/block/uranium",
+    "top": "tfc_ie_addon:block/metal/block/uranium_top",
+    "bottom": "tfc_ie_addon:block/metal/block/uranium_top"
+  }
+}

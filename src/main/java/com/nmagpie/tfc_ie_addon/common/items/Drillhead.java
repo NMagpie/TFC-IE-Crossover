@@ -8,7 +8,6 @@ import com.google.common.base.CaseFormat;
 import com.nmagpie.tfc_ie_addon.common.Helpers;
 import javax.annotation.Nullable;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -36,7 +35,7 @@ public class Drillhead extends DrillheadItem
     public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> list, TooltipFlag flag)
     {
         super.appendHoverText(stack, world, list, flag);
-        list.set(2, new TranslatableComponent(Lib.DESC_FLAVOUR + "drillhead.level", getHarvestLevelName(getMiningLevel(stack))));
+        list.set(2, Component.translatable(Lib.DESC_FLAVOUR + "drillhead.level", getHarvestLevelName(getMiningLevel(stack))));
     }
 
     private static TagKey<Item> getIngotTagKey(String path)

@@ -5,10 +5,10 @@
     "entry_list": [
       "tfc_ie_addon:tfc_ie_ores",
       "tfc_ie_addon:tfc_ie_alloys",
+      "tfc_ie_addon:tfc_ie_mold",
       "tfc_ie_addon:tfc_ie_chemicals",
       "tfc_ie_addon:tfc_ie_multiblocks",
       "tfc_ie_addon:tfc_ie_blueprint",
-      "tfc_ie_addon:tfc_ie_mold",
       "tfc_ie_addon:tfc_ie_jute",
       "tfc_ie_addon:tfc_ie_quartz",
       "tfc_ie_addon:tfc_ie_graphite",

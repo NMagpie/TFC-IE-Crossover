@@ -10,26 +10,24 @@ def generate(rm: ResourceManager):
     placed_feature_tag(rm, 'tfc:in_biome/veins', *[*('tfc_ie_addon:vein/%s' % v for v in ORE_VEINS.keys()), 'tfc_ie_addon:quartz_geode'])
 
     for vein_name, vein in ORE_VEINS.items():
-        rocks = expand_rocks(vein.rocks, vein_name)
-        configured_placed_feature(rm, ('vein', vein_name), 'tfc:%s_vein' % vein.type, {
-            'rarity': vein.rarity,
-            'min_y': utils.vertical_anchor(vein.min_y, 'absolute'),
-            'max_y': utils.vertical_anchor(vein.max_y, 'absolute'),
-            'size': vein.size,
-            'density': vein_density(vein.density),
+        rocks = expand_rocks(vein.rocks)
+        configured_placed_feature(rm, ('vein', vein_name), vein.vein_type, {
+            **vein.config(),
+            'random_name': vein_name,
             'blocks': [{
                 'replace': ['tfc:rock/raw/%s' % rock],
                 'with': vein_ore_blocks(vein, rock)
             } for rock in rocks],
             'indicator': {
-                'rarity': 12,
+                'rarity': vein.indicator_rarity,
+                'depth': 35,
+                'underground_rarity': vein.underground_rarity,
+                'underground_count': vein.underground_count,
                 'blocks': [{
                     'block': 'tfc_ie_addon:ore/small_%s' % vein.ore
                 }]
             },
-            'random_name': vein_name,
-            'biomes': vein.biomes
-        })
+            })
 
     rm.configured_feature('quartz_geode', 'tfc_ie_addon:quartz_geode',
                           {'outer': 'tfc:rock/hardened/basalt',
@@ -211,27 +209,17 @@ def biome_tag(rm: ResourceManager, name_parts: ResourceIdentifier, *values: Reso
 
 
 def vein_ore_blocks(vein: Vein, rock: str) -> List[Dict[str, Any]]:
+    poor, normal, rich = vein.grade
     ore_blocks = [{
-        'weight': vein.poor,
+        'weight': poor,
         'block': 'tfc_ie_addon:ore/poor_%s/%s' % (vein.ore, rock)
     }, {
-        'weight': vein.normal,
+        'weight': normal,
         'block': 'tfc_ie_addon:ore/normal_%s/%s' % (vein.ore, rock)
     }, {
-        'weight': vein.rich,
+        'weight': rich,
         'block': 'tfc_ie_addon:ore/rich_%s/%s' % (vein.ore, rock)
     }]
-    if vein.spoiler_ore is not None and rock in vein.spoiler_rocks:
-        p = vein.spoiler_rarity * 0.01  # as a percentage of the overall vein
-        ore_blocks.append({
-            'weight': int(100 * p / (1 - p)),
-            'block': 'tfc_ie_addon:ore/%s/%s' % (vein.spoiler_ore, rock)
-        })
-    elif vein.deposits:
-        ore_blocks.append({
-            'weight': 10,
-            'block': 'tfc_ie_addon:deposit/%s/%s' % (vein.ore, rock)
-        })
     return ore_blocks
 
 

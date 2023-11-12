@@ -187,6 +187,21 @@
     "tfc_ie_addon:mineral/quartz_cluster",
     "tfc_ie_addon:mineral/large_quartz_bud",
     "tfc_ie_addon:mineral/medium_quartz_bud",
-    "tfc_ie_addon:mineral/small_quartz_bud"
+    "tfc_ie_addon:mineral/small_quartz_bud",
+    "tfc_ie_addon:metal/block/aluminum",
+    "tfc_ie_addon:metal/block/aluminum_slab",
+    "tfc_ie_addon:metal/block/aluminum_stairs",
+    "tfc_ie_addon:metal/block/lead",
+    "tfc_ie_addon:metal/block/lead_slab",
+    "tfc_ie_addon:metal/block/lead_stairs",
+    "tfc_ie_addon:metal/block/uranium",
+    "tfc_ie_addon:metal/block/uranium_slab",
+    "tfc_ie_addon:metal/block/uranium_stairs",
+    "tfc_ie_addon:metal/block/constantan",
+    "tfc_ie_addon:metal/block/constantan_slab",
+    "tfc_ie_addon:metal/block/constantan_stairs",
+    "tfc_ie_addon:metal/block/electrum",
+    "tfc_ie_addon:metal/block/electrum_slab",
+    "tfc_ie_addon:metal/block/electrum_stairs"
   ]
 }

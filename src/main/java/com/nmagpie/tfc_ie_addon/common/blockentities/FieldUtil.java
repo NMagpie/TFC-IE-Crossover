@@ -9,7 +9,6 @@ import sun.misc.Unsafe;
  **/
 public class FieldUtil
 {
-
     private static Unsafe unsafe;
 
     static

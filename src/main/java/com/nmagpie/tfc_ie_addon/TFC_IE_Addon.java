@@ -2,10 +2,10 @@ package com.nmagpie.tfc_ie_addon;
 
 import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
-import com.nmagpie.tfc_ie_addon.client.ClientForgeEvents;
+import com.nmagpie.tfc_ie_addon.common.CreativeTabs;
 import com.nmagpie.tfc_ie_addon.common.Events;
 import com.nmagpie.tfc_ie_addon.common.Helpers;
-import com.nmagpie.tfc_ie_addon.common.blockentities.TFC_IE_BlockEntities;
+import com.nmagpie.tfc_ie_addon.common.blockentities.BlockEntities;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
@@ -13,7 +13,7 @@ import com.nmagpie.tfc_ie_addon.common.network.Packets;
 import com.nmagpie.tfc_ie_addon.common.recipes.AddonIngredientFluidStack;
 import com.nmagpie.tfc_ie_addon.common.recipes.RecipeSerializers;
 import com.nmagpie.tfc_ie_addon.common.util.HerbicideEffects;
-import com.nmagpie.tfc_ie_addon.common.util.Registered_Soils;
+import com.nmagpie.tfc_ie_addon.common.util.RegisteredSoils;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,9 +38,11 @@ public class TFC_IE_Addon
         Items.ITEMS.register(eventBus);
         Blocks.BLOCKS.register(eventBus);
         Fluids.FLUIDS.register(eventBus);
+        Fluids.FLUID_TYPES.register(eventBus);
         Features.FEATURES.register(eventBus);
-        TFC_IE_BlockEntities.BLOCK_ENTITIES.register(eventBus);
+        BlockEntities.BLOCK_ENTITIES.register(eventBus);
         RecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
+        CreativeTabs.CREATIVE_TABS.register(eventBus);
 
         Packets.init();
         Config.init();
@@ -53,13 +55,12 @@ public class TFC_IE_Addon
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             ClientEvents.init();
-            ClientForgeEvents.init();
         }
     }
 
     private void setup(FMLCommonSetupEvent event)
     {
-        Registered_Soils.register_tfc_soils();
+        RegisteredSoils.registerTFCSoils();
         HerbicideEffects.register();
     }
 }
