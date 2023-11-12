@@ -1,9 +1,8 @@
-from typing import Dict, List, NamedTuple, Optional, Literal, Tuple
+from typing import Dict, List, NamedTuple, Optional, Literal, Tuple, Any
 
-OreGrade = NamedTuple('OreGrade', weight=int, grind_amount=int)
+OreGrade = NamedTuple('OreGrade', grind_amount=int)
 RockCategory = Literal['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
 Rock = NamedTuple('Rock', category=RockCategory, sand=str)
-Vein = NamedTuple('Vein', ore=str, type=str, rarity=int, size=int, min_y=int, max_y=int, density=float, poor=float, normal=float, rich=float, rocks=List[str], spoiler_ore=str, spoiler_rarity=int, spoiler_rocks=List[str], biomes=Optional[str], height=Optional[int], deposits=bool)
 
 DEFAULT_FORGE_ORE_TAGS: Tuple[str, ...] = ('coal', 'diamond', 'emerald', 'gold', 'iron', 'lapis', 'netherite_scrap', 'quartz', 'redstone')
 
@@ -33,34 +32,77 @@ TFC_ROCKS: Dict[str, Rock] = {
 ROCK_CATEGORIES: List[str] = ['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
 SOIL_VARIANTS: List[str] = ['silt', 'loam', 'sandy_loam', 'silty_loam']
 ORE_GRADES: Dict[str, OreGrade] = {
-    'normal': OreGrade(50, 5),
-    'poor': OreGrade(30, 3),
-    'rich': OreGrade(20, 7)
+    'normal': OreGrade(5),
+    'poor': OreGrade(3),
+    'rich': OreGrade(7)
 }
 
-# Default parameters for common ore veins
-# rarity, size, min_y, max_y, density, poor, normal, rich
-POOR_METAL_ORE = (80, 15, 0, 100, 40, 40, 30, 10)
-NORMAL_METAL_ORE = (60, 20, -32, 75, 60, 20, 50, 30)
-DEEP_METAL_ORE = (100, 30, -64, 30, 70, 10, 30, 60)
-SURFACE_METAL_ORE = (20, 15, 60, 210, 50, 60, 30, 10)
 
-POOR_S_METAL_ORE = (100, 12, 0, 100, 40, 60, 30, 10)
-NORMAL_S_METAL_ORE = (70, 15, -32, 60, 60, 20, 50, 30)
-DEEP_S_METAL_ORE = (110, 25, -64, 30, 70, 10, 30, 60)
+class Vein(NamedTuple):
+    ore: str  # The name of the ore (as found in ORES)
+    vein_type: str  # Either 'cluster', 'pipe' or 'disc'
+    rarity: int
+    size: int
+    min_y: int
+    max_y: int
+    density: float
+    grade: tuple[int, int, int]  # (poor, normal, rich) weights
+    rocks: tuple[str, ...]  # Rock, or rock categories
+    biomes: str | None
+    height: int
+    radius: int
+    deposits: bool
+    indicator_rarity: int  # Above-ground indicators
+    underground_rarity: int  # Underground indicators
+    underground_count: int
+    project: bool | None  # Project to surface
+    project_offset: bool | None  # Project offset
 
-DEEP_MINERAL_ORE = (90, 10, -48, 100, 60, 0, 0, 0)
-HIGH_MINERAL_ORE = (90, 10, 0, 210, 60, 0, 0, 0)
+    @staticmethod
+    def new(
+        ore: str,
+        rarity: int,
+        size: int,
+        min_y: int,
+        max_y: int,
+        density: float,
+        rocks: tuple[str, ...],
 
+        vein_type: str = 'cluster',
+        grade: tuple[int, int, int] = (),
+        biomes: str = None,
+        height: int = 2,  # For disc type veins, `size` is the width
+        radius: int = 5,  # For pipe type veins, `size` is the height
+        deposits: bool = False,
+        indicator: int = 12,  # Indicator rarity
+        deep_indicator: tuple[int, int] = (1, 0),  # Pair of (rarity, count) for underground indicators
+        project: str | bool = None,  # Projects to surface. Either True or 'offset'
+    ):
+        assert 0 < density < 1
+        assert isinstance(rocks, tuple), 'Forgot the trailing comma in a single element tuple: %s' % repr(rocks)
+        assert vein_type in ('cluster', 'disc', 'pipe')
+        assert project is None or project is True or project == 'offset'
 
-def vein(ore: str, vein_type: str, rarity: int, size: int, min_y: int, max_y: int, density: float, poor: float, normal: float, rich: float, rocks: List[str], spoiler_ore: Optional[str] = None, spoiler_rarity: int = 0, spoiler_rocks: List[str] = None, biomes: str = None, height: int = 0, deposits: bool = False):
-    # Factory method to allow default values
-    return Vein(ore, vein_type, rarity, size, min_y, max_y, density, poor, normal, rich, rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
+        underground_rarity, underground_count = deep_indicator
+        return Vein(ore, 'tfc:%s_vein' % vein_type, rarity, size, min_y, max_y, density, grade, rocks, biomes, height, radius, deposits, indicator, underground_rarity, underground_count, None if project is None else True, None if project != 'offset' else True)
 
-
-def preset_vein(ore: str, vein_type: str, rocks: List[str], spoiler_ore: Optional[str] = None, spoiler_rarity: int = 0, spoiler_rocks: List[str] = None, biomes: str = None, height: int = 0, preset: Tuple[int, int, int, int, int, int, int, int] = None, deposits: bool = False):
-    assert preset is not None
-    return Vein(ore, vein_type, preset[0], preset[1], preset[2], preset[3], preset[4], preset[5], preset[6], preset[7], rocks, spoiler_ore, spoiler_rarity, spoiler_rocks, biomes, height, deposits)
+    def config(self) -> dict[str, Any]:
+        cfg = {
+            'rarity': self.rarity,
+            'density': self.density,
+            'min_y': self.min_y,
+            'max_y': self.max_y,
+            'project': self.project,
+            'project_offset': self.project_offset,
+            'biomes': self.biomes
+        }
+        if self.vein_type == 'tfc:cluster_vein':
+            cfg.update(size=self.size)
+        elif self.vein_type == 'tfc:pipe_vein':
+            cfg.update(min_skew=5, max_skew=13, min_slant=0, max_slant=2, sign=0, height=self.size, radius=self.radius)
+        else:
+            cfg.update(size=self.size, height=self.height)
+        return cfg
 
 
 ALLOYS: Dict[str, Tuple[Tuple[str, float, float], ...]] = {
@@ -68,13 +110,17 @@ ALLOYS: Dict[str, Tuple[Tuple[str, float, float], ...]] = {
     'constantan': (('copper', 0.4, 0.6), ('nickel', 0.4, 0.6))
 }
 
+POOR = 70, 25, 5  # = 1550
+NORMAL = 35, 40, 25  # = 2400
+RICH = 15, 25, 60  # = 2550
+
 ORE_VEINS: Dict[str, Vein] = {
-    'normal_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=SURFACE_METAL_ORE),
-    'deep_aluminum': preset_vein('aluminum', 'cluster', ['sedimentary', 'metamorphic'], preset=NORMAL_METAL_ORE),
-    'normal_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive', 'igneous_intrusive'], preset=NORMAL_METAL_ORE),
-    'deep_lead': preset_vein('lead', 'cluster', ['metamorphic', 'igneous_extrusive', 'igneous_intrusive'], preset=DEEP_METAL_ORE),
-    'normal_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=NORMAL_METAL_ORE),
-    'deep_uranium': preset_vein('uranium', 'cluster', ['metamorphic', 'igneous_extrusive'], preset=DEEP_METAL_ORE),
+    'surface_aluminum': Vein.new('aluminum', 30, 20, 60, 140, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
+    'normal_aluminum': Vein.new('aluminum', 60, 30, -32, 75, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'surface_lead': Vein.new('lead', 50, 25, -32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
+    'normal_lead': Vein.new('lead', 100, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'surfacae_uranium': Vein.new('uranium', 60, 20, -32, 75, 0.3, ('metamorphic', 'igneous_extrusive'), grade=POOR),
+    'normal_uranium': Vein.new('uranium', 120, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
 }
 
 ORES = [
@@ -95,13 +141,13 @@ ORES = [
 ADDON_ORES: Dict[str, str] = {
     'aluminum': 'copper',
     'lead': 'copper',
-    'uranium': 'iron',
+    'uranium': 'iron'
 }
 
 TFC_METALS = [
     'bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver',
     'tin', 'zinc', 'sterling_silver', 'wrought_iron', 'cast_iron', 'steel', 'black_steel', 'blue_steel',
-    'red_steel',
+    'red_steel'
 ]
 
 TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel', 'high_carbon_steel', 'high_carbon_black_steel',
@@ -162,19 +208,21 @@ DEFAULT_LANG = {
     'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft',
 
     'pack.tfc_ie_addon.immersivepetroleum.title': 'TFC + IE Addon Immersive Petroleum Override',
-    'pack.tfc_ie_addon.immersivepetroleum.description': 'Compatibility with Immersive Petroleum by TFC + IE Addon'
+    'pack.tfc_ie_addon.immersivepetroleum.description': 'Compatibility with Immersive Petroleum by TFC + IE Addon',
+
+    'tfc_ie_addon.creative_tab.main': 'TFC + IE Crossover'
 }
 
 TO_REMOVE_RECIPES = [
-    'immersiveengineering:crafting/armor_faraday_chest',
-    'immersiveengineering:crafting/armor_faraday_feet',
-    'immersiveengineering:crafting/armor_faraday_head',
-    'immersiveengineering:crafting/armor_faraday_legs',
+    'immersiveengineering:crafting/armor_faraday_chestplate',
+    'immersiveengineering:crafting/armor_faraday_boots',
+    'immersiveengineering:crafting/armor_faraday_helmet',
+    'immersiveengineering:crafting/armor_faraday_leggings',
 
-    'immersiveengineering:crafting/armor_steel_chest',
-    'immersiveengineering:crafting/armor_steel_feet',
-    'immersiveengineering:crafting/armor_steel_head',
-    'immersiveengineering:crafting/armor_steel_legs',
+    'immersiveengineering:crafting/armor_steel_chestplate',
+    'immersiveengineering:crafting/armor_steel_boots',
+    'immersiveengineering:crafting/armor_steel_helmet',
+    'immersiveengineering:crafting/armor_steel_leggings',
 
     'immersiveengineering:crafting/axe_steel',
     'immersiveengineering:crafting/sword_steel',

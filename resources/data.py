@@ -131,6 +131,40 @@ def generate(rm: ResourceManager):
         'tfc_ie_addon:fluid/metal/uranium'
     ])
 
+    # ITEM SIZES
+    rm.item_tag('tfc_ie_addon:molds', *[
+        'immersiveengineering:mold_plate',
+        'immersiveengineering:mold_gear',
+        'immersiveengineering:mold_rod',
+        'immersiveengineering:mold_bullet_casing',
+        'immersiveengineering:mold_wire',
+        'immersiveengineering:mold_packing_4',
+        'immersiveengineering:mold_packing_9',
+        'immersiveengineering:mold_unpacking',
+        'tfc_ie_addon:mold_sheet',
+        'tfc_ie_addon:mold_block'
+    ])
+    item_size(rm, 'molds', '#tfc_ie_addon:molds', Size.normal, Weight.medium)
+    # molds = [
+    #     'immersiveengineering:mold_plate',
+    #     'immersiveengineering:mold_gear',
+    #     'immersiveengineering:mold_rod',
+    #     'immersiveengineering:mold_bullet_casing',
+    #     'immersiveengineering:mold_wire',
+    #     'immersiveengineering:mold_packing_4',
+    #     'immersiveengineering:mold_packing_9',
+    #     'immersiveengineering:mold_unpacking',
+    #     'tfc_ie_addon:mold_sheet',
+    #     'tfc_ie_addon:mold_block'
+    # ]
+
+    # for mold in molds:
+    #     if 'immersiveengineering' in mold:
+    #         name_part = mold.replace('immersiveengineering:', '')
+    #     elif 'tfc_ie_addon' in mold:
+    #         name_part = mold.replace('tfc_ie_addon:', '')
+    #     item_size(rm, name_part, mold, Size.normal, Weight.medium)
+
 
 def needs_tool(_tool: str) -> str:
     return {

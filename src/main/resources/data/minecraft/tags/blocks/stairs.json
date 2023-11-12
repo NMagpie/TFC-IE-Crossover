@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:metal/block/aluminum_stairs",
+    "tfc_ie_addon:metal/block/lead_stairs",
+    "tfc_ie_addon:metal/block/uranium_stairs",
+    "tfc_ie_addon:metal/block/constantan_stairs",
+    "tfc_ie_addon:metal/block/electrum_stairs"
+  ]
+}

@@ -2,6 +2,7 @@ package com.nmagpie.tfc_ie_addon.client;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 import blusunrize.immersiveengineering.api.ManualHelper;
@@ -11,10 +12,14 @@ import com.nmagpie.tfc_ie_addon.common.util.Metal;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
+import net.minecraftforge.client.model.DynamicFluidContainerModel;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class ClientEvents
 {
@@ -26,7 +31,7 @@ public class ClientEvents
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(ClientEvents::clientSetup);
-        bus.addListener(ClientEvents::onTextureStitch);
+        bus.addListener(ClientEvents::registerColorHandlerItems);
     }
 
     public static void clientSetup(FMLClientSetupEvent event)
@@ -45,14 +50,6 @@ public class ClientEvents
         setupManual();
     }
 
-    public static void onTextureStitch(TextureStitchEvent.Pre event)
-    {
-        for (Metal metal : Metal.values())
-        {
-            event.addSprite(metal.getSheet());
-        }
-    }
-
     public static void setupManual()
     {
         config.put("crucibleExternalHeaterFEPerTick", Config.SERVER.crucibleExternalHeaterFEPerTick::get);
@@ -69,5 +66,16 @@ public class ClientEvents
             }
             return null;
         });
+    }
+
+    public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
+    {
+        for (Fluid fluid : ForgeRegistries.FLUIDS.getValues())
+        {
+            if (Objects.requireNonNull(ForgeRegistries.FLUIDS.getKey(fluid)).getNamespace().equals(TFC_IE_Addon.MOD_ID))
+            {
+                event.register(new DynamicFluidContainerModel.Colors(), fluid.getBucket());
+            }
+        }
     }
 }

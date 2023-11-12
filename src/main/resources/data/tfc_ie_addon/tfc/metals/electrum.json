@@ -7,6 +7,9 @@
   "ingots": {
     "tag": "forge:ingots/electrum"
   },
+  "double_ingots": {
+    "tag": "forge:double_ingots/electrum"
+  },
   "sheets": {
     "tag": "forge:sheets/electrum"
   }

@@ -10,6 +10,7 @@ import net.dries007.tfc.util.Helpers;
 
 public class Config
 {
+    public static final CommonConfig COMMON = register(ModConfig.Type.COMMON, CommonConfig::new);
     public static final ServerConfig SERVER = register(ModConfig.Type.SERVER, ServerConfig::new);
 
     public static void init()

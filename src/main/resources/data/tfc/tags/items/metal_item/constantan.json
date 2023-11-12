@@ -4,6 +4,9 @@
   "values": [
     "immersiveengineering:ingot_constantan",
     "tfc_ie_addon:metal/double_ingot/constantan",
-    "tfc_ie_addon:metal/sheet/constantan"
+    "tfc_ie_addon:metal/sheet/constantan",
+    "tfc_ie_addon:metal/block/constantan",
+    "tfc_ie_addon:metal/block/constantan_slab",
+    "tfc_ie_addon:metal/block/constantan_stairs"
   ]
 }

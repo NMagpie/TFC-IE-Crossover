@@ -1,6 +1,0 @@
-Steel Creation
-Not So Simple Steel
-
-<&items>
-In TerraFirmaCraft World it is not so easy to create steel ingot. Now you have to follow full process of forging the ingots from Pig Iron to Steel. Luckily, this process can be simplified later. Also, the Slag now can be obtained while you are forging High Carbon Steel Ingot to get Steel Ingot.
-<&anvil_recipe>

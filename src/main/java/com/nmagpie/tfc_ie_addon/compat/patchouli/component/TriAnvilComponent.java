@@ -25,6 +25,6 @@ public class TriAnvilComponent extends TriInputOutputComponent<AnvilRecipe>
     @Override
     public ItemStack getOutput(AnvilRecipe recipe)
     {
-        return recipe.getResultItem();
+        return recipe.getResultItem(null);
     }
 }

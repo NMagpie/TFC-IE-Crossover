@@ -167,7 +167,7 @@ def generate(rm: ResourceManager):
 
     anvil_recipe(rm, 'empty_casing', 'tfc:metal/ingot/copper', '2 immersiveengineering:empty_casing', 1, Rules.shrink_last, Rules.upset_any, Rules.punch_any)
 
-    armor_parts = ['feet', 'legs', 'chest', 'head']
+    armor_parts = ['boots', 'leggings', 'chestplate', 'helmet']
 
     [anvil_recipe(rm, ('armor', 'armor_faraday_%s' % armor_part),
                   'tfc:metal/double_sheet/steel',
@@ -468,14 +468,15 @@ def oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingre
     })
 
 
-def heat_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, temperature: float, result_item: Optional[Union[str, Json]], result_fluid: Optional[str] = None) -> RecipeContext:
+def heat_recipe(rm: ResourceManager, name_parts: ResourceIdentifier, ingredient: Json, temperature: float, result_item: Optional[Union[str, Json]] = None, result_fluid: Optional[str] = None, use_durability: Optional[bool] = None) -> RecipeContext:
     result_item = item_stack_provider(result_item) if isinstance(result_item, str) else result_item
     result_fluid = None if result_fluid is None else fluid_stack(result_fluid)
     return rm.recipe(('heating', name_parts), 'tfc:heating', {
         'ingredient': utils.ingredient(ingredient),
         'result_item': result_item,
         'result_fluid': result_fluid,
-        'temperature': temperature
+        'temperature': temperature,
+        'use_durability': use_durability if use_durability else None,
     })
 
 

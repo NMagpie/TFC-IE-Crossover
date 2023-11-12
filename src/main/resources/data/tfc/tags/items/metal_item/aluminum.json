@@ -4,6 +4,9 @@
   "values": [
     "immersiveengineering:ingot_aluminum",
     "tfc_ie_addon:metal/double_ingot/aluminum",
-    "tfc_ie_addon:metal/sheet/aluminum"
+    "tfc_ie_addon:metal/sheet/aluminum",
+    "tfc_ie_addon:metal/block/aluminum",
+    "tfc_ie_addon:metal/block/aluminum_slab",
+    "tfc_ie_addon:metal/block/aluminum_stairs"
   ]
 }

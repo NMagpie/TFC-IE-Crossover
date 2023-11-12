@@ -7,21 +7,22 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 
 public class FluidAwareShapedRecipe extends BasicShapedRecipe
 {
-    public FluidAwareShapedRecipe(ResourceLocation idIn, String groupIn, int recipeWidthIn, int recipeHeightIn, NonNullList<Ingredient> recipeItemsIn, ItemStack recipeOutputIn)
+    public FluidAwareShapedRecipe(ResourceLocation idIn, String groupIn, int recipeWidthIn, int recipeHeightIn, NonNullList<Ingredient> recipeItemsIn, ItemStack recipeOutputIn, CraftingBookCategory category)
     {
-        super(idIn, groupIn, recipeWidthIn, recipeHeightIn, recipeItemsIn, recipeOutputIn);
+        super(idIn, groupIn, recipeWidthIn, recipeHeightIn, recipeItemsIn, recipeOutputIn, category);
     }
 
     public FluidAwareShapedRecipe(ShapedRecipe vanillaBase)
     {
         this(vanillaBase.getId(), vanillaBase.getGroup(), vanillaBase.getWidth(), vanillaBase.getHeight(),
-            vanillaBase.getIngredients(), vanillaBase.getResultItem());
+            vanillaBase.getIngredients(), vanillaBase.getResultItem(null), vanillaBase.category());
     }
 
     @Nonnull
@@ -48,8 +49,8 @@ public class FluidAwareShapedRecipe extends BasicShapedRecipe
                         result = ((IngredientFluidStack) ingr).getExtractedStack(item.copy());
                     else if (ingr instanceof AddonIngredientFluidStack)
                         result = ((AddonIngredientFluidStack) ingr).getExtractedStack(item.copy());
-                    else if (item.hasContainerItem())
-                        result = item.getContainerItem();
+                    else if (item.hasCraftingRemainingItem())
+                        result = item.getCraftingRemainingItem();
                     if (result == item)
                         result = result.copy();
                     remaining.set(invIndex, result);

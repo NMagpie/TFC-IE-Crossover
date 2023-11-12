@@ -4,6 +4,9 @@
   "values": [
     "immersiveengineering:ingot_uranium",
     "tfc_ie_addon:metal/double_ingot/uranium",
-    "tfc_ie_addon:metal/sheet/uranium"
+    "tfc_ie_addon:metal/sheet/uranium",
+    "tfc_ie_addon:metal/block/uranium",
+    "tfc_ie_addon:metal/block/uranium_slab",
+    "tfc_ie_addon:metal/block/uranium_stairs"
   ]
 }

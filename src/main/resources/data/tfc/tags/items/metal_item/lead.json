@@ -4,6 +4,9 @@
   "values": [
     "immersiveengineering:ingot_lead",
     "tfc_ie_addon:metal/double_ingot/lead",
-    "tfc_ie_addon:metal/sheet/lead"
+    "tfc_ie_addon:metal/sheet/lead",
+    "tfc_ie_addon:metal/block/lead",
+    "tfc_ie_addon:metal/block/lead_slab",
+    "tfc_ie_addon:metal/block/lead_stairs"
   ]
 }
