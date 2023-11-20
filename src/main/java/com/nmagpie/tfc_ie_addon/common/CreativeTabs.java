@@ -78,7 +78,6 @@ public class CreativeTabs
                 accept(out, Blocks.ALUMINUM_ORES, rock, grade);
                 accept(out, Blocks.LEAD_ORES, rock, grade);
                 accept(out, Blocks.URANIUM_ORES, rock, grade);
-
             }
     }
 

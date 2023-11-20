@@ -107,10 +107,6 @@ def generate(rm: ResourceManager):
     fuel_item(rm, 'coal_coke_block', 'immersiveengineering:coke', 33000, 1550)
     rm.item_tag('tfc:forge_fuel', 'immersiveengineering:coke')
 
-    # FORBIDDEN IN CRATES (HUGE ITEMS)
-
-    rm.item_tag('immersiveengineering:forbidden_in_crates', '#tfc:large_vessels', '#tfc:anvils', '#tfc:barrels', 'tfc:powderkeg')
-
     # REPLACEABLE
 
     rm.block_tag('minecraft:replaceable', *[

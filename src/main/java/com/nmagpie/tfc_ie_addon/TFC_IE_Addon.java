@@ -5,11 +5,9 @@ import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.common.CreativeTabs;
 import com.nmagpie.tfc_ie_addon.common.Events;
 import com.nmagpie.tfc_ie_addon.common.Helpers;
-import com.nmagpie.tfc_ie_addon.common.blockentities.BlockEntities;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.common.network.Packets;
 import com.nmagpie.tfc_ie_addon.common.recipes.AddonIngredientFluidStack;
 import com.nmagpie.tfc_ie_addon.common.recipes.RecipeSerializers;
 import com.nmagpie.tfc_ie_addon.common.util.HerbicideEffects;
@@ -40,11 +38,9 @@ public class TFC_IE_Addon
         Fluids.FLUIDS.register(eventBus);
         Fluids.FLUID_TYPES.register(eventBus);
         Features.FEATURES.register(eventBus);
-        BlockEntities.BLOCK_ENTITIES.register(eventBus);
         RecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
         CreativeTabs.CREATIVE_TABS.register(eventBus);
 
-        Packets.init();
         Config.init();
         Events.init();
 

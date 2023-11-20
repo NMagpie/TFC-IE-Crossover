@@ -1,7 +1,6 @@
 package com.nmagpie.tfc_ie_addon.world.feature;
 
 import java.util.List;
-import java.util.Random;
 import java.util.function.Predicate;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;

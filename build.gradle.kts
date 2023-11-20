@@ -128,6 +128,7 @@ tasks {
     jar {
         manifest {
             attributes["Implementation-Version"] = project.version
+            attributes["MixinConfigs"] = "$modId.mixins.json"
         }
     }
 }

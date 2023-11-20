@@ -81,7 +81,7 @@ public class Events
         {
             Path resourcePath = ModList.get().getModFileById(TFC_IE_Addon.MOD_ID).getFile().findResource("compat/immersivepetroleum");
             PathPackResources pack = new PathPackResources(ModList.get().getModFileById(TFC_IE_Addon.MOD_ID).getFile().getFileName() + ":" + resourcePath, true, resourcePath);
-            PackMetadataSection  metadata = new PackMetadataSection(Component.translatable("pack.tfc_ie_addon.immersivepetroleum.description"), SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA));
+            PackMetadataSection metadata = new PackMetadataSection(Component.translatable("pack.tfc_ie_addon.immersivepetroleum.description"), SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA));
             event.addRepositorySource(consumer ->
                 consumer.accept(Pack.create(
                     "builtin/tfc_ie_addon_immersivepetroleum_compat",
