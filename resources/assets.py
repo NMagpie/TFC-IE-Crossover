@@ -17,7 +17,7 @@ def generate(rm: ResourceManager):
         for grade in ORE_GRADES.keys():
             rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore_name))
         block = rm.blockstate('ore/small_%s' % ore, variants={"": four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
-        block.with_lang(lang('small %s', ore_name)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('tfc:can_be_snow_piled')
+        block.with_lang(lang('small %s', ore_name)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:can_be_snow_piled')
         rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore_name))
         for rock, data in TFC_ROCKS.items():
             for grade in ORE_GRADES.keys():

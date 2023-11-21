@@ -2,6 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
+    "tfc_ie_addon:ore/small_aluminum",
     "tfc_ie_addon:ore/normal_aluminum/granite",
     "tfc_ie_addon:ore/poor_aluminum/granite",
     "tfc_ie_addon:ore/rich_aluminum/granite",
@@ -62,6 +63,7 @@
     "tfc_ie_addon:ore/normal_aluminum/marble",
     "tfc_ie_addon:ore/poor_aluminum/marble",
     "tfc_ie_addon:ore/rich_aluminum/marble",
+    "tfc_ie_addon:ore/small_lead",
     "tfc_ie_addon:ore/normal_lead/granite",
     "tfc_ie_addon:ore/poor_lead/granite",
     "tfc_ie_addon:ore/rich_lead/granite",
@@ -122,6 +124,7 @@
     "tfc_ie_addon:ore/normal_lead/marble",
     "tfc_ie_addon:ore/poor_lead/marble",
     "tfc_ie_addon:ore/rich_lead/marble",
+    "tfc_ie_addon:ore/small_uranium",
     "tfc_ie_addon:ore/normal_uranium/granite",
     "tfc_ie_addon:ore/poor_uranium/granite",
     "tfc_ie_addon:ore/rich_uranium/granite",
