@@ -7,7 +7,7 @@
   ],
   "additives": [],
   "input": {
-    "count": 7,
+    "count": 10,
     "base_ingredient": {
       "item": "tfc:powder/malachite"
     }

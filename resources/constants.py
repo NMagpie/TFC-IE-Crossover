@@ -115,12 +115,11 @@ NORMAL = 35, 40, 25  # = 2400
 RICH = 15, 25, 60  # = 2550
 
 ORE_VEINS: Dict[str, Vein] = {
-    'surface_aluminum': Vein.new('aluminum', 30, 20, 60, 140, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
-    'normal_aluminum': Vein.new('aluminum', 60, 30, -32, 75, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
-    'surface_lead': Vein.new('lead', 50, 25, -32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
-    'normal_lead': Vein.new('lead', 100, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
-    'surfacae_uranium': Vein.new('uranium', 60, 20, -32, 75, 0.3, ('metamorphic', 'igneous_extrusive'), grade=POOR),
-    'normal_uranium': Vein.new('uranium', 120, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
+    'surface_aluminum': Vein.new('aluminum', 40, 20, 48, 100, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
+    'normal_aluminum': Vein.new('aluminum', 80, 30, -64, 32, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'surface_lead': Vein.new('lead', 40, 25, 32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
+    'normal_lead': Vein.new('lead', 80, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'normal_uranium': Vein.new('uranium', 100, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
 }
 
 ORES = [

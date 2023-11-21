@@ -19,7 +19,7 @@ import net.dries007.tfc.common.recipes.AnvilRecipe;
 import net.dries007.tfc.util.Helpers;
 
 /**
- * Outputs slag when steel ingot is forged
+ * Outputs slag when high carbon steel ingot is forged
  */
 @Mixin(AnvilBlockEntity.class)
 public abstract class AnvilBlockEntityMixin implements BlockEntityAccessor
@@ -27,7 +27,7 @@ public abstract class AnvilBlockEntityMixin implements BlockEntityAccessor
     @Inject(method = "work", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/common/blockentities/AnvilBlockEntity$AnvilInventory;setStackInSlot(ILnet/minecraft/world/item/ItemStack;)V", ordinal = 1), locals = LocalCapture.CAPTURE_FAILHARD, remap = false)
     private void work(ServerPlayer player, ForgeStep step, CallbackInfoReturnable<InteractionResult> cir, ItemStack stack, Forging forge, ItemStack hammer, InteractionHand hammerSlot, AnvilRecipe recipe)
     {
-        if (recipe.getId().toString().equals("tfc:anvil/steel_ingot"))
+        if (recipe.getId().toString().equals("tfc:anvil/high_carbon_steel_ingot"))
         {
             ItemStack slag = new ItemStack(IEItems.Ingredients.SLAG);
             if (!player.getInventory().add(slag))
