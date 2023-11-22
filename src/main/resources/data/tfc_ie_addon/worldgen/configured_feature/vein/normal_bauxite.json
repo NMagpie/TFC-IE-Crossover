@@ -1,0 +1,272 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:cluster_vein",
+  "config": {
+    "rarity": 80,
+    "density": 0.6,
+    "min_y": -64,
+    "max_y": 32,
+    "size": 30,
+    "random_name": "normal_bauxite",
+    "blocks": [
+      {
+        "replace": [
+          "tfc:rock/raw/shale"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/shale"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/shale"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/shale"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/claystone"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/claystone"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/claystone"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/claystone"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/limestone"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/limestone"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/limestone"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/limestone"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/conglomerate"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/conglomerate"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/conglomerate"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/conglomerate"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/dolomite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/dolomite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/dolomite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/dolomite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/chert"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/chert"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/chert"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/chert"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/chalk"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/chalk"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/chalk"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/chalk"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/quartzite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/quartzite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/quartzite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/quartzite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/slate"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/slate"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/slate"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/slate"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/phyllite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/phyllite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/phyllite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/phyllite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/schist"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/schist"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/schist"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/schist"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/gneiss"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/gneiss"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/gneiss"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/gneiss"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/marble"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/marble"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/marble"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/marble"
+          }
+        ]
+      }
+    ],
+    "indicator": {
+      "rarity": 0,
+      "depth": 35,
+      "underground_rarity": 1,
+      "underground_count": 4,
+      "blocks": [
+        {
+          "block": "tfc_ie_addon:ore/small_bauxite"
+        }
+      ]
+    }
+  }
+}

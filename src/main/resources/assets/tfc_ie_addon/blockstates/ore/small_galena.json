@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "tfc_ie_addon:block/small_galena",
+        "y": 90
+      },
+      {
+        "model": "tfc_ie_addon:block/small_galena"
+      },
+      {
+        "model": "tfc_ie_addon:block/small_galena",
+        "y": 180
+      },
+      {
+        "model": "tfc_ie_addon:block/small_galena",
+        "y": 270
+      }
+    ]
+  }
+}

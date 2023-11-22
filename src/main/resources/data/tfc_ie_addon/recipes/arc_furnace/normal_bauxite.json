@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:arc_furnace",
+  "input": {
+    "base_ingredient": {
+      "item": "tfc_ie_addon:ore/normal_bauxite"
+    },
+    "count": 2
+  },
+  "results": [
+    {
+      "tag": "forge:ingots/aluminum"
+    }
+  ],
+  "additives": [],
+  "slag": {
+    "tag": "forge:slag"
+  },
+  "time": 100,
+  "energy": 25600
+}

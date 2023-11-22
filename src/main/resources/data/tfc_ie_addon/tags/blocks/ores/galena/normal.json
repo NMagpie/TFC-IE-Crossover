@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:ore/normal_galena/granite",
+    "tfc_ie_addon:ore/normal_galena/diorite",
+    "tfc_ie_addon:ore/normal_galena/gabbro",
+    "tfc_ie_addon:ore/normal_galena/shale",
+    "tfc_ie_addon:ore/normal_galena/claystone",
+    "tfc_ie_addon:ore/normal_galena/limestone",
+    "tfc_ie_addon:ore/normal_galena/conglomerate",
+    "tfc_ie_addon:ore/normal_galena/dolomite",
+    "tfc_ie_addon:ore/normal_galena/chert",
+    "tfc_ie_addon:ore/normal_galena/chalk",
+    "tfc_ie_addon:ore/normal_galena/rhyolite",
+    "tfc_ie_addon:ore/normal_galena/basalt",
+    "tfc_ie_addon:ore/normal_galena/andesite",
+    "tfc_ie_addon:ore/normal_galena/dacite",
+    "tfc_ie_addon:ore/normal_galena/quartzite",
+    "tfc_ie_addon:ore/normal_galena/slate",
+    "tfc_ie_addon:ore/normal_galena/phyllite",
+    "tfc_ie_addon:ore/normal_galena/schist",
+    "tfc_ie_addon:ore/normal_galena/gneiss",
+    "tfc_ie_addon:ore/normal_galena/marble"
+  ]
+}

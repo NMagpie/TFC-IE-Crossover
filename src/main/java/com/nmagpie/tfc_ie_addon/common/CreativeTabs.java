@@ -46,15 +46,15 @@ public class CreativeTabs
         accept(out, Items.DRILLHEAD_BLUE_STEEL);
         accept(out, Items.DRILLHEAD_RED_STEEL);
         accept(out, Items.TREATED_WOOD_LUMBER);
-        accept(out, Blocks.SMALL_ALUMINUM);
+        accept(out, Blocks.SMALL_BAUXITE);
         for (Ore.Grade grade : Ore.Grade.values())
-            accept(out, Items.ALUMINUM_ORES, grade);
-        accept(out, Blocks.SMALL_LEAD);
+            accept(out, Items.BAUXITE_ORES, grade);
+        accept(out, Blocks.SMALL_GALENA);
         for (Ore.Grade grade : Ore.Grade.values())
-            accept(out, Items.LEAD_ORES, grade);
-        accept(out, Blocks.SMALL_URANIUM);
+            accept(out, Items.GALENA_ORES, grade);
+        accept(out, Blocks.SMALL_URANINITE);
         for (Ore.Grade grade : Ore.Grade.values())
-            accept(out, Items.URANIUM_ORES, grade);
+            accept(out, Items.URANINITE_ORES, grade);
         for (Metal metal : Metal.values())
             for (Metal.ItemType itemType : Metal.ItemType.values())
                 accept(out, Items.METAL_ITEMS, metal, itemType);
@@ -75,9 +75,9 @@ public class CreativeTabs
         for (Rock rock : Rock.values())
             for (Ore.Grade grade : Ore.Grade.values())
             {
-                accept(out, Blocks.ALUMINUM_ORES, rock, grade);
-                accept(out, Blocks.LEAD_ORES, rock, grade);
-                accept(out, Blocks.URANIUM_ORES, rock, grade);
+                accept(out, Blocks.BAUXITE_ORES, rock, grade);
+                accept(out, Blocks.GALENA_ORES, rock, grade);
+                accept(out, Blocks.URANINITE_ORES, rock, grade);
             }
     }
 

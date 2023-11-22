@@ -9,16 +9,13 @@ from constants import *
 def generate(rm: ResourceManager):
     # ORE STUFF
 
-    ores = ['aluminum', 'lead', 'uranium']
+    ores = ['bauxite', 'galena', 'uraninite']
     for ore in ores:
-
-        ore_name = 'bauxite' if ore == 'aluminum' else ore
-
         for grade in ORE_GRADES.keys():
-            rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore_name))
+            rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore))
         block = rm.blockstate('ore/small_%s' % ore, variants={"": four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
-        block.with_lang(lang('small %s', ore_name)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:can_be_snow_piled')
-        rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore_name))
+        block.with_lang(lang('small %s', ore)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:can_be_snow_piled')
+        rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore))
         for rock, data in TFC_ROCKS.items():
             for grade in ORE_GRADES.keys():
                 block = rm.blockstate(('ore', grade + '_' + ore, rock), 'tfc_ie_addon:block/ore/%s_%s/%s' % (grade, ore, rock))
@@ -27,8 +24,8 @@ def generate(rm: ResourceManager):
                     'particle': 'tfc:block/rock/raw/%s' % rock,
                     'overlay': 'tfc_ie_addon:block/ore/%s_%s' % (grade, ore)
                 }, parent='tfc:block/ore')
-                block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore_name)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
-                rm.block('tfc_ie_addon:ore/%s_%s/%s/prospected' % (grade, ore, rock)).with_lang(lang(ore_name))
+                block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
+                rm.block('tfc_ie_addon:ore/%s_%s/%s/prospected' % (grade, ore, rock)).with_lang(lang(ore))
 
     # MINERAL STUFF
 

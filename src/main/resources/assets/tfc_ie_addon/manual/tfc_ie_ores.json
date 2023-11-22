@@ -3,10 +3,10 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc_ie_addon:ore/normal_aluminum/marble"
+        "item": "tfc_ie_addon:ore/normal_bauxite/marble"
       },
       {
-        "item": "tfc_ie_addon:ore/normal_aluminum"
+        "item": "tfc_ie_addon:ore/normal_bauxite"
       },
       {
         "item": "immersiveengineering:ingot_aluminum"
@@ -17,10 +17,10 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc_ie_addon:ore/normal_lead/marble"
+        "item": "tfc_ie_addon:ore/normal_galena/marble"
       },
       {
-        "item": "tfc_ie_addon:ore/normal_lead"
+        "item": "tfc_ie_addon:ore/normal_galena"
       },
       {
         "item": "immersiveengineering:ingot_lead"
@@ -31,10 +31,10 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc_ie_addon:ore/normal_uranium/marble"
+        "item": "tfc_ie_addon:ore/normal_uraninite/marble"
       },
       {
-        "item": "tfc_ie_addon:ore/normal_uranium"
+        "item": "tfc_ie_addon:ore/normal_uraninite"
       },
       {
         "item": "immersiveengineering:ingot_uranium"

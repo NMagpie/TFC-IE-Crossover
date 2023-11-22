@@ -4,49 +4,49 @@
     {
       "chance": 0.7,
       "output": {
-        "item": "tfc_ie_addon:ore/small_uranium"
+        "item": "tfc_ie_addon:ore/small_uraninite"
       }
     },
     {
       "chance": 0.5,
       "output": {
-        "item": "tfc_ie_addon:ore/poor_uranium"
+        "item": "tfc_ie_addon:ore/poor_uraninite"
       }
     },
     {
       "chance": 0.3,
       "output": {
-        "item": "tfc_ie_addon:ore/normal_uranium"
+        "item": "tfc_ie_addon:ore/normal_uraninite"
       }
     },
     {
       "chance": 0.2,
       "output": {
-        "item": "tfc_ie_addon:ore/rich_uranium"
+        "item": "tfc_ie_addon:ore/rich_uraninite"
       }
     },
     {
       "chance": 0.35,
       "output": {
-        "item": "tfc_ie_addon:ore/small_lead"
+        "item": "tfc_ie_addon:ore/small_galena"
       }
     },
     {
       "chance": 0.25,
       "output": {
-        "item": "tfc_ie_addon:ore/poor_lead"
+        "item": "tfc_ie_addon:ore/poor_galena"
       }
     },
     {
       "chance": 0.2,
       "output": {
-        "item": "tfc_ie_addon:ore/normal_lead"
+        "item": "tfc_ie_addon:ore/normal_galena"
       }
     },
     {
       "chance": 0.1,
       "output": {
-        "item": "tfc_ie_addon:ore/rich_lead"
+        "item": "tfc_ie_addon:ore/rich_galena"
       }
     },
     {

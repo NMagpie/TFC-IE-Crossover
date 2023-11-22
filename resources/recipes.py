@@ -76,7 +76,7 @@ def generate(rm: ResourceManager):
 
     # ORE RECIPES
 
-    ores = ['aluminum', 'lead', 'uranium']
+    ores = ['bauxite', 'galena', 'uraninite']
     for ore in ores:
         for rock, data in TFC_ROCKS.items():
             cobble = 'tfc:rock/cobble/%s' % rock
@@ -190,7 +190,7 @@ def generate(rm: ResourceManager):
     grades = [('small', 5, 1), ('poor', 7, 2), ('normal', 2, 1), ('rich', 3, 2)]
 
     for (grade, count, output) in grades:
-        for (ore, metal) in ORES:
+        for (ore, metal) in TFC_ORES:
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
                                input='%s tfc:ore/%s_%s' % (count, grade, ore),
                                results=('%s tfc:metal/ingot/%s' % (output, metal)),
@@ -199,10 +199,10 @@ def generate(rm: ResourceManager):
                                slag=True)
 
     for (grade, count, output) in grades:
-        for ore in ADDON_ORES.keys():
+        for ore, ore_data in ORES.items():
             arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
                                input='%s tfc_ie_addon:ore/%s_%s' % (count, grade, ore),
-                               results=('%s #forge:ingots/%s' % (output, ore)),
+                               results=('%s #forge:ingots/%s' % (output, ore_data.metal)),
                                time=100,
                                energy=25600,
                                slag=True)

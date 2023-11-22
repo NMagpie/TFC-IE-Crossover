@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/andesite",
-    "tfc_ie_addon:ore/normal_uranium/andesite",
-    "tfc_ie_addon:ore/rich_uranium/andesite"
+    "tfc_ie_addon:ore/poor_uraninite/andesite",
+    "tfc_ie_addon:ore/normal_uraninite/andesite",
+    "tfc_ie_addon:ore/rich_uraninite/andesite"
   ],
   "result": "tfc:rock/cobble/andesite"
 }

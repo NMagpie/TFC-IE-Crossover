@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/slate",
-    "tfc_ie_addon:ore/normal_uranium/slate",
-    "tfc_ie_addon:ore/rich_uranium/slate"
+    "tfc_ie_addon:ore/poor_uraninite/slate",
+    "tfc_ie_addon:ore/normal_uraninite/slate",
+    "tfc_ie_addon:ore/rich_uraninite/slate"
   ],
   "result": "tfc:rock/cobble/slate"
 }

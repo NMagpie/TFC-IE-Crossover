@@ -1,0 +1,215 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:cluster_vein",
+  "config": {
+    "rarity": 100,
+    "density": 0.6,
+    "min_y": -80,
+    "max_y": 20,
+    "size": 30,
+    "random_name": "normal_uraninite",
+    "blocks": [
+      {
+        "replace": [
+          "tfc:rock/raw/quartzite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/quartzite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/quartzite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/quartzite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/slate"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/slate"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/slate"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/slate"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/phyllite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/phyllite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/phyllite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/phyllite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/schist"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/schist"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/schist"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/schist"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/gneiss"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/gneiss"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/gneiss"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/gneiss"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/marble"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/marble"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/marble"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/marble"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/rhyolite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/rhyolite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/rhyolite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/rhyolite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/basalt"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/basalt"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/basalt"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/basalt"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/andesite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/andesite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/andesite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/andesite"
+          }
+        ]
+      },
+      {
+        "replace": [
+          "tfc:rock/raw/dacite"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_uraninite/dacite"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_uraninite/dacite"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_uraninite/dacite"
+          }
+        ]
+      }
+    ],
+    "indicator": {
+      "rarity": 0,
+      "depth": 35,
+      "underground_rarity": 1,
+      "underground_count": 4,
+      "blocks": [
+        {
+          "block": "tfc_ie_addon:ore/small_uraninite"
+        }
+      ]
+    }
+  }
+}

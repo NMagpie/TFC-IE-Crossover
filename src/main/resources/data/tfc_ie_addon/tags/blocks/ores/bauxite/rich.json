@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:ore/rich_bauxite/granite",
+    "tfc_ie_addon:ore/rich_bauxite/diorite",
+    "tfc_ie_addon:ore/rich_bauxite/gabbro",
+    "tfc_ie_addon:ore/rich_bauxite/shale",
+    "tfc_ie_addon:ore/rich_bauxite/claystone",
+    "tfc_ie_addon:ore/rich_bauxite/limestone",
+    "tfc_ie_addon:ore/rich_bauxite/conglomerate",
+    "tfc_ie_addon:ore/rich_bauxite/dolomite",
+    "tfc_ie_addon:ore/rich_bauxite/chert",
+    "tfc_ie_addon:ore/rich_bauxite/chalk",
+    "tfc_ie_addon:ore/rich_bauxite/rhyolite",
+    "tfc_ie_addon:ore/rich_bauxite/basalt",
+    "tfc_ie_addon:ore/rich_bauxite/andesite",
+    "tfc_ie_addon:ore/rich_bauxite/dacite",
+    "tfc_ie_addon:ore/rich_bauxite/quartzite",
+    "tfc_ie_addon:ore/rich_bauxite/slate",
+    "tfc_ie_addon:ore/rich_bauxite/phyllite",
+    "tfc_ie_addon:ore/rich_bauxite/schist",
+    "tfc_ie_addon:ore/rich_bauxite/gneiss",
+    "tfc_ie_addon:ore/rich_bauxite/marble"
+  ]
+}

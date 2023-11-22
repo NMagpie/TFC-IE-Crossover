@@ -31,13 +31,13 @@ public class ClientEvents
         // Render Types
         final RenderType cutout = RenderType.cutout();
 
-        Stream.of(Blocks.SMALL_ALUMINUM, Blocks.SMALL_LEAD, Blocks.SMALL_URANIUM, Blocks.BUDDING_QUARTZ, Blocks.QUARTZ_BLOCK,
+        Stream.of(Blocks.SMALL_BAUXITE, Blocks.SMALL_GALENA, Blocks.SMALL_URANINITE, Blocks.BUDDING_QUARTZ, Blocks.QUARTZ_BLOCK,
             Blocks.QUARTZ_CLUSTER, Blocks.LARGE_QUARTZ_BUD, Blocks.MEDIUM_QUARTZ_BUD, Blocks.SMALL_QUARTZ_BUD
         ).forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
 
-        Blocks.ALUMINUM_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
-        Blocks.LEAD_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
-        Blocks.URANIUM_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
+        Blocks.BAUXITE_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
+        Blocks.GALENA_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
+        Blocks.URANINITE_ORES.values().forEach(map -> map.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout)));
 
         setupManual();
     }

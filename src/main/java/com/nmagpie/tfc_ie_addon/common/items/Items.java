@@ -37,9 +37,9 @@ public class Items
 
     public static final RegistryObject<Item> TREATED_WOOD_LUMBER = register("treated_wood_lumber");
 
-    public static final Map<Ore.Grade, RegistryObject<Item>> ALUMINUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_aluminum"));
-    public static final Map<Ore.Grade, RegistryObject<Item>> LEAD_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_lead"));
-    public static final Map<Ore.Grade, RegistryObject<Item>> URANIUM_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_uranium"));
+    public static final Map<Ore.Grade, RegistryObject<Item>> BAUXITE_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_bauxite"));
+    public static final Map<Ore.Grade, RegistryObject<Item>> GALENA_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_galena"));
+    public static final Map<Ore.Grade, RegistryObject<Item>> URANINITE_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_uraninite"));
     public static final Map<Metal, Map<Metal.ItemType, RegistryObject<Item>>> METAL_ITEMS = Helpers.mapOfKeys(Metal.class, metal ->
         Helpers.mapOfKeys(Metal.ItemType.class, type ->
             register("metal/" + type.name() + "/" + metal.name(), () -> type.create(metal))

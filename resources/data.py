@@ -31,7 +31,7 @@ def generate(rm: ResourceManager):
     ### TAGS ###
 
     # ORE TAGS
-    for ore in ADDON_ORES.keys():
+    for ore, ore_data in ORES.items():
         rm.block_tag('forge:ores', '#forge:ores/%s' % ore)
         rm.block_tag('forge:ores/%s' % ore, '#tfc_ie_addon:ores/%s/poor' % ore, '#tfc_ie_addon:ores/%s/normal' % ore, '#tfc_ie_addon:ores/%s/rich' % ore)
         rm.item_tag('tfc:ore_pieces', 'tfc_ie_addon:ore/poor_%s' % ore, 'tfc_ie_addon:ore/normal_%s' % ore, 'tfc_ie_addon:ore/rich_%s' % ore)
@@ -42,7 +42,7 @@ def generate(rm: ResourceManager):
             rm.block_tag('ores/%s/normal' % ore, 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock))
             rm.block_tag('ores/%s/rich' % ore, 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
 
-            rm.block_tag(needs_tool(ADDON_ORES[ore]), 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
+            rm.block_tag(needs_tool(ore_data.required_tool), 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
 
     # JUTE AND FIBER TAGS
 

@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/claystone",
-    "tfc_ie_addon:ore/normal_uranium/claystone",
-    "tfc_ie_addon:ore/rich_uranium/claystone"
+    "tfc_ie_addon:ore/poor_uraninite/claystone",
+    "tfc_ie_addon:ore/normal_uraninite/claystone",
+    "tfc_ie_addon:ore/rich_uraninite/claystone"
   ],
   "result": "tfc:rock/cobble/claystone"
 }

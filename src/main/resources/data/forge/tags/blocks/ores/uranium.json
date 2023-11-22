@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "replace": false,
-  "values": [
-    "#tfc_ie_addon:ores/uranium/poor",
-    "#tfc_ie_addon:ores/uranium/normal",
-    "#tfc_ie_addon:ores/uranium/rich"
-  ]
-}

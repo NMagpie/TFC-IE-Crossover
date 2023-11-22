@@ -39,27 +39,27 @@ public class Blocks
     public static final RegistryObject<AmethystClusterBlock> MEDIUM_QUARTZ_BUD = register("mineral/medium_quartz_bud", () -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(QUARTZ_CLUSTER.get()).sound(SoundType.GLASS).lightLevel(light -> 2)));
     public static final RegistryObject<AmethystClusterBlock> SMALL_QUARTZ_BUD = register("mineral/small_quartz_bud", () -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(QUARTZ_CLUSTER.get()).sound(SoundType.GLASS).lightLevel(light -> 1)));
 
-    public static final RegistryObject<Block> SMALL_ALUMINUM = register("ore/small_aluminum", () -> GroundcoverBlock.looseOre(Properties.of().mapColor(MapColor.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SMALL_BAUXITE = register("ore/small_bauxite", () -> GroundcoverBlock.looseOre(Properties.of().mapColor(MapColor.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission().pushReaction(PushReaction.DESTROY)));
 
-    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> ALUMINUM_ORES = Helpers.mapOfKeys(Rock.class, rock ->
+    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> BAUXITE_ORES = Helpers.mapOfKeys(Rock.class, rock ->
         Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_aluminum" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
+            register(("ore/" + grade.name() + "_bauxite" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
         )
     );
 
-    public static final RegistryObject<Block> SMALL_LEAD = register("ore/small_lead", () -> GroundcoverBlock.looseOre(Properties.of().mapColor(MapColor.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SMALL_GALENA = register("ore/small_galena", () -> GroundcoverBlock.looseOre(Properties.of().mapColor(MapColor.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission().pushReaction(PushReaction.DESTROY)));
 
-    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> LEAD_ORES = Helpers.mapOfKeys(Rock.class, rock ->
+    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> GALENA_ORES = Helpers.mapOfKeys(Rock.class, rock ->
         Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_lead" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
+            register(("ore/" + grade.name() + "_galena" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
         )
     );
 
-    public static final RegistryObject<Block> SMALL_URANIUM = register("ore/small_uranium", () -> GroundcoverBlock.looseOre(Properties.of().mapColor(MapColor.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SMALL_URANINITE = register("ore/small_uraninite", () -> GroundcoverBlock.looseOre(Properties.of().mapColor(MapColor.GRASS).strength(0.05F, 0.0F).sound(SoundType.NETHER_ORE).noCollission().pushReaction(PushReaction.DESTROY)));
 
-    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> URANIUM_ORES = Helpers.mapOfKeys(Rock.class, rock ->
+    public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> URANINITE_ORES = Helpers.mapOfKeys(Rock.class, rock ->
         Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_uranium" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
+            register(("ore/" + grade.name() + "_uraninite" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
         )
     );
 

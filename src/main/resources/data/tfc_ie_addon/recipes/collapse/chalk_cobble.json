@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/chalk",
-    "tfc_ie_addon:ore/normal_uranium/chalk",
-    "tfc_ie_addon:ore/rich_uranium/chalk"
+    "tfc_ie_addon:ore/poor_uraninite/chalk",
+    "tfc_ie_addon:ore/normal_uraninite/chalk",
+    "tfc_ie_addon:ore/rich_uraninite/chalk"
   ],
   "result": "tfc:rock/cobble/chalk"
 }

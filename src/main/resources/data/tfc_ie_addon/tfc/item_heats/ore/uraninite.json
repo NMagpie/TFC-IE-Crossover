@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "tfc_ie_addon:ore/small_uraninite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/normal_uraninite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/poor_uraninite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/rich_uraninite"
+    }
+  ],
+  "heat_capacity": 1.143,
+  "forging_temperature": 750,
+  "welding_temperature": 1000
+}

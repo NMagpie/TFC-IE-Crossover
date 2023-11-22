@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/schist",
-    "tfc_ie_addon:ore/normal_uranium/schist",
-    "tfc_ie_addon:ore/rich_uranium/schist"
+    "tfc_ie_addon:ore/poor_uraninite/schist",
+    "tfc_ie_addon:ore/normal_uraninite/schist",
+    "tfc_ie_addon:ore/rich_uraninite/schist"
   ],
   "result": "tfc:rock/cobble/schist"
 }

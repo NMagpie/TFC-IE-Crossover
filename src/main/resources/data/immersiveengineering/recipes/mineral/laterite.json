@@ -28,25 +28,25 @@
     {
       "chance": 0.7,
       "output": {
-        "item": "tfc_ie_addon:ore/small_aluminum"
+        "item": "tfc_ie_addon:ore/small_bauxite"
       }
     },
     {
       "chance": 0.5,
       "output": {
-        "item": "tfc_ie_addon:ore/poor_aluminum"
+        "item": "tfc_ie_addon:ore/poor_bauxite"
       }
     },
     {
       "chance": 0.4,
       "output": {
-        "item": "tfc_ie_addon:ore/normal_aluminum"
+        "item": "tfc_ie_addon:ore/normal_bauxite"
       }
     },
     {
       "chance": 0.2,
       "output": {
-        "item": "tfc_ie_addon:ore/rich_aluminum"
+        "item": "tfc_ie_addon:ore/rich_bauxite"
       }
     },
     {

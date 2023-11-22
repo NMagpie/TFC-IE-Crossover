@@ -1,4 +1,4 @@
-from typing import Union, get_args, Any
+from typing import Union, get_args, Any, List, Dict
 
 from mcresources import ResourceManager, utils
 from mcresources.type_definitions import ResourceIdentifier, JsonObject, Json, VerticalAnchor

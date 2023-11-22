@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "replace": false,
-  "values": [
-    "#tfc_ie_addon:ores/aluminum/poor",
-    "#tfc_ie_addon:ores/aluminum/normal",
-    "#tfc_ie_addon:ores/aluminum/rich"
-  ]
-}

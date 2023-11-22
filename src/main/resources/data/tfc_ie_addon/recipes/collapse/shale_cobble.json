@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/shale",
-    "tfc_ie_addon:ore/normal_uranium/shale",
-    "tfc_ie_addon:ore/rich_uranium/shale"
+    "tfc_ie_addon:ore/poor_uraninite/shale",
+    "tfc_ie_addon:ore/normal_uraninite/shale",
+    "tfc_ie_addon:ore/rich_uraninite/shale"
   ],
   "result": "tfc:rock/cobble/shale"
 }

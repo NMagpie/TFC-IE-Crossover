@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:ore/poor_uraninite/granite",
+    "tfc_ie_addon:ore/poor_uraninite/diorite",
+    "tfc_ie_addon:ore/poor_uraninite/gabbro",
+    "tfc_ie_addon:ore/poor_uraninite/shale",
+    "tfc_ie_addon:ore/poor_uraninite/claystone",
+    "tfc_ie_addon:ore/poor_uraninite/limestone",
+    "tfc_ie_addon:ore/poor_uraninite/conglomerate",
+    "tfc_ie_addon:ore/poor_uraninite/dolomite",
+    "tfc_ie_addon:ore/poor_uraninite/chert",
+    "tfc_ie_addon:ore/poor_uraninite/chalk",
+    "tfc_ie_addon:ore/poor_uraninite/rhyolite",
+    "tfc_ie_addon:ore/poor_uraninite/basalt",
+    "tfc_ie_addon:ore/poor_uraninite/andesite",
+    "tfc_ie_addon:ore/poor_uraninite/dacite",
+    "tfc_ie_addon:ore/poor_uraninite/quartzite",
+    "tfc_ie_addon:ore/poor_uraninite/slate",
+    "tfc_ie_addon:ore/poor_uraninite/phyllite",
+    "tfc_ie_addon:ore/poor_uraninite/schist",
+    "tfc_ie_addon:ore/poor_uraninite/gneiss",
+    "tfc_ie_addon:ore/poor_uraninite/marble"
+  ]
+}

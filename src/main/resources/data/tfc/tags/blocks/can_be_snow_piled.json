@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    "tfc_ie_addon:ore/small_aluminum",
-    "tfc_ie_addon:ore/small_lead",
-    "tfc_ie_addon:ore/small_uranium"
+    "tfc_ie_addon:ore/small_bauxite",
+    "tfc_ie_addon:ore/small_galena",
+    "tfc_ie_addon:ore/small_uraninite"
   ]
 }

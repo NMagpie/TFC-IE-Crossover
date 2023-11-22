@@ -1,41 +1,24 @@
-from typing import Dict, List, NamedTuple, Optional, Literal, Tuple, Any
+from typing import Dict, List, NamedTuple, Optional, Literal, Tuple, Any, Set
 
-OreGrade = NamedTuple('OreGrade', grind_amount=int)
-RockCategory = Literal['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
-Rock = NamedTuple('Rock', category=RockCategory, sand=str)
 
-DEFAULT_FORGE_ORE_TAGS: Tuple[str, ...] = ('coal', 'diamond', 'emerald', 'gold', 'iron', 'lapis', 'netherite_scrap', 'quartz', 'redstone')
+class Ore(NamedTuple):
+    metal: Optional[str]
+    graded: bool
+    required_tool: str
+    tag: str
+    dye_color: Optional[str] = None
 
-TFC_ROCKS: Dict[str, Rock] = {
-    'granite': Rock('igneous_intrusive', 'white'),
-    'diorite': Rock('igneous_intrusive', 'white'),
-    'gabbro': Rock('igneous_intrusive', 'black'),
-    'shale': Rock('sedimentary', 'black'),
-    'claystone': Rock('sedimentary', 'brown'),
-    'limestone': Rock('sedimentary', 'white'),
-    'conglomerate': Rock('sedimentary', 'green'),
-    'dolomite': Rock('sedimentary', 'black'),
-    'chert': Rock('sedimentary', 'yellow'),
-    'chalk': Rock('sedimentary', 'white'),
-    'rhyolite': Rock('igneous_extrusive', 'red'),
-    'basalt': Rock('igneous_extrusive', 'red'),
-    'andesite': Rock('igneous_extrusive', 'red'),
-    'dacite': Rock('igneous_extrusive', 'red'),
-    'quartzite': Rock('metamorphic', 'white'),
-    'slate': Rock('metamorphic', 'brown'),
-    'phyllite': Rock('metamorphic', 'brown'),
-    'schist': Rock('metamorphic', 'green'),
-    'gneiss': Rock('metamorphic', 'green'),
-    'marble': Rock('metamorphic', 'yellow')
-}
 
-ROCK_CATEGORIES: List[str] = ['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
-SOIL_VARIANTS: List[str] = ['silt', 'loam', 'sandy_loam', 'silty_loam']
-ORE_GRADES: Dict[str, OreGrade] = {
-    'normal': OreGrade(5),
-    'poor': OreGrade(3),
-    'rich': OreGrade(7)
-}
+class Metal(NamedTuple):
+    tier: int
+    types: Set[str]
+    heat_capacity_base: float  # Do not access directly, use one of specific or ingot heat capacity.
+    melt_temperature: float
+    melt_metal: Optional[str]
+
+    def specific_heat_capacity(self) -> float: return round(300 / self.heat_capacity_base) / 100_000
+
+    def ingot_heat_capacity(self) -> float: return 1 / self.heat_capacity_base
 
 
 class Vein(NamedTuple):
@@ -105,6 +88,59 @@ class Vein(NamedTuple):
         return cfg
 
 
+ORES: Dict[str, Ore] = {
+    'bauxite': Ore('aluminum', True, 'copper', 'aluminum', 'orange'),
+    'galena': Ore('lead', True, 'copper', 'lead', 'black'),
+    'uraninite': Ore('uranium', True, 'iron', 'uranium', 'green')
+}
+
+METALS: Dict[str, Metal] = {
+    'aluminum': Metal(1, {'part'}, 0.35, 650, None),
+    'lead': Metal(2, {'part'}, 0.35, 500, None),
+    'uranium': Metal(3, {'part'}, 0.35, 1250, None),
+
+    'constantan': Metal(2, {'part'}, 0.35, 750, None),
+    'electrum': Metal(3, {'part'}, 0.35, 900, None)
+}
+
+OreGrade = NamedTuple('OreGrade', grind_amount=int)
+RockCategory = Literal['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
+Rock = NamedTuple('Rock', category=RockCategory, sand=str)
+
+DEFAULT_FORGE_ORE_TAGS: Tuple[str, ...] = ('coal', 'diamond', 'emerald', 'gold', 'iron', 'lapis', 'netherite_scrap', 'quartz', 'redstone')
+
+TFC_ROCKS: Dict[str, Rock] = {
+    'granite': Rock('igneous_intrusive', 'white'),
+    'diorite': Rock('igneous_intrusive', 'white'),
+    'gabbro': Rock('igneous_intrusive', 'black'),
+    'shale': Rock('sedimentary', 'black'),
+    'claystone': Rock('sedimentary', 'brown'),
+    'limestone': Rock('sedimentary', 'white'),
+    'conglomerate': Rock('sedimentary', 'green'),
+    'dolomite': Rock('sedimentary', 'black'),
+    'chert': Rock('sedimentary', 'yellow'),
+    'chalk': Rock('sedimentary', 'white'),
+    'rhyolite': Rock('igneous_extrusive', 'red'),
+    'basalt': Rock('igneous_extrusive', 'red'),
+    'andesite': Rock('igneous_extrusive', 'red'),
+    'dacite': Rock('igneous_extrusive', 'red'),
+    'quartzite': Rock('metamorphic', 'white'),
+    'slate': Rock('metamorphic', 'brown'),
+    'phyllite': Rock('metamorphic', 'brown'),
+    'schist': Rock('metamorphic', 'green'),
+    'gneiss': Rock('metamorphic', 'green'),
+    'marble': Rock('metamorphic', 'yellow')
+}
+
+ROCK_CATEGORIES: List[str] = ['sedimentary', 'metamorphic', 'igneous_extrusive', 'igneous_intrusive']
+SOIL_VARIANTS: List[str] = ['silt', 'loam', 'sandy_loam', 'silty_loam']
+ORE_GRADES: Dict[str, OreGrade] = {
+    'normal': OreGrade(5),
+    'poor': OreGrade(3),
+    'rich': OreGrade(7)
+}
+
+
 ALLOYS: Dict[str, Tuple[Tuple[str, float, float], ...]] = {
     'electrum': (('gold', 0.4, 0.6), ('silver', 0.4, 0.6)),
     'constantan': (('copper', 0.4, 0.6), ('nickel', 0.4, 0.6))
@@ -115,14 +151,14 @@ NORMAL = 35, 40, 25  # = 2400
 RICH = 15, 25, 60  # = 2550
 
 ORE_VEINS: Dict[str, Vein] = {
-    'surface_aluminum': Vein.new('aluminum', 40, 20, 48, 100, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
-    'normal_aluminum': Vein.new('aluminum', 80, 30, -64, 32, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
-    'surface_lead': Vein.new('lead', 40, 25, 32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
-    'normal_lead': Vein.new('lead', 80, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
-    'normal_uranium': Vein.new('uranium', 100, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
+    'surface_bauxite': Vein.new('bauxite', 40, 20, 48, 100, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
+    'normal_bauxite': Vein.new('bauxite', 80, 30, -64, 32, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'surface_galena': Vein.new('galena', 40, 25, 32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
+    'normal_galena': Vein.new('galena', 80, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'normal_uraninite': Vein.new('uraninite', 100, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
 }
 
-ORES = [
+TFC_ORES = [
     ('native_copper', 'copper'),
     ('native_gold', 'gold'),
     ('hematite', 'cast_iron'),
@@ -136,12 +172,6 @@ ORES = [
     ('sphalerite', 'zinc'),
     ('tetrahedrite', 'copper'),
 ]
-
-ADDON_ORES: Dict[str, str] = {
-    'aluminum': 'copper',
-    'lead': 'copper',
-    'uranium': 'iron'
-}
 
 TFC_METALS = [
     'bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver',

@@ -2,9 +2,9 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:collapse",
   "ingredient": [
-    "tfc_ie_addon:ore/poor_uranium/quartzite",
-    "tfc_ie_addon:ore/normal_uranium/quartzite",
-    "tfc_ie_addon:ore/rich_uranium/quartzite"
+    "tfc_ie_addon:ore/poor_uraninite/quartzite",
+    "tfc_ie_addon:ore/normal_uraninite/quartzite",
+    "tfc_ie_addon:ore/rich_uraninite/quartzite"
   ],
   "result": "tfc:rock/cobble/quartzite"
 }

@@ -2,11 +2,11 @@
   "__comment__": "This file was automatically created by mcresources",
   "name": "New Ores",
   "category": "tfc:tfc_ie_changes",
-  "icon": "tfc_ie_addon:ore/normal_aluminum",
+  "icon": "tfc_ie_addon:ore/normal_bauxite",
   "pages": [
     {
       "type": "patchouli:text",
-      "anchor": "aluminum",
+      "anchor": "bauxite",
       "text": "Bauxite is an ore of $(thing)Aluminum$(), which is an integral part of high-voltage architecture. It can be found at any elevation, but deeper veins are often richer. It can be found in $(l:the_world/geology#sedimentary)Sedimentary$() and $(l:the_world/geology#metamorphic)Metamorphic$() rocks.",
       "title": "Bauxite"
     },
@@ -24,7 +24,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/poor_aluminum/marble"
+            "X": "tfc_ie_addon:ore/poor_bauxite/marble"
           }
         },
         {
@@ -37,7 +37,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/normal_aluminum/marble"
+            "X": "tfc_ie_addon:ore/normal_bauxite/marble"
           }
         },
         {
@@ -50,20 +50,20 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/rich_aluminum/marble"
+            "X": "tfc_ie_addon:ore/rich_bauxite/marble"
           }
         }
       ]
     },
     {
       "type": "patchouli:text",
-      "anchor": "lead",
-      "text": "Lead is used in creating early accumulators. It can be found at elevations below y=75. It can be found in $(l:the_world/geology#metamorphic)Metamorphic$(), $(l:the_world/geology#igneous_extrusive)Igneous Extrusive$() and $(l:the_world/geology#igneous_intrusive)Igneous Intrusive$() rocks.",
-      "title": "Lead"
+      "anchor": "galena",
+      "text": "Galena is an ore of $(thing)Lead$(), which is used in creating early accumulators. It can be found at elevations below y=75. It can be found in $(l:the_world/geology#metamorphic)Metamorphic$(), $(l:the_world/geology#igneous_extrusive)Igneous Extrusive$() and $(l:the_world/geology#igneous_intrusive)Igneous Intrusive$() rocks.",
+      "title": "Galena"
     },
     {
       "type": "tfc:multimultiblock",
-      "text": "Lead Ores in Marble.",
+      "text": "Galena Ores in Marble.",
       "multiblocks": [
         {
           "pattern": [
@@ -75,7 +75,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/poor_lead/marble"
+            "X": "tfc_ie_addon:ore/poor_galena/marble"
           }
         },
         {
@@ -88,7 +88,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/normal_lead/marble"
+            "X": "tfc_ie_addon:ore/normal_galena/marble"
           }
         },
         {
@@ -101,20 +101,20 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/rich_lead/marble"
+            "X": "tfc_ie_addon:ore/rich_galena/marble"
           }
         }
       ]
     },
     {
       "type": "patchouli:text",
-      "anchor": "uranium",
-      "text": "Uranium can be found at elevations below y=75. It can be found in $(l:the_world/geology#metamorphic)Metamorphic$() and $(l:the_world/geology#igneous_extrusive)Igneous Extrusive$() rocks. A uranium block can serve as a heatsource for the $(thing)Thermoelectric Generator$().",
-      "title": "Uranium"
+      "anchor": "uraninite",
+      "text": "Uraninite is an ore of $(thing)Uranium$(). It can be found at elevations below y=75. It can be found in $(l:the_world/geology#metamorphic)Metamorphic$() and $(l:the_world/geology#igneous_extrusive)Igneous Extrusive$() rocks. A uranium block can serve as a heat source for the $(thing)Thermoelectric Generator$().",
+      "title": "Uraninite"
     },
     {
       "type": "tfc:multimultiblock",
-      "text": "Uranium Ores in Marble.",
+      "text": "Uraninite Ores in Marble.",
       "multiblocks": [
         {
           "pattern": [
@@ -126,7 +126,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/poor_uranium/marble"
+            "X": "tfc_ie_addon:ore/poor_uraninite/marble"
           }
         },
         {
@@ -139,7 +139,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/normal_uranium/marble"
+            "X": "tfc_ie_addon:ore/normal_uraninite/marble"
           }
         },
         {
@@ -152,7 +152,7 @@
             ]
           ],
           "mapping": {
-            "X": "tfc_ie_addon:ore/rich_uranium/marble"
+            "X": "tfc_ie_addon:ore/rich_uraninite/marble"
           }
         }
       ]
@@ -161,17 +161,17 @@
   "read_by_default": true,
   "sortnum": 0,
   "extra_recipe_mappings": {
-    "tfc_ie_addon:ore/small_aluminum": 0,
-    "tfc_ie_addon:ore/poor_aluminum": 0,
-    "tfc_ie_addon:ore/normal_aluminum": 0,
-    "tfc_ie_addon:ore/rich_aluminum": 0,
-    "tfc_ie_addon:ore/small_lead": 2,
-    "tfc_ie_addon:ore/poor_lead": 2,
-    "tfc_ie_addon:ore/normal_lead": 2,
-    "tfc_ie_addon:ore/rich_lead": 2,
-    "tfc_ie_addon:ore/small_uranium": 4,
-    "tfc_ie_addon:ore/poor_uranium": 4,
-    "tfc_ie_addon:ore/normal_uranium": 4,
-    "tfc_ie_addon:ore/rich_uranium": 4
+    "tfc_ie_addon:ore/small_bauxite": 0,
+    "tfc_ie_addon:ore/poor_bauxite": 0,
+    "tfc_ie_addon:ore/normal_bauxite": 0,
+    "tfc_ie_addon:ore/rich_bauxite": 0,
+    "tfc_ie_addon:ore/small_galena": 2,
+    "tfc_ie_addon:ore/poor_galena": 2,
+    "tfc_ie_addon:ore/normal_galena": 2,
+    "tfc_ie_addon:ore/rich_galena": 2,
+    "tfc_ie_addon:ore/small_uraninite": 4,
+    "tfc_ie_addon:ore/poor_uraninite": 4,
+    "tfc_ie_addon:ore/normal_uraninite": 4,
+    "tfc_ie_addon:ore/rich_uraninite": 4
   }
 }
