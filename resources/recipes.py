@@ -45,6 +45,12 @@ class Rules(Enum):
 def generate(rm: ResourceManager):
     rm.domain = 'tfc_ie_addon'
 
+    def craft_decorations(recipe_name: str, base_block: str, has_wall: bool = True):
+        rm.crafting_shaped(recipe_name + '_slab', ['XXX'], base_block, (6, base_block + '_slab')).with_advancement(base_block)
+        rm.crafting_shaped(recipe_name + '_stairs', ['X  ', 'XX ', 'XXX'], base_block, (8, base_block + '_stairs')).with_advancement(base_block)
+        if has_wall:
+            rm.crafting_shaped(recipe_name + '_wall', ['XXX', 'XXX'], base_block, (6, base_block + '_wall')).with_advancement(base_block)
+
     # RECIPE REMOVALS
 
     [disable_recipe(rm, recipe) for recipe in TO_REMOVE_RECIPES]
@@ -55,6 +61,10 @@ def generate(rm: ResourceManager):
     for metal in PLATE_METALS:
         damage_shapeless(rm, 'crafting/%s_sheet_to_plate' % metal, ('%s:metal/sheet/%s' % ('tfc_ie_addon' if metal in ADDON_METALS else 'tfc', metal), 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_%s' % metal))
     damage_shapeless(rm, 'crafting/wrought_iron_sheet_to_plate', ('tfc:metal/sheet/wrought_iron', 'immersiveengineering:wirecutter'), (2, 'immersiveengineering:plate_iron'))
+
+    for metal in ADDON_METALS:
+        damage_shaped(rm, 'crafting/metal/block/%s' % metal, [' SH', 'SWS', ' S '], {'S': '#forge:sheets/%s' % metal, 'W': '#minecraft:planks', 'H': '#tfc:hammers'}, '8 tfc_ie_addon:metal/block/%s' % metal)
+        craft_decorations('crafting/metal/block/%s' % metal, 'tfc_ie_addon:metal/block/%s' % metal, has_wall=False)
 
     rm.crafting_shaped('crafting/treated_wood_planks', ['XX', 'XX'], {'X': 'tfc_ie_addon:treated_wood_lumber'}, 'immersiveengineering:treated_wood_horizontal')
 
@@ -276,6 +286,17 @@ def generate(rm: ResourceManager):
 
     chisel_recipe(rm, 'asphalt_stairs', 'immersivepetroleum:asphalt', 'immersivepetroleum:asphalt_stair', 'stair', 'immersivepetroleum')
     chisel_recipe(rm, 'asphalt_slab', 'immersivepetroleum:asphalt', 'immersivepetroleum:asphalt_slab', 'slab', 'immersivepetroleum')
+
+
+def damage_shaped(rm: ResourceManager, name_parts: utils.ResourceIdentifier, pattern: Sequence[str], ingredients: Json, result: Json, group: str = None, conditions: Optional[Json] = None) -> RecipeContext:
+    return delegate_recipe(rm, name_parts, 'tfc:damage_inputs_shaped_crafting', {
+        'type': 'minecraft:crafting_shaped',
+        'group': group,
+        'pattern': pattern,
+        'key': utils.item_stack_dict(ingredients, ''.join(pattern)[0]),
+        'result': utils.item_stack(result),
+        'conditions': utils.recipe_condition(conditions)
+    })
 
 
 def damage_shapeless(rm: ResourceManager, name_parts: ResourceIdentifier, ingredients: Json, result: Json, group: str = None, conditions: utils.Json = None) -> RecipeContext:
