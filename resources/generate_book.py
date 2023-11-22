@@ -134,7 +134,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         )),
         entry('herbicide', 'Herbicide Additions', 'immersiveengineering:herbicide_bucket', pages=(
             text('$(thing)Herbicide$() works in the TerraFirmaCraft World too! When loaded into a $(thing)Chemical Thrower$() it is dispersed as a fine mist, which withers and destroys any plants it comes in contact with. The fluid will destroy flowers and crops and strip the grass from dirt. It will also dehydrate and ruin farmland. It can therefore be used as an alternative to $(thing)Rotten Compost$().'),
-            item_spotlight('immersiveengineering:herbicide_bucket', text_contents='To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with $(thing)Malachite Powder$() and $(l:tfc:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$().')
+            item_spotlight('immersiveengineering:herbicide_bucket', text_contents='To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with any $(thing)copper powder$() and $(l:tfc:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$().')
         )),
         entry('external_heater', 'Electric Crucible?', 'tfc:crucible', pages=(
             text('There is no Electric Crucible in this mod, but the $(thing)External Heater$() is made to be able to heat a $(l:mechanics/crucible)Crucible$() just like a $(l:mechanics/charcoal_forge)Charcoal Forge$().').link('immersiveengineering:furnace_heater'),

@@ -12,7 +12,7 @@
       "type": "patchouli:spotlight",
       "item": "immersiveengineering:herbicide_bucket",
       "link_recipes": false,
-      "text": "To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with $(thing)Malachite Powder$() and $(l:tfc:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$()."
+      "text": "To craft $(thing)Herbicide$(), mix half a bucket of $(thing)Ethanol$() with any $(thing)copper powder$() and $(l:tfc:tfc_ie_changes/chemicals#sulfur)Sulfur$() in the $(thing)Mixer$()."
     }
   ],
   "read_by_default": true,
