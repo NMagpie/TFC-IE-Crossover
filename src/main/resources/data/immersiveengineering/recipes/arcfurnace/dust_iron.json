@@ -2,14 +2,12 @@
   "type": "immersiveengineering:arc_furnace",
   "results": [
     {
-      "item": "minecraft:iron_ingot"
+      "item": "tfc:metal/ingot/wrought_iron"
     }
   ],
   "additives": [],
   "input": {
-    "base_ingredient": {
-      "item": "immersiveengineering:dust_iron"
-    }
+    "tag": "forge:dusts/iron"
   },
   "time": 100,
   "energy": 51200
