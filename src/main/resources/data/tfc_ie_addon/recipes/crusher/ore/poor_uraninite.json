@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc_ie_addon:ore/poor_uraninite"
+  },
+  "result": {
+    "item": "tfc_ie_addon:powder/uraninite",
+    "count": 6
+  },
+  "secondaries": [],
+  "energy": 1500
+}

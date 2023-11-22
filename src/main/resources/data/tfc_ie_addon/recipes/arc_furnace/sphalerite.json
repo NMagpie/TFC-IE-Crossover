@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:arc_furnace",
+  "input": {
+    "base_ingredient": {
+      "item": "tfc:powder/sphalerite"
+    },
+    "count": 20
+  },
+  "results": [
+    {
+      "item": "tfc:metal/ingot/zinc"
+    }
+  ],
+  "additives": [],
+  "time": 100,
+  "energy": 25600
+}

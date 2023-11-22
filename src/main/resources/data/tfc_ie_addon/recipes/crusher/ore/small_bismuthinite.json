@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc:ore/small_bismuthinite"
+  },
+  "result": {
+    "item": "tfc:powder/bismuthinite",
+    "count": 4
+  },
+  "secondaries": [],
+  "energy": 1000
+}

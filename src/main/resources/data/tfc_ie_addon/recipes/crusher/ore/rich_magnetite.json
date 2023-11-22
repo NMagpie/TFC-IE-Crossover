@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc:ore/rich_magnetite"
+  },
+  "result": {
+    "item": "tfc:powder/magnetite",
+    "count": 14
+  },
+  "secondaries": [],
+  "energy": 3500
+}

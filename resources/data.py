@@ -44,6 +44,9 @@ def generate(rm: ResourceManager):
 
             rm.block_tag(needs_tool(ore_data.required_tool), 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock))
 
+    # GLASSWORKING POWDER TAG
+    rm.item_tag('tfc:glassworking_powders', 'tfc_ie_addon:powder/galena', 'tfc_ie_addon:powder/uraninite')
+
     # JUTE AND FIBER TAGS
 
     rm.item_tag('forge:fiber_hemp', 'tfc:jute_fiber')
@@ -141,25 +144,6 @@ def generate(rm: ResourceManager):
         'tfc_ie_addon:mold_block'
     ])
     item_size(rm, 'molds', '#tfc_ie_addon:molds', Size.normal, Weight.medium)
-    # molds = [
-    #     'immersiveengineering:mold_plate',
-    #     'immersiveengineering:mold_gear',
-    #     'immersiveengineering:mold_rod',
-    #     'immersiveengineering:mold_bullet_casing',
-    #     'immersiveengineering:mold_wire',
-    #     'immersiveengineering:mold_packing_4',
-    #     'immersiveengineering:mold_packing_9',
-    #     'immersiveengineering:mold_unpacking',
-    #     'tfc_ie_addon:mold_sheet',
-    #     'tfc_ie_addon:mold_block'
-    # ]
-
-    # for mold in molds:
-    #     if 'immersiveengineering' in mold:
-    #         name_part = mold.replace('immersiveengineering:', '')
-    #     elif 'tfc_ie_addon' in mold:
-    #         name_part = mold.replace('tfc_ie_addon:', '')
-    #     item_size(rm, name_part, mold, Size.normal, Weight.medium)
 
 
 def needs_tool(_tool: str) -> str:

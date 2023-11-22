@@ -12,7 +12,7 @@ def generate(rm: ResourceManager):
     for ore, ore_data in ORES.items():
         for grade in ORE_GRADES.keys():
             rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore))
-        block = rm.blockstate('ore/small_%s' % ore, variants={"": four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
+        block = rm.blockstate('ore/small_%s' % ore, variants={'': four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
         block.with_lang(lang('small %s', ore)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:can_be_snow_piled')
         rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore))
         rm.item_model('powder/%s' % ore).with_lang(lang('%s powder', ore)).with_tag('tfc:powders')
@@ -38,7 +38,7 @@ def generate(rm: ResourceManager):
     for (block_name, block_lang, texture, parent) in quartz_parts:
 
         if 'budding' in block_name or 'block' in block_name:
-            block = rm.blockstate('mineral/%s' % block_name, variants={"": {'model': 'tfc_ie_addon:block/mineral/%s' % block_name}}, use_default_model=False)
+            block = rm.blockstate('mineral/%s' % block_name, variants={'': {'model': 'tfc_ie_addon:block/mineral/%s' % block_name}}, use_default_model=False)
 
             block.with_item_model().with_lang(lang(block_lang))
 
@@ -48,7 +48,7 @@ def generate(rm: ResourceManager):
         else:
             block = rm.blockstate('mineral/%s' % block_name, variants=six_ways('tfc_ie_addon:block/mineral/%s' % block_name), use_default_model=False)
 
-        if "cluster" in block_name:
+        if 'cluster' in block_name:
             block.with_block_loot('2 tfc_ie_addon:mineral/quartz_shard')
 
         block.with_block_model({

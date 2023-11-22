@@ -140,7 +140,6 @@ ORE_GRADES: Dict[str, OreGrade] = {
     'rich': OreGrade(7)
 }
 
-
 ALLOYS: Dict[str, Tuple[Tuple[str, float, float], ...]] = {
     'electrum': (('gold', 0.4, 0.6), ('silver', 0.4, 0.6)),
     'constantan': (('copper', 0.4, 0.6), ('nickel', 0.4, 0.6))
@@ -158,20 +157,20 @@ ORE_VEINS: Dict[str, Vein] = {
     'normal_uraninite': Vein.new('uraninite', 100, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
 }
 
-TFC_ORES = [
-    ('native_copper', 'copper'),
-    ('native_gold', 'gold'),
-    ('hematite', 'cast_iron'),
-    ('native_silver', 'silver'),
-    ('cassiterite', 'tin'),
-    ('bismuthinite', 'bismuth'),
-    ('garnierite', 'nickel'),
-    ('malachite', 'copper'),
-    ('magnetite', 'cast_iron'),
-    ('limonite', 'cast_iron'),
-    ('sphalerite', 'zinc'),
-    ('tetrahedrite', 'copper'),
-]
+TFC_ORES: Dict[str, Ore] = {
+    'native_copper': Ore('copper', True, 'copper', 'copper', 'orange'),
+    'native_gold': Ore('gold', True, 'copper', 'gold'),
+    'hematite': Ore('cast_iron', True, 'copper', 'iron', 'red'),
+    'native_silver': Ore('silver', True, 'copper', 'silver', 'light_gray'),
+    'cassiterite': Ore('tin', True, 'copper', 'tin', 'gray'),
+    'bismuthinite': Ore('bismuth', True, 'copper', 'bismuth', 'green'),
+    'garnierite': Ore('nickel', True, 'bronze', 'nickel', 'brown'),
+    'malachite': Ore('copper', True, 'copper', 'copper', 'green'),
+    'magnetite': Ore('cast_iron', True, 'copper', 'iron', 'gray'),
+    'limonite': Ore('cast_iron', True, 'copper', 'iron', 'yellow'),
+    'sphalerite': Ore('zinc', True, 'copper', 'zinc', 'gray'),
+    'tetrahedrite': Ore('copper', True, 'copper', 'copper', 'gray')
+}
 
 TFC_METALS = [
     'bismuth', 'bismuth_bronze', 'black_bronze', 'bronze', 'brass', 'copper', 'gold', 'nickel', 'rose_gold', 'silver',
@@ -189,6 +188,9 @@ DEFAULT_LANG = {
     'desc.immersiveengineering.info.mineral.aikinite': 'Aikinite',
     'desc.immersiveengineering.info.mineral.franklinite': 'Franklinite',
     'desc.immersiveengineering.info.mineral.quartzite': 'Quartzite',
+
+    'tfc.enum.glassoperation.lead': 'Lead Powder',
+    'tfc.enum.glassoperation.uranium': 'Uranium Powder',
 
     'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft',
 

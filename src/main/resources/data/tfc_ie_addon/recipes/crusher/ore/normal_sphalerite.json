@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc:ore/normal_sphalerite"
+  },
+  "result": {
+    "item": "tfc:powder/sphalerite",
+    "count": 10
+  },
+  "secondaries": [],
+  "energy": 2500
+}

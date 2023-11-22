@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Union, Sequence
+from typing import Union, Sequence, Optional, List, Dict, Tuple
 
 from assets import domain_divider
 
@@ -108,6 +108,11 @@ def generate(rm: ResourceManager):
     chisel_recipe(rm, 'concrete_stairs', 'immersiveengineering:concrete', 'immersiveengineering:stairs_concrete', 'stair')
     chisel_recipe(rm, 'concrete_slab', 'immersiveengineering:concrete', 'immersiveengineering:slab_concrete', 'slab')
 
+    # GLASSWORKING RECIPES
+    for name, op, result in (('glass_pane', 'table_pour', 'tfc:%s_poured_glass'), ('glass_block', 'basin_pour', 'minecraft:%s_stained_glass')):
+        glass_recipe(rm, 'lime_' + name, ['uranium', op], '#tfc:glass_batches_tier_2', result % 'lime')
+        glass_recipe(rm, 'yellow_' + name, ['lead', op], '#tfc:glass_batches_tier_2', result % 'yellow')
+
     # COKE OVEN RECIPES
 
     tfc_coals = ['bituminous_coal', 'lignite']
@@ -196,35 +201,36 @@ def generate(rm: ResourceManager):
 
     # ARC FURNACE RECIPES
 
-    grades = [('small', 5, 1), ('poor', 7, 2), ('normal', 2, 1), ('rich', 3, 2)]
-
-    for (grade, count, output) in grades:
-        for (ore, metal) in TFC_ORES:
-            arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
-                               input='%s tfc:ore/%s_%s' % (count, grade, ore),
-                               results=('%s tfc:metal/ingot/%s' % (output, metal)),
-                               time=100,
-                               energy=25600,
-                               slag=True)
-
-    for (grade, count, output) in grades:
-        for ore, ore_data in ORES.items():
-            arc_furnace_recipe(rm, '%s_%s' % (grade, ore),
-                               input='%s tfc_ie_addon:ore/%s_%s' % (count, grade, ore),
-                               results=('%s #forge:ingots/%s' % (output, ore_data.metal)),
-                               time=100,
-                               energy=25600,
-                               slag=True)
+    for ore, ore_data in (ORES | TFC_ORES).items():
+        input_prefix = 'tfc_ie_addon' if ore in ORES.keys() else 'tfc'
+        output_prefix = 'immersiveengineering:ingot_' if ore in ORES.keys() else 'tfc:metal/ingot/'
+        arc_furnace_recipe(rm, '%s' % ore,
+                           input='20 %s:powder/%s' % (input_prefix, ore),
+                           results='%s%s' % (output_prefix, ore_data.metal),
+                           time=100,
+                           energy=25600)
 
     # CRUSHER RECIPES
+
+    for ore in list(ORES.keys()) + list(TFC_ORES.keys()):
+        prefix = 'tfc_ie_addon' if ore in ORES.keys() else 'tfc'
+        for grade, data in ORE_GRADES.items():
+            crusher_recipe(rm, 'ore/%s_%s' % (grade, ore),
+                           input='%s:ore/%s_%s' % (prefix, grade, ore),
+                           result='%s %s:powder/%s' % (data.grind_amount * 2, prefix, ore),
+                           energy=data.grind_amount * 500)
+        crusher_recipe(rm, 'ore/small_%s' % ore,
+                       input='%s:ore/small_%s' % (prefix, ore),
+                       result='4 %s:powder/%s' % (prefix, ore),
+                       energy=1000)
 
     for type in SANDSTONE_TYPES:
         for color in SANDSTONE_COLORS:
             crusher_recipe(rm, 'sandstone/%s_%s' % (type, color),
-                           utils.ingredient('tfc:%s_sandstone/%s' % (type, color)),
-                           utils.item_stack('2 tfc:sand/%s' % color),
-                           3200,
-                           [{'chance': 0.5, 'output': utils.item_stack('tfc:powder/saltpeter')}])
+                           input='tfc:%s_sandstone/%s' % (type, color),
+                           result='2 tfc:sand/%s' % color,
+                           energy=3200,
+                           secondaries=[{'chance': 0.5, 'output': utils.item_stack('tfc:powder/saltpeter')}])
 
     # METAL PRESS RECIPES
 
@@ -244,13 +250,13 @@ def generate(rm: ResourceManager):
     # SAWMILL RECIPES
 
     for wood_type in TFC_WOOD_TYPES:
-        for (wood_item, count, energy) in TFC_WOOD_ITEMS:
+        for wood_item, count, energy in TFC_WOOD_ITEMS:
             sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
                            'tfc:wood/planks/%s_%s' % (wood_type, wood_item),
                            '%s tfc:wood/lumber/%s' % (count, wood_type),
                            energy)
 
-        for (wood_item, count, energy) in TFC_OTHER_WOOD_ITEMS:
+        for wood_item, count, energy in TFC_OTHER_WOOD_ITEMS:
             sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
                            'tfc:wood/%s/%s' % (wood_item, wood_type),
                            '%s tfc:wood/lumber/%s' % (count, wood_type),
@@ -282,14 +288,14 @@ def generate(rm: ResourceManager):
 
     fermenter_recipe(rm, 'raw_honey', 'firmalife:raw_honey', 200, 'firmalife')
 
-    for (grade, count, output) in grades:
-        arc_furnace_recipe(rm, '%s_chromite' % grade,
-                           input='%s firmalife:ore/%s_chromite' % (count, grade),
-                           results=('%s #forge:ingots/chromium' % output),
-                           time=100,
-                           energy=25600,
-                           slag=True,
-                           conditional_modid='firmalife')
+    # for grade, count, output in grades:
+    #     arc_furnace_recipe(rm, '%s_chromite' % grade,
+    #                        input='%s firmalife:ore/%s_chromite' % (count, grade),
+    #                        results=('%s #forge:ingots/chromium' % output),
+    #                        time=100,
+    #                        energy=25600,
+    #                        slag=True,
+    #                        conditional_modid='firmalife')
 
     # IMMERSIVE PETROLEUM COMPAT
 
@@ -621,6 +627,14 @@ def chisel_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ing
     }, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
 
 
+def glass_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, steps: List[str], batch: str, result: str):
+    rm.recipe(('glassworking', name_parts), 'tfc:glassworking', {
+        'operations': steps,
+        'batch': utils.ingredient(batch),
+        'result': utils.item_stack(result)
+    })
+
+
 def coke_oven_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, creosote: int, time: int):
     rm.recipe(('cokeoven', name_parts), 'immersiveengineering:coke_oven', {
         'creosote': creosote,
@@ -679,12 +693,7 @@ def arc_furnace_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier
 
 
 def crusher_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, secondaries: list = []):
-    recipe = {'input': input, 'result': result}
-
-    if secondaries:
-        recipe['secondaries'] = secondaries
-
-    recipe['energy'] = energy
+    recipe = {'input': utils.ingredient(input), 'result': utils.item_stack(result), 'secondaries': secondaries, 'energy': energy}
 
     rm.recipe(('crusher', name_parts), 'immersiveengineering:crusher', recipe)
 

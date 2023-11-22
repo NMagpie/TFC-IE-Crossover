@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:arc_furnace",
+  "input": {
+    "base_ingredient": {
+      "item": "tfc:powder/malachite"
+    },
+    "count": 20
+  },
+  "results": [
+    {
+      "item": "tfc:metal/ingot/copper"
+    }
+  ],
+  "additives": [],
+  "time": 100,
+  "energy": 25600
+}

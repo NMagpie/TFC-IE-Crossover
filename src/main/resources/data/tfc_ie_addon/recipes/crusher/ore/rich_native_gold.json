@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc:ore/rich_native_gold"
+  },
+  "result": {
+    "item": "tfc:powder/native_gold",
+    "count": 14
+  },
+  "secondaries": [],
+  "energy": 3500
+}

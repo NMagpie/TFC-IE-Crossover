@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc:ore/poor_native_silver"
+  },
+  "result": {
+    "item": "tfc:powder/native_silver",
+    "count": 6
+  },
+  "secondaries": [],
+  "energy": 1500
+}

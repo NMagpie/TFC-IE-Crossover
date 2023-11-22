@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:crusher",
+  "input": {
+    "item": "tfc:ore/poor_garnierite"
+  },
+  "result": {
+    "item": "tfc:powder/garnierite",
+    "count": 6
+  },
+  "secondaries": [],
+  "energy": 1500
+}
