@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "tfc_ie_addon:powder/bauxite",
+    "tfc_ie_addon:powder/galena",
+    "tfc_ie_addon:powder/uraninite"
+  ]
+}

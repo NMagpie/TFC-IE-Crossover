@@ -58,6 +58,9 @@ public class CreativeTabs
         for (Metal metal : Metal.values())
             for (Metal.ItemType itemType : Metal.ItemType.values())
                 accept(out, Items.METAL_ITEMS, metal, itemType);
+        accept(out, Items.BAUXITE_POWDER);
+        accept(out, Items.GALENA_POWDER);
+        accept(out, Items.URANINITE_POWDER);
         for (Metal metal : Metal.values())
             accept(out, Items.METAL_FLUID_BUCKETS, metal);
         accept(out, Blocks.QUARTZ_BLOCK);

@@ -40,6 +40,10 @@ public class Items
     public static final Map<Ore.Grade, RegistryObject<Item>> BAUXITE_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_bauxite"));
     public static final Map<Ore.Grade, RegistryObject<Item>> GALENA_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_galena"));
     public static final Map<Ore.Grade, RegistryObject<Item>> URANINITE_ORES = Helpers.mapOfKeys(Ore.Grade.class, grade -> register("ore/" + grade.name() + "_uraninite"));
+    public static final RegistryObject<Item> BAUXITE_POWDER = register("powder/bauxite");
+    public static final RegistryObject<Item> GALENA_POWDER = register("powder/galena");
+    public static final RegistryObject<Item> URANINITE_POWDER = register("powder/uraninite");
+
     public static final Map<Metal, Map<Metal.ItemType, RegistryObject<Item>>> METAL_ITEMS = Helpers.mapOfKeys(Metal.class, metal ->
         Helpers.mapOfKeys(Metal.ItemType.class, type ->
             register("metal/" + type.name() + "/" + metal.name(), () -> type.create(metal))

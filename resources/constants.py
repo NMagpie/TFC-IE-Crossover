@@ -89,7 +89,7 @@ class Vein(NamedTuple):
 
 
 ORES: Dict[str, Ore] = {
-    'bauxite': Ore('aluminum', True, 'copper', 'aluminum', 'orange'),
+    'bauxite': Ore('aluminum', True, 'copper', 'aluminum', 'red'),
     'galena': Ore('lead', True, 'copper', 'lead', 'black'),
     'uraninite': Ore('uranium', True, 'iron', 'uranium', 'green')
 }

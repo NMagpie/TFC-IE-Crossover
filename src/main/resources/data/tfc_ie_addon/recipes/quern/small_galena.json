@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfc_ie_addon:ore/small_galena"
+  },
+  "result": {
+    "item": "tfc_ie_addon:powder/galena",
+    "count": 2
+  }
+}

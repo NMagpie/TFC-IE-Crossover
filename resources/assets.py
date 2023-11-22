@@ -9,13 +9,13 @@ from constants import *
 def generate(rm: ResourceManager):
     # ORE STUFF
 
-    ores = ['bauxite', 'galena', 'uraninite']
-    for ore in ores:
+    for ore, ore_data in ORES.items():
         for grade in ORE_GRADES.keys():
             rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore))
         block = rm.blockstate('ore/small_%s' % ore, variants={"": four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
         block.with_lang(lang('small %s', ore)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:can_be_snow_piled')
         rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore))
+        rm.item_model('powder/%s' % ore).with_lang(lang('%s powder', ore)).with_tag('tfc:powders')
         for rock, data in TFC_ROCKS.items():
             for grade in ORE_GRADES.keys():
                 block = rm.blockstate(('ore', grade + '_' + ore, rock), 'tfc_ie_addon:block/ore/%s_%s/%s' % (grade, ore, rock))

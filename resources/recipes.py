@@ -66,6 +66,10 @@ def generate(rm: ResourceManager):
         damage_shaped(rm, 'crafting/metal/block/%s' % metal, [' SH', 'SWS', ' S '], {'S': '#forge:sheets/%s' % metal, 'W': '#minecraft:planks', 'H': '#tfc:hammers'}, '8 tfc_ie_addon:metal/block/%s' % metal)
         craft_decorations('crafting/metal/block/%s' % metal, 'tfc_ie_addon:metal/block/%s' % metal, has_wall=False)
 
+    for ore, ore_data in ORES.items():
+        if ore_data.dye_color:
+            rm.crafting_shapeless('crafting/vanilla/%s_dye_from_%s' % (ore_data.dye_color, ore), ('tfc_ie_addon:powder/%s' % ore), 'minecraft:%s_dye' % ore_data.dye_color).with_advancement('tfc_ie_addon:powder/%s' % ore)
+
     rm.crafting_shaped('crafting/treated_wood_planks', ['XX', 'XX'], {'X': 'tfc_ie_addon:treated_wood_lumber'}, 'immersiveengineering:treated_wood_horizontal')
 
     # HEAT RECIPES
@@ -76,8 +80,7 @@ def generate(rm: ResourceManager):
 
     # ORE RECIPES
 
-    ores = ['bauxite', 'galena', 'uraninite']
-    for ore in ores:
+    for ore, ore_data in ORES.items():
         for rock, data in TFC_ROCKS.items():
             cobble = 'tfc:rock/cobble/%s' % rock
             collapse_recipe(rm, '%s_cobble' % rock, [
@@ -88,6 +91,12 @@ def generate(rm: ResourceManager):
             for grade in ORE_GRADES.keys():
                 rm.block_tag('tfc:can_start_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
                 rm.block_tag('tfc:can_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
+
+    # QUERN RECIPES
+        if ore_data.graded:
+            for grade, data in ORE_GRADES.items():
+                quern_recipe(rm, '%s_%s' % (grade, ore), 'tfc_ie_addon:ore/%s_%s' % (grade, ore), 'tfc_ie_addon:powder/%s' % ore, count=data.grind_amount)
+            quern_recipe(rm, 'small_%s' % ore, 'tfc_ie_addon:ore/small_%s' % ore, 'tfc_ie_addon:powder/%s' % ore, count=2)
 
     # BARREL RECIPES
 
