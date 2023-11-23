@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:mixer",
+  "inputs": [
+    {
+      "item": "tfc:powder/lime"
+    }
+  ],
+  "result": {
+    "fluid": "tfc:limewater",
+    "amount": 500
+  },
+  "fluid": {
+    "tag": "tfc:fresh_water",
+    "amount": 500
+  },
+  "energy": 800
+}
