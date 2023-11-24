@@ -11,6 +11,8 @@ public class ServerConfig
 {
     public final ForgeConfigSpec.IntValue crucibleExternalHeaterFEPerTick;
     public final ForgeConfigSpec.IntValue crucibleExternalHeaterTemperature;
+    public final ForgeConfigSpec.DoubleValue tfcWaterWheelEnergyModifier;
+    public final ForgeConfigSpec.DoubleValue tfcWindmillEnergyModifier;
     public final ForgeConfigSpec.EnumValue<Size> crateMaximumItemSize;
 
     ServerConfig(Builder innerBuilder)
@@ -21,6 +23,14 @@ public class ServerConfig
 
         crucibleExternalHeaterFEPerTick = builder.apply("crucibleExternalHeaterFEPerTick").comment("The amount of FE an external heater consumes per tick when heating a crucible.").defineInRange("crucibleExternalHeaterFEPerTick", 20, 0, 32000);
         crucibleExternalHeaterTemperature = builder.apply("crucibleExternalHeaterTemperature").comment("The maximum temperature a crucible reaches when heated by an external heater.").defineInRange("crucibleExternalHeaterTemperature", 2000, 0, Integer.MAX_VALUE);
+
+        innerBuilder.pop().push("tfcWaterWheel");
+
+        tfcWaterWheelEnergyModifier = builder.apply("tfcWaterWheelEnergyModifier").comment("A modifier to apply to the energy generation of a TFC water wheel on a kinetic dynamo.").defineInRange("tfcWaterWheelEnergyModifier", 1, 1e-3, 1e3);
+
+        innerBuilder.pop().push("tfcWindmill");
+
+        tfcWindmillEnergyModifier = builder.apply("tfcWindmillEnergyModifier").comment("A modifier to apply to the energy generation of a TFC windmill on a kinetic dynamo.").defineInRange("tfcWindmillEnergyModifier", 1, 1e-3, 1e3);
 
         innerBuilder.pop().push("crate");
 

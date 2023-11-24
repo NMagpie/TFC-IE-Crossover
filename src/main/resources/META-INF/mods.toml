@@ -31,7 +31,7 @@ side = "BOTH"
 [[dependencies.tfc_ie_addon]]
 modId = "tfc"
 mandatory = true
-versionRange = "[3.0.3-beta,)"
+versionRange = "[3.1.0-beta,)"
 ordering = "AFTER"
 side = "BOTH"
 

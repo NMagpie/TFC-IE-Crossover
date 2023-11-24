@@ -1,10 +1,11 @@
 {
   "homepage" : "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover",
   "promos": {
-    "1.20.1-latest": "1.0.1",
-    "1.20.1-recommended": "1.0.1"
+    "1.20.1-latest": "1.1.0",
+    "1.20.1-recommended": "1.1.0"
   },
   "1.20.1": {
+    "1.1.0": "Add compatibility for TFC water wheel and windmill with kinetic dynamo.",
     "1.0.1": "Fix small uraninite model and mixer recipes.",
     "1.0.0": "Port to 1.20.1."
   }

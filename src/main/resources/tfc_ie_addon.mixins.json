@@ -6,8 +6,6 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "mixins": [
-    "AllowInCrateMixin", "AnvilBlockEntityMixin", "GlassOperationMixin", "GlassworkingRecipeCategoryMixin", "accessor.BlockEntityAccessor"
-  ],
+  "mixins": ["AllowInCrateMixin", "AnvilBlockEntityMixin", "GlassOperationMixin", "GlassworkingRecipeCategoryMixin", "WaterWheelBlockEntityMixin", "WindmillBlockEntityMixin", "accessor.BlockEntityAccessor"],
   "refmap": "tfc_ie_addon.refmap.json"
 }
