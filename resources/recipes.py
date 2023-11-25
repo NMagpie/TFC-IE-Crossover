@@ -171,21 +171,21 @@ def generate(rm: ResourceManager):
 
     # ANVIL RECIPES
 
-    anvil_recipe(rm, 'wirecutter_head', 'tfc:metal/ingot/wrought_iron', 'tfc_ie_addon:tool_head/wirecutter', 3, Rules.shrink_not_last, Rules.hit_last, Rules.bend_any)
+    anvil_recipe(rm, 'wirecutter_head', 'tfc:metal/ingot/wrought_iron', 'tfc_ie_addon:tool_head/wirecutter', 3, Rules.hit_last, Rules.shrink_not_last, Rules.bend_not_last)
 
-    anvil_recipe(rm, 'hammer_head', 'tfc:metal/ingot/wrought_iron', 'tfc_ie_addon:tool_head/ie_hammer', 3, Rules.upset_any, Rules.hit_not_last, Rules.draw_second_last)
+    anvil_recipe(rm, 'hammer_head', 'tfc:metal/ingot/wrought_iron', 'tfc_ie_addon:tool_head/ie_hammer', 3, Rules.upset_last, Rules.draw_second_last, Rules.hit_third_last)
 
     anvil_recipe(rm, 'toolupgrade_revolver_bayonet', 'tfc:metal/ingot/steel', 'immersiveengineering:toolupgrade_revolver_bayonet', 4, Rules.hit_last, Rules.bend_any, Rules.draw_any)
 
-    anvil_recipe(rm, 'drillhead_steel', 'tfc:metal/double_sheet/steel', 'immersiveengineering:drillhead_steel', 4, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+    anvil_recipe(rm, 'drillhead_steel', 'tfc:metal/double_sheet/steel', 'immersiveengineering:drillhead_steel', 4, Rules.hit_last, Rules.draw_second_last, Rules.bend_third_last)
 
-    anvil_recipe(rm, 'drillhead_iron', 'tfc:metal/double_sheet/wrought_iron', 'immersiveengineering:drillhead_iron', 3, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+    anvil_recipe(rm, 'drillhead_iron', 'tfc:metal/double_sheet/wrought_iron', 'immersiveengineering:drillhead_iron', 3, Rules.hit_last, Rules.draw_second_last, Rules.bend_third_last)
 
-    anvil_recipe(rm, 'drillhead_black_steel', 'tfc:metal/double_sheet/black_steel', 'tfc_ie_addon:drillhead_black_steel', 5, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+    anvil_recipe(rm, 'drillhead_black_steel', 'tfc:metal/double_sheet/black_steel', 'tfc_ie_addon:drillhead_black_steel', 5, Rules.hit_last, Rules.draw_second_last, Rules.bend_third_last)
 
-    anvil_recipe(rm, 'drillhead_blue_steel', 'tfc:metal/double_sheet/blue_steel', 'tfc_ie_addon:drillhead_blue_steel', 6, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+    anvil_recipe(rm, 'drillhead_blue_steel', 'tfc:metal/double_sheet/blue_steel', 'tfc_ie_addon:drillhead_blue_steel', 6, Rules.hit_last, Rules.draw_second_last, Rules.bend_third_last)
 
-    anvil_recipe(rm, 'drillhead_red_steel', 'tfc:metal/double_sheet/red_steel', 'tfc_ie_addon:drillhead_red_steel', 6, Rules.bend_third_last, Rules.draw_any, Rules.hit_last)
+    anvil_recipe(rm, 'drillhead_red_steel', 'tfc:metal/double_sheet/red_steel', 'tfc_ie_addon:drillhead_red_steel', 6, Rules.hit_last, Rules.draw_second_last, Rules.bend_third_last)
 
     anvil_recipe(rm, 'gunpart_barrel', 'tfc:metal/ingot/steel', 'immersiveengineering:gunpart_barrel', 4, Rules.draw_last, Rules.hit_any, Rules.shrink_any)
 

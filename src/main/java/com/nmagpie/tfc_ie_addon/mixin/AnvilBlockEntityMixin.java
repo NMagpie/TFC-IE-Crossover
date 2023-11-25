@@ -24,7 +24,7 @@ import net.dries007.tfc.util.Helpers;
 @Mixin(AnvilBlockEntity.class)
 public abstract class AnvilBlockEntityMixin implements BlockEntityAccessor
 {
-    @Inject(method = "work", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/common/blockentities/AnvilBlockEntity$AnvilInventory;setStackInSlot(ILnet/minecraft/world/item/ItemStack;)V", ordinal = 1), locals = LocalCapture.CAPTURE_FAILHARD, remap = false)
+    @Inject(method = "work", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/common/recipes/AnvilRecipe;assemble(Lnet/dries007/tfc/common/recipes/AnvilRecipe$Inventory;Lnet/minecraft/core/RegistryAccess;)Lnet/minecraft/world/item/ItemStack;"), locals = LocalCapture.CAPTURE_FAILHARD, remap = false)
     private void work(ServerPlayer player, ForgeStep step, CallbackInfoReturnable<InteractionResult> cir, ItemStack stack, Forging forge, ItemStack hammer, InteractionHand hammerSlot, AnvilRecipe recipe)
     {
         if (recipe.getId().toString().equals("tfc:anvil/high_carbon_steel_ingot"))

@@ -9,8 +9,8 @@
   },
   "tier": 6,
   "rules": [
-    "bend_third_last",
-    "draw_any",
-    "hit_last"
+    "hit_last",
+    "draw_second_last",
+    "bend_third_last"
   ]
 }

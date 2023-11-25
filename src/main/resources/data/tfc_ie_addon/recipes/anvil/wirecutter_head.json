@@ -9,8 +9,8 @@
   },
   "tier": 3,
   "rules": [
-    "shrink_not_last",
     "hit_last",
-    "bend_any"
+    "shrink_not_last",
+    "bend_not_last"
   ]
 }

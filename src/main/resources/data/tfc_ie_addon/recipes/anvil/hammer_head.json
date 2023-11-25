@@ -9,8 +9,8 @@
   },
   "tier": 3,
   "rules": [
-    "upset_any",
-    "hit_not_last",
-    "draw_second_last"
+    "upset_last",
+    "draw_second_last",
+    "hit_third_last"
   ]
 }
