@@ -150,11 +150,11 @@ NORMAL = 35, 40, 25  # = 2400
 RICH = 15, 25, 60  # = 2550
 
 ORE_VEINS: Dict[str, Vein] = {
-    'surface_bauxite': Vein.new('bauxite', 40, 20, 48, 100, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
-    'normal_bauxite': Vein.new('bauxite', 80, 30, -64, 32, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
-    'surface_galena': Vein.new('galena', 40, 25, 32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
-    'normal_galena': Vein.new('galena', 80, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
-    'normal_uraninite': Vein.new('uraninite', 100, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
+    'surface_bauxite': Vein.new('bauxite', 20, 20, 48, 100, 0.3, ('sedimentary', 'metamorphic'), grade=POOR),
+    'normal_bauxite': Vein.new('bauxite', 60, 30, -64, 32, 0.6, ('sedimentary', 'metamorphic'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'surface_galena': Vein.new('galena', 20, 25, 32, 75, 0.3, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=POOR),
+    'normal_galena': Vein.new('galena', 60, 40, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive', 'igneous_intrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4)),
+    'normal_uraninite': Vein.new('uraninite', 40, 30, -80, 20, 0.6, ('metamorphic', 'igneous_extrusive'), grade=RICH, indicator=0, deep_indicator=(1, 4))
 }
 
 TFC_ORES: Dict[str, Ore] = {

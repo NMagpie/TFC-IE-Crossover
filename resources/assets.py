@@ -1,5 +1,3 @@
-from typing import Any
-
 from mcresources import ResourceManager, ItemContext
 from mcresources import utils
 
