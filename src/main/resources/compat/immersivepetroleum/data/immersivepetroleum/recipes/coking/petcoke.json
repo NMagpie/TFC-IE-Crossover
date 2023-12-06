@@ -5,7 +5,7 @@
     "count": 2
   },
   "resultfluid": {
-    "tag": "forge:diesel_sulfur",
+    "fluid": "immersivepetroleum:diesel_sulfur",
     "amount": 27
   },
   "input": {

@@ -1,0 +1,28 @@
+{
+  "type": "tfc_ie_addon:shaped_fluid",
+  "key": {
+    "B": {
+      "type": "tfc_ie_addon:fluid",
+      "amount": 1000,
+      "tag": "tfc:fresh_water"
+    },
+    "C": {
+      "item": "immersivepetroleum:bitumen"
+    },
+    "G": {
+      "tag": "forge:gravel"
+    },
+    "S": {
+      "tag": "forge:sand"
+    }
+  },
+  "pattern": [
+    "SCS",
+    "GBG",
+    "SCS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "immersivepetroleum:asphalt"
+  }
+}
