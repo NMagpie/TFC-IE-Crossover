@@ -91,7 +91,8 @@ def generate(rm: ResourceManager):
                 rm.block_tag('tfc:can_start_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
                 rm.block_tag('tfc:can_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
 
-        # QUERN RECIPES
+    # QUERN RECIPES
+
         if ore_data.graded:
             for grade, data in ORE_GRADES.items():
                 quern_recipe(rm, '%s_%s' % (grade, ore), 'tfc_ie_addon:ore/%s_%s' % (grade, ore), 'tfc_ie_addon:powder/%s' % ore, count=data.grind_amount)
