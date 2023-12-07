@@ -1,13 +1,8 @@
-from typing import NamedTuple, Dict, Optional
-
 from mcresources import ResourceManager, utils, loot_tables
-
-from assets import domain_divider
 
 from constants import *
 from data import item_heat
 from recipes import anvil_recipe, Rules, welding_recipe, heat_recipe, casting_recipe
-
 
 MetalItem = NamedTuple('MetalItem', type=str, smelt_amount=int, parent_model=str, tag=Optional[str], mold=bool)
 

@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 
 class I18n:
@@ -60,4 +60,3 @@ class ForLanguage(I18n):
         with open(self.lang_path, 'w', encoding='utf-8') as f:
             print('Writing updated translation for language %s' % self.lang)
             json.dump(self.after, f, indent=2, ensure_ascii=False)
-

@@ -1,3 +1,4 @@
+import re
 from typing import NamedTuple, Tuple, List, Mapping
 
 from mcresources import ResourceManager, utils
@@ -5,8 +6,6 @@ from mcresources.type_definitions import JsonObject, ResourceLocation
 
 from constants import ALLOYS, lang
 from i18n import I18n
-
-import re
 
 NON_TEXT_FIRST_PAGE = 'NON_TEXT_FIRST_PAGE'
 PAGE_BREAK = 'PAGE_BREAK'

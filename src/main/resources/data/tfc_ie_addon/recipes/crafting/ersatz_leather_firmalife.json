@@ -1,0 +1,27 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "fff",
+    "fcf",
+    "fff"
+  ],
+  "key": {
+    "c": {
+      "item": "firmalife:raw_honey"
+    },
+    "f": {
+      "tag": "forge:fabric_hemp"
+    }
+  },
+  "result": {
+    "item": "immersiveengineering:ersatz_leather",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ]
+}

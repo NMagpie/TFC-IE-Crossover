@@ -1,5 +1,6 @@
-from glob import glob
 import json
+from glob import glob
+
 from mcresources import utils
 
 assets_path = '../src/main/resources/assets/'

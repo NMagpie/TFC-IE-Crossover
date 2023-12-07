@@ -1,11 +1,10 @@
 from enum import Enum
-from typing import Union, Sequence, Optional, List, Dict, Tuple
-
-from assets import domain_divider
+from typing import Union, Sequence
 
 from mcresources import ResourceManager, RecipeContext, utils
 from mcresources.type_definitions import Json, JsonObject, ResourceIdentifier
 
+from assets import domain_divider
 from constants import *
 
 
@@ -92,7 +91,7 @@ def generate(rm: ResourceManager):
                 rm.block_tag('tfc:can_start_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
                 rm.block_tag('tfc:can_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
 
-    # QUERN RECIPES
+        # QUERN RECIPES
         if ore_data.graded:
             for grade, data in ORE_GRADES.items():
                 quern_recipe(rm, '%s_%s' % (grade, ore), 'tfc_ie_addon:ore/%s_%s' % (grade, ore), 'tfc_ie_addon:powder/%s' % ore, count=data.grind_amount)
@@ -101,7 +100,7 @@ def generate(rm: ResourceManager):
     # BARREL RECIPES
 
     barrel_instant_recipe(rm, 'redstone_acid', '#forge:dusts/redstone', '250 minecraft:water', output_fluid='250 immersiveengineering:redstone_acid')
-    barrel_sealed_recipe(rm, 'treated_wood', 'Treated Wood', 8000, '#tfc:lumber', '50 immersiveengineering:creosote',  output_item='tfc_ie_addon:treated_wood_lumber')
+    barrel_sealed_recipe(rm, 'treated_wood', 'Treated Wood', 8000, '#tfc:lumber', '50 immersiveengineering:creosote', output_item='tfc_ie_addon:treated_wood_lumber')
 
     # CHISEL RECIPES
 
@@ -288,14 +287,16 @@ def generate(rm: ResourceManager):
 
     fermenter_recipe(rm, 'raw_honey', 'firmalife:raw_honey', 200, 'firmalife')
 
-    # for grade, count, output in grades:
-    #     arc_furnace_recipe(rm, '%s_chromite' % grade,
-    #                        input='%s firmalife:ore/%s_chromite' % (count, grade),
-    #                        results=('%s #forge:ingots/chromium' % output),
-    #                        time=100,
-    #                        energy=25600,
-    #                        slag=True,
-    #                        conditional_modid='firmalife')
+    for grade, count, output in [('small', 5, 1), ('poor', 7, 2), ('normal', 2, 1), ('rich', 3, 2)]:
+        arc_furnace_recipe(rm, '%s_chromite' % grade,
+                           input='%s firmalife:ore/%s_chromite' % (count, grade),
+                           results=('%s #forge:ingots/chromium' % output),
+                           time=100,
+                           energy=25600,
+                           slag=True,
+                           conditional_modid='firmalife')
+
+    rm.crafting_shaped('crafting/ersatz_leather_firmalife', ['fff', 'fcf', 'fff'], {'c': 'firmalife:raw_honey', 'f': '#forge:fabric_hemp'}, '8 immersiveengineering:ersatz_leather', conditions={'type': 'forge:mod_loaded', 'modid': 'firmalife'})
 
     # IMMERSIVE PETROLEUM COMPAT
 

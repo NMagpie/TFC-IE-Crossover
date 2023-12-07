@@ -4,7 +4,6 @@ from argparse import ArgumentParser
 from mcresources.type_definitions import ResourceIdentifier
 
 from patchouli import *
-from i18n import I18n
 
 GRADES = ['poor', 'normal', 'rich']
 GRADES_ALL = ['small', 'poor', 'normal', 'rich']

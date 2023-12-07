@@ -27,7 +27,7 @@ def generate(rm: ResourceManager):
                     'block': 'tfc_ie_addon:ore/small_%s' % vein.ore
                 }]
             },
-            })
+        })
 
     rm.configured_feature('quartz_geode', 'tfc_ie_addon:quartz_geode',
                           {'outer': 'tfc:rock/hardened/basalt',

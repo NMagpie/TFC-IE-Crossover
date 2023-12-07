@@ -7,9 +7,9 @@ from mcresources import ResourceManager, utils
 from mcresources.type_definitions import Json
 
 import assets
+import data
 import metal_stuff
 import recipes
-import data
 import world_gen
 
 
