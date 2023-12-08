@@ -12,5 +12,14 @@
     "tag": "tfc:milks",
     "amount": 9
   },
-  "energy": 50
+  "energy": 50,
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+      }
+    }
+  ]
 }
