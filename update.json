@@ -5,7 +5,7 @@
     "1.20.1-recommended": "1.1.3"
   },
   "1.20.1": {
-    "1.1.3": "Fix water wheel and windmill mixin. Disable milk vinegar refinery recipe if firmalife is loaded.",
+    "1.1.3": "Fix water wheel and windmill mixin.\nDisable milk vinegar refinery recipe if firmalife is loaded.",
     "1.1.2": "Add knapping texture for ersatz leather.\nAdd crafting recipe for ersatz leather using firmalife honey.\nAdd chromite arc furnace recipe.",
     "1.1.1": "Make anvil recipes less confusing.\nImprove anvil mixin.\nTurn down ore veins rarity.",
     "1.1.0": "Add compatibility for TFC water wheel and windmill with kinetic dynamo.",
