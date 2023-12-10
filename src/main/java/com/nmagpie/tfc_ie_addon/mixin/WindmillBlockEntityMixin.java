@@ -6,6 +6,7 @@ import com.nmagpie.tfc_ie_addon.config.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,14 +15,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.dries007.tfc.common.blockentities.TickableBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.RotatingBlockEntity;
 import net.dries007.tfc.common.blockentities.rotation.WindmillBlockEntity;
 import net.dries007.tfc.common.blocks.rotation.WindmillBlock;
 import net.dries007.tfc.util.rotation.Rotation;
 
 @Mixin(WindmillBlockEntity.class)
-public abstract class WindmillBlockEntityMixin extends TickableBlockEntity implements RotatingBlockEntity
+public abstract class WindmillBlockEntityMixin extends BlockEntity
 {
     protected WindmillBlockEntityMixin(BlockEntityType<?> type, BlockPos pos, BlockState state)
     {
