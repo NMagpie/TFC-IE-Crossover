@@ -3,7 +3,7 @@ package com.nmagpie.tfc_ie_addon.common;
 import java.io.IOException;
 import java.nio.file.Path;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
-import com.nmagpie.tfc_ie_addon.common.util.IEHeatHandler;
+import com.nmagpie.tfc_ie_addon.util.IEHeatHandler;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import javax.annotation.Nonnull;
 import net.minecraft.SharedConstants;

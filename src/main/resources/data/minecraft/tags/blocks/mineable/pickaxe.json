@@ -194,17 +194,22 @@
     "tfc_ie_addon:metal/block/aluminum",
     "tfc_ie_addon:metal/block/aluminum_slab",
     "tfc_ie_addon:metal/block/aluminum_stairs",
+    "tfc_ie_addon:cauldron/metal/aluminum",
     "tfc_ie_addon:metal/block/lead",
     "tfc_ie_addon:metal/block/lead_slab",
     "tfc_ie_addon:metal/block/lead_stairs",
+    "tfc_ie_addon:cauldron/metal/lead",
     "tfc_ie_addon:metal/block/uranium",
     "tfc_ie_addon:metal/block/uranium_slab",
     "tfc_ie_addon:metal/block/uranium_stairs",
+    "tfc_ie_addon:cauldron/metal/uranium",
     "tfc_ie_addon:metal/block/constantan",
     "tfc_ie_addon:metal/block/constantan_slab",
     "tfc_ie_addon:metal/block/constantan_stairs",
+    "tfc_ie_addon:cauldron/metal/constantan",
     "tfc_ie_addon:metal/block/electrum",
     "tfc_ie_addon:metal/block/electrum_slab",
-    "tfc_ie_addon:metal/block/electrum_stairs"
+    "tfc_ie_addon:metal/block/electrum_stairs",
+    "tfc_ie_addon:cauldron/metal/electrum"
   ]
 }

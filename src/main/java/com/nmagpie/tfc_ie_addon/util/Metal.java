@@ -1,4 +1,4 @@
-package com.nmagpie.tfc_ie_addon.common.util;
+package com.nmagpie.tfc_ie_addon.util;
 
 import java.util.Locale;
 import java.util.function.BiFunction;

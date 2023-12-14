@@ -10,8 +10,9 @@ import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.common.recipes.AddonIngredientFluidStack;
 import com.nmagpie.tfc_ie_addon.common.recipes.RecipeSerializers;
-import com.nmagpie.tfc_ie_addon.common.util.HerbicideEffects;
-import com.nmagpie.tfc_ie_addon.common.util.RegisteredSoils;
+import com.nmagpie.tfc_ie_addon.util.HerbicideEffects;
+import com.nmagpie.tfc_ie_addon.util.ModCauldronInteractions;
+import com.nmagpie.tfc_ie_addon.util.RegisteredSoils;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
 import net.minecraftforge.api.distmarker.Dist;
@@ -58,5 +59,7 @@ public class TFC_IE_Addon
     {
         RegisteredSoils.registerTFCSoils();
         HerbicideEffects.register();
+
+        event.enqueueWork(ModCauldronInteractions::registerCauldronInteractions);
     }
 }

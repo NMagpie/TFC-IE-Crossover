@@ -5,7 +5,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.common.util.Metal;
+import com.nmagpie.tfc_ie_addon.util.Metal;
 import javax.annotation.Nullable;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -22,6 +22,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.dries007.tfc.common.blocks.FluidCauldronBlock;
 import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.rock.Ore;
 import net.dries007.tfc.common.blocks.rock.Rock;
@@ -71,6 +72,10 @@ public class Blocks
 
     public static final Map<Metal, RegistryObject<LiquidBlock>> METAL_FLUIDS = Helpers.mapOfKeys(Metal.class, metal ->
         registerNoItem("fluid/metal/" + metal.name(), () -> new LiquidBlock(Fluids.METALS.get(metal).source(), Properties.copy(net.minecraft.world.level.block.Blocks.LAVA).noLootTable()))
+    );
+
+    public static final Map<Metal, RegistryObject<FluidCauldronBlock>> METAL_CAULDRONS = Helpers.mapOfKeys(Metal.class, metal ->
+        registerNoItem("cauldron/metal/" + metal.name(), () -> new FluidCauldronBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.CAULDRON)))
     );
 
     private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> blockSupplier)

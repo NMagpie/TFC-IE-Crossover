@@ -97,7 +97,7 @@ def generate(rm: ResourceManager):
                 casting_recipe(rm, '%s_%s' % (item, metal), item, metal, item_data.smelt_amount, 0.1 if item == 'ingot' else 1)
 
         rm.blockstate(('fluid', 'metal', metal)).with_block_model({'particle': 'block/lava_still'}, parent=None).with_lang(lang('Molten %s', metal))
-        rm.lang('fluid.tfc_ie_addon.metal.%s' % metal, lang('Molten %s', metal))
+        rm.lang('fluid.tfc_ie_addon.metal.%s' % metal, lang('%s', metal))
         rm.fluid_tag(metal, 'tfc_ie_addon:metal/%s' % metal, 'tfc_ie_addon:metal/flowing_%s' % metal)
         rm.fluid_tag('tfc:molten_metals', *['tfc_ie_addon:metal/%s' % metal])
 
@@ -107,7 +107,7 @@ def generate(rm: ResourceManager):
         })
 
         item.with_lang(lang('molten %s bucket', metal))
-        rm.lang('metal.tfc_ie_addon.%s' % metal, lang(metal))
+        cauldron(rm, 'molten %s' % metal, 'metal/%s' % metal, False)
 
         rm.item_tag('tfc:pileable_ingots', 'immersiveengineering:ingot_%s' % metal)
         rm.item_tag('tfc:pileable_double_ingots', 'tfc_ie_addon:metal/double_ingot/%s' % metal)
@@ -138,3 +138,18 @@ def slab_loot(rm: ResourceManager, loot: str):
             'add': False
         }]
     })
+
+
+def cauldron(rm: ResourceManager, name: str, fluid: str, water: bool = True):
+    block = rm.blockstate(('cauldron', fluid))
+    block.with_block_model({
+        'content': 'block/water_still' if water else 'tfc:block/molten_still',
+        'inside': 'block/cauldron_inner',
+        'particle': 'block/cauldron_side',
+        'top': 'block/cauldron_top',
+        'bottom': 'block/cauldron_bottom',
+        'side': 'block/cauldron_side'
+    }, parent='minecraft:block/template_cauldron_full')
+    block.with_block_loot('minecraft:cauldron')
+    block.with_lang(lang('%s cauldron', name))
+    block.with_tag('minecraft:mineable/pickaxe')

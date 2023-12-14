@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.common.util.Metal;
+import com.nmagpie.tfc_ie_addon.util.Metal;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;

@@ -23,6 +23,7 @@ public class ClientEvents
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(ClientEvents::clientSetup);
+        bus.addListener(ClientEvents::registerColorHandlerBlocks);
         bus.addListener(ClientEvents::registerColorHandlerItems);
     }
 
@@ -42,7 +43,7 @@ public class ClientEvents
         setupManual();
     }
 
-    public static void setupManual()
+    private static void setupManual()
     {
         ManualHelper.addConfigGetter(str -> switch (str)
         {
@@ -50,6 +51,11 @@ public class ClientEvents
             case "crucibleExternalHeaterTemperature" -> Config.SERVER.crucibleExternalHeaterTemperature.get();
             default -> -1;
         });
+    }
+
+    public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
+    {
+        Blocks.METAL_CAULDRONS.forEach((metal, reg) -> event.register((state, level, pos, tintIndex) -> metal.getColor(), reg.get()));
     }
 
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
