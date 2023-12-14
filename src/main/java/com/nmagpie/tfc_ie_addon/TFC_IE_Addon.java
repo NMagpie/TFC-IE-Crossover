@@ -4,19 +4,15 @@ import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.common.CreativeTabs;
 import com.nmagpie.tfc_ie_addon.common.Events;
-import com.nmagpie.tfc_ie_addon.common.Helpers;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.common.recipes.AddonIngredientFluidStack;
-import com.nmagpie.tfc_ie_addon.common.recipes.RecipeSerializers;
+import com.nmagpie.tfc_ie_addon.config.Config;
 import com.nmagpie.tfc_ie_addon.util.HerbicideEffects;
 import com.nmagpie.tfc_ie_addon.util.ModCauldronInteractions;
 import com.nmagpie.tfc_ie_addon.util.RegisteredSoils;
-import com.nmagpie.tfc_ie_addon.config.Config;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -39,13 +35,10 @@ public class TFC_IE_Addon
         Fluids.FLUIDS.register(eventBus);
         Fluids.FLUID_TYPES.register(eventBus);
         Features.FEATURES.register(eventBus);
-        RecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
         CreativeTabs.CREATIVE_TABS.register(eventBus);
 
         Config.init();
         Events.init();
-
-        CraftingHelper.register(Helpers.identifier("fluid"), AddonIngredientFluidStack.Serializer.INSTANCE);
 
         eventBus.addListener(this::setup);
 

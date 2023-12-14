@@ -1,27 +1,29 @@
 {
-  "type": "tfc_ie_addon:shaped_fluid",
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "tag": "forge:plates/lead"
+    },
+    "e": {
+      "type": "immersiveengineering:fluid",
+      "amount": 1000,
+      "tag": "forge:redstone_acid"
+    },
+    "f": {
+      "tag": "forge:ingots/wrought_iron"
+    },
+    "w": {
+      "tag": "forge:treated_wood"
+    }
+  },
   "pattern": [
     "waw",
     "fef",
     "waw"
   ],
-  "key": {
-    "w": {
-      "tag": "forge:treated_wood"
-    },
-    "f": {
-      "tag": "forge:ingots/wrought_iron"
-    },
-    "a": {
-      "tag": "forge:plates/lead"
-    },
-    "e": {
-      "tag": "forge:redstone_acid",
-      "amount": 1000,
-      "type": "tfc_ie_addon:fluid"
-    }
-  },
   "result": {
     "item": "immersiveengineering:capacitor_lv"
-  }
+  },
+  "show_notification": true
 }
