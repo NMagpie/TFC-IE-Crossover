@@ -1,11 +1,9 @@
 package com.nmagpie.tfc_ie_addon.mixin;
 
 import java.util.Objects;
-import java.util.stream.Stream;
 import blusunrize.immersiveengineering.api.crafting.FluidTagInput;
 import blusunrize.immersiveengineering.common.crafting.fluidaware.IngredientFluidStack;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
@@ -22,13 +20,8 @@ import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.util.Helpers;
 
 @Mixin(IngredientFluidStack.class)
-public abstract class IngredientFluidStackMixin extends Ingredient
+public abstract class IngredientFluidStackMixin
 {
-    protected IngredientFluidStackMixin(Stream<? extends Value> values)
-    {
-        super(values);
-    }
-
     @Shadow
     @Final
     private FluidTagInput fluidTagInput;
@@ -36,7 +29,7 @@ public abstract class IngredientFluidStackMixin extends Ingredient
     @Shadow
     ItemStack[] cachedStacks;
 
-    @Inject(method = "getItems", at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = "getItems", at = @At("HEAD"), cancellable = true)
     public void getItems(CallbackInfoReturnable<ItemStack[]> cir)
     {
         if (cachedStacks == null)
