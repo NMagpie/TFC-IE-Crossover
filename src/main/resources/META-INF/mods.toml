@@ -17,7 +17,7 @@ updateJSONURL = "https://raw.githubusercontent.com/NMagpie/TFC-IE-Crossover/1.20
 [[dependencies.tfc_ie_addon]]
 modId = "forge"
 mandatory = true
-versionRange = "[47.2.6,)"
+versionRange = "[47.1.81,47.2.0),[47.2.6,)"
 ordering = "AFTER"
 side = "BOTH"
 
