@@ -107,6 +107,7 @@ def generate(rm: ResourceManager):
         })
 
         item.with_lang(lang('molten %s bucket', metal))
+        rm.lang('metal.tfc_ie_addon.%s' % metal, lang(metal))
         cauldron(rm, 'molten %s' % metal, 'metal/%s' % metal, False)
 
         rm.item_tag('tfc:pileable_ingots', 'immersiveengineering:ingot_%s' % metal)
