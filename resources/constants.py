@@ -189,8 +189,8 @@ DEFAULT_LANG = {
     'desc.immersiveengineering.info.mineral.franklinite': 'Franklinite',
     'desc.immersiveengineering.info.mineral.quartzite': 'Quartzite',
 
-    'tfc.enum.glassoperation.lead': 'Lead Powder',
-    'tfc.enum.glassoperation.uranium': 'Uranium Powder',
+    'tfc.enum.glassoperation.lead': 'Galena Powder',
+    'tfc.enum.glassoperation.uranium': 'Uraninite Powder',
 
     'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft',
 
