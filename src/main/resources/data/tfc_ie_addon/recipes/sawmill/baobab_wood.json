@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:sawmill",
+  "input": {
+    "item": "afc:wood/wood/baobab"
+  },
+  "result": {
+    "item": "afc:wood/lumber/baobab",
+    "count": 12
+  },
+  "energy": 1600,
+  "stripped": {
+    "item": "afc:wood/stripped_wood/baobab"
+  },
+  "secondaries": [
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": false
+    },
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": true
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "afc"
+    }
+  ]
+}

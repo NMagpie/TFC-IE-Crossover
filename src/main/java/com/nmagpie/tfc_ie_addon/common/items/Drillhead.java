@@ -5,7 +5,7 @@ import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.api.utils.TagUtils;
 import blusunrize.immersiveengineering.common.items.DrillheadItem;
 import com.google.common.base.CaseFormat;
-import com.nmagpie.tfc_ie_addon.common.Helpers;
+import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import javax.annotation.Nullable;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -22,9 +22,9 @@ import net.dries007.tfc.common.TFCTiers;
 
 public class Drillhead extends DrillheadItem
 {
-    public static final DrillHeadPerm BLACK_STEEL = new DrillHeadPerm("black_steel", getIngotTagKey("black_steel"), 3, 1, TFCTiers.BLACK_STEEL, 12, 8, 16000, Helpers.identifier("item/drill_black_steel"));
-    public static final DrillHeadPerm BLUE_STEEL = new DrillHeadPerm("blue_steel", getIngotTagKey("blue_steel"), 5, 1, TFCTiers.BLUE_STEEL, 15, 10, 20000, Helpers.identifier("item/drill_blue_steel"));
-    public static final DrillHeadPerm RED_STEEL = new DrillHeadPerm("red_steel", getIngotTagKey("red_steel"), 5, 1, TFCTiers.RED_STEEL, 15, 10, 20000, Helpers.identifier("item/drill_red_steel"));
+    public static final DrillHeadPerm BLACK_STEEL = new DrillHeadPerm("black_steel", getIngotTagKey("black_steel"), 3, 1, TFCTiers.BLACK_STEEL, 12, 8, 16000, TFC_IE_Addon.identifier("item/drill_black_steel"));
+    public static final DrillHeadPerm BLUE_STEEL = new DrillHeadPerm("blue_steel", getIngotTagKey("blue_steel"), 5, 1, TFCTiers.BLUE_STEEL, 15, 10, 20000, TFC_IE_Addon.identifier("item/drill_blue_steel"));
+    public static final DrillHeadPerm RED_STEEL = new DrillHeadPerm("red_steel", getIngotTagKey("red_steel"), 5, 1, TFCTiers.RED_STEEL, 15, 10, 20000, TFC_IE_Addon.identifier("item/drill_red_steel"));
 
     public Drillhead(DrillHeadPerm perms)
     {

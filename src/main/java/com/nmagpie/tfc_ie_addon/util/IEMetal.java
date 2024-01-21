@@ -25,7 +25,7 @@ import net.dries007.tfc.common.TFCTiers;
 import net.dries007.tfc.util.registry.RegistryMetal;
 
 @MethodsReturnNonnullByDefault
-public enum Metal implements RegistryMetal
+public enum IEMetal implements RegistryMetal
 {
     ELECTRUM(
         0xFCB74A,
@@ -74,7 +74,7 @@ public enum Metal implements RegistryMetal
     private final ArmorMaterial armorTier;
     private final net.dries007.tfc.util.Metal.Tier metalTier;
 
-    Metal(int color, MapColor mapColor, Rarity rarity, Tier toolTier, ArmorMaterial armorTier, net.dries007.tfc.util.Metal.Tier metalTier)
+    IEMetal(int color, MapColor mapColor, Rarity rarity, Tier toolTier, ArmorMaterial armorTier, net.dries007.tfc.util.Metal.Tier metalTier)
     {
         this.serializedName = name().toLowerCase(Locale.ROOT);
         this.mapColor = mapColor;
@@ -138,14 +138,14 @@ public enum Metal implements RegistryMetal
         SHEET(metal -> new Item(new Item.Properties())),
         DOUBLE_INGOT(metal -> new Item(new Item.Properties()));
 
-        private final NonNullFunction<Metal, Item> itemFactory;
+        private final NonNullFunction<IEMetal, Item> itemFactory;
 
-        ItemType(NonNullFunction<Metal, Item> itemFactory)
+        ItemType(NonNullFunction<IEMetal, Item> itemFactory)
         {
             this.itemFactory = itemFactory;
         }
 
-        public Item create(Metal metal)
+        public Item create(IEMetal metal)
         {
             return itemFactory.apply(metal);
         }

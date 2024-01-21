@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:sawmill",
+  "input": {
+    "item": "afc:wood/planks/tualang_fence_gate"
+  },
+  "result": {
+    "item": "afc:wood/lumber/tualang",
+    "count": 6
+  },
+  "energy": 800,
+  "secondaries": [
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": false
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "afc"
+    }
+  ]
+}

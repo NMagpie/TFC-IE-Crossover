@@ -326,6 +326,17 @@ TFC_WOOD_TYPES = [
     'willow'
 ]
 
+AFC_WOOD_TYPES = [
+    'cypress',
+    'tualang',
+    'hevea',
+    'teak',
+    'eucalyptus',
+    'baobab',
+    'fig',
+    'mahogany'
+]
+
 
 def lang(key: str, *args) -> str:
     return ((key % args) if len(args) > 0 else key).replace('_', ' ').replace('/', ' ').title()

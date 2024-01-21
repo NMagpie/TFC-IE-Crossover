@@ -5,7 +5,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.util.Metal;
+import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import javax.annotation.Nullable;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -64,17 +64,17 @@ public class Blocks
         )
     );
 
-    public static final Map<Metal, Map<Metal.BlockType, RegistryObject<Block>>> METALS = Helpers.mapOfKeys(Metal.class, metal ->
-        Helpers.mapOfKeys(Metal.BlockType.class, type ->
+    public static final Map<IEMetal, Map<IEMetal.BlockType, RegistryObject<Block>>> METALS = Helpers.mapOfKeys(IEMetal.class, metal ->
+        Helpers.mapOfKeys(IEMetal.BlockType.class, type ->
             register(type.createName(metal), type.create(metal), type.createBlockItem(new Item.Properties()))
         )
     );
 
-    public static final Map<Metal, RegistryObject<LiquidBlock>> METAL_FLUIDS = Helpers.mapOfKeys(Metal.class, metal ->
+    public static final Map<IEMetal, RegistryObject<LiquidBlock>> METAL_FLUIDS = Helpers.mapOfKeys(IEMetal.class, metal ->
         registerNoItem("fluid/metal/" + metal.name(), () -> new LiquidBlock(Fluids.METALS.get(metal).source(), Properties.copy(net.minecraft.world.level.block.Blocks.LAVA).noLootTable()))
     );
 
-    public static final Map<Metal, RegistryObject<FluidCauldronBlock>> METAL_CAULDRONS = Helpers.mapOfKeys(Metal.class, metal ->
+    public static final Map<IEMetal, RegistryObject<FluidCauldronBlock>> METAL_CAULDRONS = Helpers.mapOfKeys(IEMetal.class, metal ->
         registerNoItem("cauldron/metal/" + metal.name(), () -> new FluidCauldronBlock(BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.CAULDRON)))
     );
 

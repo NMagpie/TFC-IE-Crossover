@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:sawmill",
+  "input": {
+    "item": "afc:wood/planks/baobab_pressure_plate"
+  },
+  "result": {
+    "item": "afc:wood/lumber/baobab",
+    "count": 2
+  },
+  "energy": 400,
+  "secondaries": [
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": false
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "afc"
+    }
+  ]
+}

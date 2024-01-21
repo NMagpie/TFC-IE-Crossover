@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
-import com.nmagpie.tfc_ie_addon.util.Metal;
+import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -44,12 +44,12 @@ public class Items
     public static final RegistryObject<Item> GALENA_POWDER = register("powder/galena");
     public static final RegistryObject<Item> URANINITE_POWDER = register("powder/uraninite");
 
-    public static final Map<Metal, Map<Metal.ItemType, RegistryObject<Item>>> METAL_ITEMS = Helpers.mapOfKeys(Metal.class, metal ->
-        Helpers.mapOfKeys(Metal.ItemType.class, type ->
+    public static final Map<IEMetal, Map<IEMetal.ItemType, RegistryObject<Item>>> METAL_ITEMS = Helpers.mapOfKeys(IEMetal.class, metal ->
+        Helpers.mapOfKeys(IEMetal.ItemType.class, type ->
             register("metal/" + type.name() + "/" + metal.name(), () -> type.create(metal))
         )
     );
-    public static final Map<Metal, RegistryObject<BucketItem>> METAL_FLUID_BUCKETS = Helpers.mapOfKeys(Metal.class, metal ->
+    public static final Map<IEMetal, RegistryObject<BucketItem>> METAL_FLUID_BUCKETS = Helpers.mapOfKeys(IEMetal.class, metal ->
         register("bucket/metal/" + metal.name(), () -> new BucketItem(Fluids.METALS.get(metal).source(), new Item.Properties().craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1)))
     );
 

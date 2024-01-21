@@ -1,5 +1,6 @@
 package com.nmagpie.tfc_ie_addon.compat.patchouli.component;
 
+import javax.annotation.Nonnull;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -11,7 +12,7 @@ import net.dries007.tfc.compat.patchouli.PatchouliIntegration;
 public abstract class TriInputOutputComponent<T extends Recipe<?>> extends TriRecipeComponent<T>
 {
     @Override
-    public void render(GuiGraphics graphics, IComponentRenderContext context, float partialTicks, int mouseX, int mouseY)
+    public void render(@Nonnull GuiGraphics graphics, @Nonnull IComponentRenderContext context, float partialTicks, int mouseX, int mouseY)
     {
         if (recipe == null || recipe2 == null || recipe3 == null) return;
 

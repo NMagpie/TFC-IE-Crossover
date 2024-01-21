@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.common.CreativeTabs;
 import com.nmagpie.tfc_ie_addon.common.Events;
+import com.nmagpie.tfc_ie_addon.common.ForgeEvents;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
@@ -12,6 +13,7 @@ import com.nmagpie.tfc_ie_addon.util.HerbicideEffects;
 import com.nmagpie.tfc_ie_addon.util.ModCauldronInteractions;
 import com.nmagpie.tfc_ie_addon.util.RegisteredSoils;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -39,6 +41,7 @@ public class TFC_IE_Addon
 
         Config.init();
         Events.init();
+        ForgeEvents.init();
 
         eventBus.addListener(this::setup);
 
@@ -54,5 +57,10 @@ public class TFC_IE_Addon
         HerbicideEffects.register();
 
         event.enqueueWork(ModCauldronInteractions::registerCauldronInteractions);
+    }
+
+    public static ResourceLocation identifier(String name)
+    {
+        return new ResourceLocation(MOD_ID, name);
     }
 }

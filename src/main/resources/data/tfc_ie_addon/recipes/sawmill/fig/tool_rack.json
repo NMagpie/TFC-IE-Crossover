@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "immersiveengineering:sawmill",
+  "input": {
+    "item": "afc:wood/planks/fig_tool_rack"
+  },
+  "result": {
+    "item": "afc:wood/lumber/fig",
+    "count": 6
+  },
+  "energy": 800,
+  "secondaries": [
+    {
+      "output": {
+        "tag": "forge:dusts/wood"
+      },
+      "stripping": false
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "afc"
+    }
+  ]
+}

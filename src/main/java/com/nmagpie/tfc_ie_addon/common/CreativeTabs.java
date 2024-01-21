@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.util.Metal;
+import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -55,13 +55,13 @@ public class CreativeTabs
         accept(out, Blocks.SMALL_URANINITE);
         for (Ore.Grade grade : Ore.Grade.values())
             accept(out, Items.URANINITE_ORES, grade);
-        for (Metal metal : Metal.values())
-            for (Metal.ItemType itemType : Metal.ItemType.values())
+        for (IEMetal metal : IEMetal.values())
+            for (IEMetal.ItemType itemType : IEMetal.ItemType.values())
                 accept(out, Items.METAL_ITEMS, metal, itemType);
         accept(out, Items.BAUXITE_POWDER);
         accept(out, Items.GALENA_POWDER);
         accept(out, Items.URANINITE_POWDER);
-        for (Metal metal : Metal.values())
+        for (IEMetal metal : IEMetal.values())
             accept(out, Items.METAL_FLUID_BUCKETS, metal);
         accept(out, Blocks.QUARTZ_BLOCK);
         accept(out, Blocks.BUDDING_QUARTZ);
@@ -70,9 +70,9 @@ public class CreativeTabs
         accept(out, Blocks.LARGE_QUARTZ_BUD);
         accept(out, Blocks.MEDIUM_QUARTZ_BUD);
         accept(out, Blocks.SMALL_QUARTZ_BUD);
-        for (Metal metal : Metal.values())
+        for (IEMetal metal : IEMetal.values())
         {
-            for (Metal.BlockType blockType : Metal.BlockType.values())
+            for (IEMetal.BlockType blockType : IEMetal.BlockType.values())
                 accept(out, Blocks.METALS, metal, blockType);
         }
         for (Rock rock : Rock.values())

@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.util.Metal;
+import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
@@ -30,7 +30,7 @@ public class Fluids
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, TFC_IE_Addon.MOD_ID);
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, TFC_IE_Addon.MOD_ID);
 
-    public static final Map<Metal, FluidRegistryObject<ForgeFlowingFluid>> METALS = Helpers.mapOfKeys(Metal.class, metal -> register(
+    public static final Map<IEMetal, FluidRegistryObject<ForgeFlowingFluid>> METALS = Helpers.mapOfKeys(IEMetal.class, metal -> register(
         "metal/" + metal.getSerializedName(),
         properties -> properties
             .block(Blocks.METAL_FLUIDS.get(metal))

@@ -280,6 +280,44 @@ def generate(rm: ResourceManager):
                        '4 tfc:wood/lumber/%s' % wood_type,
                        1600)
 
+    # AFC Compat
+
+    for wood_type in AFC_WOOD_TYPES:
+        for wood_item, count, energy in TFC_WOOD_ITEMS:
+            sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
+                           'afc:wood/planks/%s_%s' % (wood_type, wood_item),
+                           '%s afc:wood/lumber/%s' % (count, wood_type),
+                           energy,
+                           conditional_modid='afc')
+
+        for wood_item, count, energy in TFC_OTHER_WOOD_ITEMS:
+            sawmill_recipe(rm, '%s/%s' % (wood_type, wood_item),
+                           'afc:wood/%s/%s' % (wood_item, wood_type),
+                           '%s afc:wood/lumber/%s' % (count, wood_type),
+                           energy,
+                           conditional_modid='afc')
+
+        for log_type in ['wood', 'log']:
+            sawmill_recipe(rm, '%s_%s' % (wood_type, log_type),
+                           'afc:wood/%s/%s' % (log_type, wood_type),
+                           '12 afc:wood/lumber/%s' % wood_type,
+                           1600,
+                           stripped='afc:wood/stripped_%s/%s' % (log_type, wood_type),
+                           secondaries2=True,
+                           conditional_modid='afc')
+
+            sawmill_recipe(rm, '%s_stripped_%s' % (wood_type, log_type),
+                           'afc:wood/stripped_%s/%s' % (log_type, wood_type),
+                           '12 afc:wood/lumber/%s' % wood_type,
+                           1600,
+                           conditional_modid='afc')
+
+        sawmill_recipe(rm, '%s/planks' % wood_type,
+                       'afc:wood/planks/%s' % wood_type,
+                       '4 afc:wood/lumber/%s' % wood_type,
+                       1600,
+                       conditional_modid='afc')
+
     # FIRMALIFE COMPAT
 
     for metal in FL_METALS:
@@ -711,7 +749,7 @@ def metalpress_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier,
     rm.recipe(('metalpress', name_parts), 'immersiveengineering:metal_press', recipe, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
 
 
-def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, stripped: Json = None, secondaries1: bool = True, secondaries2: bool = False):
+def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, input: Json, result: Json, energy: int, stripped: Json = None, secondaries1: bool = True, secondaries2: bool = False, conditional_modid: str = None):
     recipe = {
         'input': utils.ingredient(input),
         'result': utils.item_stack(result),
@@ -735,4 +773,4 @@ def sawmill_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, in
             'stripping': True
         })
 
-    rm.recipe(('sawmill', name_parts), 'immersiveengineering:sawmill', recipe)
+    rm.recipe(('sawmill', name_parts), 'immersiveengineering:sawmill', recipe, conditions={'type': 'forge:mod_loaded', 'modid': conditional_modid} if conditional_modid is not None else None)
