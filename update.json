@@ -1,10 +1,11 @@
 {
   "homepage" : "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover",
   "promos": {
-    "1.20.1-latest": "1.1.6",
-    "1.20.1-recommended": "1.1.6"
+    "1.20.1-latest": "1.2.0",
+    "1.20.1-recommended": "1.2.0"
   },
   "1.20.1": {
+    "1.2.0": "Make ore veins smaller and rarer.\nRe-add coke brick recipe.\nRevert coke oven structure back to using coke bricks.",
     "1.1.6": "Add sawmill recipes for AFC.",
     "1.1.5": "Allows NeoForge 47.1.81+.\nFix metal and glassworking lang.",
     "1.1.4": "Add metal fluid cauldrons.\nUse mixin to replace custom fluid recipe and ingredient.\nUpdate IE recipes.",

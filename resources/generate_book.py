@@ -78,7 +78,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             text('Mixing $(thing)Saltpeter$(), $(thing)Sulfur$() and $(thing)Charcoal$() allows for the creation of $(thing)Gunpowder$(), a far more scientific process than looting it from slain monsters.')
         )),
         entry('multiblocks', 'Multiblock Changes', 'tfc:fire_bricks', pages=(
-            text('Now, there are changes in creating multiblock structures. To create $(thing)Coke Oven$() and $(thing)Arc Furnace$() you will need $(thing)Fire Bricks$() from TerraFirmaCraft instead of Blast Bricks.$(br)Also, keep in mind that you don\'t need Blast Furnace from Immersive Engineering since you have it in TerraFirmaCraft! Additionally, you don\'t need Alloy Kiln because, you know, you can make alloys in TerraFirmaCraft.').link('immersiveengineering:cokebrick').link('immersiveengineering:blastbrick'),
+            text('Now, there are changes in creating multiblock structures. To create $(thing)Arc Furnace$() you will need $(thing)Fire Bricks$() from TerraFirmaCraft instead of Blast Bricks.$(br)Also, keep in mind that you don\'t need Blast Furnace from Immersive Engineering since you have it in TerraFirmaCraft! Additionally, you don\'t need Alloy Kiln because, you know, you can make alloys in TerraFirmaCraft.').link('immersiveengineering:cokebrick').link('immersiveengineering:blastbrick'),
             crafting('tfc:crafting/fire_bricks'),
             multiblock('Arc Furnace', '', True, pattern=(
                 ('     ', 'S    ', 'LLL  ', 'S    ', '     '),
@@ -96,13 +96,7 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
                 'R': 'immersiveengineering:rs_engineering',
                 '0': 'minecraft:cauldron'
             }),
-            multiblock('Coke Oven', '', True, pattern=(
-                ('BBB', 'BBB', 'BBB'),
-                ('BBB', 'BBB', 'BBB'),
-                ('BBB', 'BB0', 'BBB')), mapping={
-                'B': 'tfc:fire_bricks',
-                '0': 'tfc:fire_bricks'
-            })
+            empty_last_page()
         )),
         entry('blueprint', 'Blueprint Recipes', 'immersiveengineering:blueprint', pages=(
             text('Since TerraFirmaCraft world does not provide village generation, you won\'t be able to meet Villagers that could sell you some Blueprints. Thus, you can now craft it on the crafting table! It will be a little difficult, but it will worth it.'),

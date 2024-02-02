@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Now, there are changes in creating multiblock structures. To create $(thing)Coke Oven$() and $(thing)Arc Furnace$() you will need $(thing)Fire Bricks$() from TerraFirmaCraft instead of Blast Bricks.$(br)Also, keep in mind that you don't need Blast Furnace from Immersive Engineering since you have it in TerraFirmaCraft! Additionally, you don't need Alloy Kiln because, you know, you can make alloys in TerraFirmaCraft."
+      "text": "Now, there are changes in creating multiblock structures. To create $(thing)Arc Furnace$() you will need $(thing)Fire Bricks$() from TerraFirmaCraft instead of Blast Bricks.$(br)Also, keep in mind that you don't need Blast Furnace from Immersive Engineering since you have it in TerraFirmaCraft! Additionally, you don't need Alloy Kiln because, you know, you can make alloys in TerraFirmaCraft."
     },
     {
       "type": "patchouli:crafting",
@@ -65,35 +65,6 @@
         }
       },
       "name": "Arc Furnace",
-      "text": "",
-      "enable_visualize": true
-    },
-    {
-      "type": "patchouli:multiblock",
-      "multiblock": {
-        "pattern": [
-          [
-            "BBB",
-            "BBB",
-            "BBB"
-          ],
-          [
-            "BBB",
-            "BBB",
-            "BBB"
-          ],
-          [
-            "BBB",
-            "BB0",
-            "BBB"
-          ]
-        ],
-        "mapping": {
-          "B": "tfc:fire_bricks",
-          "0": "tfc:fire_bricks"
-        }
-      },
-      "name": "Coke Oven",
       "text": "",
       "enable_visualize": true
     }

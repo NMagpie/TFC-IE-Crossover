@@ -24,7 +24,7 @@ val modId: String = "tfc_ie_addon"
 base {
     archivesName.set("TFC-IE-Crossover-$minecraftVersion")
     group = "com.nmagpie.tfc_ie_addon"
-    version = "1.1.6"
+    version = "1.2.0"
 }
 
 java {

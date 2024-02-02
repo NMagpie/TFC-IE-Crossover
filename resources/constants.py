@@ -240,7 +240,6 @@ TO_REMOVE_RECIPES = [
     'immersiveengineering:mineral/cassiterite',
 
     'immersiveengineering:crafting/alloybrick',
-    'immersiveengineering:crafting/cokebrick',
     'immersiveengineering:crafting/blastbrick',
     'immersiveengineering:crafting/blastbrick_reinforced',
 

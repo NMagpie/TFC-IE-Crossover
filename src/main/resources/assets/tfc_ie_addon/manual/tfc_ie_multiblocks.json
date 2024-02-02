@@ -10,9 +10,5 @@
   "arcfurnace_recipe": {
     "type": "multiblock",
     "name": "multiblocks/arcfurnace"
-  },
-  "coke_oven_recipe": {
-    "type": "multiblock",
-    "name": "multiblocks/coke_oven"
   }
 }
