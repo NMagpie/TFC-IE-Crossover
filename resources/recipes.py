@@ -567,12 +567,12 @@ def fluid_stack(data_in: Json) -> Json:
     }
 
 
-def casting_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, mold: str, metal: str, amount: int, break_chance: float):
+def casting_recipe(rm: ResourceManager, name_parts: utils.ResourceIdentifier, mold: str, metal: str, amount: int, break_chance: float, result_item: str = None):
     domain, divider = domain_divider(mold)
     rm.recipe(('casting', name_parts), 'tfc:casting', {
         'mold': {'item': 'tfc:ceramic/%s_mold' % mold},
         'fluid': fluid_stack_ingredient('%d tfc_ie_addon:metal/%s' % (amount, metal)),
-        'result': utils.item_stack('%s%s%s%s' % (domain, mold, divider, metal)),
+        'result': utils.item_stack('%s%s%s%s' % (domain, mold, divider, metal)) if result_item is None else utils.item_stack(result_item),
         'break_chance': break_chance
     })
 

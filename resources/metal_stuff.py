@@ -94,7 +94,9 @@ def generate(rm: ResourceManager):
 
         for item, item_data in METAL_ITEMS.items():
             if item == 'ingot' or (item_data.mold and 'tool' in metal_data.types and metal_data.tier <= 2):
-                casting_recipe(rm, '%s_%s' % (item, metal), item, metal, item_data.smelt_amount, 0.1 if item == 'ingot' else 1)
+                casting_recipe(rm, '%s_%s' % (metal, item), item, metal, item_data.smelt_amount, 0.1 if item == 'ingot' else 1)
+            if item == 'ingot':
+                casting_recipe(rm, '%s_fire_%s' % (metal, item), 'fire_ingot', metal, item_data.smelt_amount, 0.01, 'immersiveengineering:ingot_%s' % metal)
 
         rm.blockstate(('fluid', 'metal', metal)).with_block_model({'particle': 'block/lava_still'}, parent=None).with_lang(lang('Molten %s', metal))
         rm.lang('fluid.tfc_ie_addon.metal.%s' % metal, lang('%s', metal))
