@@ -281,9 +281,9 @@ SANDSTONE_TYPES = ['raw', 'smooth', 'cut']
 TFC_WOOD_ITEMS = [
     ('bookshelf', 6, 1600),
     ('door', 3, 800),
-    ('trapdoor', 6, 800),
+    ('trapdoor', 2, 800),
     ('fence', 2, 800),
-    ('log_fence', 4, 800),
+    ('log_fence', 6, 800),
     ('fence_gate', 6, 800),
     ('button', 1, 400),
     ('pressure_plate', 2, 400),
@@ -294,7 +294,7 @@ TFC_WOOD_ITEMS = [
 ]
 
 TFC_OTHER_WOOD_ITEMS = [
-    ('boat', 16, 1600),
+    ('boat', 20, 1600),
     ('sign', 2, 800),
     ('trapped_chest', 8, 1600),
     ('chest', 8, 1600),
@@ -333,7 +333,9 @@ AFC_WOOD_TYPES = [
     'eucalyptus',
     'baobab',
     'fig',
-    'mahogany'
+    'mahogany',
+    'ironwood',
+    'ipe'
 ]
 
 
