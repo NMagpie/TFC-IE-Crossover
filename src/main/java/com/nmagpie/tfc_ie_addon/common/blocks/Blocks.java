@@ -44,7 +44,7 @@ public class Blocks
 
     public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> BAUXITE_ORES = Helpers.mapOfKeys(Rock.class, rock ->
         Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_bauxite" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
+            register(("ore/" + grade.name() + "_bauxite" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(6.5f, 10).requiresCorrectToolForDrops()))
         )
     );
 
@@ -52,7 +52,7 @@ public class Blocks
 
     public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> GALENA_ORES = Helpers.mapOfKeys(Rock.class, rock ->
         Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_galena" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
+            register(("ore/" + grade.name() + "_galena" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(6.5f, 10).requiresCorrectToolForDrops()))
         )
     );
 
@@ -60,7 +60,7 @@ public class Blocks
 
     public static final Map<Rock, Map<Ore.Grade, RegistryObject<Block>>> URANINITE_ORES = Helpers.mapOfKeys(Rock.class, rock ->
         Helpers.mapOfKeys(Ore.Grade.class, grade ->
-            register(("ore/" + grade.name() + "_uraninite" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(3, 10).requiresCorrectToolForDrops()))
+            register(("ore/" + grade.name() + "_uraninite" + "/" + rock.name()), () -> new Block(Properties.of().mapColor(MapColor.STONE).sound(SoundType.STONE).strength(6.5f, 10).requiresCorrectToolForDrops()))
         )
     );
 

@@ -79,20 +79,16 @@ def generate(rm: ResourceManager):
 
     # ORE RECIPES
 
-    for ore, ore_data in ORES.items():
-        for rock, data in TFC_ROCKS.items():
-            cobble = 'tfc:rock/cobble/%s' % rock
-            collapse_recipe(rm, '%s_cobble' % rock, [
-                'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock),
-                'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock),
-                'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock)
-            ], cobble)
+    for rock in TFC_ROCKS.keys():
+        collapse_recipe(rm, '%s_cobble' % rock, ['tfc_ie_addon:ore/poor_%s/%s' % (ore, rock) for ore in ORES.keys()], 'tfc:rock/cobble/%s' % rock)
+        for ore in ORES.keys():
+            collapse_recipe(rm, 'ore/poor_%s_%s' % (rock, ore), 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/poor_%s/%s' % (ore, rock))
+            collapse_recipe(rm, 'ore/normal_%s_%s' % (rock, ore), 'tfc_ie_addon:ore/rich_%s/%s' % (ore, rock), 'tfc_ie_addon:ore/normal_%s/%s' % (ore, rock))
             for grade in ORE_GRADES.keys():
-                rm.block_tag('tfc:can_start_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
-                rm.block_tag('tfc:can_collapse', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
+                rm.block_tag('tfc:rock/ores', 'tfc_ie_addon:ore/%s_%s/%s' % (grade, ore, rock))
 
     # QUERN RECIPES
-
+    for ore, ore_data in ORES.items():
         if ore_data.graded:
             for grade, data in ORE_GRADES.items():
                 quern_recipe(rm, '%s_%s' % (grade, ore), 'tfc_ie_addon:ore/%s_%s' % (grade, ore), 'tfc_ie_addon:powder/%s' % ore, count=data.grind_amount)
