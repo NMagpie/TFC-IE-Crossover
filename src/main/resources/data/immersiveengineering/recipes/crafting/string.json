@@ -3,13 +3,13 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "immersiveengineering:hemp_fiber"
+      "tag": "forge:fiber_hemp"
     },
     {
-      "item": "immersiveengineering:hemp_fiber"
+      "tag": "forge:fiber_hemp"
     },
     {
-      "item": "immersiveengineering:hemp_fiber"
+      "tag": "forge:fiber_hemp"
     }
   ],
   "result": {
