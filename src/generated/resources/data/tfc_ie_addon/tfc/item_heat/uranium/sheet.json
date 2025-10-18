@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 678.0,
+  "heat_capacity": 16.666666,
+  "ingredient": {
+    "tag": "c:sheets/uranium"
+  },
+  "welding_temperature": 904.0
+}

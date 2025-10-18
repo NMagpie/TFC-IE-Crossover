@@ -117,9 +117,9 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
                 '0': 'tfc_ie_addon:mineral/budding_quartz'
             })
         )),
-        entry('graphite', 'Graphite', 'immersiveengineering:ingot_hop_graphite', pages=(
-            text('Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs. $(thing)HOP Graphite Dust$() is created by compressing eight pieces of $(thing)Coke Dust$() or $(thing)Graphite Powder$() in the $(thing)Industrial Squeezer$(). That dust can then be smelted into an ingot.'),
-            item_spotlight('immersiveengineering:graphite_electrode', text_contents='The most common use for HOP Graphite is the creation of $(thing)electrodes$() to be used in the $(thing)Arc Furnace$(). These $(thing)electrodes$() are created with an $(l:tfc:tfc_ie_changes/blueprint)Engineer\'s Blueprint$(), which can be crafted. You can also create $(thing)electrodes$() in the $(thing)Metal Press$(), using the Rod Mold on 4 ingots, but the $(thing)electrodes$() crafted this way only have half the durability.')
+        entry('graphite', 'Graphite', 'immersiveengineering:dust_hop_graphite', pages=(
+            text('Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs. $(thing)HOP Graphite Dust$() is created by compressing eight pieces of $(thing)Coke Dust$() or $(thing)Graphite Powder$() in the $(thing)Industrial Squeezer$().'),
+            empty_last_page()
         )),
         entry('steel_obtain', 'Steel Creation', 'tfc:metal/ingot/steel', pages=(
             text('In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.').link('immersiveengineering:slag'),

@@ -1,0 +1,14 @@
+{
+  "type": "tfc:glassworking",
+  "batch": {
+    "tag": "tfc:glass_batches_tier_2"
+  },
+  "operations": [
+    "tfc_ie_addon:uranium",
+    "tfc:table_pour"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfc:lime_poured_glass"
+  }
+}

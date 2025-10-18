@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "c:rods/constantan"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfc_ie_addon:metal/constantan"
+  },
+  "temperature": 1250.0
+}

@@ -1,0 +1,31 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "key": {
+    "H": {
+      "tag": "c:tools/hammer"
+    },
+    "S": {
+      "tag": "c:sheets/uranium"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    " SH",
+    "SWS",
+    " S "
+  ],
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 8,
+    "id": "tfc_ie_addon:metal/block/uranium"
+  }
+}

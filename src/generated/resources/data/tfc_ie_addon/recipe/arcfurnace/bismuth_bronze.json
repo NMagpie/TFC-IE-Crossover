@@ -1,0 +1,25 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [
+    {
+      "tag": "c:ingots/zinc"
+    },
+    {
+      "tag": "c:ingots/bismuth"
+    }
+  ],
+  "energy": 51200,
+  "input": {
+    "basePredicate": {
+      "tag": "c:ingots/copper"
+    },
+    "count": 2
+  },
+  "results": [
+    {
+      "count": 4,
+      "id": "tfc:metal/ingot/bismuth_bronze"
+    }
+  ],
+  "time": 100
+}

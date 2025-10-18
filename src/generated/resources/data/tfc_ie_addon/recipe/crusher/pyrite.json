@@ -1,0 +1,16 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:ore/pyrite"
+    },
+    {
+      "item": "tfc:gem/pyrite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfc:powder/pyrite"
+  }
+}

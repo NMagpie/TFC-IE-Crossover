@@ -1,0 +1,24 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "tfc:wood/wood/kapok"
+  },
+  "result": {
+    "count": 12,
+    "id": "tfc:wood/lumber/kapok"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ],
+  "stripped": {
+    "id": "tfc:wood/stripped_wood/kapok"
+  },
+  "strippingSecondaries": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ]
+}

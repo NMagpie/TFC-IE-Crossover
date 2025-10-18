@@ -1,0 +1,14 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/aluminum"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:metal/double_ingot/aluminum"
+  },
+  "second_input": {
+    "tag": "c:ingots/aluminum"
+  },
+  "tier": 2
+}

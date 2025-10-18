@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "immersiveengineering:slag"
+  },
+  "result_item": {
+    "count": 1,
+    "id": "immersiveengineering:slag_glass"
+  },
+  "temperature": 380.0
+}

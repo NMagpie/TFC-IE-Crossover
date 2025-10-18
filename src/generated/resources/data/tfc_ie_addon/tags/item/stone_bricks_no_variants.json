@@ -1,0 +1,26 @@
+{
+  "values": [
+    "tfc:rock/bricks/granite",
+    "tfc:rock/bricks/diorite",
+    "tfc:rock/bricks/gabbro",
+    "tfc:rock/bricks/shale",
+    "tfc:rock/bricks/claystone",
+    "tfc:rock/bricks/limestone",
+    "tfc:rock/bricks/conglomerate",
+    "tfc:rock/bricks/dolomite",
+    "tfc:rock/bricks/chert",
+    "tfc:rock/bricks/chalk",
+    "tfc:rock/bricks/tuff",
+    "tfc:rock/bricks/rhyolite",
+    "tfc:rock/bricks/basalt",
+    "tfc:rock/bricks/andesite",
+    "tfc:rock/bricks/dacite",
+    "tfc:rock/bricks/quartzite",
+    "tfc:rock/bricks/slate",
+    "tfc:rock/bricks/phyllite",
+    "tfc:rock/bricks/schist",
+    "tfc:rock/bricks/gneiss",
+    "tfc:rock/bricks/marble",
+    "minecraft:stone_bricks"
+  ]
+}

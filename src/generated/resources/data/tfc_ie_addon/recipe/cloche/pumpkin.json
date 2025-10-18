@@ -1,0 +1,48 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/pumpkin"
+  },
+  "render": {
+    "type": "immersiveengineering:crop",
+    "block": "tfc:crop/pumpkin"
+  },
+  "results": [
+    {
+      "id": "tfc:pumpkin"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/pumpkin"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

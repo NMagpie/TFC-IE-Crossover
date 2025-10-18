@@ -1,0 +1,50 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/papyrus"
+  },
+  "render": {
+    "type": "tfc_ie_addon:doublecroptfc",
+    "block": "tfc:crop/papyrus",
+    "doublingAge": 3
+  },
+  "results": [
+    {
+      "count": 6,
+      "id": "tfc:papyrus"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/papyrus"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

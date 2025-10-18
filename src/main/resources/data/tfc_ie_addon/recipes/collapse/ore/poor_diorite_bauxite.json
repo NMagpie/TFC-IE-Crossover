@@ -1,6 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "type": "tfc:collapse",
-  "ingredient": "tfc_ie_addon:ore/normal_bauxite/diorite",
-  "result": "tfc_ie_addon:ore/poor_bauxite/diorite"
-}

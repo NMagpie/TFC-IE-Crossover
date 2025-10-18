@@ -1,0 +1,49 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/lentil"
+  },
+  "render": {
+    "type": "immersiveengineering:crop",
+    "block": "tfc:crop/lentil"
+  },
+  "results": [
+    {
+      "count": 6,
+      "id": "tfc:food/lentil"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/lentil"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

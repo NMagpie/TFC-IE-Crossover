@@ -1,0 +1,8 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:false"
+    }
+  ],
+  "type": "tfc_ie_addon:empty"
+}

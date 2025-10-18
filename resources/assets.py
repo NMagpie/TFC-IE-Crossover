@@ -11,9 +11,9 @@ def generate(rm: ResourceManager):
         for grade in ORE_GRADES.keys():
             rm.item_model('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_lang(lang('%s %s', grade, ore))
         block = rm.blockstate('ore/small_%s' % ore, variants={'': four_ways('tfc_ie_addon:block/small_%s' % ore)}, use_default_model=False)
-        block.with_lang(lang('small %s', ore)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:can_be_snow_piled')
+        block.with_lang(lang('small %s', ore)).with_block_loot('tfc_ie_addon:ore/small_%s' % ore)
         rm.item_model('ore/small_%s' % ore).with_lang(lang('small %s', ore))
-        rm.item_model('powder/%s' % ore).with_lang(lang('%s powder', ore)).with_tag('tfc:powders')
+        rm.item_model('powder/%s' % ore).with_lang(lang('%s powder', ore))
         for rock, data in TFC_ROCKS.items():
             for grade in ORE_GRADES.keys():
                 block = rm.blockstate(('ore', grade + '_' + ore, rock), 'tfc_ie_addon:block/ore/%s_%s/%s' % (grade, ore, rock))
@@ -22,7 +22,7 @@ def generate(rm: ResourceManager):
                     'particle': 'tfc:block/rock/raw/%s' % rock,
                     'overlay': 'tfc_ie_addon:block/ore/%s_%s' % (grade, ore)
                 }, parent='tfc:block/ore')
-                block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore)).with_tag('minecraft:mineable/pickaxe').with_tag('tfc:prospectable')
+                block.with_item_model().with_lang(lang('%s %s %s', grade, rock, ore)).with_block_loot('tfc_ie_addon:ore/%s_%s' % (grade, ore))
                 rm.block('tfc_ie_addon:ore/%s_%s/%s/prospected' % (grade, ore, rock)).with_lang(lang(ore))
 
     # MINERAL STUFF
@@ -31,7 +31,7 @@ def generate(rm: ResourceManager):
 
     quartz_parts = mineral_parts(mineral)
 
-    rm.item_model('mineral/%s_shard' % mineral).with_lang(lang('%s shard' % mineral)).with_tag('forge:gems').with_tag('forge:gems/%s' % mineral)
+    rm.item_model('mineral/%s_shard' % mineral).with_lang(lang('%s shard' % mineral))
 
     for (block_name, block_lang, texture, parent) in quartz_parts:
 
@@ -52,8 +52,7 @@ def generate(rm: ResourceManager):
         block.with_block_model({
             texture: 'tfc_ie_addon:block/mineral/%s' % block_name,
             'particle': 'tfc_ie_addon:block/mineral/%s' % block_name,
-        }, parent='minecraft:block/' + parent, )
-        block.with_lang(lang(block_lang)).with_tag('tfc:prospectable').with_tag('minecraft:mineable/pickaxe')
+        }, parent='minecraft:block/' + parent, ).with_lang(lang(block_lang))
 
         rm.block('tfc_ie_addon:mineral/%s/prospected' % block_name).with_lang(lang('quartz'))
 
@@ -83,7 +82,7 @@ def generate(rm: ResourceManager):
 
 def contained_fluid(rm: ResourceManager, name_parts: utils.ResourceIdentifier, base: str, overlay: str) -> 'ItemContext':
     return rm.custom_item_model(name_parts, 'tfc:contained_fluid', {
-        'parent': 'forge:item/default',
+        'parent': 'neoforge:item/default',
         'textures': {
             'base': base,
             'fluid': overlay
@@ -102,12 +101,9 @@ def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifie
 
 def water_based_fluid(rm: ResourceManager, name: str):
     rm.blockstate(('fluid', name)).with_block_model({'particle': 'minecraft:block/water_still'}, parent=None).with_lang(lang(name))
-    rm.fluid_tag(name, 'tfc_ie_addon:%s' % name, 'tfc_ie_addon:flowing_%s' % name)
-    rm.fluid_tag('minecraft:water', 'tfc_ie_addon:%s' % name, 'tfc_ie_addon:flowing_%s' % name)  # Need to use water fluid tag for behavior
-    rm.fluid_tag('mixable', 'tfc_ie_addon:%s' % name, 'tfc_ie_addon:flowing_%s' % name)
 
-    item = rm.custom_item_model(('bucket', name), 'forge:bucket', {
-        'parent': 'forge:item/bucket',
+    item = rm.custom_item_model(('bucket', name), 'neoforge:bucket', {
+        'parent': 'neoforge:item/bucket',
         'fluid': 'tfc_ie_addon:%s' % name
     })
     item.with_lang(lang('%s bucket', name))

@@ -1,0 +1,14 @@
+{
+  "type": "immersiveengineering:coke_oven",
+  "creosote": 500,
+  "input": {
+    "basePredicate": {
+      "item": "tfc:ore/bituminous_coal"
+    },
+    "count": 16
+  },
+  "result": {
+    "tag": "c:coal_coke"
+  },
+  "time": 6000
+}

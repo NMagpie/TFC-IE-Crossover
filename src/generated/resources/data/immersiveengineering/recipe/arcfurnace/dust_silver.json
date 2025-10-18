@@ -1,0 +1,14 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [],
+  "energy": 51200,
+  "input": {
+    "tag": "c:dusts/silver"
+  },
+  "results": [
+    {
+      "id": "tfc:metal/ingot/silver"
+    }
+  ],
+  "time": 100
+}

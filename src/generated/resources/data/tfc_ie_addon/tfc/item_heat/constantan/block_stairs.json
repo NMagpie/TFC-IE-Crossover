@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 750.0,
+  "heat_capacity": 2.142857,
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/constantan_stairs"
+  },
+  "welding_temperature": 1000.0
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": {
+      "tag": "c:plates/iron"
+    },
+    "r": [
+      {
+        "tag": "c:rods/iron"
+      },
+      {
+        "tag": "c:rods/wrought_iron"
+      }
+    ]
+  },
+  "pattern": [
+    "rr",
+    "pp"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:hatch"
+  }
+}

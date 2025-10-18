@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "tag": "c:fabric_hemp"
+    },
+    "s": {
+      "tag": "c:rods/all_metal"
+    }
+  },
+  "pattern": [
+    "sss",
+    "fff",
+    "fff"
+  ],
+  "result": {
+    "count": 3,
+    "id": "immersiveengineering:strip_curtain"
+  }
+}

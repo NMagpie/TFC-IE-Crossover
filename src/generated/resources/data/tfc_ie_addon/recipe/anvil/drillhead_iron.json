@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:double_sheets/wrought_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:drillhead_iron"
+  },
+  "rules": [
+    "bend_third_last",
+    "draw_second_last",
+    "hit_last"
+  ],
+  "tier": 3
+}

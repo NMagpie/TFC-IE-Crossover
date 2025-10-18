@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:mixer",
+  "energy": 800,
+  "fluid": {
+    "amount": 125,
+    "tag": "tfc:fresh_water"
+  },
+  "inputs": [
+    {
+      "item": "tfc:powder/salt"
+    }
+  ],
+  "result": {
+    "amount": 125,
+    "id": "tfc:salt_water"
+  }
+}

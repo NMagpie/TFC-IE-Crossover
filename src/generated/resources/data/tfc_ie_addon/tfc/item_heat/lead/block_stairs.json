@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 198.00002,
+  "heat_capacity": 5.769231,
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/lead_stairs"
+  },
+  "welding_temperature": 264.0
+}

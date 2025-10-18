@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": {
+    "item": "tfc:ore/cinnabar"
+  },
+  "result": {
+    "count": 8,
+    "id": "minecraft:redstone"
+  }
+}

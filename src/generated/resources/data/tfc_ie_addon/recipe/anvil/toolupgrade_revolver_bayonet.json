@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:ingots/steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:toolupgrade_revolver_bayonet"
+  },
+  "rules": [
+    "draw_any",
+    "bend_any",
+    "hit_last"
+  ],
+  "tier": 4
+}

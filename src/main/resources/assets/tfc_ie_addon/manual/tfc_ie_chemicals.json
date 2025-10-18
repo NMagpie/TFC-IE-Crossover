@@ -3,10 +3,10 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc:powder/saltpeter"
+        "id": "tfc:powder/saltpeter"
       },
       {
-        "item": "tfc:powder/sulfur"
+        "id": "tfc:powder/sulfur"
       }
     ]
   },

@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:metal_press",
+  "energy": 2400,
+  "input": {
+    "tag": "c:ingots/uranium"
+  },
+  "mold": "tfc_ie_addon:mold_sheet",
+  "result": {
+    "id": "tfc_ie_addon:metal/sheet/uranium"
+  }
+}

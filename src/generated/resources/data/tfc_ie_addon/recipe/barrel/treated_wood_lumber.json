@@ -1,0 +1,16 @@
+{
+  "type": "tfc:barrel_sealed",
+  "duration": 8000,
+  "input_fluid": {
+    "amount": 50,
+    "fluid": "immersiveengineering:creosote"
+  },
+  "input_item": {
+    "count": 1,
+    "tag": "tfc:lumber"
+  },
+  "output_item": {
+    "count": 1,
+    "id": "tfc_ie_addon:treated_wood_lumber"
+  }
+}

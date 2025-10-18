@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:double_sheets/black_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:drillhead_black_steel"
+  },
+  "rules": [
+    "bend_third_last",
+    "draw_second_last",
+    "hit_last"
+  ],
+  "tier": 5
+}

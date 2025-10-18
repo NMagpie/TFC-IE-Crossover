@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 1044.0,
+  "heat_capacity": 1.4285715,
+  "ingredient": {
+    "tag": "c:storage_blocks/aluminum"
+  },
+  "welding_temperature": 1392.0
+}

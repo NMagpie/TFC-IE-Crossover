@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#c:ores/bauxite/poor",
+    "#c:ores/bauxite/normal",
+    "#c:ores/bauxite/rich",
+    "#c:ores/galena/poor",
+    "#c:ores/galena/normal",
+    "#c:ores/galena/rich",
+    "#c:ores/uraninite/poor",
+    "#c:ores/uraninite/normal",
+    "#c:ores/uraninite/rich"
+  ]
+}

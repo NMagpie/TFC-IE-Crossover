@@ -1,0 +1,25 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [
+    {
+      "basePredicate": {
+        "tag": "c:ingots/copper"
+      },
+      "count": 2
+    }
+  ],
+  "energy": 51200,
+  "input": {
+    "basePredicate": {
+      "tag": "c:ingots/silver"
+    },
+    "count": 3
+  },
+  "results": [
+    {
+      "count": 5,
+      "id": "tfc:metal/ingot/sterling_silver"
+    }
+  ],
+  "time": 100
+}

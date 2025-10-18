@@ -1,0 +1,86 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.05,
+  "ores": [
+    {
+      "chance": 0.6,
+      "output": {
+        "id": "tfc:ore/small_hematite"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "id": "tfc:ore/poor_hematite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_hematite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_hematite"
+      }
+    },
+    {
+      "chance": 0.35,
+      "output": {
+        "id": "tfc:ore/small_sphalerite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:ore/poor_sphalerite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_sphalerite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_sphalerite"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/conglomerate"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/conglomerate"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/shale"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/shale"
+      }
+    }
+  ],
+  "weight": 30
+}

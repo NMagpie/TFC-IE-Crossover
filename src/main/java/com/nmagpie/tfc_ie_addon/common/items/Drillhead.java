@@ -1,12 +1,12 @@
 package com.nmagpie.tfc_ie_addon.common.items;
 
 import java.util.List;
+import java.util.Locale;
 import blusunrize.immersiveengineering.api.Lib;
 import blusunrize.immersiveengineering.api.utils.TagUtils;
 import blusunrize.immersiveengineering.common.items.DrillheadItem;
-import com.google.common.base.CaseFormat;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
-import javax.annotation.Nullable;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -14,9 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.common.TierSortingRegistry;
-import org.apache.commons.lang3.StringUtils;
 
 import net.dries007.tfc.common.TFCTiers;
 
@@ -32,23 +29,19 @@ public class Drillhead extends DrillheadItem
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> list, TooltipFlag flag)
+    public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> list, TooltipFlag flag)
     {
-        super.appendHoverText(stack, world, list, flag);
-        list.set(2, Component.translatable(Lib.DESC_FLAVOUR + "drillhead.level", getHarvestLevelName(getMiningLevel(stack))));
+        super.appendHoverText(stack, ctx, list, flag);
+        list.set(2, Component.translatable(Lib.DESC_FLAVOUR + "drillhead.level", getHarvestLevelName(getMiningLevel(stack))).withStyle(ChatFormatting.GRAY));
     }
 
     private static TagKey<Item> getIngotTagKey(String path)
     {
-        return TagUtils.createItemWrapper(new ResourceLocation("forge", "ingots/" + path));
+        return TagUtils.createItemWrapper(ResourceLocation.fromNamespaceAndPath("c", "ingots/" + path));
     }
 
     private static String getHarvestLevelName(Tier tier)
     {
-        return StringUtils.join(
-            StringUtils.splitByCharacterTypeCamelCase(
-                CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, TierSortingRegistry.getName(tier).getPath())),
-            " "
-        );
+        return tier.toString().toUpperCase(Locale.ROOT).replaceAll("_", " ");
     }
 }

@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:wood/stripped_log/acacia"
+    },
+    {
+      "item": "tfc:wood/stripped_wood/acacia"
+    }
+  ],
+  "result": {
+    "count": 12,
+    "id": "tfc:wood/lumber/acacia"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ],
+  "strippingSecondaries": []
+}

@@ -1,0 +1,92 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.05,
+  "ores": [
+    {
+      "chance": 0.35,
+      "output": {
+        "id": "tfc:ore/small_hematite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:ore/poor_hematite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_hematite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_hematite"
+      }
+    },
+    {
+      "chance": 0.35,
+      "output": {
+        "id": "tfc:ore/small_garnierite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:ore/poor_garnierite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_garnierite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_garnierite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:ore/sulfur"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/chalk"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/chalk"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/gneiss"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/gneiss"
+      }
+    }
+  ],
+  "weight": 25
+}

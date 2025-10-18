@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfc_ie_addon:ore/normal_bauxite"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfc_ie_addon:metal/aluminum"
+  },
+  "temperature": 1740.0
+}

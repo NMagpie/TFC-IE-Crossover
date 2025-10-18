@@ -1,0 +1,16 @@
+{
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfc:metal/copper",
+      "max": 0.6,
+      "min": 0.4
+    },
+    {
+      "fluid": "tfc:metal/nickel",
+      "max": 0.6,
+      "min": 0.4
+    }
+  ],
+  "result": "tfc_ie_addon:metal/constantan"
+}

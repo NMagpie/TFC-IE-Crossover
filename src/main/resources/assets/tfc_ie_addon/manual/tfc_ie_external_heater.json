@@ -3,10 +3,10 @@
     "type": "item_display",
     "items": [
       {
-        "item": "immersiveengineering:furnace_heater"
+        "id": "immersiveengineering:furnace_heater"
       },
       {
-        "item": "tfc:crucible"
+        "id": "tfc:crucible"
       }
     ]
   }

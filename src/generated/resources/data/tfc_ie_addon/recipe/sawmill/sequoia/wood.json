@@ -1,0 +1,24 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "tfc:wood/wood/sequoia"
+  },
+  "result": {
+    "count": 12,
+    "id": "tfc:wood/lumber/sequoia"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ],
+  "stripped": {
+    "id": "tfc:wood/stripped_wood/sequoia"
+  },
+  "strippingSecondaries": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ]
+}

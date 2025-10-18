@@ -1,0 +1,50 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/green_bean"
+  },
+  "render": {
+    "type": "tfc_ie_addon:doublecroptfc",
+    "block": "tfc:crop/green_bean",
+    "doublingAge": 4
+  },
+  "results": [
+    {
+      "count": 6,
+      "id": "tfc:food/green_bean"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/green_bean"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

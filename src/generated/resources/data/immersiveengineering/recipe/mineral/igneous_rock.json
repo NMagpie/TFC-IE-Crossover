@@ -1,0 +1,50 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.05,
+  "ores": [
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:rock/raw/granite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:rock/raw/diorite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:rock/raw/andesite"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:rock/gravel/granite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:rock/gravel/diorite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:rock/gravel/andesite"
+      }
+    }
+  ],
+  "weight": 25
+}

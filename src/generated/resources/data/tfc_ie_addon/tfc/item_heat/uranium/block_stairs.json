@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 678.0,
+  "heat_capacity": 6.25,
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/uranium_stairs"
+  },
+  "welding_temperature": 904.0
+}

@@ -1,0 +1,19 @@
+{
+  "forging_temperature": 678.0,
+  "heat_capacity": 3.3333333,
+  "ingredient": [
+    {
+      "item": "tfc_ie_addon:ore/small_uraninite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/poor_uraninite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/normal_uraninite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/rich_uraninite"
+    }
+  ],
+  "welding_temperature": 904.0
+}

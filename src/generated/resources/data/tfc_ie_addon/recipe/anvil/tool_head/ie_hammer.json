@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:ingots/wrought_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:tool_head/ie_hammer"
+  },
+  "rules": [
+    "hit_third_last",
+    "draw_second_last",
+    "upset_last"
+  ],
+  "tier": 3
+}

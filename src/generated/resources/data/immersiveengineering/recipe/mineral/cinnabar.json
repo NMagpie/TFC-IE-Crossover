@@ -1,0 +1,65 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.1,
+  "ores": [
+    {
+      "chance": 0.6,
+      "output": {
+        "id": "tfc:ore/cinnabar"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "id": "tfc:ore/sulfur"
+      }
+    },
+    {
+      "chance": 0.3,
+      "conditions": [
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:ores/mercury"
+          }
+        }
+      ],
+      "output": {
+        "tag": "c:ores/mercury"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/gabbro"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/gabbro"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/schist"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/schist"
+      }
+    }
+  ],
+  "weight": 15
+}

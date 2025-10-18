@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 3500,
+  "input": {
+    "item": "tfc:ore/rich_native_gold"
+  },
+  "result": {
+    "count": 14,
+    "id": "tfc:powder/native_gold"
+  }
+}

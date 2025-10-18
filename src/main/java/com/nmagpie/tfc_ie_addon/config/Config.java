@@ -1,26 +1,20 @@
 package com.nmagpie.tfc_ie_addon.config;
 
 import java.util.function.Function;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.config.ModConfig;
+import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
-import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.config.BaseConfig;
 
 public class Config
 {
-    public static final CommonConfig COMMON = register(ModConfig.Type.COMMON, CommonConfig::new);
-    public static final ServerConfig SERVER = register(ModConfig.Type.SERVER, ServerConfig::new);
+    public static final ServerConfig SERVER = register(ServerConfig::new, ConfigBuilder.ServerValue::new, "server");
 
-    public static void init()
+    private static <C extends BaseConfig> C register(Function<ConfigBuilder, C> factory, ConfigBuilder.Factory value, String prefix)
     {
-    }
-
-    private static <C> C register(ModConfig.Type type, Function<ForgeConfigSpec.Builder, C> factory)
-    {
-        Pair<C, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(factory);
-        if (!Helpers.BOOTSTRAP_ENVIRONMENT) ModLoadingContext.get().registerConfig(type, specPair.getRight());
-        return specPair.getLeft();
+        final Pair<C, ModConfigSpec> pair = new ModConfigSpec.Builder()
+            .configure(builder -> factory.apply(new ConfigBuilder(builder, value, prefix)));
+        pair.getKey().updateSpec(pair.getValue());
+        return pair.getKey();
     }
 }

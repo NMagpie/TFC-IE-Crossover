@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfc_ie_addon:ore/normal_uraninite"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfc_ie_addon:powder/uraninite"
+  }
+}

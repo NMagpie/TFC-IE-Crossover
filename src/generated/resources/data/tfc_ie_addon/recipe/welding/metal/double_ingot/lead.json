@@ -1,0 +1,14 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/lead"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:metal/double_ingot/lead"
+  },
+  "second_input": {
+    "tag": "c:ingots/lead"
+  },
+  "tier": 0
+}

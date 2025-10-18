@@ -1,0 +1,49 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/onion"
+  },
+  "render": {
+    "type": "immersiveengineering:crop",
+    "block": "tfc:crop/onion"
+  },
+  "results": [
+    {
+      "count": 6,
+      "id": "tfc:food/onion"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/onion"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

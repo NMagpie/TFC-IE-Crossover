@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "h": {
+      "item": "tfc_ie_addon:tool_head/ie_hammer"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "h",
+    "s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:hammer"
+  }
+}

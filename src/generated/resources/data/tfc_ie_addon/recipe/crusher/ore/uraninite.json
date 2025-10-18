@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1000,
+  "input": {
+    "item": "tfc_ie_addon:ore/small_uraninite"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfc_ie_addon:powder/uraninite"
+  }
+}

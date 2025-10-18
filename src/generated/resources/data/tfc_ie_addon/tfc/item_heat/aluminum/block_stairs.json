@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 1044.0,
+  "heat_capacity": 1.0714285,
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/aluminum_stairs"
+  },
+  "welding_temperature": 1392.0
+}

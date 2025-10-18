@@ -1,0 +1,48 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/melon"
+  },
+  "render": {
+    "type": "immersiveengineering:crop",
+    "block": "tfc:crop/melon"
+  },
+  "results": [
+    {
+      "id": "tfc:melon"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/melon"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

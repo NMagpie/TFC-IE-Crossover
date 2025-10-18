@@ -1,0 +1,50 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/maize"
+  },
+  "render": {
+    "type": "tfc_ie_addon:doublecroptfc",
+    "block": "tfc:crop/maize",
+    "doublingAge": 3
+  },
+  "results": [
+    {
+      "count": 6,
+      "id": "tfc:food/maize"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/maize"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

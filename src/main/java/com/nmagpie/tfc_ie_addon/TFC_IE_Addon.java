@@ -1,26 +1,33 @@
 package com.nmagpie.tfc_ie_addon;
 
+import blusunrize.immersiveengineering.api.tool.ExternalHeaterHandler;
 import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.common.CreativeTabs;
-import com.nmagpie.tfc_ie_addon.common.Events;
-import com.nmagpie.tfc_ie_addon.common.ForgeEvents;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.config.Config;
+import com.nmagpie.tfc_ie_addon.util.CrucibleHeater;
+import com.nmagpie.tfc_ie_addon.util.EmptyRecipe;
 import com.nmagpie.tfc_ie_addon.util.HerbicideEffects;
-import com.nmagpie.tfc_ie_addon.util.ModCauldronInteractions;
-import com.nmagpie.tfc_ie_addon.util.RegisteredSoils;
+import com.nmagpie.tfc_ie_addon.util.ModGlassOperation;
+import com.nmagpie.tfc_ie_addon.util.ModClocheRenderFunctions;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
+
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 
 @Mod(TFC_IE_Addon.MOD_ID)
 public class TFC_IE_Addon
@@ -28,39 +35,53 @@ public class TFC_IE_Addon
     public static final String MOD_ID = "tfc_ie_addon";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public TFC_IE_Addon()
+    public TFC_IE_Addon(ModContainer mod, IEventBus bus)
     {
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        mod.registerConfig(ModConfig.Type.SERVER, Config.SERVER.spec());
 
-        Items.ITEMS.register(eventBus);
-        Blocks.BLOCKS.register(eventBus);
-        Fluids.FLUIDS.register(eventBus);
-        Fluids.FLUID_TYPES.register(eventBus);
-        Features.FEATURES.register(eventBus);
-        CreativeTabs.CREATIVE_TABS.register(eventBus);
+        bus.addListener(this::setup);
+        bus.addListener(this::register);
+        bus.addListener(this::registerCapabilities);
 
-        Config.init();
-        Events.init();
-        ForgeEvents.init();
+        Items.ITEMS.register(bus);
+        Blocks.BLOCKS.register(bus);
+        Fluids.FLUIDS.register(bus);
+        Fluids.FLUID_TYPES.register(bus);
+        Features.FEATURES.register(bus);
+        CreativeTabs.CREATIVE_TABS.register(bus);
 
-        eventBus.addListener(this::setup);
+        ModGlassOperation.OPERATIONS.register(bus);
+        ModClocheRenderFunctions.register();
 
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
-            ClientEvents.init();
+            ClientEvents.init(bus);
         }
     }
 
     private void setup(FMLCommonSetupEvent event)
     {
-        RegisteredSoils.registerTFCSoils();
+        ModClocheRenderFunctions.init();
         HerbicideEffects.register();
+    }
 
-        event.enqueueWork(ModCauldronInteractions::registerCauldronInteractions);
+    private void register(RegisterEvent event)
+    {
+        event.register(Registries.RECIPE_TYPE, EmptyRecipe.ID, () -> EmptyRecipe.TYPE);
+        event.register(Registries.RECIPE_SERIALIZER, EmptyRecipe.ID, () -> EmptyRecipe.SERIALIZER);
+    }
+
+    private void registerCapabilities(RegisterCapabilitiesEvent event)
+    {
+        event.registerBlockEntity(
+            ExternalHeaterHandler.CAPABILITY,
+            TFCBlockEntities.CRUCIBLE.get(),
+            CrucibleHeater::new
+        );
     }
 
     public static ResourceLocation identifier(String name)
     {
-        return new ResourceLocation(MOD_ID, name);
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 }

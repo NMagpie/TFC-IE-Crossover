@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "c:sheets/aluminum"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfc_ie_addon:metal/aluminum"
+  },
+  "temperature": 1740.0
+}

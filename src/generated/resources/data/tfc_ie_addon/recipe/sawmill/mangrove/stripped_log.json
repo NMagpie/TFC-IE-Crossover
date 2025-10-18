@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:wood/stripped_log/mangrove"
+    },
+    {
+      "item": "tfc:wood/stripped_wood/mangrove"
+    }
+  ],
+  "result": {
+    "count": 12,
+    "id": "tfc:wood/lumber/mangrove"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ],
+  "strippingSecondaries": []
+}

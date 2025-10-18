@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfc_ie_addon:ore/poor_galena"
+  },
+  "result_fluid": {
+    "amount": 15,
+    "id": "tfc_ie_addon:metal/lead"
+  },
+  "temperature": 330.0
+}

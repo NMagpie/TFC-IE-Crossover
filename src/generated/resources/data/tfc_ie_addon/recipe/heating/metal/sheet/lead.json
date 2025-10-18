@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "c:sheets/lead"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfc_ie_addon:metal/lead"
+  },
+  "temperature": 330.0
+}

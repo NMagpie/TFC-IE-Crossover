@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:ingots/wrought_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:tool_head/wirecutter"
+  },
+  "rules": [
+    "bend_not_last",
+    "shrink_not_last",
+    "hit_last"
+  ],
+  "tier": 3
+}

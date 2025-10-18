@@ -1,0 +1,13 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "tfc:wood/planks/mangrove"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfc:wood/lumber/mangrove"
+  },
+  "secondaryOutputs": [],
+  "strippingSecondaries": []
+}

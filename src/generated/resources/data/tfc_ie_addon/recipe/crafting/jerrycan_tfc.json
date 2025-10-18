@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": [
+      {
+        "item": "tfc:metal/bucket/blue_steel"
+      },
+      {
+        "item": "tfc:metal/bucket/red_steel"
+      }
+    ],
+    "i": {
+      "tag": "c:plates/iron"
+    }
+  },
+  "pattern": [
+    " ii",
+    "ibb",
+    "ibb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:jerrycan"
+  }
+}

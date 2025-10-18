@@ -6,6 +6,7 @@ import blusunrize.immersiveengineering.api.tool.ChemthrowerHandler;
 import blusunrize.immersiveengineering.common.entities.ChemthrowerShotEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,12 +37,13 @@ public class HerbicideEffects
         ChemthrowerHandler.registerEffect(IETags.fluidHerbicide, new ChemthrowerHandler.ChemthrowerEffect()
         {
             @Override
-            public void applyToEntity(LivingEntity target, @Nullable Player shooter, ItemStack thrower, Fluid fluid)
+            public void applyToEntity(LivingEntity target, @Nullable Player shooter, @Nullable Entity projectile, ItemStack thrower, Fluid fluid)
             {
+
             }
 
             @Override
-            public void applyToBlock(Level world, HitResult mop, @Nullable Player shooter, ItemStack thrower, Fluid fluid)
+            public void applyToBlock(Level world, HitResult mop, @Nullable Player shooter, @Nullable Entity projectile, ItemStack thrower, Fluid fluid)
             {
                 if (!(mop instanceof BlockHitResult result))
                     return;

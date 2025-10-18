@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1000,
+  "input": {
+    "item": "tfc:ore/small_limonite"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfc:powder/limonite"
+  }
+}

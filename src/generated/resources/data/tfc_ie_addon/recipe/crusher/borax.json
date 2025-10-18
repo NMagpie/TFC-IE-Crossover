@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": {
+    "item": "tfc:ore/borax"
+  },
+  "result": {
+    "count": 6,
+    "id": "tfc:powder/flux"
+  }
+}

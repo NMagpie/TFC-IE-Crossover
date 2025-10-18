@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "immersiveengineering:component_iron"
+    },
+    "i": [
+      {
+        "tag": "c:ingots/iron"
+      },
+      {
+        "tag": "c:ingots/wrought_iron"
+      }
+    ],
+    "l": {
+      "item": "immersiveengineering:coil_lv"
+    },
+    "r": {
+      "tag": "c:dusts/redstone"
+    }
+  },
+  "pattern": [
+    "rcr",
+    "ili"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:dynamo"
+  }
+}

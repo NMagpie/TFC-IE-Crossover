@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [],
+  "energy": 25600,
+  "input": {
+    "basePredicate": {
+      "item": "tfc_ie_addon:powder/bauxite"
+    },
+    "count": 20
+  },
+  "results": [
+    {
+      "id": "immersiveengineering:ingot_aluminum"
+    }
+  ],
+  "time": 100
+}

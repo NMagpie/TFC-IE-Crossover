@@ -1,0 +1,5 @@
+{
+  "fluid": "tfc_ie_addon:metal/uranium",
+  "melt_temperature": 1130.0,
+  "specific_heat_capacity": 0.025
+}

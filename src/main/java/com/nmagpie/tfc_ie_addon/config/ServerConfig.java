@@ -1,41 +1,28 @@
 package com.nmagpie.tfc_ie_addon.config;
 
-import java.util.function.Function;
-import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.Builder;
+import java.util.function.Supplier;
 
-import net.dries007.tfc.common.capabilities.size.Size;
+import net.dries007.tfc.common.component.size.Size;
+import net.dries007.tfc.config.BaseConfig;
 
-public class ServerConfig
+
+public class ServerConfig extends BaseConfig
 {
-    public final ForgeConfigSpec.IntValue crucibleExternalHeaterFEPerTick;
-    public final ForgeConfigSpec.IntValue crucibleExternalHeaterTemperature;
-    public final ForgeConfigSpec.DoubleValue tfcWaterWheelEnergyModifier;
-    public final ForgeConfigSpec.DoubleValue tfcWindmillEnergyModifier;
-    public final ForgeConfigSpec.EnumValue<Size> crateMaximumItemSize;
+    public final Supplier<Integer> crucibleExternalHeaterFEPerTick;
+    public final Supplier<Integer> crucibleExternalHeaterTemperature;
+    public final Supplier<Size> crateMaximumItemSize;
 
-    ServerConfig(Builder innerBuilder)
+    ServerConfig(ConfigBuilder builder)
     {
-        Function<String, Builder> builder = name -> innerBuilder.translation(TFC_IE_Addon.MOD_ID + ".config.server." + name);
+        builder.push("crucibleExternalHeater");
 
-        innerBuilder.push("crucibleExternalHeater");
+        crucibleExternalHeaterFEPerTick = builder.comment("The amount of FE an external heater consumes per tick when heating a crucible.").define("crucibleExternalHeaterFEPerTick", 20, 0, 32000);
+        crucibleExternalHeaterTemperature = builder.comment("The maximum temperature a crucible reaches when heated by an external heater.").define("crucibleExternalHeaterTemperature", 2000, 0, Integer.MAX_VALUE);
 
-        crucibleExternalHeaterFEPerTick = builder.apply("crucibleExternalHeaterFEPerTick").comment("The amount of FE an external heater consumes per tick when heating a crucible.").defineInRange("crucibleExternalHeaterFEPerTick", 20, 0, 32000);
-        crucibleExternalHeaterTemperature = builder.apply("crucibleExternalHeaterTemperature").comment("The maximum temperature a crucible reaches when heated by an external heater.").defineInRange("crucibleExternalHeaterTemperature", 2000, 0, Integer.MAX_VALUE);
+        builder.swap("crate");
 
-        innerBuilder.pop().push("tfcWaterWheel");
+        crateMaximumItemSize = builder.comment("The largest (inclusive) size of an item that is allowed in a wooden storage crate or reinforced storage crate.").define("crateMaximumItemSize", Size.VERY_LARGE);
 
-        tfcWaterWheelEnergyModifier = builder.apply("tfcWaterWheelEnergyModifier").comment("A modifier to apply to the energy generation of a TFC water wheel on a kinetic dynamo.").defineInRange("tfcWaterWheelEnergyModifier", 1, 1e-3, 1e3);
-
-        innerBuilder.pop().push("tfcWindmill");
-
-        tfcWindmillEnergyModifier = builder.apply("tfcWindmillEnergyModifier").comment("A modifier to apply to the energy generation of a TFC windmill on a kinetic dynamo.").defineInRange("tfcWindmillEnergyModifier", 1, 1e-3, 1e3);
-
-        innerBuilder.pop().push("crate");
-
-        crateMaximumItemSize = builder.apply("crateMaximumItemSize").comment("The largest (inclusive) size of an item that is allowed in a wooden storage crate or reinforced storage crate.").defineEnum("crateMaximumItemSize", Size.VERY_LARGE);
-
-        innerBuilder.pop();
+        builder.pop();
     }
 }

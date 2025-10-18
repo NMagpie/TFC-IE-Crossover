@@ -1,0 +1,21 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [
+    {
+      "tag": "c:dusts/coal_coke"
+    }
+  ],
+  "energy": 204800,
+  "input": {
+    "tag": "c:ingots/wrought_iron"
+  },
+  "results": [
+    {
+      "id": "tfc:metal/ingot/steel"
+    }
+  ],
+  "slag": {
+    "tag": "c:slag"
+  },
+  "time": 400
+}

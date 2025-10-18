@@ -1,0 +1,31 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.05,
+  "ores": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "minecraft:clay"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "tag": "c:sands"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "tag": "c:gravels"
+      }
+    }
+  ],
+  "spoils": [],
+  "weight": 25
+}

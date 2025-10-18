@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 678.0,
+  "heat_capacity": 8.333333,
+  "ingredient": {
+    "tag": "c:storage_blocks/uranium"
+  },
+  "welding_temperature": 904.0
+}

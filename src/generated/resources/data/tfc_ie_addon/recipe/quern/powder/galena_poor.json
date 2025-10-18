@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfc_ie_addon:ore/poor_galena"
+  },
+  "result": {
+    "count": 3,
+    "id": "tfc_ie_addon:powder/galena"
+  }
+}

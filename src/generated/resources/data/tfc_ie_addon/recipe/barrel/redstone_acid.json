@@ -1,0 +1,15 @@
+{
+  "type": "tfc:barrel_instant",
+  "input_fluid": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  },
+  "input_item": {
+    "count": 1,
+    "tag": "c:dusts/redstone"
+  },
+  "output_fluid": {
+    "amount": 250,
+    "id": "immersiveengineering:redstone_acid"
+  }
+}

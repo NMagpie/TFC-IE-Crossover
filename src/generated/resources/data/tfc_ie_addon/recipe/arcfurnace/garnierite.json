@@ -1,0 +1,17 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [],
+  "energy": 25600,
+  "input": {
+    "basePredicate": {
+      "item": "tfc:powder/garnierite"
+    },
+    "count": 20
+  },
+  "results": [
+    {
+      "id": "tfc:metal/ingot/nickel"
+    }
+  ],
+  "time": 100
+}

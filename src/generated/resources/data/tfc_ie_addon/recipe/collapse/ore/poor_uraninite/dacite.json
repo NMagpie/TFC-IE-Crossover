@@ -1,0 +1,7 @@
+{
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/normal_uraninite/dacite"
+  ],
+  "result": "tfc_ie_addon:ore/poor_uraninite/dacite"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "tag": "c:fabric_hemp"
+    }
+  },
+  "pattern": [
+    "fff",
+    "f f",
+    "fff"
+  ],
+  "result": {
+    "count": 3,
+    "id": "immersiveengineering:cushion"
+  }
+}

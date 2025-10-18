@@ -1,0 +1,14 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/uranium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:metal/double_ingot/uranium"
+  },
+  "second_input": {
+    "tag": "c:ingots/uranium"
+  },
+  "tier": 2
+}

@@ -1,0 +1,16 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:ore/sapphire"
+    },
+    {
+      "item": "tfc:gem/sapphire"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfc:powder/sapphire"
+  }
+}

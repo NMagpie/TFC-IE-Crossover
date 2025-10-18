@@ -1,0 +1,14 @@
+{
+  "values": [
+    "tfc_ie_addon:mold_block",
+    "tfc_ie_addon:mold_sheet",
+    "immersiveengineering:mold_plate",
+    "immersiveengineering:mold_gear",
+    "immersiveengineering:mold_rod",
+    "immersiveengineering:mold_bullet_casing",
+    "immersiveengineering:mold_wire",
+    "immersiveengineering:mold_packing_4",
+    "immersiveengineering:mold_packing_9",
+    "immersiveengineering:mold_unpacking"
+  ]
+}

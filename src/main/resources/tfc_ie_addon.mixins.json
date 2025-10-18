@@ -2,12 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.nmagpie.tfc_ie_addon.mixin",
-  "compatibilityLevel": "JAVA_17",
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
-    "AllowInCrateMixin", "AnvilBlockEntityMixin", "GlassOperationMixin", "GlassworkingRecipeCategoryMixin", "IngredientFluidStackMixin", "WaterWheelBlockEntityMixin", "WindmillBlockEntityMixin", "accessor.BlockEntityAccessor"
+    "AllowInCrateMixin", "AnvilBlockEntityMixin", "IngredientFluidStackMixin", "accessor.BlockEntityAccessor"
   ],
   "refmap": "tfc_ie_addon.refmap.json"
 }

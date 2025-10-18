@@ -1,0 +1,17 @@
+{
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:double_sheets/steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:armor_faraday_chestplate"
+  },
+  "rules": [
+    "punch_not_last",
+    "hit_any",
+    "draw_any"
+  ],
+  "tier": 4
+}

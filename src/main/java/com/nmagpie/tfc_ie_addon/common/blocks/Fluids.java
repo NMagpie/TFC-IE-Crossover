@@ -6,31 +6,28 @@ import java.util.function.Function;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraftforge.common.SoundActions;
-import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.world.level.pathfinder.PathType;
+import net.neoforged.neoforge.common.SoundActions;
+import net.neoforged.neoforge.fluids.BaseFlowingFluid;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import net.dries007.tfc.common.fluids.ExtendedFluidType;
-import net.dries007.tfc.common.fluids.FluidRegistryObject;
-import net.dries007.tfc.common.fluids.FluidTypeClientProperties;
+import net.dries007.tfc.common.fluids.FluidHolder;
 import net.dries007.tfc.common.fluids.MoltenFluid;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
-import static net.dries007.tfc.common.fluids.TFCFluids.*;
-
 public class Fluids
 {
-    public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, TFC_IE_Addon.MOD_ID);
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, TFC_IE_Addon.MOD_ID);
+    public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, TFC_IE_Addon.MOD_ID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, TFC_IE_Addon.MOD_ID);
 
-    public static final Map<IEMetal, FluidRegistryObject<ForgeFlowingFluid>> METALS = Helpers.mapOfKeys(IEMetal.class, metal -> register(
+    public static final Map<IEMetal, FluidHolder<BaseFlowingFluid>> METALS = Helpers.mapOf(IEMetal.class, metal -> register(
         "metal/" + metal.getSerializedName(),
         properties -> properties
             .block(Blocks.METAL_FLUIDS.get(metal))
@@ -38,8 +35,7 @@ public class Fluids
             .explosionResistance(100),
         lavaLike()
             .descriptionId("fluid.tfc_ie_addon.metal." + metal.getSerializedName())
-            .rarity(metal.getRarity()),
-        new FluidTypeClientProperties(ALPHA_MASK | metal.getColor(), MOLTEN_STILL, MOLTEN_FLOW, null, null),
+            .rarity(metal.rarity()),
         MoltenFluid.Source::new,
         MoltenFluid.Flowing::new
     ));
@@ -47,7 +43,7 @@ public class Fluids
     private static FluidType.Properties lavaLike()
     {
         return FluidType.Properties.create()
-            .adjacentPathType(BlockPathTypes.LAVA)
+            .adjacentPathType(PathType.LAVA)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
             .lightLevel(15)
@@ -63,11 +59,11 @@ public class Fluids
             .supportsBoating(false);
     }
 
-    private static <F extends FlowingFluid> FluidRegistryObject<F> register(String name, Consumer<ForgeFlowingFluid.Properties> builder, FluidType.Properties typeProperties, FluidTypeClientProperties clientProperties, Function<ForgeFlowingFluid.Properties, F> sourceFactory, Function<ForgeFlowingFluid.Properties, F> flowingFactory)
+    private static <F extends FlowingFluid> FluidHolder<F> register(String name, Consumer<BaseFlowingFluid.Properties> builder, FluidType.Properties typeProperties, Function<BaseFlowingFluid.Properties, F> sourceFactory, Function<BaseFlowingFluid.Properties, F> flowingFactory)
     {
         final int index = name.lastIndexOf('/');
         final String flowingName = index == -1 ? "flowing_" + name : name.substring(0, index) + "/flowing_" + name.substring(index + 1);
 
-        return RegistrationHelpers.registerFluid(FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new ExtendedFluidType(typeProperties, clientProperties), sourceFactory, flowingFactory);
+        return RegistrationHelpers.registerFluid(FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new FluidType(typeProperties), sourceFactory, flowingFactory);
     }
 }

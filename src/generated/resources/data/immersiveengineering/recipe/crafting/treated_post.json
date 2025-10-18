@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "immersiveengineering:treated_fence"
+    },
+    "s": {
+      "tag": "tfc_ie_addon:stone_bricks_no_variants"
+    }
+  },
+  "pattern": [
+    "f",
+    "f",
+    "s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:treated_post"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 1044.0,
+  "heat_capacity": 0.71428573,
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/aluminum_slab"
+  },
+  "welding_temperature": 1392.0
+}

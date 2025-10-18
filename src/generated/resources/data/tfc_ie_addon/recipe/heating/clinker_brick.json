@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "minecraft:bricks"
+  },
+  "result_item": {
+    "count": 1,
+    "id": "immersiveengineering:clinker_brick"
+  },
+  "temperature": 1499.0
+}

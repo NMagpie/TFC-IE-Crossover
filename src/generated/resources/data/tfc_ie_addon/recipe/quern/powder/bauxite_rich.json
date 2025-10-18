@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfc_ie_addon:ore/rich_bauxite"
+  },
+  "result": {
+    "count": 7,
+    "id": "tfc_ie_addon:powder/bauxite"
+  }
+}

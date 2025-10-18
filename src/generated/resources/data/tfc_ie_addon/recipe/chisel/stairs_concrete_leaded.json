@@ -1,0 +1,8 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": [
+    "immersiveengineering:concrete_leaded"
+  ],
+  "mode": "tfc:stair",
+  "result": "immersiveengineering:stairs_concrete_leaded"
+}

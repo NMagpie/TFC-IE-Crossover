@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "replace": false,
-  "values": [
-    "#forge:ores/bauxite",
-    "#forge:ores/galena",
-    "#forge:ores/uraninite"
-  ]
-}

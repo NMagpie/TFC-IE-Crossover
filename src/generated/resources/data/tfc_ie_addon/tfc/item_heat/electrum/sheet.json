@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 600.0,
+  "heat_capacity": 3.6363635,
+  "ingredient": {
+    "tag": "c:sheets/electrum"
+  },
+  "welding_temperature": 800.0
+}

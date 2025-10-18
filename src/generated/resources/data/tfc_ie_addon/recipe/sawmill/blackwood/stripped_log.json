@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:wood/stripped_log/blackwood"
+    },
+    {
+      "item": "tfc:wood/stripped_wood/blackwood"
+    }
+  ],
+  "result": {
+    "count": 12,
+    "id": "tfc:wood/lumber/blackwood"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ],
+  "strippingSecondaries": []
+}

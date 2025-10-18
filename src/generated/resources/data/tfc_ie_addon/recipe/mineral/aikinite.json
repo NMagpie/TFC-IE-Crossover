@@ -1,0 +1,116 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.1,
+  "ores": [
+    {
+      "chance": 0.7,
+      "output": {
+        "id": "tfc:ore/small_tetrahedrite"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:ore/poor_tetrahedrite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:ore/normal_tetrahedrite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/rich_tetrahedrite"
+      }
+    },
+    {
+      "chance": 0.35,
+      "output": {
+        "id": "tfc:ore/small_limonite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:ore/poor_limonite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_limonite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_limonite"
+      }
+    },
+    {
+      "chance": 0.7,
+      "output": {
+        "id": "tfc:ore/small_cassiterite"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:ore/poor_cassiterite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:ore/normal_cassiterite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/rich_cassiterite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:ore/sulfur"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/marble"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/marble"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/andesite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/andesite"
+      }
+    }
+  ],
+  "weight": 20
+}

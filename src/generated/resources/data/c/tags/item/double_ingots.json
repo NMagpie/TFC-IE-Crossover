@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#c:double_ingots/electrum",
+    "#c:double_ingots/constantan",
+    "#c:double_ingots/aluminum",
+    "#c:double_ingots/lead",
+    "#c:double_ingots/uranium"
+  ]
+}

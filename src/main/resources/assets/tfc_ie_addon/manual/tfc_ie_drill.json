@@ -3,13 +3,13 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc_ie_addon:drillhead_black_steel"
+        "id": "tfc_ie_addon:drillhead_black_steel"
       },
       {
-        "item": "tfc_ie_addon:drillhead_blue_steel"
+        "id": "tfc_ie_addon:drillhead_blue_steel"
       },
       {
-        "item": "tfc_ie_addon:drillhead_red_steel"
+        "id": "tfc_ie_addon:drillhead_red_steel"
       }
     ]
   }

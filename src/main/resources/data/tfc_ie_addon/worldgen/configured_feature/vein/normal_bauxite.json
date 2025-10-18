@@ -144,6 +144,25 @@
       },
       {
         "replace": [
+          "tfc:rock/raw/tuff"
+        ],
+        "with": [
+          {
+            "weight": 15,
+            "block": "tfc_ie_addon:ore/poor_bauxite/tuff"
+          },
+          {
+            "weight": 25,
+            "block": "tfc_ie_addon:ore/normal_bauxite/tuff"
+          },
+          {
+            "weight": 60,
+            "block": "tfc_ie_addon:ore/rich_bauxite/tuff"
+          }
+        ]
+      },
+      {
+        "replace": [
           "tfc:rock/raw/quartzite"
         ],
         "with": [

@@ -1,0 +1,16 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:ore/topaz"
+    },
+    {
+      "item": "tfc:gem/topaz"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfc:powder/topaz"
+  }
+}

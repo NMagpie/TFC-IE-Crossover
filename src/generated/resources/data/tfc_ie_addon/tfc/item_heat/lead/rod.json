@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 198.00002,
+  "heat_capacity": 3.846154,
+  "ingredient": {
+    "tag": "c:rods/lead"
+  },
+  "welding_temperature": 264.0
+}

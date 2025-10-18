@@ -1,0 +1,9 @@
+{
+  "values": [
+    "tfc_ie_addon:metal/block/electrum_slab",
+    "tfc_ie_addon:metal/block/constantan_slab",
+    "tfc_ie_addon:metal/block/aluminum_slab",
+    "tfc_ie_addon:metal/block/lead_slab",
+    "tfc_ie_addon:metal/block/uranium_slab"
+  ]
+}

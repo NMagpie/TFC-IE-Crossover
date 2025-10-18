@@ -1,0 +1,9 @@
+{
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_bauxite/granite",
+    "tfc_ie_addon:ore/poor_galena/granite",
+    "tfc_ie_addon:ore/poor_uraninite/granite"
+  ],
+  "result": "tfc:rock/cobble/granite"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_bauxite/shale",
+    "tfc_ie_addon:ore/poor_galena/shale",
+    "tfc_ie_addon:ore/poor_uraninite/shale"
+  ],
+  "result": "tfc:rock/cobble/shale"
+}

@@ -3,13 +3,13 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc:wild_crop/jute"
+        "id": "tfc:wild_crop/jute"
       },
       {
-        "item": "tfc:jute_fiber"
+        "id": "tfc:jute_fiber"
       },
       {
-        "item": "tfc:seeds/jute"
+        "id": "tfc:seeds/jute"
       }
     ]
   },

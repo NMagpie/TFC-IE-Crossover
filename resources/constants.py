@@ -120,12 +120,13 @@ TFC_ROCKS: Dict[str, Rock] = {
     'dolomite': Rock('sedimentary', 'black'),
     'chert': Rock('sedimentary', 'yellow'),
     'chalk': Rock('sedimentary', 'white'),
+    'tuff': Rock('sedimentary', 'black'),
     'rhyolite': Rock('igneous_extrusive', 'red'),
     'basalt': Rock('igneous_extrusive', 'red'),
     'andesite': Rock('igneous_extrusive', 'red'),
-    'dacite': Rock('igneous_extrusive', 'red'),
+    'dacite': Rock('igneous_extrusive', 'yellow'),
     'quartzite': Rock('metamorphic', 'white'),
-    'slate': Rock('metamorphic', 'brown'),
+    'slate': Rock('metamorphic', 'yellow'),
     'phyllite': Rock('metamorphic', 'brown'),
     'schist': Rock('metamorphic', 'green'),
     'gneiss': Rock('metamorphic', 'green'),
@@ -189,8 +190,8 @@ DEFAULT_LANG = {
     'desc.immersiveengineering.info.mineral.franklinite': 'Franklinite',
     'desc.immersiveengineering.info.mineral.quartzite': 'Quartzite',
 
-    'tfc.enum.glassoperation.lead': 'Galena Powder',
-    'tfc.enum.glassoperation.uranium': 'Uraninite Powder',
+    'glass_operation.tfc_ie_addon.lead': 'Lead Powder',
+    'glass_operation.tfc_ie_addon.uranium': 'Uranium Powder',
 
     'manual.tfc_ie_addon.tfc_ie_changes': 'Changes with TerraFirmaCraft',
 
@@ -283,13 +284,11 @@ TFC_WOOD_ITEMS = [
     ('door', 3, 800),
     ('trapdoor', 2, 800),
     ('fence', 2, 800),
-    ('log_fence', 6, 800),
-    ('fence_gate', 6, 800),
-    ('button', 1, 400),
-    ('pressure_plate', 2, 400),
+    ('log_fence', 6, 1600),
+    ('fence_gate', 6, 1600),
     ('slab', 2, 800),
     ('stairs', 3, 1600),
-    ('tool_rack', 6, 800),
+    ('tool_rack', 6, 1600),
     ('loom', 7, 1600),
 ]
 

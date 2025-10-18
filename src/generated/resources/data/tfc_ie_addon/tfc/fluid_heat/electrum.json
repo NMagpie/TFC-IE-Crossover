@@ -1,0 +1,5 @@
+{
+  "fluid": "tfc_ie_addon:metal/electrum",
+  "melt_temperature": 1000.0,
+  "specific_heat_capacity": 0.0054545454
+}

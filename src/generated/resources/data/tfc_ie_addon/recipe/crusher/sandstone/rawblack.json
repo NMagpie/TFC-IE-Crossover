@@ -1,0 +1,19 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 3200,
+  "input": {
+    "item": "tfc:raw_sandstone/black"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfc:sand/black"
+  },
+  "secondaries": [
+    {
+      "chance": 0.5,
+      "output": {
+        "item": "tfc:powder/saltpeter"
+      }
+    }
+  ]
+}

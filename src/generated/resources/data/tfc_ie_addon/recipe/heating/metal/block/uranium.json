@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "c:storage_blocks/uranium"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfc_ie_addon:metal/uranium"
+  },
+  "temperature": 1130.0
+}

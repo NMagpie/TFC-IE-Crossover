@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "c:dyes/blue"
+    },
+    "E": {
+      "item": "immersiveengineering:empty_shell"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "S": {
+      "tag": "c:ingots/blue_steel"
+    }
+  },
+  "pattern": [
+    "SES",
+    "DDD",
+    "PPP"
+  ],
+  "result": {
+    "components": {
+      "immersiveengineering:blueprint": "specialBullet"
+    },
+    "count": 1,
+    "id": "immersiveengineering:blueprint"
+  }
+}

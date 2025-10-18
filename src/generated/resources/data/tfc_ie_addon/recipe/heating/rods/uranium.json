@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "c:rods/uranium"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfc_ie_addon:metal/uranium"
+  },
+  "temperature": 1130.0
+}

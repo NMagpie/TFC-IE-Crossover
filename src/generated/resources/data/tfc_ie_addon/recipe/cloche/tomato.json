@@ -1,0 +1,50 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "tfc:seeds/tomato"
+  },
+  "render": {
+    "type": "tfc_ie_addon:doublecroptfc",
+    "block": "tfc:crop/tomato",
+    "doublingAge": 4
+  },
+  "results": [
+    {
+      "count": 6,
+      "id": "tfc:food/tomato"
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:seeds/tomato"
+      }
+    }
+  ],
+  "soil": [
+    {
+      "item": "tfc:dirt/entisol"
+    },
+    {
+      "item": "tfc:dirt/aridisol"
+    },
+    {
+      "item": "tfc:dirt/oxisol"
+    },
+    {
+      "item": "tfc:dirt/fluvisol"
+    },
+    {
+      "item": "tfc:dirt/andisol"
+    },
+    {
+      "item": "tfc:dirt/podzol"
+    },
+    {
+      "item": "tfc:dirt/alfisol"
+    },
+    {
+      "item": "tfc:dirt/mollisol"
+    }
+  ],
+  "time": 128000
+}

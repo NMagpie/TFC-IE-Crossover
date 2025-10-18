@@ -1,0 +1,101 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.15,
+  "ores": [
+    {
+      "chance": 0.7,
+      "output": {
+        "id": "tfc_ie_addon:ore/small_uraninite"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc_ie_addon:ore/poor_uraninite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc_ie_addon:ore/normal_uraninite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc_ie_addon:ore/rich_uraninite"
+      }
+    },
+    {
+      "chance": 0.35,
+      "output": {
+        "id": "tfc_ie_addon:ore/small_galena"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc_ie_addon:ore/poor_galena"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc_ie_addon:ore/normal_galena"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc_ie_addon:ore/rich_galena"
+      }
+    },
+    {
+      "chance": 0.1,
+      "conditions": [
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:ores/thorium"
+          }
+        }
+      ],
+      "output": {
+        "tag": "c:ores/thorium"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/diorite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/diorite"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/chert"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/chert"
+      }
+    }
+  ],
+  "weight": 10
+}

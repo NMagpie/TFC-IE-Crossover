@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "immersiveengineering:coil_lv"
+    },
+    "i": [
+      {
+        "tag": "c:ingots/iron"
+      },
+      {
+        "tag": "c:ingots/wrought_iron"
+      }
+    ],
+    "l": {
+      "tag": "c:leathers"
+    }
+  },
+  "pattern": [
+    "  l",
+    "lc ",
+    "lil"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:toolupgrade_shield_magnet"
+  }
+}

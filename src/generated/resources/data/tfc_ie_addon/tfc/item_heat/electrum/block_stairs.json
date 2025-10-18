@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 600.0,
+  "heat_capacity": 1.3636363,
+  "ingredient": {
+    "item": "tfc_ie_addon:metal/block/electrum_stairs"
+  },
+  "welding_temperature": 800.0
+}

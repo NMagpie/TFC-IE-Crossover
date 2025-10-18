@@ -1,0 +1,19 @@
+{
+  "forging_temperature": 1044.0,
+  "heat_capacity": 0.5714286,
+  "ingredient": [
+    {
+      "item": "tfc_ie_addon:ore/small_bauxite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/poor_bauxite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/normal_bauxite"
+    },
+    {
+      "item": "tfc_ie_addon:ore/rich_bauxite"
+    }
+  ],
+  "welding_temperature": 1392.0
+}

@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1600,
+  "input": {
+    "item": "minecraft:charcoal"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfc:powder/charcoal"
+  }
+}

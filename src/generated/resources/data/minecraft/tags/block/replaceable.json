@@ -1,0 +1,9 @@
+{
+  "values": [
+    "tfc_ie_addon:fluid/metal/electrum",
+    "tfc_ie_addon:fluid/metal/constantan",
+    "tfc_ie_addon:fluid/metal/aluminum",
+    "tfc_ie_addon:fluid/metal/lead",
+    "tfc_ie_addon:fluid/metal/uranium"
+  ]
+}

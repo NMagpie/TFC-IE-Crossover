@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "immersiveengineering:connector_lv"
+    },
+    "r": [
+      {
+        "tag": "c:rods/iron"
+      },
+      {
+        "tag": "c:rods/wrought_iron"
+      }
+    ]
+  },
+  "pattern": [
+    "crc",
+    "crc",
+    "crc"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:toolupgrade_shield_shock"
+  }
+}

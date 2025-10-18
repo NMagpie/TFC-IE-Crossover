@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 600.0,
+  "heat_capacity": 0.9090909,
+  "ingredient": {
+    "tag": "c:rods/electrum"
+  },
+  "welding_temperature": 800.0
+}

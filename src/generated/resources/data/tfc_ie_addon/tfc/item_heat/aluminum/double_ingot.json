@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 1044.0,
+  "heat_capacity": 2.857143,
+  "ingredient": {
+    "tag": "c:double_ingots/aluminum"
+  },
+  "welding_temperature": 1392.0
+}

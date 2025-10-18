@@ -1,0 +1,14 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/electrum"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfc_ie_addon:metal/double_ingot/electrum"
+  },
+  "second_input": {
+    "tag": "c:ingots/electrum"
+  },
+  "tier": 0
+}

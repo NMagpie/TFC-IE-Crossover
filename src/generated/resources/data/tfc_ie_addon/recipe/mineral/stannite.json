@@ -1,0 +1,116 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.1,
+  "ores": [
+    {
+      "chance": 0.6,
+      "output": {
+        "id": "tfc_ie_addon:ore/small_galena"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "id": "tfc_ie_addon:ore/poor_galena"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc_ie_addon:ore/normal_galena"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc_ie_addon:ore/rich_galena"
+      }
+    },
+    {
+      "chance": 0.35,
+      "output": {
+        "id": "tfc:ore/small_malachite"
+      }
+    },
+    {
+      "chance": 0.25,
+      "output": {
+        "id": "tfc:ore/poor_malachite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_malachite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_malachite"
+      }
+    },
+    {
+      "chance": 0.65,
+      "output": {
+        "id": "tfc:ore/small_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.4,
+      "output": {
+        "id": "tfc:ore/poor_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/normal_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.1,
+      "output": {
+        "id": "tfc:ore/rich_bismuthinite"
+      }
+    },
+    {
+      "chance": 0.3,
+      "output": {
+        "id": "tfc:ore/sulfur"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/claystone"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/claystone"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/dolomite"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/dolomite"
+      }
+    }
+  ],
+  "weight": 20
+}

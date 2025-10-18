@@ -1,0 +1,5 @@
+{
+  "fluid": "tfc_ie_addon:metal/constantan",
+  "melt_temperature": 1250.0,
+  "specific_heat_capacity": 0.008571429
+}

@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 1500,
+  "input": {
+    "item": "tfc:ore/poor_bismuthinite"
+  },
+  "result": {
+    "count": 6,
+    "id": "tfc:powder/bismuthinite"
+  }
+}

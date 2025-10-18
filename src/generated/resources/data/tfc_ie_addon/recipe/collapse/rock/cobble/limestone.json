@@ -1,0 +1,9 @@
+{
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_bauxite/limestone",
+    "tfc_ie_addon:ore/poor_galena/limestone",
+    "tfc_ie_addon:ore/poor_uraninite/limestone"
+  ],
+  "result": "tfc:rock/cobble/limestone"
+}

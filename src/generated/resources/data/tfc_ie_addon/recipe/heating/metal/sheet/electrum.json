@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "tag": "c:sheets/electrum"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfc_ie_addon:metal/electrum"
+  },
+  "temperature": 1000.0
+}

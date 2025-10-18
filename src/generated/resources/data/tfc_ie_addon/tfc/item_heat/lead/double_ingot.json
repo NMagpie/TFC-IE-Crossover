@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 198.00002,
+  "heat_capacity": 15.384616,
+  "ingredient": {
+    "tag": "c:double_ingots/lead"
+  },
+  "welding_temperature": 264.0
+}

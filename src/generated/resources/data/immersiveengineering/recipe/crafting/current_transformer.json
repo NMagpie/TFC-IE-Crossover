@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "immersiveengineering:connector_insulator"
+    },
+    "e": {
+      "item": "immersiveengineering:component_electronic"
+    },
+    "i": [
+      {
+        "tag": "c:ingots/iron"
+      },
+      {
+        "tag": "c:ingots/wrought_iron"
+      }
+    ],
+    "m": {
+      "item": "immersiveengineering:voltmeter"
+    }
+  },
+  "pattern": [
+    " m ",
+    " b ",
+    "iei"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:current_transformer"
+  }
+}

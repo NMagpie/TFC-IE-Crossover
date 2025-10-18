@@ -1,0 +1,65 @@
+{
+  "type": "immersiveengineering:mineral_mix",
+  "biome_predicates": [
+    [
+      "minecraft:is_overworld"
+    ]
+  ],
+  "fail_chance": 0.05,
+  "ores": [
+    {
+      "chance": 0.8,
+      "output": {
+        "id": "tfc:ore/bituminous_coal"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:ore/sulfur"
+      }
+    },
+    {
+      "chance": 0.2,
+      "conditions": [
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:dusts/phosphorus"
+          }
+        }
+      ],
+      "output": {
+        "tag": "c:dusts/phosphorus"
+      }
+    }
+  ],
+  "spoils": [
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/basalt"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/basalt"
+      }
+    },
+    {
+      "chance": 0.5,
+      "output": {
+        "id": "tfc:rock/raw/chalk"
+      }
+    },
+    {
+      "chance": 0.2,
+      "output": {
+        "id": "tfc:rock/gravel/chalk"
+      }
+    }
+  ],
+  "weight": 25
+}

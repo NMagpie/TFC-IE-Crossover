@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [
+    {
+      "tag": "c:ingots/tin"
+    }
+  ],
+  "energy": 51200,
+  "input": {
+    "basePredicate": {
+      "tag": "c:ingots/copper"
+    },
+    "count": 9
+  },
+  "results": [
+    {
+      "count": 10,
+      "id": "tfc:metal/ingot/bronze"
+    }
+  ],
+  "time": 100
+}

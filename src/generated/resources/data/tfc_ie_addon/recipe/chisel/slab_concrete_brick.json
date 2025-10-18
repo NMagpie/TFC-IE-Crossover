@@ -1,0 +1,12 @@
+{
+  "type": "tfc:chisel",
+  "ingredient": [
+    "immersiveengineering:concrete_brick"
+  ],
+  "item_output": {
+    "count": 1,
+    "id": "immersiveengineering:slab_concrete_brick"
+  },
+  "mode": "tfc:slab",
+  "result": "immersiveengineering:slab_concrete_brick"
+}

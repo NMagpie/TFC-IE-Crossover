@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 2500,
+  "input": {
+    "item": "tfc_ie_addon:ore/normal_galena"
+  },
+  "result": {
+    "count": 10,
+    "id": "tfc_ie_addon:powder/galena"
+  }
+}

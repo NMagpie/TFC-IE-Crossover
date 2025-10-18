@@ -3,19 +3,15 @@
     "type": "item_display",
     "items": [
       {
-        "item": "tfc_ie_addon:mineral/quartz_shard"
+        "id": "tfc_ie_addon:mineral/quartz_shard"
       },
       {
-        "item": "tfc_ie_addon:mineral/quartz_block"
+        "id": "tfc_ie_addon:mineral/quartz_block"
       }
     ]
   },
   "component": {
     "type": "blueprint",
-    "recipes": [
-      {
-        "item": "immersiveengineering:component_electronic"
-      }
-    ]
+    "recipe": "blueprint/component_electronic"
   }
 }

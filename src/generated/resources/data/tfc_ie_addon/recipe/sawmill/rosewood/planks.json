@@ -1,0 +1,13 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "tfc:wood/planks/rosewood"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfc:wood/lumber/rosewood"
+  },
+  "secondaryOutputs": [],
+  "strippingSecondaries": []
+}

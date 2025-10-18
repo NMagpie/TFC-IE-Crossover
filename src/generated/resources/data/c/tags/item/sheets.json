@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#c:sheets/electrum",
+    "#c:sheets/constantan",
+    "#c:sheets/aluminum",
+    "#c:sheets/lead",
+    "#c:sheets/uranium"
+  ]
+}

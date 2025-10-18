@@ -1,0 +1,9 @@
+{
+  "type": "tfc:collapse",
+  "ingredient": [
+    "tfc_ie_addon:ore/poor_bauxite/phyllite",
+    "tfc_ie_addon:ore/poor_galena/phyllite",
+    "tfc_ie_addon:ore/poor_uraninite/phyllite"
+  ],
+  "result": "tfc:rock/cobble/phyllite"
+}

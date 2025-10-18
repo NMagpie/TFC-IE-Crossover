@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": [
+      {
+        "tag": "c:rods/iron"
+      },
+      {
+        "tag": "c:rods/wrought_iron"
+      }
+    ],
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    " i",
+    "s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:screwdriver"
+  }
+}

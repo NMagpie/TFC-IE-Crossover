@@ -1,0 +1,31 @@
+{
+  "type": "immersiveengineering:arc_furnace",
+  "additives": [
+    {
+      "basePredicate": {
+        "tag": "c:ingots/steel"
+      },
+      "count": 2
+    },
+    {
+      "tag": "c:ingots/bismuth_bronze"
+    },
+    {
+      "tag": "c:ingots/sterling_silver"
+    }
+  ],
+  "energy": 51200,
+  "input": {
+    "basePredicate": {
+      "tag": "c:ingots/black_steel"
+    },
+    "count": 5
+  },
+  "results": [
+    {
+      "count": 9,
+      "id": "tfc:metal/ingot/weak_blue_steel"
+    }
+  ],
+  "time": 100
+}

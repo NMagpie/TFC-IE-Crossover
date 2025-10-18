@@ -1,5 +1,5 @@
 New Ores
 Diggy diggy hole
-<&alu>Bauxite is an ore of §lAluminum§r, which is an integral part of high-voltage architecture. It can be found at any elevation, but deeper veins are often richer. It can be found in Sedimentary and Metamorphic rocks.
-<&lead>Galena is an ore of §lLead§r, which is used in creating early accumulators. It can be found at elevations below y=75. It can be found in Metamorphic, Igneous Extrusive and Igneous Intrusive rocks.
-<&uranium>Uraninite is an ore of §lUranium§r. It can be found at elevations below y=75. It can be found in Metamorphic and Igneous Extrusive rocks. A uranium block can serve as a heat source for the <link;thermoelectric;Thermoelectric Generator;start>.
+<&alu>Bauxite is an ore of §lAluminum§r, which is an integral part of high-voltage architecture. It can be found at any elevation, but deeper veins are often richer. It can be found in Sedimentary and Metamorphic rocks.<br>
+<&lead>Galena is an ore of §lLead§r, which is used in creating early accumulators. It can be found at elevations below y=75. It can be found in Metamorphic, Igneous Extrusive and Igneous Intrusive rocks.<br>
+<&uranium>Uraninite is an ore of §lUranium§r. It can be found at elevations below y=75. It can be found in Metamorphic and Igneous Extrusive rocks. A uranium block can serve as a heat source for the <link;thermoelectric_generator;Thermoelectric Generator;start>.

@@ -3,6 +3,7 @@ package com.nmagpie.tfc_ie_addon.compat.patchouli.component;
 import java.util.function.UnaryOperator;
 import com.google.gson.annotations.SerializedName;
 import javax.annotation.Nullable;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import vazkii.patchouli.api.IVariable;
@@ -27,11 +28,11 @@ public abstract class TriRecipeComponent<T extends Recipe<?>> extends CustomComp
     }
 
     @Override
-    public void onVariablesAvailable(UnaryOperator<IVariable> lookup)
+    public void onVariablesAvailable(UnaryOperator<IVariable> lookup, HolderLookup.Provider provider)
     {
-        recipeName = lookup.apply(IVariable.wrap(recipeName)).asString();
-        recipeName2 = lookup.apply(IVariable.wrap(recipeName2)).asString();
-        recipeName3 = lookup.apply(IVariable.wrap(recipeName3)).asString();
+        recipeName = lookup.apply(IVariable.wrap(recipeName, provider)).asString();
+        recipeName2 = lookup.apply(IVariable.wrap(recipeName2, provider)).asString();
+        recipeName3 = lookup.apply(IVariable.wrap(recipeName3, provider)).asString();
     }
 
     protected abstract RecipeType<T> getRecipeType();

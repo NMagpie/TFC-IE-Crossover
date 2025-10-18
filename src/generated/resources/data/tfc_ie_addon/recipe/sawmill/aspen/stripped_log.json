@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": [
+    {
+      "item": "tfc:wood/stripped_log/aspen"
+    },
+    {
+      "item": "tfc:wood/stripped_wood/aspen"
+    }
+  ],
+  "result": {
+    "count": 12,
+    "id": "tfc:wood/lumber/aspen"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ],
+  "strippingSecondaries": []
+}

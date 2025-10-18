@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 3500,
+  "input": {
+    "item": "tfc_ie_addon:ore/rich_bauxite"
+  },
+  "result": {
+    "count": 14,
+    "id": "tfc_ie_addon:powder/bauxite"
+  }
+}

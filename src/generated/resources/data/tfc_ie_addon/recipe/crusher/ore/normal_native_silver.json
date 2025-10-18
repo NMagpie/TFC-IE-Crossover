@@ -1,0 +1,11 @@
+{
+  "type": "immersiveengineering:crusher",
+  "energy": 2500,
+  "input": {
+    "item": "tfc:ore/normal_native_silver"
+  },
+  "result": {
+    "count": 10,
+    "id": "tfc:powder/native_silver"
+  }
+}

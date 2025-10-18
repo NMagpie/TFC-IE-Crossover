@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:ingots/aluminum"
+  },
+  "result": {
+    "count": 2,
+    "id": "immersiveengineering:stick_aluminum"
+  },
+  "rules": [
+    "draw_third_last",
+    "draw_second_last",
+    "bend_last"
+  ],
+  "tier": 3
+}

@@ -1,0 +1,28 @@
+{
+  "type": "immersiveengineering:mixer",
+  "energy": 3200,
+  "fluid": {
+    "amount": 500,
+    "tag": "c:ethanol"
+  },
+  "inputs": [
+    {
+      "tag": "c:dusts/sulfur"
+    },
+    [
+      {
+        "item": "tfc:powder/native_copper"
+      },
+      {
+        "item": "tfc:powder/malachite"
+      },
+      {
+        "item": "tfc:powder/tetrahedrite"
+      }
+    ]
+  ],
+  "result": {
+    "amount": 500,
+    "id": "immersiveengineering:herbicide"
+  }
+}
