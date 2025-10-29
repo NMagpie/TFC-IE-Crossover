@@ -1,0 +1,10 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "id": "tfc_ie_addon:wild_crop/hemp"
+      }
+    ]
+  }
+}

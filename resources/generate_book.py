@@ -3,6 +3,7 @@ from argparse import ArgumentParser
 
 from mcresources.type_definitions import ResourceIdentifier
 
+from constants import CROPS
 from patchouli import *
 
 GRADES = ['poor', 'normal', 'rich']
@@ -107,6 +108,19 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
             item_spotlight('tfc:jute_fiber', 'Jute', text_contents='Industrial Hemp is a remarkable plant, but today we are going to talk about $(thing)Jute$()! Not only are its seeds useful for the creation of $(thing)Biodiesel$(), $(thing)Jute Fiber$() is also used for the creation of $(thing)Burlap Cloth$(), which is an alternative of Tough Fabric. The seeds can be obtained by harvesting $(l:the_world/wild_crops)Wild Jute$().'),
             loom_recipe('tfc:loom/burlap_cloth', 'Similar to Tough Fabric, $(thing)Burlap Cloth$() is a resilient weave made from $(thing)Jute Fiber$(). It\'s used to create $(thing)Improved Windmills$() as well as $(thing)Balloons$() and $(thing)Jump Cushions$()')
         )),
+        entry('hemp', 'Hemp', 'immersiveengineering:hemp_fiber', pages=(
+           text(f'{detail_hemp('hemp')}You can now find $(thing)Wild Hemp$() in the world of TFC! Hemp seeds can be planted on TFC soil as well.').link('immersiveengineering:seed').link('immersiveengineering:hemp_fiber'),
+           multimultiblock('', *[multiblock('', '', False, (('X',), ('Y',), ('Z',), ('0',)), {
+               'X': 'tfc_ie_addon:crop/hemp[age=%d,part=top]' % i if i == 4 else 'minecraft:air',
+               'Y': 'tfc_ie_addon:crop/hemp[age=%d,part=bottom]' % i,
+               'Z': 'tfc:farmland/andisol',
+           }) for i in range(5)]),
+           table(
+               make_wild_crop_table(0, 1),
+               '', 'Wild Crop Requirements', {}, [],
+               2, 80, 70, 10, 2, 12, False
+           )
+        )),
         entry('quartz', 'Quartz', 'tfc_ie_addon:mineral/quartz_shard', pages=(
             non_text_first_page(),
             item_spotlight('tfc_ie_addon:mineral/quartz_shard', 'Quartz', text_contents='You cannot visit Nether anymore, but you still need some Quartz for Electronics? Not a problem! Now you can find in TFC Overworld $(thing)Quartz Geodes$(), which can contain $(thing)Quartz Blocks$() and $(thing)Quartz Clusters$()! It can be helpful for crafting electronics from the Immersive Engineering!').link('tfc_ie_addon:mineral/quartz_shard').link('tfc_ie_addon:mineral/quartz_block'),
@@ -116,10 +130,6 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
                 'Q': 'tfc_ie_addon:mineral/quartz_cluster',
                 '0': 'tfc_ie_addon:mineral/budding_quartz'
             })
-        )),
-        entry('graphite', 'Graphite', 'immersiveengineering:dust_hop_graphite', pages=(
-            text('Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs. $(thing)HOP Graphite Dust$() is created by compressing eight pieces of $(thing)Coke Dust$() or $(thing)Graphite Powder$() in the $(thing)Industrial Squeezer$().'),
-            empty_last_page()
         )),
         entry('steel_obtain', 'Steel Creation', 'tfc:metal/ingot/steel', pages=(
             text('In the TerraFirmaCraft World it is not so easy to create a $(l:mechanics/steel)Steel Ingot$(). Now you have to follow full process of forging the ingots from $(thing)Pig Iron$() to $(thing)Steel$(). Luckily, this process can be simplified later.').link('immersiveengineering:slag'),
@@ -139,6 +149,43 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         ))
     ))
 
+
+def detail_hemp(crop: str) -> str:
+    data = CROPS[crop]
+
+    nitrogen = data.nitrogen
+    phosphorous = data.phosphorous
+    potassium = data.potassium
+
+    string= '$(bold)$(l:the_world/climate#temperature)Temperature$(): %d - %d °C$(br)$(bold)$(l:mechanics/hydration)Hydration$(): %d - %d %%$(br)$(br)' % (data.min_temp_growth, data.max_temp_growth, data.min_hydration, data.max_hydration)
+    if nitrogen < 0:
+        n = '$(bold)$(b)N: +%s ' % -nitrogen
+    else:
+        n = '$(bold)$(b)N: %s ' % nitrogen
+    if phosphorous < 0:
+        p = '$(bold)$(6)P: +%s ' % -phosphorous
+    else:
+        p = '$(bold)$(6)P: %s ' % phosphorous
+    if potassium <0:
+        k = '$(bold)$(d)K: +%s$()$(br)' % -potassium
+    else:
+        k = '$(bold)$(d)K: %s$()$(br)' % potassium
+
+    return string + n + p + k
+
+def make_wild_crop_table(start_index: int, end_index: int) -> List[str | Dict[str, Any]]:
+    crop_table = [
+        {'text': contents, 'bold': True}
+        for contents in ('Crop', 'Temperature (°C)', 'Rainfall (mm)')
+    ]
+    for idx, (crop, data) in enumerate(CROPS.items()):
+        if start_index <= idx <= end_index:
+            crop_table += [
+                {'text': lang(crop)},
+                '%3s - %s' % (data.min_temp_wg, data.max_temp_wg),
+                '%3s - %s' % (data.min_water, data.max_water)
+            ]
+    return crop_table
 
 if __name__ == '__main__':
     main()

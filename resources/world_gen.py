@@ -52,25 +52,25 @@ def generate(rm: ResourceManager):
 
     # WILD CROPS
 
-    crop = 'hemp'
-    name_parts = ('plant', 'wild_crop', crop)
-    name = 'tfc_ie_addon:wild_crop/%s' % crop
-    heightmap: Heightmap = 'world_surface_wg'
-    replaceable = decorate_replaceable()
+    for crop, crop_data in CROPS.items():
+        name_parts = ('plant', 'wild_crop', crop)
+        name = 'tfc_ie_addon:wild_crop/%s' % crop
+        heightmap: Heightmap = 'world_surface_wg'
+        replaceable = decorate_replaceable()
 
-    feature = 'tfc:tall_wild_crop', {'block': name}
-    name += '[part=bottom]'
+        feature = 'tfc:tall_wild_crop', {'block': name}
+        name += '[part=bottom]'
 
-    res = utils.resource_location(rm.domain, name_parts)
-    patch_feature = res.join() + '_patch'
-    singular_feature = utils.resource_location(rm.domain, name_parts)
+        res = utils.resource_location(rm.domain, name_parts)
+        patch_feature = res.join() + '_patch'
+        singular_feature = utils.resource_location(rm.domain, name_parts)
 
-    rm.placed_feature_tag('tfc:feature/crops', patch_feature)
+        rm.placed_feature_tag('tfc:feature/crops', patch_feature)
 
-    rm.configured_feature(patch_feature, 'minecraft:random_patch', {'tries': 6, 'xz_spread': 5, 'y_spread': 1, 'feature': singular_feature.join()})
-    rm.configured_feature(singular_feature, *feature)
-    rm.placed_feature(patch_feature, patch_feature, decorate_chance(90), decorate_square(), decorate_climate(10, 40, 140, 360))
-    rm.placed_feature(singular_feature, singular_feature, decorate_heightmap(heightmap), replaceable, decorate_would_survive(name))
+        rm.configured_feature(patch_feature, 'minecraft:random_patch', {'tries': 6, 'xz_spread': 5, 'y_spread': 1, 'feature': singular_feature.join()})
+        rm.configured_feature(singular_feature, *feature)
+        rm.placed_feature(patch_feature, patch_feature, decorate_chance(90), decorate_square(), decorate_climate(crop_data.min_temp_wg, crop_data.max_temp_wg, crop_data.min_water, crop_data.max_water, min_forest=crop_data.min_forest, max_forest=crop_data.max_forest))
+        rm.placed_feature(singular_feature, singular_feature, decorate_heightmap(heightmap), replaceable, decorate_would_survive(name))
 
 
 Heightmap = Literal['motion_blocking', 'motion_blocking_no_leaves', 'ocean_floor', 'ocean_floor_wg', 'world_surface', 'world_surface_wg']

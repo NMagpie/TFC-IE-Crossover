@@ -1,0 +1,169 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Hemp",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "immersiveengineering:hemp_fiber",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(l:the_world/climate#temperature)Temperature$(): 10 - 47 °C$(br)$(bold)$(l:mechanics/hydration)Hydration$(): 30 - 80 %$(br)$(br)$(bold)$(b)N: 0.6 $(bold)$(6)P: 0.2 $(bold)$(d)K: 0.6$()$(br)You can now find $(thing)Wild Hemp$() in the world of TFC! Hemp seeds can be planted on TFC soil as well."
+    },
+    {
+      "type": "tfc:multimultiblock",
+      "text": "",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "Y"
+            ],
+            [
+              "Z"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "minecraft:air",
+            "Y": "tfc_ie_addon:crop/hemp[age=0,part=bottom]",
+            "Z": "tfc:farmland/andisol"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "Y"
+            ],
+            [
+              "Z"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "minecraft:air",
+            "Y": "tfc_ie_addon:crop/hemp[age=1,part=bottom]",
+            "Z": "tfc:farmland/andisol"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "Y"
+            ],
+            [
+              "Z"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "minecraft:air",
+            "Y": "tfc_ie_addon:crop/hemp[age=2,part=bottom]",
+            "Z": "tfc:farmland/andisol"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "Y"
+            ],
+            [
+              "Z"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "minecraft:air",
+            "Y": "tfc_ie_addon:crop/hemp[age=3,part=bottom]",
+            "Z": "tfc:farmland/andisol"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "Y"
+            ],
+            [
+              "Z"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:crop/hemp[age=4,part=top]",
+            "Y": "tfc_ie_addon:crop/hemp[age=4,part=bottom]",
+            "Z": "tfc:farmland/andisol"
+          }
+        }
+      ]
+    },
+    {
+      "type": "tfc:table",
+      "strings": [
+        {
+          "text": "Crop",
+          "bold": true
+        },
+        {
+          "text": "Temperature (°C)",
+          "bold": true
+        },
+        {
+          "text": "Rainfall (mm)",
+          "bold": true
+        },
+        {
+          "text": "Hemp"
+        },
+        {
+          "text": " 10 - 40"
+        },
+        {
+          "text": "140 - 360"
+        }
+      ],
+      "text": "",
+      "title": "Wild Crop Requirements",
+      "legend": [],
+      "columns": 2,
+      "first_column_width": 80,
+      "column_width": 70,
+      "row_height": 10,
+      "left_buffer": 2,
+      "top_buffer": 12,
+      "draw_background": false
+    },
+    {
+      "type": "patchouli:empty",
+      "draw_filler": false
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 7,
+  "extra_recipe_mappings": {
+    "immersiveengineering:seed": 0,
+    "immersiveengineering:hemp_fiber": 0
+  }
+}
