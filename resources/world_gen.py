@@ -48,7 +48,7 @@ def generate(rm: ResourceManager):
                            ]
                            })
 
-    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(350), decorate_square(), decorate_range(30, 80), decorate_biome())
+    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(300), decorate_square(), decorate_range(-48, 32), decorate_biome())
 
     # WILD CROPS
 
