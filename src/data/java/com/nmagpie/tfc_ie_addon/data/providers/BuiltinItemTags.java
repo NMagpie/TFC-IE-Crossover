@@ -92,7 +92,6 @@ public class BuiltinItemTags extends TagsProvider<Item> implements Accessors
 
         tag(commonTagOf(Registries.ITEM, "fabric_hemp")).add(TFCItems.BURLAP_CLOTH);
         tag(commonTagOf(Registries.ITEM, "fiber_hemp")).add(TFCItems.JUTE_FIBER);
-        tag(commonTagOf(Registries.ITEM, "dusts/coal_coke")).add(TFCItems.ORE_POWDERS.get(Ore.GRAPHITE));
         tag(commonTagOf(Registries.ITEM, "dusts/saltpeter")).add(TFCItems.ORE_POWDERS.get(Ore.SALTPETER));
         tag(commonTagOf(Registries.ITEM, "dusts/sulfur")).add(TFCItems.ORE_POWDERS.get(Ore.SULFUR));
         tag(commonTagOf(Registries.ITEM, "gems")).add(Items.QUARTZ_SHARD);
