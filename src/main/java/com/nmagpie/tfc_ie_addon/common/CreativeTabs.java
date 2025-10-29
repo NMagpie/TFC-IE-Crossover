@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
+import com.nmagpie.tfc_ie_addon.util.IECrop;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import com.nmagpie.tfc_ie_addon.util.IEOre;
 import net.minecraft.core.registries.Registries;
@@ -70,6 +71,8 @@ public class CreativeTabs
                 accept(out, Blocks.METALS, metal, blockType);
         for (IEOre ore : IEOre.values())
             Blocks.ORES.values().forEach(map -> map.get(ore).values().forEach(out::accept));
+        for (IECrop crop : IECrop.values())
+            accept(out, Blocks.WILD_CROPS, crop);
     }
 
     private static <T extends ItemLike, R extends Supplier<T>, K1, K2> void accept(CreativeModeTab.Output out, Map<K1, Map<K2, R>> map, K1 key1, K2 key2)

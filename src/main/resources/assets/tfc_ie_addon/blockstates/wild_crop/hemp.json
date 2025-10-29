@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "part=top,mature=true": {
+      "model": "tfc_ie_addon:block/wild_crop/hemp_top"
+    },
+    "part=top,mature=false": {
+      "model": "tfc_ie_addon:block/dead_crop/hemp_top"
+    },
+    "part=bottom,mature=true": {
+      "model": "tfc_ie_addon:block/wild_crop/hemp_bottom"
+    },
+    "part=bottom,mature=false": {
+      "model": "tfc_ie_addon:block/dead_crop/hemp_bottom"
+    }
+  }
+}

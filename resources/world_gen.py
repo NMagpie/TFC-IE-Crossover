@@ -50,6 +50,28 @@ def generate(rm: ResourceManager):
 
     rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(350), decorate_square(), decorate_range(30, 80), decorate_biome())
 
+    # WILD CROPS
+
+    crop = 'hemp'
+    name_parts = ('plant', 'wild_crop', crop)
+    name = 'tfc_ie_addon:wild_crop/%s' % crop
+    heightmap: Heightmap = 'world_surface_wg'
+    replaceable = decorate_replaceable()
+
+    feature = 'tfc:tall_wild_crop', {'block': name}
+    name += '[part=bottom]'
+
+    res = utils.resource_location(rm.domain, name_parts)
+    patch_feature = res.join() + '_patch'
+    singular_feature = utils.resource_location(rm.domain, name_parts)
+
+    rm.placed_feature_tag('tfc:feature/crops', patch_feature)
+
+    rm.configured_feature(patch_feature, 'minecraft:random_patch', {'tries': 6, 'xz_spread': 5, 'y_spread': 1, 'feature': singular_feature.join()})
+    rm.configured_feature(singular_feature, *feature)
+    rm.placed_feature(patch_feature, patch_feature, decorate_chance(90), decorate_square(), decorate_climate(10, 40, 140, 360))
+    rm.placed_feature(singular_feature, singular_feature, decorate_heightmap(heightmap), replaceable, decorate_would_survive(name))
+
 
 Heightmap = Literal['motion_blocking', 'motion_blocking_no_leaves', 'ocean_floor', 'ocean_floor_wg', 'world_surface', 'world_surface_wg']
 
@@ -65,21 +87,31 @@ class PatchConfig(NamedTuple):
     custom_config: Json
 
 
-def decorate_climate(min_temp: Optional[float] = None, max_temp: Optional[float] = None, min_rain: Optional[float] = None, max_rain: Optional[float] = None, needs_forest: Optional[bool] = False, fuzzy: Optional[bool] = None, min_forest: Optional[str] = None, max_forest: Optional[str] = None) -> Json:
+def decorate_climate(min_temp: Optional[float] = None, max_temp: Optional[float] = None, min_water: Optional[float] = None, max_water: Optional[float] = None, min_rain_variance: Optional[float] = None, max_rain_variance: Optional[float] = None, rain_variance_absolute: Optional[bool] = None, min_forest: Optional[int] = None, max_forest: Optional[int] = None, min_elevation: Optional[int] = None, max_elevation: Optional[int] = None, fuzzy: Optional[bool] = None, ignore_rivers: Optional[bool] = None, forest_types: Optional[List[str]] = None, needs_forest: Optional[bool] = False) -> Json:
+
+    if needs_forest:
+        min_forest = 3
     return {
         'type': 'tfc:climate',
         'min_temperature': min_temp,
         'max_temperature': max_temp,
-        'min_rainfall': min_rain,
-        'max_rainfall': max_rain,
-        'min_forest': 'normal' if needs_forest else min_forest,
+        'min_groundwater': min_water,
+        'max_groundwater': max_water,
+        'min_rain_variance': min_rain_variance,
+        'max_rain_variance': max_rain_variance,
+        'rain_variance_absolute': rain_variance_absolute,
+        'min_forest': min_forest,
         'max_forest': max_forest,
-        'fuzzy': fuzzy
+        'forest_types': forest_types,
+        'min_elevation': min_elevation,
+        'max_elevation': max_elevation,
+        'fuzzy': fuzzy,
+        'ignore_rivers': ignore_rivers
     }
 
 
 def patch_config(block: str, y_spread: int, xz_spread: int, tries: int = 64, water: Union[bool, Literal['salt']] = False, custom_feature: Optional[str] = None, custom_config: Json = None) -> PatchConfig:
-    return PatchConfig(block, y_spread, xz_spread, tries, water == 'salt' or water == True, water == 'salt', custom_feature, custom_config)
+    return PatchConfig(block, y_spread, xz_spread, tries, (isinstance(water, bool) and water) or isinstance(water, str), water == 'salt', water == 'fresh', custom_feature, custom_config)
 
 
 def configured_patch_feature(rm: ResourceManager, name_parts: ResourceIdentifier, patch: PatchConfig, *patch_decorators: Json, extra_singular_decorators: Optional[List[Json]] = None, biome_check: bool = True):
@@ -91,6 +123,8 @@ def configured_patch_feature(rm: ResourceManager, name_parts: ResourceIdentifier
         feature = 'tfc:block_with_fluid'
         if patch.salt_water:
             singular_decorators.append(decorate_matching_blocks('tfc:fluid/salt_water'))
+        elif patch.fresh_water:
+            singular_decorators.append(decorate_matching_blocks('minecraft:water'))
         else:
             singular_decorators.append(decorate_air_or_empty_fluid())
     else:

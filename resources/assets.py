@@ -1,4 +1,4 @@
-from mcresources import ResourceManager, ItemContext
+from mcresources import ResourceManager, ItemContext, loot_tables
 from mcresources import utils
 
 from constants import *
@@ -55,6 +55,64 @@ def generate(rm: ResourceManager):
         }, parent='minecraft:block/' + parent, ).with_lang(lang(block_lang))
 
         rm.block('tfc_ie_addon:mineral/%s/prospected' % block_name).with_lang(lang('quartz'))
+
+    # CROPS
+
+    crop = 'hemp'
+
+    block = rm.blockstate(('crop', crop), variants={
+        **dict(('age=%d' % i, {'model': 'immersiveengineering:block/hemp/bottom%d' % i}) for i in range(4)),
+        'age=4,part=bottom': {'model': 'immersiveengineering:block/hemp/bottom4'},
+        'age=4,part=top': {'model': 'immersiveengineering:block/hemp/top'}
+    })
+    block.with_lang(lang(crop))
+
+    block.with_block_loot({
+        'name': 'immersiveengineering:hemp_fiber',
+        'conditions': loot_tables.block_state_property('tfc_ie_addon:crop/%s[age=4,part=bottom]' % crop),
+        'functions': crop_yield(0, (6, 10))
+    }, {
+        'name': 'immersiveengineering:seed',
+        'conditions': loot_tables.block_state_property('tfc_ie_addon:crop/%s[part=bottom,part=bottom]' % crop)
+    })
+
+    block = rm.blockstate(('dead_crop', crop), variants={
+        'mature=false': {'model': 'tfc_ie_addon:block/dead_crop/%s_young' % crop},
+        'mature=true,part=top': {'model': 'tfc_ie_addon:block/dead_crop/%s_top' % crop},
+        'mature=true,part=bottom': {'model': 'tfc_ie_addon:block/dead_crop/%s_bottom' % crop}
+    })
+    block.with_lang(lang('dead %s', crop))
+    for variant in ('young', 'top', 'bottom'):
+        rm.block_model(('dead_crop', '%s_%s' % (crop, variant)), {'crop': 'tfc_ie_addon:block/crop/%s_dead_%s' % (crop, variant)}, parent='block/crop')
+
+    block.with_block_loot(loot_tables.alternatives({
+        'name': 'immersiveengineering:seed',
+        'conditions': loot_tables.block_state_property('tfc_ie_addon:dead_crop/%s[mature=true,part=bottom]' % crop),
+        'functions': loot_tables.set_count(1, 3)
+    }, {
+        'name': 'immersiveengineering:seed',
+        'conditions': loot_tables.block_state_property('tfc_ie_addon:dead_crop/%s[mature=false,part=bottom]' % crop)
+    }))
+
+    block = rm.blockstate(('wild_crop', crop), variants={
+        'part=top,mature=true': {'model': 'tfc_ie_addon:block/wild_crop/%s_top' % crop},
+        'part=top,mature=false': {'model': 'tfc_ie_addon:block/dead_crop/%s_top' % crop},
+        'part=bottom,mature=true': {'model': 'tfc_ie_addon:block/wild_crop/%s_bottom' % crop},
+        'part=bottom,mature=false': {'model': 'tfc_ie_addon:block/dead_crop/%s_bottom' % crop}
+    })
+    rm.item_model(('wild_crop', crop), parent='tfc_ie_addon:block/wild_crop/%s_bottom' % crop, no_textures=True)
+    block.with_lang(lang('wild %s', crop))
+    rm.block_model(('wild_crop', '%s_top' % crop), {'crop': 'immersiveengineering:block/hemp/top0'}, parent='block/crop')
+    rm.block_model(('wild_crop', '%s_bottom' % crop), {'crop': 'immersiveengineering:block/hemp/bottom4'}, parent='tfc:block/wild_crop/crop')
+
+    block.with_block_loot({
+        'name': 'immersiveengineering:hemp_fiber',
+        'conditions': loot_tables.block_state_property('tfc_ie_addon:wild_crop/%s[part=bottom,mature=true]' % crop),
+        'functions': loot_tables.set_count(1, 3)
+    }, {
+        'name': 'immersiveengineering:seed',
+        'conditions': loot_tables.block_state_property('tfc_ie_addon:wild_crop/%s[part=bottom]' % crop)
+    })
 
     # TOOLS
 
@@ -145,3 +203,18 @@ def mineral_parts(mineral: str):
         ('large_%s_bud' % mineral, 'Large %s Bud' % mineral, 'cross', 'cross'),
         ('medium_%s_bud' % mineral, 'Medium %s Bud' % mineral, 'cross', 'cross'),
         ('small_%s_bud' % mineral, 'Small %s Bud' % mineral, 'cross', 'cross')]
+
+
+def crop_yield(lo: int, hi: Tuple[int, int]) -> utils.Json:
+    return {
+        'function': 'minecraft:set_count',
+        'count': {
+            'type': 'tfc:crop_yield_uniform',
+            'min': lo,
+            'max': {
+                'type': 'minecraft:uniform',
+                'min': hi[0],
+                'max': hi[1]
+            }
+        }
+    }

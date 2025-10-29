@@ -54,6 +54,14 @@ public class BuiltinBlockTags extends TagsProvider<Block> implements Accessors
 
         tag(BlockTags.STAIRS).addEvery(b -> b instanceof StairBlock);
         tag(BlockTags.SLABS).addEvery(b -> b instanceof SlabBlock);
+        tag(BlockTags.CROPS)
+            .add(Blocks.CROPS)
+            .add(Blocks.DEAD_CROPS)
+            .add(Blocks.WILD_CROPS);
+        tag(BlockTags.MINEABLE_WITH_HOE)
+            .add(Blocks.CROPS)
+            .add(Blocks.DEAD_CROPS)
+            .add(Blocks.WILD_CROPS);
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .add3(Blocks.ORES)
             .add(Blocks.SMALL_ORES)
@@ -87,8 +95,9 @@ public class BuiltinBlockTags extends TagsProvider<Block> implements Accessors
 
         // ===== TFC Tags ===== //
 
-        tag(TFCTags.Blocks.CAN_BE_SNOW_PILED).add(Blocks.SMALL_ORES);
-
+        tag(TFCTags.Blocks.CAN_BE_SNOW_PILED)
+            .add(Blocks.SMALL_ORES)
+            .add(Blocks.WILD_CROPS);
     }
 
     @Override

@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "feature": "tfc_ie_addon:plant/wild_crop/hemp_patch",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 90
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "tfc:climate",
+      "min_temperature": 10,
+      "max_temperature": 40,
+      "min_groundwater": 140,
+      "max_groundwater": 360
+    }
+  ]
+}

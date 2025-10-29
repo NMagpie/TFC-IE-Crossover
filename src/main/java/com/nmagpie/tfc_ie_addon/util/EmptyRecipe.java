@@ -4,7 +4,6 @@ import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.recipes.INoopInputRecipe;
 import net.dries007.tfc.common.recipes.RecipeSerializerImpl;
@@ -17,13 +16,13 @@ public class EmptyRecipe implements INoopInputRecipe
     public static final RecipeSerializer<EmptyRecipe> SERIALIZER = new RecipeSerializerImpl<>(new EmptyRecipe());
 
     @Override
-    public @NotNull RecipeType<?> getType()
+    public RecipeType<?> getType()
     {
         return TYPE;
     }
 
     @Override
-    public @NotNull RecipeSerializer<?> getSerializer()
+    public RecipeSerializer<?> getSerializer()
     {
         return SERIALIZER;
     }

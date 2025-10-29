@@ -7,6 +7,8 @@ import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.config.Config;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -17,6 +19,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
 
+import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.extensions.FluidRendererExtension;
 import net.dries007.tfc.common.fluids.TFCFluids;
 
@@ -27,6 +30,7 @@ public class ClientEvents
     public static void init(IEventBus bus)
     {
         bus.addListener(ClientEvents::clientSetup);
+        bus.addListener(ClientEvents::registerColorHandlerBlocks);
         bus.addListener(ClientEvents::registerColorHandlerItems);
         bus.addListener(ClientEvents::registerExtensions);
     }
@@ -43,6 +47,10 @@ public class ClientEvents
         Blocks.SMALL_ORES.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
         Blocks.ORES.values().forEach(map -> map.values().forEach(inner -> inner.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout))));
 
+        Blocks.CROPS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
+        Blocks.DEAD_CROPS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
+        Blocks.WILD_CROPS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
+
         setupManual();
     }
 
@@ -56,8 +64,19 @@ public class ClientEvents
         });
     }
 
+    public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
+    {
+        final BlockColor grassColor = (state, level, pos, tintIndex) -> TFCColors.getGrassColor(pos, tintIndex);
+
+        Blocks.WILD_CROPS.forEach((crop, reg) -> event.register(grassColor, reg.get()));
+    }
+
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
     {
+        final ItemColor grassColor = (stack, tintIndex) -> TFCColors.getGrassColor(null, tintIndex);
+
+        Blocks.WILD_CROPS.forEach((key, value) -> event.register(grassColor, value.get().asItem()));
+
         for (Fluid fluid : BuiltInRegistries.FLUID)
         {
             if (Objects.requireNonNull(BuiltInRegistries.FLUID.getKey(fluid)).getNamespace().equals(TFC_IE_Addon.MOD_ID))
