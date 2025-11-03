@@ -1,0 +1,3 @@
+Электрический тигель?
+Он даже лучше!
+В этом моде нет электрического тигля, зато есть внешний нагреватель, который греет тигель также, как и угольная кузня, потребляя <config;i;tfc_ie_addon.crucibleExternalHeaterFEPerTick> FE/тик, он греет тигель до <config;i;tfc_ie_addon.crucibleExternalHeaterTemperature>°C.
