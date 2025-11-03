@@ -1,5 +1,0 @@
-Graphite
-Coal stuff
-Highly Ordered Pyrolytic Graphite (HOP) is a complex, highly compressed, carbon material used in special engineering constructs.<br>
-HOP Graphite Dust is created by compressing eight pieces of Coke Dust or Graphite Powder in the <link;squeezer;Industrial Squeezer>.<br>
-Its uses can be seen <link;coke_and_graphite;here;shaping>.
