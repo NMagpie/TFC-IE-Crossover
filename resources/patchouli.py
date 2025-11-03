@@ -1,5 +1,5 @@
 import re
-from typing import NamedTuple, Tuple, List, Mapping
+from typing import NamedTuple, Tuple, List, Mapping, Dict, Any
 
 from mcresources import ResourceManager, utils
 from mcresources.type_definitions import JsonObject, ResourceLocation
@@ -10,6 +10,8 @@ from i18n import I18n
 NON_TEXT_FIRST_PAGE = 'NON_TEXT_FIRST_PAGE'
 PAGE_BREAK = 'PAGE_BREAK'
 EMPTY_LAST_PAGE = 'EMPTY_LAST_PAGE'
+TABLE_PAGE = 'table'
+TABLE_PAGE_SMALL = 'table_small'
 
 
 class Component(NamedTuple):
@@ -110,6 +112,10 @@ class Book:
                 elif p.type == EMPTY_LAST_PAGE:
                     allow_empty_last_page = True
                     assert j == len(pages) - 1, 'An empty_last_page() was used but it was not the last page?\n  at: %s' % str(e.name)
+                elif p.type == TABLE_PAGE or p.type == TABLE_PAGE_SMALL:
+                    assert len(real_pages) % 2 == 0, 'A table() requires that it starts on a new page!'
+                    real_pages.append(p)
+                    real_pages.append(blank())  # Tables take up two pages
                 else:
                     real_pages.append(p)
 
@@ -275,6 +281,10 @@ def empty() -> Page:
     return page('patchouli:empty', {})
 
 
+def blank() -> Page:
+    return page('patchouli:empty', {'draw_filler': False})
+
+
 # ==============
 # TFC Page Types
 # ==============
@@ -306,6 +316,31 @@ def fertilizer(item: str, text_contents: str, n: float = 0, p: float = 0, k: flo
         text_contents += '$(li)$(d)Potassium: %d$()' % (k * 100)
     return item_spotlight(item, text_contents=text_contents)
 
+def table(strings: List[str | Dict], text_content: str, title: str, keywords: Dict[str, Any], legend: List[Dict[str, Any]], columns: int, first_column_width: int, column_width: int, row_height: int, left_buffer: int, top_buffer: int, draw_background: bool = True, small: bool = False) -> Page:
+    fixed_strings = []
+    for string in strings:
+        fixed_str = string
+        if keywords:
+            for k, v in keywords.items():
+                if k == string:
+                    fixed_str = v
+        if isinstance(fixed_str, str):
+            fixed_strings.append({'text': fixed_str})
+        else:
+            fixed_strings.append(fixed_str)
+    return page(TABLE_PAGE_SMALL if small else TABLE_PAGE, {
+        'strings': fixed_strings,
+        'text': text_content,
+        'title': title,
+        'legend': legend,
+        'columns': columns,
+        'first_column_width': first_column_width,
+        'column_width': column_width,
+        'row_height': row_height,
+        'left_buffer': left_buffer,
+        'top_buffer': top_buffer,
+        'draw_background': draw_background
+    }, custom=True, translation_keys=('text', 'title'))
 
 # =======================
 # TFC_IE_ADDON Page Types

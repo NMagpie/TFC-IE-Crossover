@@ -5,6 +5,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
+import com.nmagpie.tfc_ie_addon.util.IECrop;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import com.nmagpie.tfc_ie_addon.util.IEOre;
 import javax.annotation.Nullable;
@@ -60,6 +61,18 @@ public class Blocks
 
     public static final Map<IEMetal, Id<LiquidBlock>> METAL_FLUIDS = Helpers.mapOf(IEMetal.class, metal ->
         registerNoItem("fluid/metal/" + metal.name(), () -> new LiquidBlock(Fluids.METALS.get(metal).getSource(), Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.LAVA).noLootTable()))
+    );
+
+    public static final Map<IECrop, Id<Block>> CROPS = Helpers.mapOf(IECrop.class, crop ->
+        registerNoItem("crop/" + crop.name(), crop::create)
+    );
+
+    public static final Map<IECrop, Id<Block>> DEAD_CROPS = Helpers.mapOf(IECrop.class, crop ->
+        registerNoItem("dead_crop/" + crop.name(), crop::createDead)
+    );
+
+    public static final Map<IECrop, Id<Block>> WILD_CROPS = Helpers.mapOf(IECrop.class, crop ->
+        register("wild_crop/" + crop.name(), crop::createWild)
     );
 
     private static <T extends Block> Id<T> registerNoItem(String name, Supplier<T> blockSupplier)

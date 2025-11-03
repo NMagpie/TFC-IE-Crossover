@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "age=0": {
+      "model": "immersiveengineering:block/hemp/bottom0"
+    },
+    "age=1": {
+      "model": "immersiveengineering:block/hemp/bottom1"
+    },
+    "age=2": {
+      "model": "immersiveengineering:block/hemp/bottom2"
+    },
+    "age=3": {
+      "model": "immersiveengineering:block/hemp/bottom3"
+    },
+    "age=4,part=bottom": {
+      "model": "immersiveengineering:block/hemp/bottom4"
+    },
+    "age=4,part=top": {
+      "model": "immersiveengineering:block/hemp/top"
+    }
+  }
+}

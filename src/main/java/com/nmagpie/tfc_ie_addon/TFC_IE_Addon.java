@@ -4,6 +4,7 @@ import blusunrize.immersiveengineering.api.tool.ExternalHeaterHandler;
 import com.mojang.logging.LogUtils;
 import com.nmagpie.tfc_ie_addon.client.ClientEvents;
 import com.nmagpie.tfc_ie_addon.common.CreativeTabs;
+import com.nmagpie.tfc_ie_addon.common.blockentities.BlockEntities;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
@@ -13,6 +14,7 @@ import com.nmagpie.tfc_ie_addon.util.EmptyRecipe;
 import com.nmagpie.tfc_ie_addon.util.HerbicideEffects;
 import com.nmagpie.tfc_ie_addon.util.ModGlassOperation;
 import com.nmagpie.tfc_ie_addon.util.ModClocheRenderFunctions;
+import com.nmagpie.tfc_ie_addon.util.ModInteractionManager;
 import com.nmagpie.tfc_ie_addon.world.feature.Features;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -45,6 +47,7 @@ public class TFC_IE_Addon
 
         Items.ITEMS.register(bus);
         Blocks.BLOCKS.register(bus);
+        BlockEntities.BLOCK_ENTITIES.register(bus);
         Fluids.FLUIDS.register(bus);
         Fluids.FLUID_TYPES.register(bus);
         Features.FEATURES.register(bus);
@@ -61,6 +64,7 @@ public class TFC_IE_Addon
 
     private void setup(FMLCommonSetupEvent event)
     {
+        ModInteractionManager.registerInteractions();
         ModClocheRenderFunctions.init();
         HerbicideEffects.register();
     }

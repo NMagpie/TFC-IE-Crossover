@@ -2,6 +2,7 @@
   "values": [
     "tfc_ie_addon:ore/small_bauxite",
     "tfc_ie_addon:ore/small_galena",
-    "tfc_ie_addon:ore/small_uraninite"
+    "tfc_ie_addon:ore/small_uraninite",
+    "tfc_ie_addon:wild_crop/hemp"
   ]
 }

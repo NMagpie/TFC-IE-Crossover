@@ -8,7 +8,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.dries007.tfc.common.component.glass.GlassOperation;
 import net.dries007.tfc.common.items.TFCItems;
 
-@SuppressWarnings("unused")
 public class ModGlassOperation
 {
     public static final DeferredRegister<GlassOperation> OPERATIONS = DeferredRegister.create(GlassOperation.KEY, TFC_IE_Addon.MOD_ID);

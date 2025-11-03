@@ -2,6 +2,7 @@ package com.nmagpie.tfc_ie_addon.data;
 
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.data.providers.BuiltinBlockTags;
+import com.nmagpie.tfc_ie_addon.data.providers.BuiltinClimateRanges;
 import com.nmagpie.tfc_ie_addon.data.providers.BuiltinFertilizers;
 import com.nmagpie.tfc_ie_addon.data.providers.BuiltinFluidHeat;
 import com.nmagpie.tfc_ie_addon.data.providers.BuiltinFluidTags;
@@ -38,6 +39,7 @@ public class DataEntryPoint
         add(event, new BuiltinFertilizers(output, lookup));
         add(event, new BuiltinFuels(output, lookup));
         add(event, new BuiltinItemSizes(output, lookup));
+        add(event, new BuiltinClimateRanges(output, lookup));
     }
 
     private static <T extends DataProvider> T add(GatherDataEvent event, T provider)

@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
-import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -20,8 +20,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.dries007.tfc.common.LevelTier;
 import net.dries007.tfc.common.TFCTiers;
 
-@MethodsReturnNonnullByDefault
-public enum IEMetal
+public enum IEMetal implements StringRepresentable
 {
     ELECTRUM(
         0xFCB74A,
@@ -67,6 +66,7 @@ public enum IEMetal
         this.tier = tier;
     }
 
+    @Override
     public String getSerializedName()
     {
         return serializedName;

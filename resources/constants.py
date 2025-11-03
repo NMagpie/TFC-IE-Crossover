@@ -88,6 +88,25 @@ class Vein(NamedTuple):
         return cfg
 
 
+class Crop(NamedTuple):
+    type: str
+    category: str
+    stages: int
+    min_temp_wg: float
+    max_temp_wg: float
+    min_water: float
+    max_water: float
+    min_temp_growth: float
+    max_temp_growth: float
+    min_hydration: float
+    max_hydration: float
+    nitrogen: float
+    phosphorous: float
+    potassium: float
+    min_forest: Optional[int]
+    max_forest: Optional[int]
+
+
 ORES: Dict[str, Ore] = {
     'bauxite': Ore('aluminum', True, 'copper', 'aluminum', 'red'),
     'galena': Ore('lead', True, 'copper', 'lead', 'black'),
@@ -183,6 +202,10 @@ TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel
                     'high_carbon_blue_steel', 'high_carbon_red_steel']
 
 ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
+
+CROPS: dict[str, Crop] = {
+    'hemp': Crop('double', 'misc', 5, 10, 40, 140, 360, 10, 47, 30, 80, 0.6, 0.2, 0.6, None, None)
+}
 
 DEFAULT_LANG = {
     'desc.immersiveengineering.info.mineral.stannite': 'Stannite',
