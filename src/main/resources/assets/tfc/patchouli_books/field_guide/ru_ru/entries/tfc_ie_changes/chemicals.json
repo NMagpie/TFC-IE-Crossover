@@ -1,0 +1,39 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Химические ингредиенты",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc:powder/saltpeter",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Не все материалы так же незамысловаты, как дерево и камень. Чтобы оценить объём доступных вам как инженеру материалов, необходимо базовове понимание химических процессов."
+    },
+    {
+      "type": "tfc:quern_recipe",
+      "recipe": "tfc:quern/saltpeter",
+      "text": "$(thing)Селитра$() — это щелочная соль, порошок которой можно получить из $(l:the_world/ores_and_minerals#saltpeter)руды селитры$() и $(thing)песчаного камня$() в $(thing)дробителе$(). $(thing)Руды селитры$() также можно перемолоть в $(l:mechanics/quern)жёрнове$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "immersiveengineering:crafting/fertilizer",
+      "text": "$(thing)Селитра$() используется как катализатор при получении $(thing)биодизеля$() и как компонент $(thing)удобрения$() (рецепт см. выше)."
+    },
+    {
+      "type": "tfc:quern_recipe",
+      "anchor": "sulfur",
+      "recipe": "tfc:quern/sulfur",
+      "text": "$(thing)Сера$() —  это порошок, который встречается в определённых рудах и часто в $(thing)минеральных жилах$(). Её можно получить из $(l:the_world/ores_and_minerals#sulfur)руд серы$() и $(thing)кварцевых блоков$() в $(thing)дробителе$(). $(thing)Руды серы$() также можно перемолоть в $(l:mechanics/quern)жёрнове$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "tfc:crafting/gunpowder",
+      "recipe2": "tfc:crafting/gunpowder_graphite"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Смешением $(thing)селитры$(), $(thing)серы$() и $(thing)древесного угля$() можно получить $(thing)порох$(). Куда более научный способ, чем убийство монстров, не так ли?"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 3
+}

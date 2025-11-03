@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Новые сплавы",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "immersiveengineering:ingot_electrum",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "В TerraFirmaCraft существует своя система получения сплавов, которую Вы теперь можете использовать для получения сплавов из Immersive Engineering! К этим сплавам относятся $(thing)электрум$() и $(thing)константан$(). Всё, что вам нужно знать — это пропорции, и они довольно простые."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "immersiveengineering:ingot_electrum",
+      "title": "Электрум",
+      "link_recipes": false,
+      "text": "$(br)$(bold)Компоненты:$()$(br)$(li)40 - 60 % : $(thing)Золото$()$(li)40 - 60 % : $(thing)Серебро$()$(br2)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "immersiveengineering:ingot_constantan",
+      "title": "Константан",
+      "link_recipes": false,
+      "text": "$(br)$(bold)Компоненты:$()$(br)$(li)40 - 60 % : $(thing)Медь$()$(li)40 - 60 % : $(thing)Никель$()$(br2)"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 1,
+  "extra_recipe_mappings": {
+    "immersiveengineering:ingot_electrum": 1,
+    "immersiveengineering:ingot_constantan": 2
+  }
+}

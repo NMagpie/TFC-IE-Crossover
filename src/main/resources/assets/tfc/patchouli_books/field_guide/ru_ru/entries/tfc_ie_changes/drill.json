@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Головки бура",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc_ie_addon:drillhead_black_steel",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Кажется, что Ваш бур слишком медленный? Чувствуете, что стальной головки уже недостаточно?$(br)Поздравляю, теперь вы можете сделать головку бура из цветной стали! Они больше, быстрее и прочнее!"
+    },
+    {
+      "type": "tfc:tri_anvil_recipe",
+      "header": " ",
+      "recipe": "tfc_ie_addon:anvil/drillhead_black_steel",
+      "recipe2": "tfc_ie_addon:anvil/drillhead_blue_steel",
+      "recipe3": "tfc_ie_addon:anvil/drillhead_red_steel"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 12
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Графит",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "immersiveengineering:dust_hop_graphite",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Высокоориентированный пиролитический графит (ВОПГ) — это сложный углеродный материал с высокой плотностью, имеющий специфические применения. $(thing)Пыль ВОП графита$() можно получить сжатием восьми единиц $(thing)коксовой$() или $(thing)графитовой$() пыли в $(thing)индустриальном прессе$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 8
+}

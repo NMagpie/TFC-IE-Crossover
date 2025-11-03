@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Гербицид",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "immersiveengineering:herbicide_bucket",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Гербицид$() работает и в мире TerraFirmaCraft! Если загрузить гербицид в $(thing)распылитель химикатов$(), он будет рассеян как легкий туман, от которого загнутся и умрут все пришедшие в контакт растения. Жидкость уничтожает цветы и культуры и лишает почву травы. Она также высушивает и уничтожает пашни. Фактически, гербицид — альтернатива $(thing)испорченному компосту$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "immersiveengineering:herbicide_bucket",
+      "link_recipes": false,
+      "text": "Чтобы получить $(thing)гербицид$(), смешайте половину ведра $(thing)этанола$() с любой $(thing)медной пылью$() и $(l:tfc:tfc_ie_changes/chemicals#sulfur)порошком серы$() в $(thing)миксере$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 10
+}

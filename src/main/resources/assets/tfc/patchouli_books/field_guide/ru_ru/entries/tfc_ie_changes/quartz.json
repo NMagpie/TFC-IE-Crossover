@@ -1,0 +1,45 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Кварц",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc_ie_addon:mineral/quartz_shard",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfc_ie_addon:mineral/quartz_shard",
+      "title": "Кварц",
+      "link_recipes": false,
+      "text": "Не можете попасть в Нижний Мир, но кварц для элеткроники всё же нужен? Не беда! Теперь вы можете найти кварц в мире TFC в так называемых $(thing)кварцевых жеодах$(), которые содержат $(thing)кварцевые блоки$() и $(thing)кварцевые друзы$()!"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " Q ",
+            "   "
+          ],
+          [
+            "   ",
+            " 0 ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "Q": "tfc_ie_addon:mineral/quartz_cluster",
+          "0": "tfc_ie_addon:mineral/budding_quartz"
+        }
+      },
+      "name": "Кварцевая друза",
+      "text": "$(thing)Цветущий кварц$() периодически производит $(thing)кварцевую друзу$().",
+      "enable_visualize": false
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 7,
+  "extra_recipe_mappings": {
+    "tfc_ie_addon:mineral/quartz_shard": 0,
+    "tfc_ie_addon:mineral/quartz_block": 0
+  }
+}

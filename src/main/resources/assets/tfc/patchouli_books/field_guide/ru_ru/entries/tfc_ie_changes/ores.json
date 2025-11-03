@@ -1,0 +1,177 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Новые руды",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc_ie_addon:ore/normal_bauxite",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "anchor": "bauxite",
+      "text": "Боксит — это руда $(thing)алюминия$(), незаменимого в высоковольтном оборудовании. Его можно найти на любой глубине, но более глубокие залежи часто богаче. Встречается боксит в $(l:the_world/geology#sedimentary)осадочных$() и $(l:the_world/geology#metamorphic)метаморфических$() породах.",
+      "title": "Боксит"
+    },
+    {
+      "type": "tfc:multimultiblock",
+      "text": "Руды боксита в мраморе.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/poor_bauxite/marble"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/normal_bauxite/marble"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/rich_bauxite/marble"
+          }
+        }
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "anchor": "galena",
+      "text": "Галена — это руда $(thing)свинца$(), который используется в простейших аккумуляторах. Её можно найти на глубине ниже y=75. Галена встречается в $(l:the_world/geology#metamorphic)метаморфических$(), $(l:the_world/geology#igneous_extrusive)эффузивных магматических$() и $(l:the_world/geology#igneous_intrusive)интрузивных магматических$() породах.",
+      "title": "Галена"
+    },
+    {
+      "type": "tfc:multimultiblock",
+      "text": "Руды галены в мраморе.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/poor_galena/marble"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/normal_galena/marble"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/rich_galena/marble"
+          }
+        }
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "anchor": "uraninite",
+      "text": "Уранинит — это руда $(thing)урана$(). Её можно найти на глубине ниже y=75. Уранинит встречается в $(l:the_world/geology#metamorphic)метаморфических$() и $(l:the_world/geology#igneous_extrusive)эффузивных магматических$() породах. Урановый блок можно использовать как источник тепла для $(thing)термоэлектрического генератора$().",
+      "title": "Уранинит"
+    },
+    {
+      "type": "tfc:multimultiblock",
+      "text": "Руды уранинита в мраморе.",
+      "multiblocks": [
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/poor_uraninite/marble"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/normal_uraninite/marble"
+          }
+        },
+        {
+          "pattern": [
+            [
+              "X"
+            ],
+            [
+              "0"
+            ]
+          ],
+          "mapping": {
+            "X": "tfc_ie_addon:ore/rich_uraninite/marble"
+          }
+        }
+      ]
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 0,
+  "extra_recipe_mappings": {
+    "tfc_ie_addon:ore/small_bauxite": 0,
+    "tfc_ie_addon:ore/poor_bauxite": 0,
+    "tfc_ie_addon:ore/normal_bauxite": 0,
+    "tfc_ie_addon:ore/rich_bauxite": 0,
+    "tfc_ie_addon:ore/small_galena": 2,
+    "tfc_ie_addon:ore/poor_galena": 2,
+    "tfc_ie_addon:ore/normal_galena": 2,
+    "tfc_ie_addon:ore/rich_galena": 2,
+    "tfc_ie_addon:ore/small_uraninite": 4,
+    "tfc_ie_addon:ore/poor_uraninite": 4,
+    "tfc_ie_addon:ore/normal_uraninite": 4,
+    "tfc_ie_addon:ore/rich_uraninite": 4
+  }
+}

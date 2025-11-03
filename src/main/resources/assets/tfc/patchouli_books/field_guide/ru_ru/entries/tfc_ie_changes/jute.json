@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Джут",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc:jute_fiber",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfc:jute_fiber",
+      "title": "Джут",
+      "link_recipes": false,
+      "text": "Индустриальная конопля — замечательное растение, но $(thing)джут$() ничем не хуже! Мало того, что его семена используются для получения $(thing)биодизеля$(), из $(thing)волокон джута$() также можно получить $(thing)джутовую ткань$() — альтернативу прочной ткани. Семена джута выпадают из $(l:the_world/wild_crops)дикорастущего джута$()."
+    },
+    {
+      "type": "tfc:loom_recipe",
+      "recipe": "tfc:loom/burlap_cloth",
+      "text": "Как и прочная ткань, $(thing)джутовая ткань$() — это прочное плетение из $(thing)джутового волокна$(). Из неё можно сделать $(thing)улучшенные мельницы$(), а так же $(thing)воздушные шары$() и $(thing)подушки для прыжков$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 6
+}

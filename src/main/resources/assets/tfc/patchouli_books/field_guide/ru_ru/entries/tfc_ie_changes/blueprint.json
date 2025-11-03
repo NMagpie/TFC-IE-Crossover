@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Рецепты чертежей",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "immersiveengineering:blueprint",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "В мире TerraFirmaCraft деревень нет, следовательно у вас не получится найти жителя, который будет продавать чертежи. Поэтому чертежи теперь создаются прямо в верстаке! Рецепты могут показаться Вам сложными, но они того стоят."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "tfc_ie_addon:crafting/blueprint_electrode",
+      "recipe2": "tfc_ie_addon:crafting/blueprint_special_bullet"
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 5
+}
