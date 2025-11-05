@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Получение стали",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc:metal/ingot/steel",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "В мире TerraFirmaCraft создать $(l:mechanics/steel)сталь$() не так уж и просто! Теперь Вам необходимо пройти весь процесс ковки $(thing)стальных слитков$() из $(thing)переделанного чугуна$(). К счастью, позже этот процесс можно будет упростить."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "immersiveengineering:slag",
+      "link_recipes": false,
+      "text": "К тому же, $(thing)шлак$() теперь можно получить как побочный продукт ковки $(thing)высокоуглеродистой стали$() из $(thing)переделанного чугуна$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 9,
+  "extra_recipe_mappings": {
+    "immersiveengineering:slag": 0
+  }
+}

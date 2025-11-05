@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Электрический тигель?",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc:crucible",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "В этом моде нет электрического тигля, зато есть $(thing)внешний нагреватель$(), который греет $(l:mechanics/crucible)тигель$() также, как и $(l:mechanics/charcoal_forge)угольная кузня$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "immersiveengineering:crafting/furnace_heater",
+      "text": "По умолчанию он греет $(thing)тигель$() до 2000°C, потребляя 20 FE/тик."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 11,
+  "extra_recipe_mappings": {
+    "immersiveengineering:furnace_heater": 0
+  }
+}

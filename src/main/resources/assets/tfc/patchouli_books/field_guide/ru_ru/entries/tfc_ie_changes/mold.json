@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Новые пресс-формы",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "tfc_ie_addon:mold_sheet",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfc_ie_addon:mold_sheet",
+      "title": "Пресс-форма: лист",
+      "link_recipes": false,
+      "text": "$(thing)\"Пресс-форма: лист\"$() создаётся с помощью $(thing)чертежа инженера$() в $(thing)верстаке инженера$(). С этой пресс-формой вы сможете делать листы любого металла на $(thing)металлическом прессе$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfc_ie_addon:mold_block",
+      "title": "Пресс-форма: блок",
+      "link_recipes": false,
+      "text": "$(thing)\"Пресс-форма: блок\"$() создаётся аналогично. С её помощью Вы сможете делать $(thing)стальной блок$() и $(thing)урановый блок$()."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 2
+}
