@@ -221,6 +221,7 @@ DEFAULT_LANG = {
     'pack.tfc_ie_addon.immersivepetroleum.title': 'TFC + IE Addon Immersive Petroleum Override',
     'pack.tfc_ie_addon.immersivepetroleum.description': 'Compatibility with Immersive Petroleum by TFC + IE Addon',
 
+    'tfc.recipe.barrel.tfc_ie_addon.barrel.treated_wood': 'Treated Wood',
     'tfc_ie_addon.creative_tab.main': 'TFC + IE Crossover'
 }
 
