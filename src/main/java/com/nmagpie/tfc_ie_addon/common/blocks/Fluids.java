@@ -34,8 +34,7 @@ public class Fluids
             .bucket(Items.METAL_FLUID_BUCKETS.get(metal))
             .explosionResistance(100),
         lavaLike()
-            .descriptionId("fluid.tfc_ie_addon.metal." + metal.getSerializedName())
-            .rarity(metal.rarity()),
+            .descriptionId("fluid.tfc_ie_addon.metal." + metal.getSerializedName()),
         MoltenFluid.Source::new,
         MoltenFluid.Flowing::new
     ));

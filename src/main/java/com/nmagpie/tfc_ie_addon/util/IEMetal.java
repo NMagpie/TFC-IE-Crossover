@@ -8,7 +8,6 @@ import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -25,44 +24,37 @@ public enum IEMetal implements StringRepresentable
     ELECTRUM(
         0xFCB74A,
         MapColor.COLOR_YELLOW,
-        Rarity.EPIC,
         TFCTiers.COPPER),
 
     CONSTANTAN(
         0xEC8068,
         MapColor.COLOR_ORANGE,
-        Rarity.EPIC,
         TFCTiers.COPPER),
 
     ALUMINUM(
         0xCCC1BC,
         MapColor.CLAY,
-        Rarity.COMMON,
         TFCTiers.WROUGHT_IRON),
 
     LEAD(
         0x433F4D,
         MapColor.TERRACOTTA_BLUE,
-        Rarity.RARE,
         TFCTiers.COPPER),
 
     URANIUM(0x738A6C,
         MapColor.TERRACOTTA_GREEN,
-        Rarity.EPIC,
         TFCTiers.WROUGHT_IRON);
 
     private final String serializedName;
     private final int color;
     private final MapColor mapColor;
-    private final Rarity rarity;
     private final LevelTier tier;
 
-    IEMetal(int color, MapColor mapColor, Rarity rarity, LevelTier tier)
+    IEMetal(int color, MapColor mapColor, LevelTier tier)
     {
         this.serializedName = name().toLowerCase(Locale.ROOT);
         this.mapColor = mapColor;
         this.color = color;
-        this.rarity = rarity;
         this.tier = tier;
     }
 
@@ -80,16 +72,10 @@ public enum IEMetal implements StringRepresentable
     {
         return mapColor;
     }
-
-    public Rarity rarity()
-    {
-        return rarity;
-    }
     public LevelTier tier()
     {
         return tier;
     }
-
 
     public Supplier<Block> getFullBlock()
     {
@@ -98,8 +84,8 @@ public enum IEMetal implements StringRepresentable
 
     public enum ItemType
     {
-        SHEET(metal -> new Item(new Item.Properties().rarity(metal.rarity()))),
-        DOUBLE_INGOT(metal -> new Item(new Item.Properties().rarity(metal.rarity())));
+        SHEET(metal -> new Item(new Item.Properties())),
+        DOUBLE_INGOT(metal -> new Item(new Item.Properties()));
 
         private final Function<IEMetal, Item> itemFactory;
 
