@@ -30,8 +30,6 @@ class Category(Enum):
 def generate(rm: ResourceManager):
     ### TAGS ###
 
-    rm.item_tag('tfc:lumber', 'tfc_ie_addon:treated_wood_lumber')
-
     # ORE TAGS
     for ore, ore_data in ORES.items():
         rm.block_tag('forge:ores', '#forge:ores/%s' % ore)
