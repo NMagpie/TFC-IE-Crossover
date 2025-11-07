@@ -1,30 +1,29 @@
 plugins {
     id("java")
     id("idea")
-//    id("net.neoforged.gradle") version "[6.0.13,6.2)"
     id("net.minecraftforge.gradle") version "[6.0,6.2)"
     id("org.parchmentmc.librarian.forgegradle") version "1.+"
     id("org.spongepowered.mixin") version "0.7.+"
 }
 
 val minecraftVersion: String = "1.20.1"
-val forgeVersion: String = "47.2.6"
+val forgeVersion: String = "47.4.6"
 val parchmentVersion: String = "2023.09.03-1.20.1"
 val mixinVersion: String = "0.8.5"
-val tfcVersion: String = "4895012"
+val tfcVersion: String = "6990923"
 val jeiVersion: String = "15.2.0.27"
 val patchouliVersion: String = "1.20.1-81-FORGE"
 val jadeVersion: String = "4614153"
 val topVersion: String = "4629624"
-val ieVersion: String = "1.20.1-10.0.0-169.45"
-val ipVersion: String = ""
+val ieVersion: String = "1.20.1-10.2.0-182"
+val ipVersion: String = "7191176"
 
 val modId: String = "tfc_ie_addon"
 
 base {
     archivesName.set("TFC-IE-Crossover-$minecraftVersion")
     group = "com.nmagpie.tfc_ie_addon"
-    version = "1.2.2"
+    version = "1.3.0"
 }
 
 java {
@@ -54,7 +53,6 @@ repositories {
 }
 
 dependencies {
-//    minecraft("net.neoforged", "forge", version = "$minecraftVersion-$forgeVersion")
     minecraft("net.minecraftforge", "forge", version = "$minecraftVersion-$forgeVersion")
     implementation(fg.deobf("curse.maven:tfc-302973:$tfcVersion"))
 
@@ -79,7 +77,7 @@ dependencies {
     implementation(fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:$ieVersion:datagen"))
 
     // Immersive Petroleum
-    //implementation(fg.deobf("curse.maven:immersive-petroleum-268250:$ipVersion"))
+    implementation(fg.deobf("curse.maven:immersive-petroleum-268250:$ipVersion"))
 
     if (System.getProperty("idea.sync.active") != "true") {
         annotationProcessor("org.spongepowered:mixin:$mixinVersion:processor")

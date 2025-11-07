@@ -2,20 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "B": {
+      "item": "tfc:metal/bucket/blue_steel"
+    },
     "P": {
       "tag": "forge:plates/iron"
     },
     "R": {
-      "tag": "forge:rods/wrought_iron"
+      "tag": "forge:dyes/red"
     }
   },
   "pattern": [
-    " RR",
-    "PPP",
-    "PPP"
+    " R ",
+    "PBP"
   ],
   "result": {
-    "item": "immersivepetroleum:upgrade_rudders"
+    "item": "immersivepetroleum:oil_can"
   },
   "show_notification": true
 }

@@ -1,21 +1,22 @@
 {
   "type": "immersivepetroleum:hydrotreater",
-  "time": 1,
-  "energy": 80,
-  "result": {
-    "fluid": "immersivepetroleum:diesel",
-    "amount": 10
-  },
+  "energy": 8000,
   "input": {
-    "tag": "forge:diesel_sulfur",
-    "amount": 10
+    "amount": 1000,
+    "tag": "forge:diesel_sulfur"
+  },
+  "result": {
+    "amount": 1000,
+    "fluid": "immersivepetroleum:diesel"
   },
   "secondary_input": {
-    "tag": "tfc:fresh_water",
-    "amount": 5
+    "amount": 500,
+    "tag": "tfc:fresh_water"
   },
   "secondary_result": {
-    "item": "immersiveengineering:dust_sulfur",
-    "chance": "0.05"
-  }
+    "chance": "1.0",
+    "count": 5,
+    "item": "immersiveengineering:dust_sulfur"
+  },
+  "time": 100
 }

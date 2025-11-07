@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "immersivepetroleum:benzol",
+    "immersivepetroleum:crudeoil",
+    "immersivepetroleum:diesel",
+    "immersivepetroleum:diesel_sulfur",
+    "immersivepetroleum:gasoline",
+    "immersivepetroleum:kerosene",
+    "immersivepetroleum:lubricant",
+    "immersivepetroleum:napalm",
+    "immersivepetroleum:naphtha",
+    "immersivepetroleum:petroleum_gas"
+  ]
+}
