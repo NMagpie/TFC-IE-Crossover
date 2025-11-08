@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "name": "Kinetic Dynamo Compatibilities",
+  "category": "tfc:tfc_ie_changes",
+  "icon": "immersiveengineering:dynamo",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Kinetic Dynamo can be connected to windmills and water wheels from TFC to generate electrical power.$(br)They are cheaper than IE's variants but produce less power."
+    }
+  ],
+  "read_by_default": true,
+  "sortnum": 13
+}

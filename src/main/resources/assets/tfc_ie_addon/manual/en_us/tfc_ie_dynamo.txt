@@ -1,0 +1,4 @@
+Kinetic Dynamo Compatibilities
+2x Windmills and Water Wheels
+The Kinetic Dynamo can be connected to windmills and water wheels from TFC to generate electrical power.<br>
+They are cheaper than IE's variants but produce less power.

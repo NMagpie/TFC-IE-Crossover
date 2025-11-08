@@ -146,6 +146,10 @@ def make_book(rm: ResourceManager, i18n: I18n, local_instance: bool = False):
         entry('drill', 'High-End Drill Heads', 'tfc_ie_addon:drillhead_black_steel', pages=(
             text('Does mining with the drill feel too slow? Are you not satisfied with the steel drill head?$(br)You can now create drill heads of coloured steels! They have better mining speed and size, as well as higher durability.'),
             tri_anvil_recipe('Drill Heads', 'tfc_ie_addon:anvil/drillhead_black_steel', 'tfc_ie_addon:anvil/drillhead_blue_steel', 'tfc_ie_addon:anvil/drillhead_red_steel')
+        )),
+        entry('dynamo', 'Kinetic Dynamo Compatibilities', 'immersiveengineering:dynamo', pages=(
+            text('The Kinetic Dynamo can be connected to windmills and water wheels from TFC to generate electrical power.$(br)They are cheaper than IE\'s variants but produce less power.'),
+            empty_last_page()
         ))
     ))
 

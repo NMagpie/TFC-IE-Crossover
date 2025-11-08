@@ -1,0 +1,16 @@
+{
+  "start": {
+    "type": "item_display",
+    "items": [
+      {
+        "id": "immersiveengineering:dynamo"
+      },
+      {
+        "id": "tfc:windmill_blade/white"
+      },
+      {
+        "id": "tfc:wood/water_wheel/oak"
+      }
+    ]
+  }
+}
