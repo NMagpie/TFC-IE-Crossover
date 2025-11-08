@@ -3,6 +3,7 @@ package com.nmagpie.tfc_ie_addon.mixin;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.nmagpie.tfc_ie_addon.mixin.accessor.BlockEntityAccessor;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +25,8 @@ public abstract class AnvilBlockEntityMixin implements BlockEntityAccessor
     @Inject(method = "work", at = @At(value = "INVOKE", target = "Lnet/dries007/tfc/common/recipes/AnvilRecipe;assemble(Lnet/dries007/tfc/common/recipes/AnvilRecipe$Inventory;Lnet/minecraft/core/HolderLookup$Provider;)Lnet/minecraft/world/item/ItemStack;"), remap = false)
     private void work(ServerPlayer player, ForgeStep step, CallbackInfo ci, @Local AnvilRecipe recipe)
     {
-        if (AnvilRecipe.getId(recipe).toString().equals("tfc:anvil/high_carbon_steel_ingot"))
+        final ResourceLocation recipeRL = ResourceLocation.tryParse("tfc:anvil/high_carbon_steel_ingot");
+        if (recipeRL != null && recipe.equals(AnvilRecipe.byId(recipeRL)))
         {
             ItemStack slag = new ItemStack(IEItems.Ingredients.SLAG);
             if (!player.getInventory().add(slag))
