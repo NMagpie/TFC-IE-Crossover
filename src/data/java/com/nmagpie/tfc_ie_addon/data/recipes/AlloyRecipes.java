@@ -1,7 +1,6 @@
 package com.nmagpie.tfc_ie_addon.data.recipes;
 
 import java.util.List;
-
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import net.minecraft.core.registries.BuiltInRegistries;
 

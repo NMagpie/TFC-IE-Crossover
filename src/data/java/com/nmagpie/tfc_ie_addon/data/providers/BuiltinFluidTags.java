@@ -58,9 +58,20 @@ public class BuiltinFluidTags extends TagsProvider<Fluid> implements Accessors
             super(builder);
         }
 
-        FluidTagAppender add(Fluid... fluids) { return add(Arrays.stream(fluids)); }
-        FluidTagAppender add(Stream<Fluid> fluids) { fluids.forEach(b -> add(key(b))); return this; }
-        FluidTagAppender add(Map<?, ? extends FluidHolder<? extends Fluid>> fluids) { fluids.values().forEach(v -> add(v.getSource())); return this; }
+        FluidTagAppender add(Fluid... fluids) {return add(Arrays.stream(fluids));}
+
+        FluidTagAppender add(Stream<Fluid> fluids)
+        {
+            fluids.forEach(b -> add(key(b)));
+            return this;
+        }
+
+        FluidTagAppender add(Map<?, ? extends FluidHolder<? extends Fluid>> fluids)
+        {
+            fluids.values().forEach(v -> add(v.getSource()));
+            return this;
+        }
+
         FluidTagAppender add(FluidIngredient ingredient)
         {
             switch (ingredient)
@@ -73,7 +84,8 @@ public class BuiltinFluidTags extends TagsProvider<Fluid> implements Accessors
             return this;
         }
 
-        @Override public FluidTagAppender addTag(TagKey<Fluid> tag) { return (FluidTagAppender) super.addTag(tag); }
+        @Override
+        public FluidTagAppender addTag(TagKey<Fluid> tag) {return (FluidTagAppender) super.addTag(tag);}
 
         private ResourceKey<Fluid> key(Fluid fluid)
         {

@@ -68,10 +68,12 @@ public enum IEMetal implements StringRepresentable
     {
         return color;
     }
+
     public MapColor mapColor()
     {
         return mapColor;
     }
+
     public LevelTier tier()
     {
         return tier;

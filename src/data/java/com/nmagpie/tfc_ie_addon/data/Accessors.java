@@ -3,7 +3,6 @@ package com.nmagpie.tfc_ie_addon.data;
 import java.util.Locale;
 import java.util.Map;
 import blusunrize.immersiveengineering.api.IETags;
-import blusunrize.immersiveengineering.api.utils.TagUtils;
 import com.google.common.collect.ImmutableMap;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
@@ -128,7 +127,7 @@ public interface Accessors
 
     default String nameOf(Ingredient ingredient)
     {
-        if (ingredient.getCustomIngredient() instanceof CompoundIngredient ing) return nameOf(ing.children().get(0));
+        if (ingredient.getCustomIngredient() instanceof CompoundIngredient(java.util.List<Ingredient> children)) return nameOf(children.get(0));
         final Ingredient.Value value = ingredient.getValues()[0];
         if (value instanceof Ingredient.TagValue(TagKey<Item> tag)) return tag.location().getPath();
         if (value instanceof Ingredient.ItemValue(ItemStack item)) return nameOf(item.getItem());
@@ -153,12 +152,12 @@ public interface Accessors
         return switch (type)
         {
             case ROD -> 50;
-            default -> 100;
             case DOUBLE_INGOT, SHEET, FISH_HOOK, FISHING_ROD, SWORD, SWORD_BLADE, MACE, MACE_HEAD, SHEARS, UNFINISHED_BOOTS -> 200;
             case DOUBLE_SHEET, TUYERE, UNFINISHED_HELMET, UNFINISHED_CHESTPLATE, UNFINISHED_GREAVES, SHIELD, BOOTS -> 400;
             case HELMET, GREAVES -> 600;
             case CHESTPLATE -> 800;
             case HORSE_ARMOR -> 1200;
+            default -> 100;
         };
     }
 

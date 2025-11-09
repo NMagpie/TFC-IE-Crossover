@@ -4,7 +4,6 @@ import blusunrize.immersiveengineering.common.register.IEBlocks;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
-import com.nmagpie.tfc_ie_addon.data.Utils;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import com.nmagpie.tfc_ie_addon.util.IEOre;
 import net.minecraft.core.registries.Registries;

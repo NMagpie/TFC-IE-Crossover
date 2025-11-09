@@ -47,8 +47,8 @@ public enum IECrop implements StringRepresentable
     IECrop(float nitrogen, float phosphorous, float potassium, int doubleBlockBottomStages, int doubleBlockTopStages)
     {
         this(nitrogen, phosphorous, potassium,
-                self -> createDoubleCrop(doubleCrop(), doubleBlockBottomStages, doubleBlockTopStages, self),
-                self -> new DeadDoubleCropBlock(dead(), self.getClimateRange()),
+            self -> createDoubleCrop(doubleCrop(), doubleBlockBottomStages, doubleBlockTopStages, self),
+            self -> new DeadDoubleCropBlock(dead(), self.getClimateRange()),
             self -> new WildDoubleCropBlock(dead().randomTicks())
         );
     }
@@ -109,8 +109,10 @@ public enum IECrop implements StringRepresentable
     private static DoubleCropBlock createDoubleCrop(ExtendedProperties properties, int singleStages, int doubleStages, IECrop crop)
     {
         final IntegerProperty property = TFCBlockStateProperties.getAgeProperty(singleStages + doubleStages - 1);
-        return new DoubleCropBlock(properties, singleStages - 1, singleStages + doubleStages - 1, Blocks.DEAD_CROPS.get(crop), IEItems.Misc.HEMP_SEEDS, crop.getNitrogen(), crop.getPhosphorous(), crop.getPotassium(), crop.getClimateRange()) {
-            public IntegerProperty getAgeProperty() {
+        return new DoubleCropBlock(properties, singleStages - 1, singleStages + doubleStages - 1, Blocks.DEAD_CROPS.get(crop), IEItems.Misc.HEMP_SEEDS, crop.getNitrogen(), crop.getPhosphorous(), crop.getPotassium(), crop.getClimateRange())
+        {
+            public IntegerProperty getAgeProperty()
+            {
                 return property;
             }
         };

@@ -10,7 +10,6 @@ import net.minecraft.world.level.material.Fluid;
 
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.component.food.FoodCapability;
-import net.dries007.tfc.common.component.food.Nutrient;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.TFCItems;
 

@@ -1,7 +1,5 @@
 package com.nmagpie.tfc_ie_addon.data.providers;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
 import blusunrize.immersiveengineering.common.register.IEItems;
@@ -9,7 +7,6 @@ import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.data.Accessors;
-import com.nmagpie.tfc_ie_addon.data.Utils;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;

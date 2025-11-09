@@ -1,13 +1,11 @@
 package com.nmagpie.tfc_ie_addon.data.recipes;
 
 import java.util.List;
-import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.common.items.upgrades.ToolUpgrade;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.data.Utils;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.crafting.Ingredient;
 

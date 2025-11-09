@@ -150,7 +150,7 @@ public interface ArcFurnaceRecipes extends Recipes
             .input(TagUtils.createItemWrapper(IETags.getDust("iron")))
             .setTime(100)
             .setEnergy(51200)
-            .build(output, toIERL("dust_iron" ));
+            .build(output, toIERL("dust_iron"));
     }
 
     private ResourceLocation toRL(String name)

@@ -105,18 +105,18 @@ public class ModClocheRenderFunctions
 
     private static Pair<IntegerProperty, Integer> getCropAge(Block block) throws IllegalArgumentException
     {
-        if(block instanceof CropBlock crop)
-            return Pair.of(((CropBlockAccess)crop).invokeGetAgeProperty(), crop.getMaxAge());
+        if (block instanceof CropBlock crop)
+            return Pair.of(((CropBlockAccess) crop).invokeGetAgeProperty(), crop.getMaxAge());
         else
         {
-            for(Property<?> prop : block.defaultBlockState().getProperties())
-                if("age".equals(prop.getName())&&prop instanceof IntegerProperty intProp)
+            for (Property<?> prop : block.defaultBlockState().getProperties())
+                if ("age".equals(prop.getName()) && prop instanceof IntegerProperty intProp)
                 {
                     int max = intProp.getPossibleValues().stream().max(Integer::compare).orElse(-1);
-                    if(max > 0)
+                    if (max > 0)
                         return Pair.of(intProp, max);
                 }
         }
-        throw new IllegalArgumentException("Block "+block.getDescriptionId()+" is not a valid crop block");
+        throw new IllegalArgumentException("Block " + block.getDescriptionId() + " is not a valid crop block");
     }
 }

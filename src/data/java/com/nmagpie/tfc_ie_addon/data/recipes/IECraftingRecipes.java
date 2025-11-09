@@ -9,9 +9,16 @@ import blusunrize.immersiveengineering.api.wires.WireType;
 import blusunrize.immersiveengineering.common.blocks.metal.conveyors.BasicConveyor;
 import blusunrize.immersiveengineering.common.blocks.metal.conveyors.SplitConveyor;
 import blusunrize.immersiveengineering.common.items.upgrades.ToolUpgrade;
-import blusunrize.immersiveengineering.common.register.IEBlocks.*;
+import blusunrize.immersiveengineering.common.register.IEBlocks.Cloth;
+import blusunrize.immersiveengineering.common.register.IEBlocks.Connectors;
+import blusunrize.immersiveengineering.common.register.IEBlocks.MetalDecoration;
+import blusunrize.immersiveengineering.common.register.IEBlocks.MetalDevices;
+import blusunrize.immersiveengineering.common.register.IEBlocks.WoodenDecoration;
+import blusunrize.immersiveengineering.common.register.IEBlocks.WoodenDevices;
 import blusunrize.immersiveengineering.common.register.IEItems;
-import blusunrize.immersiveengineering.common.register.IEItems.*;
+import blusunrize.immersiveengineering.common.register.IEItems.Ingredients;
+import blusunrize.immersiveengineering.common.register.IEItems.Tools;
+import blusunrize.immersiveengineering.common.register.IEItems.Weapons;
 import blusunrize.immersiveengineering.data.recipes.IERecipeProvider;
 import blusunrize.immersiveengineering.data.recipes.WrappingRecipeOutput;
 import com.nmagpie.tfc_ie_addon.common.ModTags;
@@ -67,7 +74,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('i', getIronIngotsTag())
             .define('w', IEItems.Misc.WIRE_COILS.get(WireType.COPPER))
             .unlockedBy("has_iron_ingot", has(IETags.getTagsFor(EnumMetals.IRON).ingot))
-            .unlockedBy("has_"+toPath(IEItems.Misc.WIRE_COILS.get(WireType.COPPER)), has(IEItems.Misc.WIRE_COILS.get(WireType.COPPER)))
+            .unlockedBy("has_" + toPath(IEItems.Misc.WIRE_COILS.get(WireType.COPPER)), has(IEItems.Misc.WIRE_COILS.get(WireType.COPPER)))
             .save(out, toRL(toPath(MetalDecoration.LV_COIL)));
         shapedMisc(MetalDecoration.MV_COIL)
             .pattern("www")
@@ -76,7 +83,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('i', getIronIngotsTag())
             .define('w', IEItems.Misc.WIRE_COILS.get(WireType.ELECTRUM))
             .unlockedBy("has_iron_ingot", has(IETags.getTagsFor(EnumMetals.IRON).ingot))
-            .unlockedBy("has_"+toPath(IEItems.Misc.WIRE_COILS.get(WireType.ELECTRUM)), has(IEItems.Misc.WIRE_COILS.get(WireType.ELECTRUM)))
+            .unlockedBy("has_" + toPath(IEItems.Misc.WIRE_COILS.get(WireType.ELECTRUM)), has(IEItems.Misc.WIRE_COILS.get(WireType.ELECTRUM)))
             .save(out, toRL(toPath(MetalDecoration.MV_COIL)));
         shapedMisc(MetalDecoration.HV_COIL)
             .pattern("www")
@@ -85,7 +92,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('i', getIronIngotsTag())
             .define('w', IEItems.Misc.WIRE_COILS.get(WireType.STEEL))
             .unlockedBy("has_steel_ingot", has(IETags.getTagsFor(EnumMetals.STEEL).ingot))
-            .unlockedBy("has_"+toPath(IEItems.Misc.WIRE_COILS.get(WireType.STEEL)), has(IEItems.Misc.WIRE_COILS.get(WireType.STEEL)))
+            .unlockedBy("has_" + toPath(IEItems.Misc.WIRE_COILS.get(WireType.STEEL)), has(IEItems.Misc.WIRE_COILS.get(WireType.STEEL)))
             .save(out, toRL(toPath(MetalDecoration.HV_COIL)));
 
         shapedMisc(MetalDecoration.ALU_POST)
@@ -102,7 +109,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("s")
             .define('f', MetalDecoration.STEEL_FENCE)
             .define('s', ModTags.STONE_BRICKS_NO_VARIANTS)
-            .unlockedBy("has_"+toPath(MetalDecoration.STEEL_FENCE), has(MetalDecoration.STEEL_FENCE))
+            .unlockedBy("has_" + toPath(MetalDecoration.STEEL_FENCE), has(MetalDecoration.STEEL_FENCE))
             .save(out, toRL(toPath(MetalDecoration.STEEL_POST)));
         shapedMisc(WoodenDecoration.TREATED_POST)
             .pattern("f")
@@ -110,7 +117,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("s")
             .define('f', WoodenDecoration.TREATED_FENCE)
             .define('s', ModTags.STONE_BRICKS_NO_VARIANTS)
-            .unlockedBy("has_"+toPath(WoodenDecoration.TREATED_FENCE), has(WoodenDecoration.TREATED_FENCE))
+            .unlockedBy("has_" + toPath(WoodenDecoration.TREATED_FENCE), has(WoodenDecoration.TREATED_FENCE))
             .save(out, toRL(toPath(WoodenDecoration.TREATED_POST)));
     }
 
@@ -122,7 +129,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("ppp")
             .define('p', Ingredients.WINDMILL_BLADE)
             .define('i', getIronIngotsTag())
-            .unlockedBy("has_"+toPath(Ingredients.WINDMILL_BLADE), has(Ingredients.WINDMILL_BLADE))
+            .unlockedBy("has_" + toPath(Ingredients.WINDMILL_BLADE), has(Ingredients.WINDMILL_BLADE))
             .save(out, toRL(toPath(WoodenDevices.WINDMILL)));
 
         shapedMisc(WoodenDevices.WORKBENCH)
@@ -141,7 +148,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('f', IETags.fiberHemp)
             .define('g', Tags.Items.GUNPOWDERS)
             .define('b', WoodenDevices.WOODEN_BARREL)
-            .unlockedBy("has_"+toPath(WoodenDevices.WOODEN_BARREL), has(WoodenDevices.WOODEN_BARREL))
+            .unlockedBy("has_" + toPath(WoodenDevices.WOODEN_BARREL), has(WoodenDevices.WOODEN_BARREL))
             .save(out, toRL(toPath(WoodenDevices.GUNPOWDER_BARREL)));
 
         shapedMisc(Cloth.BALLOON, 2)
@@ -229,7 +236,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('l', MetalDecoration.LV_COIL)
             .define('r', Tags.Items.DUSTS_REDSTONE)
             .define('c', Ingredients.COMPONENT_IRON)
-            .unlockedBy("has_"+toPath(MetalDecoration.LV_COIL), has(MetalDecoration.LV_COIL))
+            .unlockedBy("has_" + toPath(MetalDecoration.LV_COIL), has(MetalDecoration.LV_COIL))
             .save(out, toRL(toPath(MetalDevices.DYNAMO)));
 
         shapedMisc(MetalDevices.FLOODLIGHT)
@@ -241,7 +248,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('e', Ingredients.LIGHT_BULB)
             .define('c', Ingredients.COMPONENT_IRON)
             .define('p', Tags.Items.GLASS_PANES)
-            .unlockedBy("has_"+toPath(Ingredients.LIGHT_BULB), has(Ingredients.LIGHT_BULB))
+            .unlockedBy("has_" + toPath(Ingredients.LIGHT_BULB), has(Ingredients.LIGHT_BULB))
             .save(out, toRL(toPath(MetalDevices.FLOODLIGHT)));
 
         shapedMisc(MetalDevices.ELECTROMAGNET)
@@ -252,7 +259,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .define('p', IETags.steelRod)
             .define('i', getIronIngotsTag())
             .define('c', Ingredients.COMPONENT_ELECTRONIC)
-            .unlockedBy("has_"+toPath(Ingredients.COMPONENT_ELECTRONIC), has(Ingredients.COMPONENT_ELECTRONIC))
+            .unlockedBy("has_" + toPath(Ingredients.COMPONENT_ELECTRONIC), has(Ingredients.COMPONENT_ELECTRONIC))
             .save(out, toRL(toPath(MetalDevices.ELECTROMAGNET)));
 
         shapedMisc(MetalDevices.PIPE_VALVE)
@@ -411,12 +418,12 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("sss")
             .pattern("sss")
             .pattern("sss")
-            .unlockedBy("has_"+toPath(nugget), has(nugget))
-            .save(out, toRL(toPath(nugget)+"_to_")+toPath(ingot2));
+            .unlockedBy("has_" + toPath(nugget), has(nugget))
+            .save(out, toRL(toPath(nugget) + "_to_") + toPath(ingot2));
         shapelessMisc(nugget, 9)
             .requires(tags.ingot)
-            .unlockedBy("has_"+toPath(ingot2), has(ingot2))
-            .save(out, toRL(toPath(ingot2)+"_to_"+toPath(nugget)));
+            .unlockedBy("has_" + toPath(ingot2), has(ingot2))
+            .save(out, toRL(toPath(ingot2) + "_to_" + toPath(nugget)));
     }
 
     @SuppressWarnings("SameParameterValue")
