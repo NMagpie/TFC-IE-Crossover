@@ -98,6 +98,8 @@ public class BuiltinBlockTags extends TagsProvider<Block> implements Accessors
         tag(TFCTags.Blocks.CAN_BE_SNOW_PILED)
             .add(Blocks.SMALL_ORES)
             .add(Blocks.WILD_CROPS);
+
+        tag(TFCTags.Blocks.PROSPECTABLE).add(Blocks.BUDDING_QUARTZ);
     }
 
     @Override
