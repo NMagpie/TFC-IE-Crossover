@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "afc"
+    }
+  ],
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "afc:wood/planks/mahogany"
+  },
+  "result": {
+    "count": 4,
+    "id": "afc:wood/lumber/mahogany"
+  },
+  "secondaryOutputs": [],
+  "strippingSecondaries": []
+}

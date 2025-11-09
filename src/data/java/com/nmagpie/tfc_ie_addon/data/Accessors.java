@@ -10,6 +10,9 @@ import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import com.nmagpie.tfc_ie_addon.util.IEOre;
+import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -333,5 +336,15 @@ public interface Accessors
     default ItemLike woodOf(Wood wood, Wood.BlockType type)
     {
         return TFCBlocks.WOODS.get(wood).get(type);
+    }
+
+    default ItemLike lumberOf(AFCWood wood)
+    {
+        return AFCItems.LUMBER.get(wood);
+    }
+
+    default ItemLike woodOf(AFCWood wood, Wood.BlockType type)
+    {
+        return AFCBlocks.WOODS.get(wood).get(type);
     }
 }

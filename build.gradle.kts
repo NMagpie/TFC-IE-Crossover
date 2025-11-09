@@ -161,13 +161,17 @@ dependencies {
     "dataImplementation"("vazkii.patchouli:Patchouli:$patchouliVersion")
 
     // TFC 4.0.9-beta
-    implementation(group = "curse.maven", name = "terrafirmacraft-302973", version = "7150812")
-    "dataImplementation"(group = "curse.maven", name = "terrafirmacraft-302973", version = "7150812")
+    implementation(group = "curse.maven", name = "terrafirmacraft-302973", version = "7200482")
+    "dataImplementation"(group = "curse.maven", name = "terrafirmacraft-302973", version = "7200482")
 
     // IE
     implementation("blusunrize.immersiveengineering:ImmersiveEngineering:$ieVersion")
     "dataImplementation"("blusunrize.immersiveengineering:ImmersiveEngineering:$ieVersion")
     "dataImplementation"("blusunrize.immersiveengineering:ImmersiveEngineering:$ieVersion:datagen")
+
+    // ArborFirmaCraft
+    runtimeOnly(group = "curse.maven", name = "arborfirmacraft-877545", version = "7200678")
+    "dataImplementation"(group = "curse.maven", name = "arborfirmacraft-877545", version = "7200678")
 
     // Jade / The One Probe
     implementation(group = "curse.maven", name = "jade-324717", version = "6853386")
