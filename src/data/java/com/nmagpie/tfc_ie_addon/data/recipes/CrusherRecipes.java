@@ -125,6 +125,12 @@ public interface CrusherRecipes extends Recipes
                     .build(output, toRL("sandstone/" + (sandstone.name() + sand.name()).toLowerCase(Locale.ROOT)));
             }
         }
+
+        CrusherRecipeBuilder.builder()
+            .output(Items.QUARTZ_SHARD, 4)
+            .input(Blocks.QUARTZ_BLOCK)
+            .setEnergy(3200)
+            .build(output, toRL("quartz"));
     }
 
     private ResourceLocation toRL(String name)

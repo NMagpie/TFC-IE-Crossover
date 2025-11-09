@@ -89,6 +89,7 @@ public interface CraftingRecipes extends Recipes
             .shaped(blueprintSpecialBullet);
 
         recipe().to2x2(Items.TREATED_WOOD_LUMBER, IEBlocks.WoodenDecoration.TREATED_WOOD.get(TreatedWoodStyles.HORIZONTAL), 1);
+        recipe().to2x2(Items.QUARTZ_SHARD, Blocks.QUARTZ_BLOCK, 1);
 
         recipe("from_bauxite")
             .input(Items.POWDERS.get(IEOre.BAUXITE))

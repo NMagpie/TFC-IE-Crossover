@@ -160,7 +160,7 @@ dependencies {
     implementation("vazkii.patchouli:Patchouli:$patchouliVersion")
     "dataImplementation"("vazkii.patchouli:Patchouli:$patchouliVersion")
 
-    // TFC 4.0.9-beta
+    // TFC 4.0.10-beta
     implementation(group = "curse.maven", name = "terrafirmacraft-302973", version = "7200482")
     "dataImplementation"(group = "curse.maven", name = "terrafirmacraft-302973", version = "7200482")
 
