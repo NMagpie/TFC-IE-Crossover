@@ -20,7 +20,7 @@ public class BuiltinClimateRanges extends DataManagerProvider<ClimateRange>
     @Override
     protected void addData(HolderLookup.Provider provider)
     {
-        add(ClimateRange.MANAGER.getReference(TFC_IE_Addon.identifier("crop/hemp")), b -> b.hydration(30, 80).temperature(10, 47));
+        add(ClimateRange.MANAGER.getReference(TFC_IE_Addon.identifier("crop/hemp")), b -> b.hydration(30, 80).temperature(10, 31));
     }
 
     private void add(DataManager.Reference<ClimateRange> reference, UnaryOperator<ClimateRange.Builder> builder)

@@ -204,7 +204,7 @@ TFC_OTHER_METALS = ['pig_iron', 'weak_steel', 'weak_blue_steel', 'weak_red_steel
 ADDON_METALS = ['aluminum', 'constantan', 'electrum', 'lead', 'uranium']
 
 CROPS: dict[str, Crop] = {
-    'hemp': Crop('double', 'misc', 5, 10, 40, 140, 360, 10, 47, 30, 80, 0.6, 0.2, 0.6, None, None)
+    'hemp': Crop('double', 'misc', 5, 10, 40, 140, 360, 10, 31, 30, 80, 0.6, 0.2, 0.6, None, None)
 }
 
 DEFAULT_LANG = {
