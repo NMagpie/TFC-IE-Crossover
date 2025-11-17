@@ -123,6 +123,16 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
 
     private void deviceRecipes(RecipeOutput out)
     {
+        shapedMisc(WoodenDevices.CRAFTING_TABLE)
+            .pattern("sss")
+            .pattern("rcr")
+            .pattern("r r")
+            .define('s', IETags.getItemTag(IETags.treatedWoodSlab))
+            .define('r', IETags.treatedStick)
+            .define('c', Tags.Items.PLAYER_WORKSTATIONS_CRAFTING_TABLES)
+            .unlockedBy("has_treated_planks", has(IETags.getItemTag(IETags.treatedWood)))
+            .save(out, toRL(toPath(WoodenDevices.CRAFTING_TABLE)));
+
         shapedMisc(WoodenDevices.WINDMILL)
             .pattern("ppp")
             .pattern("pip")

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "tag": "c:player_workstations/crafting_tables"
+    },
+    "r": {
+      "tag": "c:rods/treated_wood"
+    },
+    "s": {
+      "tag": "immersiveengineering:treated_wood_slab"
+    }
+  },
+  "pattern": [
+    "sss",
+    "rcr",
+    "r r"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersiveengineering:craftingtable"
+  }
+}

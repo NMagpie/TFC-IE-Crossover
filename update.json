@@ -5,7 +5,7 @@
     "1.21.1-recommended": "2.0.4"
   },
   "1.21.1": {
-    "2.0.4": "Rebalance hemp climate range.",
+    "2.0.4": "Rebalance hemp climate range.\nFix recipe for engineer's crafting table.",
     "2.0.3": "Make budding quartz block prospectable.\nAdd quartz block crafting and crusher recipes.\nFix ore powder textures in bowls.\nRemove rarity on metals.\nRe-add compat between TFC windmills or water wheels and the kinetic dynamo.\nRe-add AFC compat.",
     "2.0.2": "Fix treated wood lumber barrel recipe missing lang.\nUpdate ru_ru lang.",
     "2.0.1": "Add hemp as tfc crop.\nFix electric heater manual page.\nChange quartz geode generation height.\nRemove #c:dusts/coal_coke tag from graphite powder.",
