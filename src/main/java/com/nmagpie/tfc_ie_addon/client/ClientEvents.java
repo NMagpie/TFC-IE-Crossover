@@ -6,6 +6,7 @@ import blusunrize.immersiveengineering.api.ManualHelper;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.blocks.Fluids;
+import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.config.Config;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
@@ -21,6 +22,7 @@ import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
 
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.extensions.FluidRendererExtension;
+import net.dries007.tfc.client.render.blockentity.BowlBlockEntityRenderer;
 import net.dries007.tfc.common.fluids.TFCFluids;
 
 import static net.dries007.tfc.client.ClientEventHandler.*;
@@ -50,6 +52,8 @@ public class ClientEvents
         Blocks.CROPS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
         Blocks.DEAD_CROPS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
         Blocks.WILD_CROPS.values().forEach(reg -> ItemBlockRenderTypes.setRenderLayer(reg.get(), cutout));
+
+        Items.POWDERS.forEach((type, item) -> BowlBlockEntityRenderer.addPowderTexture(item.asItem(), item.getId().withPrefix("block/")));
 
         setupManual();
     }

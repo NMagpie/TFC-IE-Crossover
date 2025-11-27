@@ -1,10 +1,11 @@
 {
   "homepage" : "https://www.curseforge.com/minecraft/mc-mods/tfc-ie-crossover",
   "promos": {
-    "1.21.1-latest": "2.0.4",
-    "1.21.1-recommended": "2.0.4"
+    "1.21.1-latest": "2.0.5",
+    "1.21.1-recommended": "2.0.5"
   },
   "1.21.1": {
+    "2.0.5": "Fix a crash on server.",
     "2.0.4": "Rebalance hemp climate range.\nFix recipe for engineer's crafting table.",
     "2.0.3": "Make budding quartz block prospectable.\nAdd quartz block crafting and crusher recipes.\nFix ore powder textures in bowls.\nRemove rarity on metals.\nRe-add compat between TFC windmills or water wheels and the kinetic dynamo.\nRe-add AFC compat.",
     "2.0.2": "Fix treated wood lumber barrel recipe missing lang.\nUpdate ru_ru lang.",

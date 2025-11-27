@@ -29,7 +29,6 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import org.slf4j.Logger;
 
-import net.dries007.tfc.client.render.blockentity.BowlBlockEntityRenderer;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 
 @Mod(TFC_IE_Addon.MOD_ID)
@@ -68,8 +67,6 @@ public class TFC_IE_Addon
         ModInteractionManager.registerInteractions();
         ModClocheRenderFunctions.init();
         HerbicideEffects.register();
-
-        Items.POWDERS.forEach((type, item) -> BowlBlockEntityRenderer.addPowderTexture(item.asItem(), item.getId().withPrefix("block/")));
     }
 
     private void register(RegisterEvent event)
