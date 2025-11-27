@@ -21,7 +21,7 @@ val ieVersion: String = "1.21.1-12.4.2-194"
 val dualCodecsVersion: String = "0.1.2"
 
 val modId: String = "tfc_ie_addon"
-val modVersion: String = "2.0.4"
+val modVersion: String = "2.0.5"
 val modJavaVersion: String = "21"
 val modIsInCI: Boolean = !modVersion.contains("-indev")
 val modDataOutput: String = "src/generated/resources"
