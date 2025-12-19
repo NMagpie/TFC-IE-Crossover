@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)$(l:the_world/climate#temperature)Температура$(): 10...47 °C$(br)$(bold)$(l:mechanics/hydration)Влажность$(): 30–80 %$(br)$(bold)Категория$(): Разное$(br)$(br)$(bold)$(b)N: 60 $(bold)$(6)P: 20 $(bold)$(d)K: 60$()$(br)$(thing)Дикая конопля$() теперь встречается в мире TFC! Семена конопли можно посадить на пашне."
+      "text": "$(bold)$(l:the_world/climate#temperature)Температура$(): 10...31 °C$(br)$(bold)$(l:mechanics/hydration)Влажность$(): 30–80 %$(br)$(bold)Категория$(): Разное$(br)$(br)$(bold)$(b)N: 60 $(bold)$(6)P: 20 $(bold)$(d)K: 60$()$(br)$(thing)Дикая конопля$() теперь встречается в мире TFC! Семена конопли можно посадить на пашне."
     },
     {
       "type": "tfc:multimultiblock",
