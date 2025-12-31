@@ -7,11 +7,11 @@
     "ibi"
   ],
   "key": {
-    "i": {
-      "tag": "forge:ingots/wrought_iron"
-    },
     "b": {
-      "item": "minecraft:iron_bars"
+      "item": "tfc:metal/bars/wrought_iron"
+    },
+    "i": {
+      "tag": "forge:plates/iron"
     }
   },
   "result": {
