@@ -3,6 +3,7 @@ package com.nmagpie.tfc_ie_addon.data;
 import java.util.Locale;
 import java.util.Map;
 import blusunrize.immersiveengineering.api.IETags;
+import com.eerussianguy.firmalife.common.util.FLMetal;
 import com.google.common.collect.ImmutableMap;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
@@ -252,6 +253,11 @@ public interface Accessors
     }
 
     default TagKey<Item> ingotTagOf(IEMetal metal)
+    {
+        return commonTagOf(Registries.ITEM, "ingots/" + metal.getSerializedName());
+    }
+
+    default TagKey<Item> ingotTagOf(FLMetal metal)
     {
         return commonTagOf(Registries.ITEM, "ingots/" + metal.getSerializedName());
     }

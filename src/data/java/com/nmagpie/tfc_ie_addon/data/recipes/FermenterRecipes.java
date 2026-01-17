@@ -3,10 +3,13 @@ package com.nmagpie.tfc_ie_addon.data.recipes;
 import java.util.Arrays;
 import blusunrize.immersiveengineering.common.register.IEFluids;
 import blusunrize.immersiveengineering.data.recipes.builder.FermenterRecipeBuilder;
+import com.eerussianguy.firmalife.common.items.FLFood;
+import com.eerussianguy.firmalife.common.items.FLItems;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.Fluid;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.component.food.FoodCapability;
@@ -46,6 +49,15 @@ public interface FermenterRecipes extends Recipes
             .input(TFCTags.Items.GRAINS)
             .setEnergy(6400)
             .build(output, toRL("grains"));
+
+        // Firmalife
+
+        FermenterRecipeBuilder.builder()
+            .output(ethanol, 250)
+            .input(FLItems.FOODS.get(FLFood.RAW_HONEY))
+            .setEnergy(6400)
+            .addCondition(new ModLoadedCondition("firmalife"))
+            .build(output, toRL("raw_honey"));
     }
 
     private float[] getNutrients(Food food)

@@ -48,7 +48,7 @@ def generate(rm: ResourceManager):
                            ]
                            })
 
-    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(300), decorate_square(), decorate_range(-48, 32), decorate_biome())
+    rm.placed_feature('quartz_geode', 'tfc_ie_addon:quartz_geode', decorate_chance(300), decorate_square(), decorate_range(-48, 32))
 
     # WILD CROPS
 
@@ -165,6 +165,7 @@ def decorate_matching_blocks(*blocks: str) -> Json:
         'type': 'matching_blocks',
         'blocks': list(blocks)
     })
+
 
 def decorate_would_survive(block: str) -> Json:
     return decorate_block_predicate({

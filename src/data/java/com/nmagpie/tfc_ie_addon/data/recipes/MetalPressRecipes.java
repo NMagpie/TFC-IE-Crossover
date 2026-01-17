@@ -5,11 +5,14 @@ import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import blusunrize.immersiveengineering.common.register.IEItems;
 import blusunrize.immersiveengineering.data.recipes.builder.MetalPressRecipeBuilder;
+import com.eerussianguy.firmalife.common.items.FLItems;
+import com.eerussianguy.firmalife.common.util.FLMetal;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.util.IEMetal;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 
 import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Metal;
@@ -68,6 +71,27 @@ public interface MetalPressRecipes extends Recipes
             .mold(IEItems.Molds.MOLD_PLATE)
             .setEnergy(2400)
             .build(output, toRL("plate_wrought_iron"));
+
+        // Firmalife
+
+        for (FLMetal metal : FLMetal.values())
+        {
+            MetalPressRecipeBuilder.builder()
+                .output(FLItems.METAL_ITEMS.get(metal).get(FLMetal.ItemType.SHEET))
+                .input(ingotTagOf(metal))
+                .mold(Items.MOLD_SHEET)
+                .setEnergy(2400)
+                .addCondition(new ModLoadedCondition("firmalife"))
+                .build(output, toRL("sheet_" + metal.getSerializedName()));
+            MetalPressRecipeBuilder.builder()
+                .output(FLItems.METAL_ITEMS.get(metal).get(FLMetal.ItemType.ROD), 2)
+                .input(ingotTagOf(metal))
+                .mold(IEItems.Molds.MOLD_ROD)
+                .setEnergy(2400)
+                .addCondition(new ModLoadedCondition("firmalife"))
+                .build(output, toRL("rod_" + metal.getSerializedName()));
+
+        }
     }
 
     private ResourceLocation toRL(String name)

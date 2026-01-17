@@ -21,7 +21,7 @@ val ieVersion: String = "1.21.1-12.4.2-194"
 val dualCodecsVersion: String = "0.1.2"
 
 val modId: String = "tfc_ie_addon"
-val modVersion: String = "2.0.5"
+val modVersion: String = "2.1.0"
 val modJavaVersion: String = "21"
 val modIsInCI: Boolean = !modVersion.contains("-indev")
 val modDataOutput: String = "src/generated/resources"
@@ -160,9 +160,13 @@ dependencies {
     implementation("vazkii.patchouli:Patchouli:$patchouliVersion")
     "dataImplementation"("vazkii.patchouli:Patchouli:$patchouliVersion")
 
-    // TFC 4.0.10-beta
+    // TFC 4.0.17-beta
     implementation(group = "curse.maven", name = "terrafirmacraft-302973", version = "7452541")
     "dataImplementation"(group = "curse.maven", name = "terrafirmacraft-302973", version = "7452541")
+
+    // Firmalife 3.0.2
+    implementation(group = "curse.maven", name = "firmalife-453394", version = "7461832")
+    "dataImplementation"(group = "curse.maven", name = "firmalife-453394", version = "7461832")
 
     // IE
     implementation("blusunrize.immersiveengineering:ImmersiveEngineering:$ieVersion")

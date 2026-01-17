@@ -119,6 +119,7 @@ public class BuiltinItemTags extends TagsProvider<Item> implements Accessors
         tag(TFCTags.Items.SMALL_ORE_PIECES).add(Blocks.SMALL_ORES);
         tag(TFCTags.Items.GLASS_POWDERS).add(Items.POWDERS.get(IEOre.GALENA), Items.POWDERS.get(IEOre.URANINITE));
         tag(TFCTags.Items.BOWL_POWDERS).add(Items.POWDERS);
+        tag(TFCTags.Items.LEATHER_KNAPPING).add(IEItems.Ingredients.ERSATZ_LEATHER);
 
         // ===== IE Tags ===== //
 

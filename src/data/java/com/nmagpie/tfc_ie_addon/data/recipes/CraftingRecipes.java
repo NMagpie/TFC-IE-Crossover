@@ -11,6 +11,8 @@ import blusunrize.immersiveengineering.common.blocks.wooden.TreatedWoodStyles;
 import blusunrize.immersiveengineering.common.items.upgrades.ToolUpgrade;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import blusunrize.immersiveengineering.common.register.IEItems;
+import com.eerussianguy.firmalife.common.items.FLFood;
+import com.eerussianguy.firmalife.common.items.FLItems;
 import com.google.common.collect.ImmutableMap;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
@@ -127,6 +129,14 @@ public interface CraftingRecipes extends Recipes
             .input('b', ingredientOf(TFCItems.BLUE_STEEL_BUCKET, TFCItems.RED_STEEL_BUCKET))
             .pattern(" ii", "ibb", "ibb")
             .shaped(IEItems.Misc.JERRYCAN);
+
+        // Firmalife
+
+        recipeWithModLoadedCondition("firmalife")
+            .input('f', IETags.fabricHemp)
+            .input('c', FLItems.FOODS.get(FLFood.RAW_HONEY))
+            .pattern("fff", "fcf", "fff")
+            .shaped(IEItems.Ingredients.ERSATZ_LEATHER, 8);
     }
 
     /**
@@ -161,7 +171,7 @@ public interface CraftingRecipes extends Recipes
         var condition = new ModLoadedCondition(modid);
         return new Builder((name, r) -> {
             if (name != null) add(name, r, condition);
-            else add(r, condition);
+            else add(nameOf(r.getResultItem(lookup()).getItem()) + "_" + modid, r, condition);
         });
     }
 

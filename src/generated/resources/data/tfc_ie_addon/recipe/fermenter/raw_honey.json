@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "immersiveengineering:fermenter",
+  "energy": 6400,
+  "fluid": {
+    "amount": 250,
+    "id": "immersiveengineering:ethanol"
+  },
+  "input": {
+    "item": "firmalife:food/raw_honey"
+  }
+}
