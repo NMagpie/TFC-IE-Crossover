@@ -5,6 +5,7 @@
     "1.21.1-recommended": "2.1.0"
   },
   "1.21.1": {
+    "2.1.1": "Fix metal press sheet recipe costing 1 ingot instead of 2.",
     "2.1.0": "Fix incompatibility with latest version of TFC.\nRe-add Firmalife compatibility.\nFix ingot pile texture.\nFix ersatz leather knapping.\nUpdate ru_ru lang.",
     "2.0.5": "Fix a crash on server.",
     "2.0.4": "Rebalance hemp climate range.\nFix recipe for engineer's crafting table.",

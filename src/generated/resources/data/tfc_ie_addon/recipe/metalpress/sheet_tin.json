@@ -2,7 +2,10 @@
   "type": "immersiveengineering:metal_press",
   "energy": 2400,
   "input": {
-    "tag": "c:ingots/tin"
+    "basePredicate": {
+      "tag": "c:ingots/tin"
+    },
+    "count": 2
   },
   "mold": "tfc_ie_addon:mold_sheet",
   "result": {

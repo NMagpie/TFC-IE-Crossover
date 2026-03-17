@@ -2,7 +2,10 @@
   "type": "immersiveengineering:metal_press",
   "energy": 2400,
   "input": {
-    "tag": "c:ingots/wrought_iron"
+    "basePredicate": {
+      "tag": "c:ingots/wrought_iron"
+    },
+    "count": 2
   },
   "mold": "tfc_ie_addon:mold_sheet",
   "result": {

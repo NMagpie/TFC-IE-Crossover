@@ -8,7 +8,10 @@
   "type": "immersiveengineering:metal_press",
   "energy": 2400,
   "input": {
-    "tag": "c:ingots/chromium"
+    "basePredicate": {
+      "tag": "c:ingots/chromium"
+    },
+    "count": 2
   },
   "mold": "tfc_ie_addon:mold_sheet",
   "result": {

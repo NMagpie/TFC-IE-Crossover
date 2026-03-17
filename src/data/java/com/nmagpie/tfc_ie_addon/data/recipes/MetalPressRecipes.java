@@ -29,7 +29,7 @@ public interface MetalPressRecipes extends Recipes
             {
                 MetalPressRecipeBuilder.builder()
                     .output(TFCItems.METAL_ITEMS.get(metal).get(Metal.ItemType.SHEET))
-                    .input(ingotTagOf(metal))
+                    .input(ingotTagOf(metal), 2)
                     .mold(Items.MOLD_SHEET)
                     .setEnergy(2400)
                     .build(output, toRL("sheet_" + metal.getSerializedName()));
@@ -48,7 +48,7 @@ public interface MetalPressRecipes extends Recipes
         {
             MetalPressRecipeBuilder.builder()
                 .output(Items.METAL_ITEMS.get(metal).get(IEMetal.ItemType.SHEET))
-                .input(ingotTagOf(metal))
+                .input(ingotTagOf(metal), 2)
                 .mold(Items.MOLD_SHEET)
                 .setEnergy(2400)
                 .build(output, toRL("sheet_" + metal.getSerializedName()));
@@ -78,7 +78,7 @@ public interface MetalPressRecipes extends Recipes
         {
             MetalPressRecipeBuilder.builder()
                 .output(FLItems.METAL_ITEMS.get(metal).get(FLMetal.ItemType.SHEET))
-                .input(ingotTagOf(metal))
+                .input(ingotTagOf(metal), 2)
                 .mold(Items.MOLD_SHEET)
                 .setEnergy(2400)
                 .addCondition(new ModLoadedCondition("firmalife"))
