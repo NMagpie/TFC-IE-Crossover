@@ -100,7 +100,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("f")
             .pattern("s")
             .define('f', MetalDecoration.ALU_FENCE)
-            .define('s', ModTags.STONE_BRICKS_NO_VARIANTS)
+            .define('s', ModTags.Items.STONE_BRICKS_NO_VARIANTS)
             .unlockedBy("has_" + toPath(MetalDecoration.ALU_FENCE), has(MetalDecoration.ALU_FENCE))
             .save(out, toRL(toPath(MetalDecoration.ALU_POST)));
         shapedMisc(MetalDecoration.STEEL_POST)
@@ -108,7 +108,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("f")
             .pattern("s")
             .define('f', MetalDecoration.STEEL_FENCE)
-            .define('s', ModTags.STONE_BRICKS_NO_VARIANTS)
+            .define('s', ModTags.Items.STONE_BRICKS_NO_VARIANTS)
             .unlockedBy("has_" + toPath(MetalDecoration.STEEL_FENCE), has(MetalDecoration.STEEL_FENCE))
             .save(out, toRL(toPath(MetalDecoration.STEEL_POST)));
         shapedMisc(WoodenDecoration.TREATED_POST)
@@ -116,7 +116,7 @@ public class IECraftingRecipes extends IERecipeProvider implements Accessors
             .pattern("f")
             .pattern("s")
             .define('f', WoodenDecoration.TREATED_FENCE)
-            .define('s', ModTags.STONE_BRICKS_NO_VARIANTS)
+            .define('s', ModTags.Items.STONE_BRICKS_NO_VARIANTS)
             .unlockedBy("has_" + toPath(WoodenDecoration.TREATED_FENCE), has(WoodenDecoration.TREATED_FENCE))
             .save(out, toRL(toPath(WoodenDecoration.TREATED_POST)));
     }

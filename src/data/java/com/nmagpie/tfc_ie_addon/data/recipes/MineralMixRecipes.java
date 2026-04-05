@@ -5,6 +5,7 @@ import blusunrize.immersiveengineering.api.IETags;
 import blusunrize.immersiveengineering.api.utils.TagUtils;
 import blusunrize.immersiveengineering.data.recipes.builder.MineralMixBuilder;
 import com.nmagpie.tfc_ie_addon.TFC_IE_Addon;
+import com.nmagpie.tfc_ie_addon.common.ModTags;
 import com.nmagpie.tfc_ie_addon.common.blocks.Blocks;
 import com.nmagpie.tfc_ie_addon.common.items.Items;
 import com.nmagpie.tfc_ie_addon.util.IEOre;
@@ -27,7 +28,7 @@ public interface MineralMixRecipes extends Recipes
     default void mineralMixRecipes(RecipeOutput output)
     {
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.SMALL_ORES.get(Ore.TETRAHEDRITE), 0.7f)
             .ore(TFCItems.GRADED_ORES.get(Ore.TETRAHEDRITE).get(Ore.Grade.POOR), 0.5f)
             .ore(TFCItems.GRADED_ORES.get(Ore.TETRAHEDRITE).get(Ore.Grade.NORMAL), 0.3f)
@@ -50,7 +51,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toRL("aikinite"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.SMALL_ORES.get(Ore.HEMATITE), 0.6f)
             .ore(TFCItems.GRADED_ORES.get(Ore.HEMATITE).get(Ore.Grade.POOR), 0.4f)
             .ore(TFCItems.GRADED_ORES.get(Ore.HEMATITE).get(Ore.Grade.NORMAL), 0.2f)
@@ -68,7 +69,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toRL("franklinite"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(Blocks.QUARTZ_BLOCK, 0.3f)
             .ore(Items.QUARTZ_SHARD, 0.5f)
             .ore(TFCItems.ORES.get(Ore.SULFUR), 0.2f)
@@ -79,7 +80,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toRL("quartzite"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(Blocks.SMALL_ORES.get(IEOre.GALENA), 0.6f)
             .ore(Items.ORES.get(IEOre.GALENA).get(Ore.Grade.POOR), 0.4f)
             .ore(Items.ORES.get(IEOre.GALENA).get(Ore.Grade.NORMAL), 0.2f)
@@ -104,7 +105,7 @@ public interface MineralMixRecipes extends Recipes
         // IE namespace
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.SMALL_ORES.get(Ore.NATIVE_COPPER), 0.75f)
             .ore(TFCItems.GRADED_ORES.get(Ore.NATIVE_COPPER).get(Ore.Grade.POOR), 0.6f)
             .ore(TFCItems.GRADED_ORES.get(Ore.NATIVE_COPPER).get(Ore.Grade.NORMAL), 0.4f)
@@ -124,7 +125,7 @@ public interface MineralMixRecipes extends Recipes
 
         final TagKey<Item> phosphorus = TagUtils.createItemWrapper(IETags.getDust("phosphorus"));
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCItems.ORES.get(Ore.BITUMINOUS_COAL), 0.8f)
             .ore(TFCItems.ORES.get(Ore.SULFUR), 0.2f)
             .ore(phosphorus, 0.2f, getTagCondition(phosphorus))
@@ -137,7 +138,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toIERL("bituminous_coal"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.SMALL_ORES.get(Ore.NATIVE_COPPER), 0.75f)
             .ore(TFCItems.GRADED_ORES.get(Ore.NATIVE_COPPER).get(Ore.Grade.POOR), 0.6f)
             .ore(TFCItems.GRADED_ORES.get(Ore.NATIVE_COPPER).get(Ore.Grade.NORMAL), 0.4f)
@@ -157,7 +158,7 @@ public interface MineralMixRecipes extends Recipes
 
         final TagKey<Item> mercury = TagUtils.createItemWrapper(IETags.getOre("mercury"));
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCItems.ORES.get(Ore.CINNABAR), 0.6f)
             .ore(TFCItems.ORES.get(Ore.SULFUR), 0.4f)
             .ore(mercury, 0.3f, getTagCondition(mercury))
@@ -170,7 +171,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toIERL("cinnabar"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(Blocks.SMALL_ORES.get(IEOre.GALENA), 0.4f)
             .ore(Items.ORES.get(IEOre.GALENA).get(Ore.Grade.POOR), 0.3f)
             .ore(Items.ORES.get(IEOre.GALENA).get(Ore.Grade.NORMAL), 0.2f)
@@ -189,7 +190,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toIERL("galena"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.ROCK_BLOCKS.get(Rock.GRANITE).get(Rock.BlockType.RAW), 0.3f)
             .ore(TFCBlocks.ROCK_BLOCKS.get(Rock.DIORITE).get(Rock.BlockType.RAW), 0.3f)
             .ore(TFCBlocks.ROCK_BLOCKS.get(Rock.ANDESITE).get(Rock.BlockType.RAW), 0.3f)
@@ -202,7 +203,7 @@ public interface MineralMixRecipes extends Recipes
 
         final TagKey<Item> titanium = TagUtils.createItemWrapper(IETags.getOre("titanium"));
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.SMALL_ORES.get(Ore.MAGNETITE), 0.3f)
             .ore(TFCItems.GRADED_ORES.get(Ore.MAGNETITE).get(Ore.Grade.POOR), 0.25f)
             .ore(TFCItems.GRADED_ORES.get(Ore.MAGNETITE).get(Ore.Grade.NORMAL), 0.15f)
@@ -221,7 +222,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toIERL("laterite"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(TFCBlocks.SMALL_ORES.get(Ore.HEMATITE), 0.35f)
             .ore(TFCItems.GRADED_ORES.get(Ore.HEMATITE).get(Ore.Grade.POOR), 0.25f)
             .ore(TFCItems.GRADED_ORES.get(Ore.HEMATITE).get(Ore.Grade.NORMAL), 0.2f)
@@ -240,7 +241,7 @@ public interface MineralMixRecipes extends Recipes
             .build(output, toIERL("pentlandite"));
 
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(net.minecraft.world.item.Items.CLAY, 0.5f)
             .ore(Tags.Items.SANDS, 0.3f)
             .ore(Tags.Items.GRAVELS, 0.2f)
@@ -250,7 +251,7 @@ public interface MineralMixRecipes extends Recipes
 
         final TagKey<Item> thorium = TagUtils.createItemWrapper(IETags.getOre("thorium"));
         MineralMixBuilder.builder()
-            .dimensionOverworld()
+            .biomeCondition(ModTags.Biomes.GENERATE_MINERAL_MIX)
             .ore(Blocks.SMALL_ORES.get(IEOre.URANINITE), 0.7f)
             .ore(Items.ORES.get(IEOre.URANINITE).get(Ore.Grade.POOR), 0.5f)
             .ore(Items.ORES.get(IEOre.URANINITE).get(Ore.Grade.NORMAL), 0.3f)

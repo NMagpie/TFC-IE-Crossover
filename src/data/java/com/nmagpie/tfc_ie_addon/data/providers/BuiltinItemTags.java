@@ -129,7 +129,7 @@ public class BuiltinItemTags extends TagsProvider<Item> implements Accessors
 
         // ===== Addon Tags ===== //
 
-        tag(ModTags.MOLDS)
+        tag(ModTags.Items.MOLDS)
             .add(Items.MOLD_BLOCK)
             .add(Items.MOLD_SHEET)
             .add(IEItems.Molds.MOLD_PLATE)
@@ -141,7 +141,7 @@ public class BuiltinItemTags extends TagsProvider<Item> implements Accessors
             .add(IEItems.Molds.MOLD_PACKING_9)
             .add(IEItems.Molds.MOLD_UNPACKING);
 
-        tag(ModTags.STONE_BRICKS_NO_VARIANTS)
+        tag(ModTags.Items.STONE_BRICKS_NO_VARIANTS)
             .add(TFCBlocks.ROCK_BLOCKS, Rock.BlockType.BRICKS)
             .add(net.minecraft.world.level.block.Blocks.STONE_BRICKS);
     }

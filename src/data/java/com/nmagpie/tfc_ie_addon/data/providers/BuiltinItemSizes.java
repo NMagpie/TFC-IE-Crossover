@@ -25,7 +25,7 @@ public class BuiltinItemSizes extends DataManagerProvider<ItemSizeDefinition> im
     @Override
     protected void addData(HolderLookup.Provider provider)
     {
-        add("molds", ModTags.MOLDS, Size.NORMAL, Weight.MEDIUM);
+        add("molds", ModTags.Items.MOLDS, Size.NORMAL, Weight.MEDIUM);
     }
 
     private void add(String name, TagKey<Item> item, Size size, Weight weight)
