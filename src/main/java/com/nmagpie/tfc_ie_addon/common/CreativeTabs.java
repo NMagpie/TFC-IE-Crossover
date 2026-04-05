@@ -17,7 +17,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import net.dries007.tfc.common.TFCCreativeTabs.Id;
 import net.dries007.tfc.common.blocks.rock.Ore;
-import net.dries007.tfc.common.blocks.rock.Rock;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
 public class CreativeTabs
