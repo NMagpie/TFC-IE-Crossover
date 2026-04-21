@@ -9,9 +9,9 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(BlockEntity.class)
 public interface BlockEntityAccessor
 {
-    @Accessor
-    Level getLevel();
+    @Accessor("level")
+    Level tfc_ie_addon$getLevel();
 
-    @Accessor
-    BlockPos getWorldPosition();
+    @Accessor("worldPosition")
+    BlockPos tfc_ie_addon$getWorldPosition();
 }

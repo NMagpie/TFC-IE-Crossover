@@ -30,7 +30,7 @@ public abstract class AnvilBlockEntityMixin implements BlockEntityAccessor
         {
             ItemStack slag = new ItemStack(IEItems.Ingredients.SLAG);
             if (!player.getInventory().add(slag))
-                Helpers.spawnItem(this.getLevel(), this.getWorldPosition(), slag);
+                Helpers.spawnItem(this.tfc_ie_addon$getLevel(), this.tfc_ie_addon$getWorldPosition(), slag);
         }
     }
 }

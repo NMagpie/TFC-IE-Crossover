@@ -2,12 +2,12 @@ package com.nmagpie.tfc_ie_addon.util;
 
 import blusunrize.immersiveengineering.api.tool.ExternalHeaterHandler;
 import com.nmagpie.tfc_ie_addon.config.Config;
+import com.nmagpie.tfc_ie_addon.mixin.accessor.CrucibleBlockEntityAccessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 
 import net.dries007.tfc.common.blockentities.CrucibleBlockEntity;
-import net.dries007.tfc.common.component.heat.HeatCapability;
 
 
 public record CrucibleHeater(CrucibleBlockEntity crucible, Direction side) implements ExternalHeaterHandler.IExternalHeatable
@@ -23,11 +23,18 @@ public record CrucibleHeater(CrucibleBlockEntity crucible, Direction side) imple
             int FEPerTick = Config.SERVER.crucibleExternalHeaterFEPerTick.get();
             if (energyAvailable >= FEPerTick && !redstone)
             {
-                HeatCapability.provideHeatTo(level, pos, side, Config.SERVER.crucibleExternalHeaterTemperature.get());
+                setTargetTemperature(Config.SERVER.crucibleExternalHeaterTemperature.get());
                 return FEPerTick;
             }
+            setTargetTemperature(0);
         }
         return 0;
     }
 
+    private void setTargetTemperature(float temperature)
+    {
+        ((CrucibleBlockEntityAccessor) crucible).tfc_ie_addon$setTargetTemperature(temperature);
+        ((CrucibleBlockEntityAccessor) crucible).tfc_ie_addon$setTargetTemperatureStabilityTicks(5);
+        crucible.markForSync();
+    }
 }
